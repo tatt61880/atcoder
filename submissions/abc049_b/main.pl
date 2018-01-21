@@ -1,0 +1,5 @@
+<>;
+while(<>){
+	print;
+	print;
+}

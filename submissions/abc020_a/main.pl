@@ -1,0 +1,1 @@
+$N=<>;print$N==1?"ABC\n":"chokudai\n";

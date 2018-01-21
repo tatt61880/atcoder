@@ -1,0 +1,224 @@
+; userIdのみ要変更です。
+const userId: []char :: "tatt61880"
+
+const jsonPath: []char :: "http://beta.kenkoooo.com/atcoder/atcoder-api/results?user="
+const atcoderBase: []char :: "https://beta.atcoder.jp/contests/"
+
+var dirHtml: []char
+var dirSubmissions: []char
+var dictOldFilesFlag: dict<[]char, bool>
+var dictExtensions: dict<[]char, []char>
+
+func main()
+	if(!@fetchJson())
+		ret
+	end if
+
+	var jsonArray: list<\json@Json> :: (\json@makeJsonF("data.json") $ \json@JsonArray).value
+	do jsonArray.head()
+	;"result":"AC"
+	;"problem_id":"abc023_c"
+	;"user_id":"tatt61880"
+	;"epoch_second":1457884898,
+	;"contest_id":"abc023"
+	;"id":660366
+	;"language":"C++ (GCC 4.9.2)"
+	var dictId: dict<[]char, int> :: #dict<[]char, int>
+	var dictConstantId: dict<[]char, []char> :: #dict<[]char, []char>
+	var dictEpochSecond: dict<[]char, int> :: #dict<[]char, int>
+	var dictLanguage: dict<[]char, []char> :: #dict<[]char, []char>
+
+	for i(0, ^jsonArray - 1)
+		var json: \json@Json :: jsonArray.get()
+		do jsonArray.next()
+		if(json.find("result").toStr() = "AC")
+			var problemId: []char :: json.find("problem_id").toStr()
+			var epochSecond: int :: json.find("epoch_second").toi()
+			var epochSecondPrev: int :: dictEpochSecond.get(problemId)
+			if(epochSecondPrev > epochSecond)
+				skip i
+			end if
+			do dictEpochSecond.add(problemId, epochSecond)
+			do dictId.add(problemId, json.find("id").toi())
+			do dictConstantId.add(problemId, json.find("contest_id").toStr())
+			do dictLanguage.add(problemId, json.find("language").toStr())
+		end if
+	end for
+
+	do @dirHtml :: "\{file@exeDir()}html/"
+	do @dictOldFilesFlag :: #dict<[]char, bool>
+	if(file@exist(@dirHtml))
+		do file@forEach(@dirHtml, false, callback, null)
+		func callback(filepath: []char, isDir: bool, data: kuin@Class): bool
+			if(!isDir)
+				do @dictOldFilesFlag.add(filepath, true)
+			end if
+			ret true
+		end func
+	else
+		do file@makeDir(@dirHtml)
+	end if
+
+	do @dirSubmissions :: "\{file@exeDir()}submissions/"
+	if(!file@exist(@dirSubmissions))
+		if(!file@makeDir(@dirSubmissions))
+			do lib@exitCode(1)
+			do cui@print("\{@dirSubmissions}を作成できません。\n")
+			ret
+		end if
+	end if
+
+	if(!@initExtensions())
+		do lib@exitCode(1)
+		do cui@print("拡張子データの初期化に失敗しました。\n")
+		ret
+	end if
+
+	var regexCode: regex@Regex :: regex@makeRegex("<pre id=\"submission-code\" class=\"prettyprint linenums\">([\\d\\D]+?)</pre>")
+	var problemIds: [][]char :: dictId.toArrayKey() {["abc001_a", "abc001_b", ...]という感じの配列です}
+	for i(0, ^problemIds - 1)
+		var id: int :: dictId.get(problemIds[i])
+		var contestId: []char :: dictConstantId.get(problemIds[i])
+		var language: []char :: dictLanguage.get(problemIds[i])
+		var url: []char :: "\{@atcoderBase}\{contestId}/submissions/\{id}"
+		var filepath: []char :: "\{@dirHtml}\{contestId}#\{id}.html"
+		do @dictOldFilesFlag.add(filepath, false)
+
+		var data: []char
+		if(!file@exist(filepath))
+			do data :: @fetchData(url)
+			var writer: file@Writer :: file@makeWriter(filepath, false)
+			do writer.writeStr(data)
+			do writer.fin()
+		else
+			var reader: file@Reader :: file@makeReader(filepath)
+			do reader.delimiter("")
+			do data :: ""
+			while(!reader.term())
+				do data :~ reader.readStr() ~ "\n"
+			end while
+		end if
+		block
+			var dirProblem: []char :: "\{@dirSubmissions}\{problemIds[i]}/"
+			if(!file@exist(dirProblem))
+				if(!file@makeDir(dirProblem))
+					do lib@exitCode(1)
+					do cui@print("\{dirProblem}を作成できません。\n")
+					ret
+				end if
+			end if
+
+			var extension: []char :: @dictExtensions.get(language)
+			if(extension =& null)
+				do @addExtension(language, &extension)
+			end if
+			var srcFilepath: []char :: "\{dirProblem}main.\{extension}"
+			assert regexCode <>& null
+			var result: [][]char :: regexCode.find(&, data, -1)
+			if(result =& null)
+				do cui@print("ERROR: Failed to find source code. [\{contestId}#\{id}]\n")
+			else
+				var srcCode: []char :: result[1]
+				do srcCode :: srcCode.replace("&#34;", "\"")
+				do srcCode :: srcCode.replace("&amp;", "&")
+				do srcCode :: srcCode.replace("&lt;", "<")
+				do srcCode :: srcCode.replace("&gt;", ">")
+				do srcCode :: srcCode.replace("&#39;", "'")
+				do srcCode :: srcCode.replace("&#43;", "+")
+				;do srcCode :: srcCode.replace("", "")
+
+				var writer: file@Writer :: file@makeWriter(srcFilepath, false)
+				do writer.writeStr(srcCode)
+				do writer.fin()
+			end if
+		end block
+	end for
+
+	do @removeOldFiles()
+end func
+
+func fetchData(url: []char): []char
+	if(url =& null)
+		do cui@print("urlがnullです。\n")
+		ret null
+	end if
+	var http: net@Http :: net@makeHttp(url, false, "Kuin")
+	do cui@print("Fetching data: \{url}\n")
+	do lib@sleep(1000)
+
+	if(http =& null)
+		do cui@print("接続に失敗しました。[\{url}]\n")
+		ret null
+	else
+		var data: []char
+		for i(1, 300)
+			do lib@sleep(10)
+			do data :: http.get()
+			if(data <>& null)
+				ret data
+			end if
+		end for
+		do http.fin()
+	end if
+	do cui@print("データの取得に失敗しました。[\{url}]\n")
+	ret null
+end func
+
+func fetchJson(): bool
+	var data: []char :: @fetchData(@jsonPath ~ @userId)
+	if(data =& null)
+		do lib@exitCode(1)
+		do cui@print("JSONデータの取得に失敗しました。\n")
+		ret false
+	end if
+
+	var writer: file@Writer :: file@makeWriter("data.json", false)
+	do writer.writeStr(data)
+	do writer.fin()
+	ret true
+end func
+
+func removeOldFiles()
+	do @dictOldFilesFlag.forEach(callback, null)
+	func callback(filepath: []char, oldFlag: bool, data: kuin@Class): bool
+		if(oldFlag)
+			do file@delFile(filepath)
+		end if
+		ret true
+	end func
+end func
+
+var arrLanguages: [][]char
+var arrExtensions: [][]char
+
+func initExtensions(): bool
+	var extensionFilepath: []char :: "\{file@exeDir()}extensions.csv"
+	var reader: file@Reader :: file@makeReader(extensionFilepath)
+	if(reader =& null)
+		do lib@exitCode(1)
+		do cui@print("\{extensionFilepath} can't be opened.\n")
+		ret false
+	end if
+	do reader.delimiter(",")
+	do @arrLanguages :: #[0][]char
+	do @arrExtensions :: #[0][]char
+	while(!reader.term())
+		var language: []char :: reader.readStr()
+		var extension: []char :: reader.readStr()
+		do @arrLanguages :~ [language]
+		do @arrExtensions :~ [extension]
+	end while
+	do @dictExtensions :: #dict<[]char, []char>
+	ret true
+end func
+
+func addExtension(language: []char, extension: &[]char)
+	do extension :: "unknown"
+	for i(^@arrLanguages - 1, 0, -1)
+		if(language.findStr(@arrLanguages[i], -1) <> -1)
+			do extension :: @arrExtensions[i]
+			break i
+		end if
+	end for
+	do @dictExtensions.add(language, extension)
+end func
