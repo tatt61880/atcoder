@@ -14,12 +14,7 @@ const int MOD = 1e9+7;
 int main(){
 	int N;
 	cin >> N;
-	rep(i,N){
-		int a, b;
-		cin>>a>>b;
-		int ans=a+b;
-		cout<<ans<<endl;
-	}
-
+	if(N%2) N*=2;
+	cout<<N<<endl;
 	return 0;
 }

@@ -11,15 +11,18 @@ typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
 
+int a[1000];
 int main(){
 	int N;
 	cin >> N;
+	rep(i,N)cin>>a[i];
+	int ans=0;
 	rep(i,N){
-		int a, b;
-		cin>>a>>b;
-		int ans=a+b;
-		cout<<ans<<endl;
+		rep(j,N){
+			ans = max(ans, a[i]-a[j]);
+			ans = max(ans, a[j]-a[i]);
+		}
 	}
-
+	cout<<ans<<endl;
 	return 0;
 }

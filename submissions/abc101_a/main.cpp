@@ -12,14 +12,16 @@ const int MOD = 1e9+7;
 //}}}
 
 int main(){
-	int N;
-	cin >> N;
-	rep(i,N){
-		int a, b;
-		cin>>a>>b;
-		int ans=a+b;
-		cout<<ans<<endl;
+	string s;
+	cin >> s;
+	int ans=0;
+	rep(i, 4){
+		if(s[i]=='+'){
+			ans++;
+		}else{
+			ans--;
+		}
 	}
-
+	cout << ans << endl;
 	return 0;
 }

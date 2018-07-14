@@ -11,15 +11,19 @@ typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
 
+int S(int n){
+	int res=0;
+	while(n){
+		res+=n%10;
+		n/=10;
+	}
+	return res;
+}
+
 int main(){
 	int N;
 	cin >> N;
-	rep(i,N){
-		int a, b;
-		cin>>a>>b;
-		int ans=a+b;
-		cout<<ans<<endl;
-	}
-
+	bool ans=N%S(N)==0;
+	puts(ans?"Yes":"No");
 	return 0;
 }
