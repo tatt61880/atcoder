@@ -77,6 +77,7 @@ func main()
 	end if
 
 	var regexCode: regex@Regex :: regex@makeRegex("<pre id=\"submission-code\" class=\"prettyprint linenums\">([\\d\\D]+?)</pre>")
+	assert regexCode <>& null
 	var problemIds: [][]char :: dictId.toArrayKey() {["abc001_a", "abc001_b", ...]という感じの配列です}
 	for i(0, ^problemIds - 1)
 		var id: int :: dictId.get(problemIds[i], &)
@@ -114,8 +115,6 @@ func main()
 			if(extension =& null)
 				do @addExtension(language, &extension)
 			end if
-			var srcFilepath: []char :: "\{dirProblem}main.\{extension}"
-			assert regexCode <>& null
 			var result: [][]char :: regexCode.find(&, data, -1)
 			if(result =& null)
 				do cui@print("ERROR: Failed to find source code. [\{contestId}#\{id}]\n")
@@ -129,6 +128,7 @@ func main()
 				do srcCode :: srcCode.replace("&#43;", "+")
 				;do srcCode :: srcCode.replace("", "")
 
+				var srcFilepath: []char :: "\{dirProblem}main.\{extension}"
 				var writer: file@Writer :: file@makeWriter(srcFilepath, false)
 				do writer.writeStr(srcCode)
 				do writer.fin()
