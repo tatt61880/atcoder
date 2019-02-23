@@ -11,7 +11,8 @@ int main(void)
 	int T[MAX];
 	int SS[2 * MAX+1] = {0};
 	Rep(i, N){
-		cin >> S[i];
+		cin >&g
+t; S[i];
 		cin >> T[i];
 		SS[S[i]]++;
 	}

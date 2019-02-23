@@ -3,6 +3,7 @@ using namespace std;
 typedef long long LL;
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define PrintLn(X) cout << X << endl
+
 int main(void)
 {
 	int N, R;
@@ -12,7 +13,8 @@ int main(void)
 	int move = 0;
 	int count = 0;
 	Rep(i, N){
-		if(S[N - i - 1] == '.'){
+		if(S[N - i - 1] == '.&#
+39;){
 			i += R - 1;
 			if(move == 0){
 				move = N - i - 1;

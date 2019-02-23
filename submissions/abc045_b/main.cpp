@@ -1,7 +1,9 @@
 #include<string>
 #include<iostream>
 using namespace std;
+
 void p(char c){ cout<<c<<endl; }
+
 int main(void)
 {
  string a,b,c;
@@ -13,7 +15,8 @@ int main(void)
   case 'a':
    if(i==a.length()) {p('A'); return 0;}
    cc=a[i++];
-   break;
+  
+ break;
   case 'b':
    if(j==b.length()) {p('B'); return 0;}
    cc=b[j++];

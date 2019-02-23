@@ -13,7 +13,8 @@ int main(void)
 		cin >> buf;
 		sort(buf, buf+strlen(buf));
 		if(strcmp(buf, indeednow) == 0){
-			cout << "YES" << endl;
+			cout <&
+lt; "YES" << endl;
 		}else{
 			cout << "NO" << endl;
 		}

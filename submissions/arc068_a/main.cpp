@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
+
 typedef long long ll;
 #define PrintLn(X) cout << X << endl
+
 int main(void)
 {
 	ll N;

@@ -12,5 +12,6 @@ int main(void)
 		ans = min(ans, (double)(L - D) / (Y - X));
 	}
 	printf("%.10f\n", ans);
-	return 0;
+	re
+turn 0;
 }

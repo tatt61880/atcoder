@@ -4,7 +4,8 @@ using namespace std;
 #define repX(a,b,c,x,...) x
 #define repN(a) repX a
 #define rep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
-#define rrep(...) repN((__VA_ARGS__,rrep3,rrep2))(__VA_ARGS__)
+#define rrep(...) repN((__VA_ARG
+S__,rrep3,rrep2))(__VA_ARGS__)
 #define loop(n) rep2(i_,n)
 #define rep2(i,n) rep3(i,0,n)
 #define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
@@ -14,6 +15,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 int main(){
   int a, b, c, d, e, f;
   cin >> a >> b >> c >> d >> e >> f;
@@ -30,7 +32,8 @@ int main(){
         for(int di = 0; sumW + ci * c + di * d <= f; di++){
           sumS = ci * c + di * d;
           double g = (double)sumS * 100 / (sumS + sumW);
-          if(e * (sumS + sumW) >= sumS * (100 + e) && ans < g){
+          if(e * (sumS + sumW) >= sumS * (100 &
+#43; e) && ans < g){
             ans = g;
             ansW = sumW;
             ansS = sumS;

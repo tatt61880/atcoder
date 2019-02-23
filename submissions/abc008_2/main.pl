@@ -1,7 +1,9 @@
 use strict;
 use warnings;
+
 <>;
 my %S;
+
 my $max = 0;
 my $ans;
 while(<>){

@@ -2,11 +2,15 @@
 #include <cmath>
 #include <cstdio>
 using namespace std;
+
 const double PI = 3.14159265358979323846264338327950;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
-int main(void)
+
+int mai
+n(void)
 {
 	int N, Q;
 	cin >> N >> Q;

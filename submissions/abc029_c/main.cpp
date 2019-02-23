@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 void rec(char *s, int N)
 {
 	if(N == 0){
@@ -11,6 +12,7 @@ void rec(char *s, int N)
 		}
 	}
 }
+
 int main(void)
 {
 	int N;

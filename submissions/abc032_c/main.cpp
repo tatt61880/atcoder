@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+
 #define SQUARE(x) ((x) * (x))
+
 int main(void)
 {
 	int N;
@@ -11,16 +13,20 @@ int main(void)
 	for(int n = 1; n <= N; n++){
 		scanf("%lld", &s[n]);
 	}
+
 	//例外処理。0を含む場合は除算ができないので。
 	for(int n = 1; n <= N; n++){
-		if(s[n] == 0){
+		if(
+s[n] == 0){
 			printf("%d\n", N); // 0を含む数列なので最長(求める値)はN
 			return 0;
 		}
 	}
+
 	long long p = 1;
 	int r = 0;
 	int max = 0;
+
 	for(int l = 1; l <= N; l++){
 		if(s[l] > K){
 			p = 1;

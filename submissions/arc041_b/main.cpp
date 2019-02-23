@@ -3,6 +3,7 @@ using namespace std;
 typedef long long LL;
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define PrintLn(X) cout << X << endl
+
 int main(void)
 {
 	int N, M;
@@ -10,7 +11,8 @@ int main(void)
 	char b[500][500];
 	Rep(i, N) Rep(j, M) cin >> b[i][j];
 	char a[500][500];
-	Rep(i, N) Rep(j, M) a[i][j] = '0';
+	Rep(i, N) Rep(j, M) a[i][j] = &#39
+;0';
 	Rep(i, N) Rep(j, M){
 		if(b[i][j] != '0'){
 			a[i + 1][j] = b[i][j];

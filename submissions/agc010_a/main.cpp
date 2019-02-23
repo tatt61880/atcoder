@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int main(void)
 {
 	int N;
@@ -16,7 +18,8 @@ int main(void)
 	}
 	if(count % 2 == 0){
 		PrintLn("YES");
-	}else{
+	}else
+{
 		PrintLn("NO");
 	}
 	return 0;

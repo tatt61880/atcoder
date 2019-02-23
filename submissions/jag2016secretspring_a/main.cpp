@@ -3,6 +3,7 @@
 using namespace std;
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (n); i++)
+
 int main(void)
 {
 	int n;
@@ -16,7 +17,8 @@ int main(void)
 		}else{
 			count--;
 			if(count < 0){
-				PrintLn("NO");
+				PrintLn("NO&#3
+4;);
 				return 0;
 			}
 		}

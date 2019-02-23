@@ -3,7 +3,8 @@
 using namespace std;
 #define repX(a,b,c,x,...) x
 #define repN(a) repX a
-#define rep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
+#define rep(...) repN((__VA_ARGS__,rep3,rep2
+,loop))(__VA_ARGS__)
 #define rrep(...) repN((__VA_ARGS__,rrep3,rrep2))(__VA_ARGS__)
 #define loop(n) rep2(i_,n)
 #define rep2(i,n) rep3(i,0,n)
@@ -14,6 +15,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 int main(){
   int ans = 0;
   rep(i, 1, 101){

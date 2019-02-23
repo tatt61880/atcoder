@@ -12,6 +12,7 @@ int main(void)
  for(int i = 0; i < strlen(s); i++){
   if(s[i] == 'A') {start = i; break;}
  }
- printf("%d\n", end - start + 1);
+ printf("%d\n", end - star
+t + 1);
  return 0;
 }

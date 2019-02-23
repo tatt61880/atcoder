@@ -1,10 +1,12 @@
 #include <stdio.h>
+
 int main(void)
 {
 	int L, H;
 	scanf("%d%d", &L, &H);
 	int N;
 	scanf("%d", &N);
+
 	for(int i = 0; i < N; i++){
 		int A;
 		scanf("%d", &A);
@@ -16,5 +18,7 @@ int main(void)
 			puts("0");
 		}
 	}
-	return 0;
+
+	re
+turn 0;
 }

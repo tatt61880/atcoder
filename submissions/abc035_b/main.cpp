@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int main(void)
 {
 	string S;
@@ -14,7 +16,8 @@ int main(void)
 	int q = 0;
 	Rep(i, S.size()){
 		switch(S[i]){
-			case 'L': x--; break;
+			case 'L': x--
+; break;
 			case 'R': x++; break;
 			case 'U': y++; break;
 			case 'D': y--; break;

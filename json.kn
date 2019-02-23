@@ -257,11 +257,15 @@ end class
 	end func
 
 	+*func toInt(value: &int): bool
-		ret me.value.toInt(&value)
+		var res: bool
+		do value :: me.value.toInt(&res)
+		ret res
 	end func
 
 	+*func toFloat(value: &float): bool
-		ret me.value.toFloat(&value)
+		var res: bool
+		do value :: me.value.toFloat(&res)
+		ret res
 	end func
 
 	+*func toStr(): []char
@@ -289,8 +293,9 @@ end class
 	end func
 
 	+*func find(key: []char): @Json
-		var index: int
-		if (!key.toInt(&index))
+		var res: bool
+		var index: int :: key.toInt(&res)
+		if (!res)
 			var err: @JsonError :: #@JsonError
 			do err.addMessage(@errIndexType)
 			ret err
@@ -418,7 +423,7 @@ end class
 			do err.addMessage(@errInvalidKey)
 			ret err
 		end if
-		ret me.value.get(key)
+		ret me.value.get(key, &)
 	end func
 
 	+*func toBool(): bool
@@ -440,7 +445,7 @@ end class
 		var text: []char :: "{"
 		for index(0, ^keys - 1)
 			do text :~ "\"\{keys[index]}\":"
-			do text :~ me.value.get(keys[index]).dump()
+			do text :~ me.value.get(keys[index], &).dump()
 			if (index < ^keys - 1)
 				do text :~ ","
 			end if
@@ -654,8 +659,9 @@ end class
 				do me.scanner.addCharNext()
 			end while
 		end if
-		var numeric: float
-		if (!me.scanner.text().toFloat(&numeric))
+		var res: bool
+		var numeric: float :: me.scanner.text().toFloat(&res)
+		if (!res)
 			throw @himeJsonInvalidDataFmt
 		end if
 		var json: @JsonNumeric :: #@JsonNumeric

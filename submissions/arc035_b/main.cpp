@@ -2,18 +2,22 @@
 #include <map>
 using namespace std;
 typedef long long LL;
+
 const LL MOD = 1000000007;
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int f(LL x){
 	int ret = 0;
 	while(x) ret += x % 10, x /= 10;
 	return ret;
 }
+
 int main(void)
 {
 	int N;
 	cin >> N;
+
 	map<int, int> mp;
 	Rep(i, N){
 		int T;
@@ -31,6 +35,7 @@ int main(void)
 			total_penalty += current_time;
 		}
 	}
+
 	PrintLn(total_penalty);
 	PrintLn(count);
 	

@@ -2,6 +2,7 @@
 #include <string>
 #include <cmath>
 using namespace std;
+
 #define Rep(i, n) for(int i = 0; i < (int)(n); i++)
 #define PrintLn(X) cout << X << endl
 int main(void)
@@ -12,7 +13,8 @@ int main(void)
 	Rep(h, H){
 		char str[103];
 		cin >> str;
-		ans[h + 1][0] = '#';
+		ans
+[h + 1][0] = '#';
 		Rep(w, W){
 			ans[h + 1][w + 1] = str[w];
 		}

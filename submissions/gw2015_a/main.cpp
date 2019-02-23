@@ -3,6 +3,7 @@
 using namespace std;
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (n); i++)
+
 int main(void)
 {
 	int P[10001] = {1};
@@ -21,6 +22,7 @@ int main(void)
 	}
 	Rep(p, 10000){
 		if(P[p] == 1) PrintLn(p);
+
 	}
 	return 0;
 }

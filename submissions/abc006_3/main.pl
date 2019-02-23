@@ -1,10 +1,13 @@
 use strict;
 use warnings;
+
 my ($N, $M) = split / /, <>;
+
 if($M < $N * 2 || $N * 4 < $M){
 	print "-1 -1 -1\n";
 	exit 0;
 }
+
 my $x;
 my $y;
 my $z;

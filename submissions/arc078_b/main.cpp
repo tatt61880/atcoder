@@ -12,19 +12,25 @@
 #include <cstring>
 #include <cctype>
 #include <cmath>
-#include <cassert>
+#include <
+cassert>
 using namespace std;
+
 typedef long long ll;
 typedef unsigned long long ull;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 int board[100000];
 vector<int> v[100000];
 int main(void)
 {
 	int N;
 	cin >> N;
+
+
 	Rep(i, N - 1){
 		int a, b;
 		cin >> a >> b;
@@ -33,12 +39,14 @@ int main(void)
 		v[a].push_back(b);
 		v[b].push_back(a);
 	}
+
 	vector<int> vf;
 	vector<int> vs;
 	board[0] = 1;
 	vf.push_back(0);
 	board[N - 1] = -1;
 	vs.push_back(N - 1);
+
 	while(1){
 		int break_count = 0;
 		if(vf.size() != 0){
@@ -61,7 +69,8 @@ int main(void)
 				for(auto &y: v[x]){
 					if(board[y] == 0){
 						board[y] = -1;
-						vt.push_back(y);
+						vt.p
+ush_back(y);
 					}
 				}
 			}
@@ -71,6 +80,7 @@ int main(void)
 		}
 		if(break_count == 2) break;
 	}
+
 	int count = 0;
 	Rep(i, N){
 		count += board[i];

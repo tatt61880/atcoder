@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main(void)
 {
 	int N, M;
@@ -12,7 +13,8 @@ int main(void)
 	}
 	for(int i = 0; i < N; i++){
 		int count = 0;
-		for(int j = 0; j < N; j++){
+		for(int j = 0; j < N; j+
++){
 			if(i == j || T[i][j]) continue;
 			for(int k = 0; k < N; k++){
 				if(i == k || j == k) continue;

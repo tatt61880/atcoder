@@ -3,15 +3,21 @@
 #include <algorithm>
 #include <vector>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
-#define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+#define For(i, a, b) for(int i = a;
+ i < (int)(b); ++i)
+
 typedef long long ll;
+
 float K;
+
 bool in(float x, float y, float r)
 {
 	return x * x + y * y <= r * r;
 }
+
 int num(float size)
 {
 	int res = 0;
@@ -32,6 +38,7 @@ int num(float size)
 	}
 	return res;
 }
+
 int main(void)
 {
 	cin >> K;

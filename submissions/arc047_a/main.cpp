@@ -5,6 +5,7 @@ int main(void)
 	scanf("%d%d", &N, &L);
 	char S[100000];
 	scanf("%s", S);
+
 	int ans = 0;
 	int tab = 1;
 	for(int i = 0; i < N; i++){
@@ -18,6 +19,8 @@ int main(void)
 			tab = 1;
 		}
 	}
-	printf("%d\n", ans);
+
+	printf("
+%d\n", ans);
 	return 0;
 }

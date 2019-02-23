@@ -1,11 +1,15 @@
 #include <iostream>
 using namespace std;
+
 typedef long long ll;
 typedef unsigned long long ull;
+
 ll MOD = 1000000007;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 ll a[100000];
 ll b[100000];
 int main(void)
@@ -15,10 +19,13 @@ int main(void)
 	Rep(i, N){
 		cin >> a[i];
 	}
+
 	b[0] = 0;
-	For(i, 1, N + 1){
+	For(i, 1,
+ N + 1){
 		b[i] = b[i - 1] + a[i - 1];
 	}
+
 	ll ans = 0;
 	int l = 0;
 	int r = 1;

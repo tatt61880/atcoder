@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main(void)
 {
 	int N, M;
@@ -13,7 +14,8 @@ int main(void)
 		sum += s;
 	}
 	// いもす法によって、各座標が何点分の区間で覆われているかを計算。
-	for(int i = 1; i <= M; i++){
+	for(int i = 
+1; i <= M; i++){
 		A[i] += A[i - 1];
 	}
 	long long min = A[0];

@@ -14,14 +14,21 @@
 #include <cmath>
 #include <cassert>
 using namespace std;
+
 typedef long long ll;
 typedef unsigned long long ull;
-#define PrintLn(X) cout << X << endl
+
+
+
+#define PrintLn(X) cout << X
+ << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 int a2[100000] = {0};
 int a5[100000] = {0};
+
 int main(void)
 {
 	string T;
@@ -45,6 +52,7 @@ int main(void)
 			a5[i] = pre5 + 1;
 		}
 	}
+
 	int ans = 0;
 	Rep(i, N - 1){
 		//PrintLn(i << " " << a2[i] << " " << a5[i + 1]);

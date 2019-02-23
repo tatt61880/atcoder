@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main(void)
 {
 	int L, R;
@@ -11,9 +12,11 @@ int main(void)
 	for(int r = 0; r < R; r++){
 		scanf("%d", &rsize[r]);
 	}
+
 	int count = 0;
 	for(int l = 0; l < L; l++){
-		for(int r = 0; r < R; r++){
+		for(i
+nt r = 0; r < R; r++){
 			if(lsize[l] == rsize[r]){
 				rsize[r] = 0;
 				count++;

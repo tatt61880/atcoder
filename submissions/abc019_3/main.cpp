@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <set>
+
 int main(void)
 {
 	int N;
 	scanf("%d", &N);
+
 	std::set<long long> s;
 	for(int i = 0; i < N; i++){
 		long long a;

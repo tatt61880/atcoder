@@ -21,6 +21,7 @@ a:
 			break;
 		}
 	}
-	printf("%d\n", num);
+	printf("%d\n&
+#34;, num);
 	return 0;
 }

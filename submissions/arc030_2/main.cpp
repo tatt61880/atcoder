@@ -1,8 +1,10 @@
 #include <iostream>
 #include <map>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int main(void)
 {
 	int n, x;
@@ -13,7 +15,8 @@ int main(void)
 	Rep(i, n) cin >> h[i];
 	Rep(i, n-1){
 		int a, b;
-		cin >> a >> b;
+		cin >&
+gt; a >> b;
 		a--;
 		b--;
 		mp[a][b] = 1;

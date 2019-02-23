@@ -1,22 +1,30 @@
 #include <iostream>
 using namespace std;
+
 typedef long long ll;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 const ll md = 1000000007LL;
 ll dp[3][3][52];
+
 enum{
 	r,
 	g,
 	b
 };
+
 int main(void)
 {
 	int N;
 	cin >> N;
+
 	char data[2][53];
 	cin >> data[0];
-	cin >> data[1];
+	cin >&gt
+; data[1];
+
 	Rep(i, N){
 		if(i == 0){
 			if(data[0][0] == data[1][0]){
@@ -46,7 +54,8 @@ int main(void)
 					dp[b][g][i] = dp[b][g][i-1];
 				}else{
 					dp[r][g][i] = dp[b][b][i-1] + dp[b][r][i-1] + dp[g][b][i-1] + dp[g][r][i-1];
-					dp[g][b][i] = dp[r][r][i-1] + dp[r][g][i-1] + dp[b][r][i-1] + dp[b][g][i-1];
+					dp[g][b][i] = dp[r][r][i-1] + dp[r][g][i-1] + dp[b][r][i-1
+] + dp[b][g][i-1];
 					dp[b][r][i] = dp[g][g][i-1] + dp[g][b][i-1] + dp[r][g][i-1] + dp[r][b][i-1];
 					dp[r][b][i] = dp[g][g][i-1] + dp[g][r][i-1] + dp[b][g][i-1] + dp[b][r][i-1];
 					dp[g][r][i] = dp[b][b][i-1] + dp[b][g][i-1] + dp[r][b][i-1] + dp[r][g][i-1];
@@ -74,9 +83,11 @@ int main(void)
 	ans += dp[r][b][N - 1]; ans %= md;
 	ans += dp[g][r][N - 1]; ans %= md;
 	ans += dp[b][g][N - 1]; ans %= md;
+
 #if 0
 	PrintLn(dp[r][r][N - 1]);
-	PrintLn(dp[g][g][N - 1]);
+	PrintLn(dp
+[g][g][N - 1]);
 	PrintLn(dp[b][b][N - 1]);
 	PrintLn(dp[r][g][N - 1]);
 	PrintLn(dp[g][b][N - 1]);

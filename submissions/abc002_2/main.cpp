@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+
 int main(void)
 {
 	char W[32];
@@ -11,5 +12,6 @@ int main(void)
 		}
 	}
 	puts("");
-	return 0;
+	ret
+urn 0;
 }

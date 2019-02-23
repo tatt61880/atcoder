@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 int main(void)
 {
 	int N;
@@ -24,3 +25,4 @@ int main(void)
 	cout << ans << endl;
 	return 0;
 }
+

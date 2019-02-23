@@ -1,2 +1,3 @@
 #include<iostream>
-char c[1000][1000];int a[14]={-1,-1,0,0,-1,0,1},W,w,H,h,x,y,z,M,m,r;int main(){std::cin>>H>>W;while(h<H)std::cin>>h++[c];for(h=0;h<H;++h)for(w=0;w<W;++w)if(w[h[c]]-46){x=M=m=w,y=h,r=z=1;do{(x<m?m:x<M?x:M)=x;if(c[y-a[z+1]-1][x+z[a]]-46)--z;else if(c[y+z[a]][x+a[z+1]]-111)++z,++r;z&=3,x+=a[z+4],y+=a[z+3];}while(x!=w||y!=h);++r[a];for(;y<h+M-m;++y)for(x=m;x<M;++x)x[y[c]]=46;}printf("%d %d %d\n",11[a],9[a],13[a]);}
+char c[1000][1000];int a[14]={-1,-1,0,0,-1,0,1},W,w,H,h,x,y,z,M,m,r;int main(){std::cin>>H>>W;while(h<H)std::cin>>h++[c];for(h=0;h<H;++h)for(w=0;w<W;++w)if(w[h[c]]-46){x=M=m=w,y=h,r=z=1;do{(x<m?m:x<M?x:M)=x;if(c[y-a[z+1]-1][x+z[a]]-46)--z;else if(c[y+z[a]][x+a[z+1]]-111)++z,++r;z&=3,x+=a[z+4],y+=a[z+3];}while(x!=w||y!=h);++r[a];fo
+r(;y<h+M-m;++y)for(x=m;x<M;++x)x[y[c]]=46;}printf("%d %d %d\n",11[a],9[a],13[a]);}

@@ -8,11 +8,15 @@
 #include <cstring>
 #include <cmath>
 using namespace std;
+
 typedef long long LL;
+
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
-#define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+#define For(i, a, b) for(int i = a; i < (int)(b); &#
+43;+i)
+
 int main(void)
 {
 	int N, a, b;

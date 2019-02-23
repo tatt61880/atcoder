@@ -4,7 +4,8 @@ using namespace std;
 #define repX(a,b,c,x,...) x
 #define repN(a) repX a
 #define rep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
-#define rrep(...) repN((__VA_ARGS__,rrep3,rrep2))(__VA_ARGS__)
+#define rrep(...) repN((__VA_ARGS__,rrep
+3,rrep2))(__VA_ARGS__)
 #define loop(n) rep2(i_,n)
 #define rep2(i,n) rep3(i,0,n)
 #define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
@@ -14,6 +15,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)998244353;
 //}}}
+
 int digitSum(ll n){
   int res = 0;
   while(n){
@@ -30,6 +32,7 @@ int digit(ll n){
   }while(n);
   return res;
 }
+
 int f(ll n){
   int res = 0;
   while(n){
@@ -38,6 +41,7 @@ int f(ll n){
   }
   return res;
 }
+
 int main(){
   ll N;
   cin >> N;

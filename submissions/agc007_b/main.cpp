@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int p[20000];
 int a[20000];
 int b[20000];
@@ -12,7 +14,8 @@ int main(void)
 	Rep(i, N) cin >> p[i];
 	Rep(i, N){
 		a[i] = 1 + 30000 * i;
-		b[i] = 1000000000 - 30000 * i;
+		b[i] = 1000000000 - 30000 *
+ i;
 	}
 	Rep(i, N){
 		a[p[i] - 1] += i;

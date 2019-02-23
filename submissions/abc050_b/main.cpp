@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int T[100];
 int main(void)
 {
@@ -15,7 +17,8 @@ int main(void)
 	cin >> M;
 	Rep(i, M){
 		int p, x;
-		cin >> p >> x;
+		cin >> p
+ >> x;
 		p--;
 		PrintLn(ans + x - T[p]);
 	}

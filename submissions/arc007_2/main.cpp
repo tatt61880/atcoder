@@ -14,11 +14,15 @@
 #include <cmath>
 #include <cassert>
 using namespace std;
+
 typedef long long ll;
 typedef unsigned long long ull;
-#define PrintLn(X) cout << X << endl
+
+#define PrintLn(X) cout << X << e
+ndl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 int main(void)
 {
 	int n, m;

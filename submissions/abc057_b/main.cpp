@@ -14,7 +14,8 @@ Rep(i,N)cin>>a[i]>>b[i];
 Rep(i,M)cin>>c[i]>>d[i];
 Rep(n,N){
  int ans=1;
- int mn=abs(a[n]-c[0])+abs(b[n]-d[0]);
+ int mn=abs(a[n]-c[0])+abs(b[n
+]-d[0]);
  Rep(m,M){
   if(abs(a[n]-c[m])+abs(b[n]-d[m])<mn){
    mn=abs(a[n]-c[m])+abs(b[n]-d[m]);

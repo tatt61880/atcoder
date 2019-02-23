@@ -1,8 +1,10 @@
 #include <iostream>
 #include <set>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int main(void)
 {
 	int N;
@@ -15,7 +17,8 @@ int main(void)
 		if(st.count(a)){
 			st.erase(a);
 		}else{
-			st.insert(a);
+			
+st.insert(a);
 		}
 	}
 	PrintLn(st.size());

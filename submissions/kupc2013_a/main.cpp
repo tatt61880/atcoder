@@ -4,6 +4,7 @@
 using namespace std;
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (n); ++i)
+
 int main(void)
 {
 	int N, Q;
@@ -18,7 +19,8 @@ int main(void)
 		cin >> year;
 		cin >> name;
 		vy.push_back(year);
-		vn.push_back(name);
+		vn.push_back(name
+);
 	}
 	vy.push_back(100);
 	while(1){

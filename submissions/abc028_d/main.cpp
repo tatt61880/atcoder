@@ -11,5 +11,6 @@ int main(void)
 	count += (N - K) * 3; //KKY
 	count += 1; //KKK
 	printf("%.15f\n", (double)count / N / N / N);
-	return 0;
+	return 
+0;
 }

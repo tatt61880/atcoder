@@ -12,27 +12,35 @@
 #include <cstring>
 #include <cctype>
 #include <cmath>
-#include <cassert>
+#
+include <cassert>
 using namespace std;
+
 typedef long long LL;
 typedef unsigned long long ULL;
+
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 int a[100000];
 int b[100000];
 set<pair<int, int>> st;
+
 LL H, W, N;
 int exist(int a, int b){
 	return (1 <= a && a <= H && 1 <= b && b <= W && st.count(pair<int, int>(a, b)));
 }
+
 int cou[9];
+
 int main(void)
 {
 	LL ans[10] = {0};
 	cin >> H >> W >> N;
 	LL total = (H - 2) * (W - 2);
+
 	Rep(i, N){
 		cin >> a[i] >> b[i];
 		st.insert(pair<int, int>(a[i], b[i]));
@@ -48,7 +56,8 @@ int main(void)
 			Rep(dj, 5){
 				if(exist(a[i] - 2 + di, b[i] - 2 + dj)){
 					if(           di <= 2 &&            dj <= 2) cou[0]++;
-					if(1 <= di && di <= 3 &&            dj <= 2) cou[1]++;
+		
+			if(1 <= di && di <= 3 &&            dj <= 2) cou[1]++;
 					if(2 <= di            &&            dj <= 2) cou[2]++;
 					if(           di <= 2 && 1 <= dj && dj <= 3) cou[3]++;
 					if(1 <= di && di <= 3 && 1 <= dj && dj <= 3) cou[4]++;
@@ -63,7 +72,8 @@ int main(void)
 		if(b[i] == 1) cou[0] = cou[1] = cou[2] = cou[3] = cou[4] = cou[5] = 0;
 		if(a[i] == 2) cou[0] = cou[3] = cou[6] = 0;
 		if(b[i] == 2) cou[0] = cou[1] = cou[2] = 0;
-		if(a[i] == H) cou[1] = cou[2] = cou[4] = cou[5] = cou[7] = cou[8] = 0;
+		if(a[i] == H) cou[1] = cou[2] = cou[4] = cou[5] =
+ cou[7] = cou[8] = 0;
 		if(b[i] == W) cou[3] = cou[4] = cou[5] = cou[6] = cou[7] = cou[8] = 0;
 		if(a[i] == H - 1) cou[2] = cou[5] = cou[8] = 0;
 		if(b[i] == W - 1) cou[6] = cou[7] = cou[8] = 0;
@@ -71,9 +81,11 @@ int main(void)
 			if(cou[x])ans[cou[x]]++;
 		}
 	}
+
 	For(i, 1, 10){
 		ans[i] /= i;
 	}
+
 	ans[0] = total;
 	For(i, 1, 10){
 		ans[0] -= ans[i];

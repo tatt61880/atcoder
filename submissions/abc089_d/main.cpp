@@ -6,14 +6,17 @@ using namespace std;
 #define rep2(i,n) rep3(i,0,n)
 #define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
 #define repN(a) repX a
-#define repX(a0,a1,a2,x,...) x
+#define repX(a0,a1,a2,x,
+...) x
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 int cost[100000];
 int main(){
 	int H, W, D;
 	cin >> H >> W >> D;
+
 	map<int, pair<int, int>> m;
 	rep(h, H){
 		rep(w, W){
@@ -22,6 +25,7 @@ int main(){
 			m[a] = make_pair(h, w);
 		}
 	}
+
 	rep(d, D){
 		int prev_h = 0;
 		int prev_w = 0;

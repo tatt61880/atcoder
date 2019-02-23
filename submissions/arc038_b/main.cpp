@@ -2,21 +2,26 @@
 using namespace std;
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 typedef enum{
 	NONE,
 	WALL,
 	FIRST,
 	SECOND,
 } STATE;
+
 STATE S[101][101];
+
 // (h, w)の位置から開始したときにどちらが勝つか。
 STATE f(int h, int w)
 {
 	if(S[h][w] != NONE) return S[h][w];
-	if(S[h+1][w] == WALL && S[h][w+1] == WALL && S[h+1][w+1] == WALL) return S[h][w] = SECOND;
+	if(S[h+1][w] == WALL &a
+mp;& S[h][w+1] == WALL && S[h+1][w+1] == WALL) return S[h][w] = SECOND;
 	if(f(h+1, w) == SECOND || f(h, w+1) == SECOND || f(h+1, w+1) == SECOND) return S[h][w] = FIRST;
 	return S[h][w] = SECOND;
 }
+
 int main(void)
 {
 	int H, W;

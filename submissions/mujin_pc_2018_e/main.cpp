@@ -4,13 +4,15 @@ using namespace std;
 #define rep(...) repN((__VA_ARGS__,rep3,rep2,loop,~))(__VA_ARGS__)
 #define loop(n) rep2(_loop_,n)
 #define rep2(i,n) rep3(i,0,n)
-#define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
+#defi
+ne rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
 #define repN(a) repX a
 #define repX(a0,a1,a2,x,...) x
 #define foreach(x,a) for(auto &x:a)
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 string s[1000];
 ll ans[1000][1000];
 string d;
@@ -22,6 +24,7 @@ typedef struct {
   int x;
   int y;
 } Pos;
+
 int N, M, K;
 int isValid(int x, int y){
   if(x < 0) return false;
@@ -31,11 +34,13 @@ int isValid(int x, int y){
   if(s[y][x] == '#') return false;
   return true;
 }
+
 int main(){
   cin >> N >> M >> K;
   cin >> d;
   d += d;
   rep(i, N) cin >> s[i];
+
   int Sx;
   int Sy;
   int Gx;
@@ -54,7 +59,8 @@ int main(){
     }
   }
   int lastU = -1;
-  int lastD = -1;
+  int lastD = -
+1;
   int lastL = -1;
   int lastR = -1;
   rep(i, 2 * K){
@@ -88,7 +94,8 @@ int main(){
     int x = p.x;
     int y = p.y;
     int i = ans[y][x] % K;
-    if(isValid(x + 1, y) && R[i] != -1 && (ans[y][x + 1] == -1 || ans[y][x + 1] > ans[y][x] + R[i] + 1)) {ans[y][x + 1] = ans[y][x] + R[i] + 1; Pos t; t.x = x + 1; t.y = y; qu.push(t);}
+    if(isValid(x + 1, y) && R[i] != -1 && (ans[y][x + 1] == -1 || ans[y][x + 1
+] > ans[y][x] + R[i] + 1)) {ans[y][x + 1] = ans[y][x] + R[i] + 1; Pos t; t.x = x + 1; t.y = y; qu.push(t);}
     if(isValid(x - 1, y) && L[i] != -1 && (ans[y][x - 1] == -1 || ans[y][x - 1] > ans[y][x] + L[i] + 1)) {ans[y][x - 1] = ans[y][x] + L[i] + 1; Pos t; t.x = x - 1; t.y = y; qu.push(t);}
     if(isValid(x, y + 1) && D[i] != -1 && (ans[y + 1][x] == -1 || ans[y + 1][x] > ans[y][x] + D[i] + 1)) {ans[y + 1][x] = ans[y][x] + D[i] + 1; Pos t; t.x = x; t.y = y + 1; qu.push(t);}
     if(isValid(x, y - 1) && U[i] != -1 && (ans[y - 1][x] == -1 || ans[y - 1][x] > ans[y][x] + U[i] + 1)) {ans[y - 1][x] = ans[y][x] + U[i] + 1; Pos t; t.x = x; t.y = y - 1; qu.push(t);}

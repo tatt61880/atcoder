@@ -3,6 +3,7 @@
 using namespace std;
 #define PrintLn(X) cout << (X) << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 char c[500][500];
 int H, W;
 bool f(int x, int y){
@@ -13,16 +14,20 @@ bool f(int x, int y){
 	c[y][x] = 's';
 	return true;
 }
+
 int main(void)
 {
 	cin >> H >> W;
-	Rep(h, H) Rep(w, W) cin >> c[h][w];
+	Re
+p(h, H) Rep(w, W) cin >> c[h][w];
+
 	typedef struct{
 		int x;
 		int y;
 	}Point;
 	queue<Point> qu;
 	Rep(h, H) Rep(w, W) if(c[h][w] == 's') qu.push({w, h});
+
 	while(!qu.empty()){
 		Point p = qu.front();
 		qu.pop();

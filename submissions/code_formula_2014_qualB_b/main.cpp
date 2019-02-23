@@ -2,6 +2,7 @@
 #include <string>
 using namespace std;
 #define PrintLn(X) cout << X << endl
+
 int main(void)
 {
 	string s;
@@ -12,7 +13,8 @@ int main(void)
 		if(i % 2 == s.size() % 2){
 			a += s[i] - '0';
 		}else{
-			b += s[i] - '0';
+			b += s[i] - '0&#39
+;;
 		}
 	}
 	cout << a << " " << b << endl;

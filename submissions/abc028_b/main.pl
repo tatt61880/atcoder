@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 my $S = <>;
 foreach(split //, "ABCDEF"){
 	my $count = $S =~ s/$_//g;

@@ -4,12 +4,15 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 float f(int t, int vs, int ve, int vmax)
 {
 	float ret = 0.0;
-	int v = vs;
+	int 
+v = vs;
 	For(i, 1, t + 1){
 		int vv;
 		vv = min(vs + i, ve + t - i);
@@ -20,6 +23,7 @@ float f(int t, int vs, int ve, int vmax)
 	}
 	return ret;
 }
+
 int main(void)
 {
 	int N;
@@ -28,13 +32,16 @@ int main(void)
 	int v[101];
 	int vs[101];
 	int ve[101];
+
 	cin >> N;
 	Rep(i, N) cin >> t[i];
 	Rep(i, N) cin >> v[i];
 	t[N] = 0;
 	v[N] = 0;
+
 	T[0] = 0;
 	Rep(i, N) T[i + 1] = T[i] + t[i];
+
 #if 0
 	Rep(i, N + 1){
 		cout << T[i] << endl;
@@ -52,10 +59,12 @@ int main(void)
 		//cout << ve[i] << endl;
 		vs[i + 1] = ve[i];
 	}
+
 	float ans = 0;
 	Rep(i, N){
 		ans += f(t[i], vs[i], ve[i], v[i]);
 	}
+
 	printf("%.15lf\n", ans);
 	return 0;
 }

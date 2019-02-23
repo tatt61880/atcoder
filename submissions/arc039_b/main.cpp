@@ -3,6 +3,7 @@ using namespace std;
 typedef long long LL;
 const LL MOD = 1000000007;
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 LL pow_mod(LL a, LL b){
 	LL res = 1;
 	while(b > 0){
@@ -15,7 +16,8 @@ LL pow_mod(LL a, LL b){
  
 LL fact_mod(LL n){
 	LL res = 1;
-	Rep(i, n) res = (res * (i + 1)) % MOD;
+	Rep(i, n)
+ res = (res * (i + 1)) % MOD;
 	return res;
 }
  

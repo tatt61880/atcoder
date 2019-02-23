@@ -2,6 +2,7 @@
 #include <cmath>
 #include <algorithm>
 using namespace std;
+
 int main(void)
 {
  int n;
@@ -16,7 +17,8 @@ int main(void)
   cin >> a;
   bbb = bb;
   bb = b;
-  b = min(bbb + abs(a - aaa), bb + abs(a - aa));
+  b = min(b
+bb + abs(a - aaa), bb + abs(a - aa));
   aaa = aa;
   aa = a;
  }

@@ -1,6 +1,8 @@
 use strict;
 use warnings;
+
 <>;
+
 my %A;
 my $count = 0;
 while(<>){
@@ -11,4 +13,5 @@ while(<>){
 		$A{$_} = 1;
 	}
 }
+
 print "$count\n";

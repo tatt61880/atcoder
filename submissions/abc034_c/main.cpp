@@ -12,15 +12,20 @@
 #include <cstring>
 #include <cctype>
 #include <cmath>
-#include <cassert>
+#include <ca
+ssert>
 using namespace std;
+
 typedef long long LL;
 typedef unsigned long long ULL;
+
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 LL MOD = 1000000007;
+
 LL pow_mod(LL a, LL b){
 	LL res = 1;
 	while(b > 0){
@@ -30,16 +35,19 @@ LL pow_mod(LL a, LL b){
 	}
 	return res;
 }
+
 LL fact_mod(LL n){
 	LL res = 1;
 	Rep(i, n) res = (res * (i + 1)) % MOD;
 	return res;
 }
+
 LL comb_mod(LL n, LL r){
 	LL res = 1;
 	Rep(i, r) res = (res * (n - i)) % MOD;
 	return (res * pow_mod(fact_mod(r), MOD - 2)) % MOD;
 }
+
 int main(void)
 {
 	int W, H;

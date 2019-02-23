@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
+
 typedef long long ll;
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int A[100000] = {0};
 int main(void)
 {
@@ -15,7 +17,8 @@ int main(void)
 	}
 	int n = 0;
 	Rep(i, 100000){
-		if(A[i] > 1){
+		if(A[i] &
+gt; 1){
 			n += A[i] - 1;
 		}
 	}

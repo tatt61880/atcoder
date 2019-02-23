@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main(void)
 {
 	int N, T;
@@ -16,9 +17,12 @@ int main(void)
 				sum += A - last;
 			}
 		}
+
 		last = A;
 	}
 	sum += T;
-	printf("%d\n", sum);
+
+	printf("%d\
+n", sum);
 	return 0;
 }

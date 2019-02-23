@@ -3,8 +3,10 @@
 #include <algorithm>
 using namespace std;
 typedef long long LL;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int main(void)
 {
 	double x, y;
@@ -13,7 +15,8 @@ int main(void)
 	cin >> N;
 	double X[100];
 	double Y[100];
-	Rep(i, N) cin >> X[i] >> Y[i];
+	Rep
+(i, N) cin >> X[i] >> Y[i];
 	X[N] = X[0];
 	Y[N] = Y[0];
 	double m = 0;

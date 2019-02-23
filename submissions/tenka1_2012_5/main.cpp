@@ -2,6 +2,7 @@
 using namespace std;
 #define PrintLn(X) cout << X << endl
 #define For(i, m, n) for(int i = m; i < (int)(n); ++i)
+
 int main(void)
 {
 	int a, b, c;

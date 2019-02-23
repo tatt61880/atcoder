@@ -7,7 +7,8 @@ int main(void)
 	int A[100001] = {0};
 	for(int i = 0; i < N; i++){
 		int a;
-		cin >> a;
+		
+cin >> a;
 		A[a]++;
 	}
 	int ans = -1;

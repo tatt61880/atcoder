@@ -4,13 +4,15 @@ using namespace std;
 #define rep(...) repN((__VA_ARGS__,rep3,rep2,loop,~))(__VA_ARGS__)
 #define loop(n) rep2(_loop_,n)
 #define rep2(i,n) rep3(i,0,n)
-#define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
+#defi
+ne rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
 #define repN(a) repX a
 #define repX(a0,a1,a2,x,...) x
 #define foreach(x,a) for(auto &x:a)
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 string s[2000];
 int r[2000][2000];
 int l[2000][2000];
@@ -20,6 +22,7 @@ int main(){
   int N, M;
   cin >> N >> M;
   rep(i, N) cin >> s[i];
+
   rep(n, N){
     rep(m, M){
       if(m == 0 || s[n][m] == '#'){
@@ -47,7 +50,8 @@ int main(){
       if(n == 0 || s[n][m] == '#'){
         t[n][m] = 0;
       }else{
-        if(s[n-1][m] == '.'){
+        if(s[n-1][m] == &#3
+9;.'){
           t[n][m] = t[n-1][m] + 1;
         }else{
           t[n][m] = 0;

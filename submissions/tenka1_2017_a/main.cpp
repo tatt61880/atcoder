@@ -1,6 +1,7 @@
 //{{{
 #include <bits/stdc++.h>
-using namespace std;
+using name
+space std;
 #define repX(a,b,c,x,...) x
 #define repN(a) repX a
 #define rep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
@@ -14,6 +15,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 int main(){
   int ans = 0;
   rep(6){

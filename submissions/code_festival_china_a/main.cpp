@@ -2,6 +2,7 @@
 using namespace std;
 #define Rep(i, n) for(int i = 0; i < (n); i++)
 #define PrintLn(x) cout << x << endl;
+
 int f(int n){
 	if(n < 10){
 		return n;
@@ -9,7 +10,9 @@ int f(int n){
 		return 19 - n;
 	}
 }
-int main(void)
+
+int
+ main(void)
 {
 	int N;
 	cin >> N;

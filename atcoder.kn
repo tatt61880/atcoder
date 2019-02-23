@@ -1,8 +1,8 @@
 ; userIdのみ要変更です。
 const userId: []char :: "tatt61880"
 
-const jsonPath: []char :: "http://beta.kenkoooo.com/atcoder/atcoder-api/results?user="
-const atcoderBase: []char :: "https://beta.atcoder.jp/contests/"
+const jsonPath: []char :: "https://kenkoooo.com/atcoder/atcoder-api/results?user="
+const atcoderBase: []char :: "https://atcoder.jp/contests/"
 
 var dirHtml: []char
 var dirSubmissions: []char
@@ -10,9 +10,11 @@ var dictOldFilesFlag: dict<[]char, bool>
 var dictExtensions: dict<[]char, []char>
 
 func main()
+	{
 	if(!@fetchJson())
 		ret
 	end if
+	}
 
 	var jsonArray: list<\json@Json> :: (\json@makeJsonF("data.json") $ \json@JsonArray).value
 	do jsonArray.head()
@@ -34,7 +36,7 @@ func main()
 		if(json.find("result").toStr() = "AC")
 			var problemId: []char :: json.find("problem_id").toStr()
 			var epochSecond: int :: json.find("epoch_second").toi()
-			var epochSecondPrev: int :: dictEpochSecond.get(problemId)
+			var epochSecondPrev: int :: dictEpochSecond.get(problemId, &)
 			if(epochSecondPrev > epochSecond)
 				skip i
 			end if
@@ -77,9 +79,9 @@ func main()
 	var regexCode: regex@Regex :: regex@makeRegex("<pre id=\"submission-code\" class=\"prettyprint linenums\">([\\d\\D]+?)</pre>")
 	var problemIds: [][]char :: dictId.toArrayKey() {["abc001_a", "abc001_b", ...]という感じの配列です}
 	for i(0, ^problemIds - 1)
-		var id: int :: dictId.get(problemIds[i])
-		var contestId: []char :: dictConstantId.get(problemIds[i])
-		var language: []char :: dictLanguage.get(problemIds[i])
+		var id: int :: dictId.get(problemIds[i], &)
+		var contestId: []char :: dictConstantId.get(problemIds[i], &)
+		var language: []char :: dictLanguage.get(problemIds[i], &)
 		var url: []char :: "\{@atcoderBase}\{contestId}/submissions/\{id}"
 		var filepath: []char :: "\{@dirHtml}\{contestId}#\{id}.html"
 		do @dictOldFilesFlag.add(filepath, false)
@@ -108,7 +110,7 @@ func main()
 				end if
 			end if
 
-			var extension: []char :: @dictExtensions.get(language)
+			var extension: []char :: @dictExtensions.get(language, &)
 			if(extension =& null)
 				do @addExtension(language, &extension)
 			end if
@@ -199,7 +201,7 @@ func initExtensions(): bool
 		do cui@print("\{extensionFilepath} can't be opened.\n")
 		ret false
 	end if
-	do reader.delimiter(",")
+	do reader.delimiter(",\n")
 	do @arrLanguages :: #[0][]char
 	do @arrExtensions :: #[0][]char
 	while(!reader.term())

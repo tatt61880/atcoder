@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #define MAX 10000
 int main(void)
 {
@@ -13,7 +14,8 @@ int main(void)
 	long long min = S[0];
 	long long sum = S[0];
 	for(int i = 1; i < N; i++){
-		if(S[i] > max) max = S[i];
+		if(S[i
+] > max) max = S[i];
 		if(S[i] < min) min = S[i];
 		sum += S[i];
 	}
@@ -21,6 +23,7 @@ int main(void)
 		puts("-1");
 		return 0;
 	}
+
 	double P, Q;
 	P = (double)B / (max - min);
 	Q = (N * A - P * sum) / N;

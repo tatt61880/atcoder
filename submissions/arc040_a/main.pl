@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 <>;
 my $sumT = 0;
 my $sumA = 0;

@@ -3,11 +3,14 @@
 #include <cstdlib>
 using namespace std;
 #define PrintLn(X) cout << X << endl
-void invalid(void)
+
+void invalid(vo
+id)
 {
 	PrintLn("invalid");
 	exit(0);
 }
+
 int main(void)
 {
 	string str;

@@ -1,8 +1,10 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int main(void)
 {
 	double A, B;
@@ -13,7 +15,8 @@ int main(void)
 	cin >> N;
 	Rep(i, N){
 		cin >> C >> D;
-		if(C < D) swap(C, D);
+		if(
+C < D) swap(C, D);
 		if(C >= A){
 			if(D >= B){
 				PrintLn("YES");

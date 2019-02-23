@@ -1,5 +1,6 @@
 #include <cstdio>
 #define rep(i, n) for(int i = 0; i < (n); i++)
+
 int main(void)
 {
 	int a,b,c,d;
@@ -17,7 +18,8 @@ int main(void)
 			if(count >= b) num++;
 		}
 		if(num >= d){
-			printf("%d\n", point);
+			printf("%d\n", poin
+t);
 			return 0;
 		}
 	}
