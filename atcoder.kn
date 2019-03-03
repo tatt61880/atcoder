@@ -10,11 +10,9 @@ var dictOldFilesFlag: dict<[]char, bool>
 var dictExtensions: dict<[]char, []char>
 
 func main()
-	{
 	if(!@fetchJson())
 		ret
 	end if
-	}
 
 	var jsonArray: list<\json@Json> :: (\json@makeJsonF("data.json") $ \json@JsonArray).value
 	do jsonArray.head()
