@@ -5,8 +5,7 @@ using namespace std;
 int main(void)
 {
 	int N, T;
-	cin >> N >&gt
-; T;
+	cin >> N >> T;
 	int A[100000];
 	int C[100000];
 	rep(i, N){

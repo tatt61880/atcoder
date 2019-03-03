@@ -1,7 +1,6 @@
 #include <iostream>
 #define PrintLn(X) cout << X << endl
 using namespace std;
-
 int main(void)
 {
 	int N, T, A;
@@ -13,8 +12,7 @@ int main(void)
 			if(N <= T){
 				PrintLn("Takahashi");
 			}else{
-				PrintLn(
-"Aoki");
+				PrintLn("Aoki");
 			}
 		}else{
 			PrintLn("Takahashi");

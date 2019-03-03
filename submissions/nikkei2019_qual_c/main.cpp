@@ -3,8 +3,7 @@
 using namespace std;
 #define repX(a,b,c,x,...) x
 #define repN(a) repX a
-#define rep(...) repN((__VA_A
-RGS__,rep3,rep2,loop))(__VA_ARGS__)
+#define rep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
 #define rrep(...) repN((__VA_ARGS__,rrep3,rrep2))(__VA_ARGS__)
 #define loop(n) rep2(i_,n)
 #define rep2(i,n) rep3(i,0,n)
@@ -15,13 +14,11 @@ RGS__,rep3,rep2,loop))(__VA_ARGS__)
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 ll A[100000];
 ll B[100000];
 int id[100000];
 vector<vector<ll>> a;
 vector<vector<ll>> b;
-
 int main(){
   int N;
   cin >> N;
@@ -34,8 +31,7 @@ int main(){
   sort(a.begin(), a.end());
   reverse(a.begin(), a.end());
   sort(b.begin(), b.end());
-  reverse(b.begin(), b.end()
-);
+  reverse(b.begin(), b.end());
 #if 0
   rep(i, N) printf("a[%lld %lld]\n", a[i][5], a[i][6]);
   rep(i, N) printf("b[%lld %lld]\n", b[i][5], b[i][6]);

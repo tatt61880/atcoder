@@ -4,7 +4,6 @@
 using namespace std;
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
-
 int main(void)
 {
 	int N, M;
@@ -13,8 +12,7 @@ int main(void)
 	int T[100000];
 	set<pair<int, int>> st;
 	Rep(i, M){
-		int s, 
-t;
+		int s, t;
 		cin >> s >> t;
 		R[--s]++;
 		R[t--]--;

@@ -3,8 +3,7 @@
 using namespace std;
 #define repX(a,b,c,x,...) x
 #define repN(a) repX a
-#define r
-ep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
+#define rep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
 #define rrep(...) repN((__VA_ARGS__,rrep3,rrep2))(__VA_ARGS__)
 #define loop(n) rep2(i_,n)
 #define rep2(i,n) rep3(i,0,n)
@@ -15,7 +14,6 @@ ep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 int countl[100000];
 int countr[100000];
 int main(){
@@ -23,7 +21,6 @@ int main(){
   cin >> N;
   string S;
   cin >> S;
-
   int count;
   count = 0;
   rep(i, N){
@@ -43,14 +40,12 @@ int main(){
       count = 0;
     }
   }
-
   int maxCountSum = -1;
   int id;
   count = 0;
   rep(i, N){
     if(S[i] == '-'){
-      int cnt = countl[i] + coun
-tr[i];
+      int cnt = countl[i] + countr[i];
       if(cnt > maxCountSum){
         maxCountSum = cnt;
         id = i;
@@ -58,7 +53,6 @@ tr[i];
     }
   }
   S[id] = '>';
-
   double ans = 0;
   rep(i, N){
     if(S[i] == '>'){

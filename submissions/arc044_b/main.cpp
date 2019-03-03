@@ -7,9 +7,7 @@ using namespace std;
 #define PrintLn(X) cout << X << endl
 typedef long long LL;
 const LL MOD = 1000000007;
-
-LL 
-pow_mod(LL a, LL b){
+LL pow_mod(LL a, LL b){
 	LL res = 1;
 	while(b > 0){
 		if(b & 1) res = (res * a) % MOD;
@@ -18,12 +16,10 @@ pow_mod(LL a, LL b){
 	}
 	return res;
 }
-
 void zero(void){
 	PrintLn("0");
 	exit(0);
 }
-
 int main(void)
 {
 	int N;

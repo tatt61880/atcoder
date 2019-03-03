@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 int main(void){
 	int A, B, C, D;
 	cin >> A >> B >> C >> D;
@@ -9,8 +8,7 @@ int main(void){
 	}else if(A + B > C + D){
 		cout << "Left" << endl;
 	}else{
-		cout << "Right" << 
-endl;
+		cout << "Right" << endl;
 	}
 	return 0;
 }

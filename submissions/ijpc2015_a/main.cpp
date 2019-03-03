@@ -4,7 +4,6 @@ using namespace std;
 #define Rep(i, n) for(int i = 0; i < (n); i++)
 #define PrintLn(x) cout << x << endl;
 typedef long long LL;
-
 int main(void)
 {
 	int N;

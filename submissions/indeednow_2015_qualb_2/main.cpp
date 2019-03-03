@@ -16,7 +16,6 @@ int main(void)
 		}
 		a = a[a.size()-1] + a.substr(0, a.size()-1);
 	}
-	cout << -1 
-<< endl;
+	cout << -1 << endl;
 	return 0;
 }

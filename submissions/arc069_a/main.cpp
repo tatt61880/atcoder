@@ -1,24 +1,18 @@
 #include <iostream>
 using namespace std;
-
 typedef long long ll;
-
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
-
 ll N, M;
-
 ll f(ll n)
 {
 	ll s_needed = n - N;
-	l
-l c_needed = 2 * n;
+	ll c_needed = 2 * n;
 	if(s_needed < 0) s_needed = 0;
 	return M >= s_needed * 2 + c_needed;
 }
-
 int main(void)
 {
 	cin >> N >> M;

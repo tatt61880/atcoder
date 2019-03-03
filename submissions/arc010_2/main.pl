@@ -1,6 +1,5 @@
 use strict;
 use warnings;
-
 <>;
 my @holidays;
 while(<>){
@@ -10,7 +9,6 @@ while(<>){
 }
 sub sort_func($);
 @holidays = sort sort_func(@holidays);
-
 my $max = 0;
 my $count = 0;
 my $day = 1;
@@ -21,8 +19,7 @@ for my $m(1..12){
 		last if($m =~ m/4|6|9|11/ && $d == 31);
 		if(@holidays && $m == $holidays[0][0] && $d == $holidays[0][1]){
 			shift @holidays;
-			$stock+&#43
-;;
+			$stock++;
 		}
 		if($day % 7 < 2 || $stock > 0){
 			$stock-- unless($day % 7 < 2);
@@ -34,9 +31,7 @@ for my $m(1..12){
 		$day++;
 	}
 }
-
 print "$max\n";
-
 sub sort_func($)
 {
 	if($a->[0] <=> $b->[0]){

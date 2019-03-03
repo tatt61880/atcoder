@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main(void)
 {
 	int x, y, k;
@@ -11,4 +10,3 @@ int main(void)
 	}
 	return 0;
 }
-

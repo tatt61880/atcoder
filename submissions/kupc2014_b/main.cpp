@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <cmath>
 #include <cstdio>
-
 #define NUM_MAX 1000
 int num[NUM_MAX+1] = {1};
 void test(int n){
@@ -14,13 +13,11 @@ void test(int n){
 		for(int j=1; j<=NUM_MAX;j++) if(j%n==0) num[j]=1;
 	}
 }
-
 using namespace std;
 int main(void)
 {
 	int p=2;
-	for(int i=0; 
-i<199; i++){
+	for(int i=0; i<199; i++){
 		for(;p<NUM_MAX;p++){
 			bool f=true;
 			for(int q=2; q<p; q++){

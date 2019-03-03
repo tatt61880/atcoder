@@ -2,7 +2,6 @@
 using namespace std;
 #define Rep(i, n) for(int i = 0; i < (n); i++)
 #define PrintLn(X) cout << (X) << endl
-
 int main(void)
 {
 	int n;

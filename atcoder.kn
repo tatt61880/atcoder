@@ -93,7 +93,7 @@ func main()
 			do writer.fin()
 		else
 			var reader: file@Reader :: file@makeReader(filepath)
-			do reader.delimiter("")
+			do reader.delimiter("\n")
 			do data :: ""
 			while(!reader.term())
 				do data :~ reader.readStr() ~ "\n"

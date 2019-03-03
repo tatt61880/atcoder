@@ -3,8 +3,7 @@
 using namespace std;
 #define repX(a,b,child,x,...) x
 #define repN(a) repX a
-#define rep(...) repN((__
-VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
+#define rep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
 #define rrep(...) repN((__VA_ARGS__,rrep3,rrep2))(__VA_ARGS__)
 #define loop(n) rep2(i_,n)
 #define rep2(i,n) rep3(i,0,n)
@@ -15,7 +14,6 @@ VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 vector<int> V[100001];
 vector<int> v;
 int visited[100001];
@@ -28,7 +26,6 @@ void tsort(int x){
   }
   v.push_back(x);
 }
-
 int main(){
   int N, M;
   cin >> N >> M;
@@ -44,7 +41,6 @@ int main(){
       ans[child] = parent;
     }
   }
-  rep(i, N) cout << ans[i + 1] &l
-t;< endl;
+  rep(i, N) cout << ans[i + 1] << endl;
   return 0;
 }

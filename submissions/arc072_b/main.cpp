@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 typedef long long ll;
 #if 0
 蜷郁ｨ・
@@ -27,14 +26,12 @@ typedef long long ll;
 4,2 W
 3,3 L
 #endif
-
 int main(void)
 {
 	ll X, Y;
 	cin >> X >> Y;
 	if(X - Y == 0 || X - Y == -1 || X - Y == 1){
-		cout << "Brown" 
-<< endl;
+		cout << "Brown" << endl;
 	}else{
 		cout << "Alice" << endl;
 	}

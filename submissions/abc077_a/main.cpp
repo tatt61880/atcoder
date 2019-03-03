@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <string>
 using namespace std;
-
 #define PrintLn(X) cout << X << endl
 int main(void)
 {

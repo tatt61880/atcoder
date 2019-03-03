@@ -1,6 +1,5 @@
 //{{{
-#include <bits/stdc++.h&gt
-;
+#include <bits/stdc++.h>
 using namespace std;
 #define repX(a,b,c,x,...) x
 #define repN(a) repX a
@@ -15,12 +14,10 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 typedef struct {
   int h;
   int w;
 } Pos;
-
 char m[400][400];
 int main(){
   int H, W;
@@ -41,8 +38,7 @@ int main(){
       Pos p = {sH, sW};
       qu.push(p);
       while(qu.size()){
-        Pos p = qu.front(
-);
+        Pos p = qu.front();
         qu.pop();
         int x = p.w;
         int y = p.h;
@@ -75,4 +71,3 @@ int main(){
   cout << ans << endl;
   return 0;
 }
-

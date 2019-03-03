@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <map>
 using namespace std;
-
 int main(void)
 {
 	pair<int, int> a[100000];
@@ -15,8 +14,7 @@ int main(void)
 	}
 	sort(a, a+n);
 	for(int i=1; i<=n; i++){
-		cout 
-<< a[i - 1].second << endl;
+		cout << a[i - 1].second << endl;
 	}
 	return 0;
 }

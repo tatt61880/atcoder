@@ -1,12 +1,10 @@
 use strict;
 use warnings;
-
 my $num = <>;
 my %rateCount;
 my %rateRank;
 my %count;
 my @data;
-
 while(<>)
 {
 	chomp;
@@ -16,16 +14,13 @@ while(<>)
 	$rateCount{$r}++;
 	push @data, $_;
 }
-
 sub f($);
 my $c = 1;
 foreach my $r(sort {$b <=> $a}(keys %rateCount)){
 	$rateRank{$r} = $c;
 	$c += $rateCount{$r};
 }
-
-for
-each(@data)
+foreach(@data)
 {
 	m|(\d+) (\d+)|;
 	my $r = $1;

@@ -1,6 +1,5 @@
 use strict;
 use warnings;
-
 my $c = <>;
 chomp $c;
 my $str = <>;

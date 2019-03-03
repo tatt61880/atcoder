@@ -1,14 +1,11 @@
 use strict;
 use warnings;
-
 my $T = <>;
 my $N = <>;
 my @A = split / /, <>;
 my $M = <>;
 my @B = split / /, <>;
-
 my $ans = "yes\n";
-
 while(@B)
 {
 	shift @A while(@A && @B && $A[0] < $B[0] - $T);
@@ -16,10 +13,8 @@ while(@B)
 		print "no\n";
 		exit 0;
 	}
-	#たこ焼
-きを売る
+	#たこ焼きを売る
 	shift @A;
 	shift @B;
 }
-
 print "yes\n";

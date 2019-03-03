@@ -1,6 +1,5 @@
 use strict;
 use warnings;
-
 $_ = <>;
 chomp;
 if(m/^.*keyence$/){
@@ -28,8 +27,7 @@ if(m/^keyen.*ce$/){
   exit(0);
 }
 if(m/^keyenc.*e$/){
-  print "Y
-ES\n";
+  print "YES\n";
   exit(0);
 }
 if(m/^keyence.*$/){

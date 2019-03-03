@@ -14,7 +14,6 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 ll dp[100001];
 int main(){
   int N, W;
@@ -25,8 +24,7 @@ int main(){
   dp[0] = 0;
   rep(i, N){
     ll w, v;
-    
-cin >> w >> v;
+    cin >> w >> v;
     rrep(j, (N - 1) * 1000 + 1){
       ll val = j + v;
       dp[val] = min(dp[val], dp[j] + w);

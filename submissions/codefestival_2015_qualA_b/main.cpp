@@ -8,8 +8,7 @@ int main(void)
 	for(int i = 0; i < N; i++){
 		int a;
 		cin >> a;
-		sum *= 
-2;
+		sum *= 2;
 		sum += a;
 	}
 	cout << sum << endl;

@@ -1,10 +1,8 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
-
 typedef struct{
 	int w;
 	int h;
@@ -12,19 +10,16 @@ typedef struct{
 char A[1000][1000];
 int a[1000][1000] = {0};
 int H, W, K;
-
 int g(int w, int h)
 {
 	int ret = 1000;
-	if(A[h][w] != 'T') return re
-t;
+	if(A[h][w] != 'T') return ret;
 	if(h < ret) ret = h;
 	if(w < ret) ret = w;
 	if(H - h - 1 < ret) ret = H - h - 1;
 	if(W - w - 1 < ret) ret = W - w - 1;
 	return (ret + K - 1) / K;
 }
-
 int f(int w, int h)
 {
 	if(w <  0) return 0;
@@ -37,7 +32,6 @@ int f(int w, int h)
 	}
 	return 0;
 }
-
 int main(void)
 {
 	cin >> H >> W >> K;
@@ -53,7 +47,6 @@ int main(void)
 			}
 		}
 	}
-
 	queue<P> qu;
 	qu.push(p);
 	while(!qu.empty()){
@@ -65,10 +58,8 @@ int main(void)
 		if(f(w-1, h)){a[h][w-1] = a[h][w] + 1; p.w = w-1; p.h = h; qu.push(p);}
 		if(f(w+1, h)){a[h][w+1] = a[h][w] + 1; p.w = w+1; p.h = h; qu.push(p);}
 		if(f(w, h-1)){a[h-1][w] = a[h][w] + 1; p.w = w; p.h = h-1; qu.push(p);}
-		if(f(w, h+1)){a[h+1][w] = a[h
-][w] + 1; p.w = w; p.h = h+1; qu.push(p);}
+		if(f(w, h+1)){a[h+1][w] = a[h][w] + 1; p.w = w; p.h = h+1; qu.push(p);}
 	}
-
 	int ans = 1000;
 	Rep(h, H){
 		Rep(w, W){

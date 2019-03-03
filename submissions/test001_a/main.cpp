@@ -3,7 +3,6 @@
 #include <string>
 using namespace std;
 #define Rep(i, n) for(int i = 0; i < (n); i++)
-
 int main(void)
 {
 	int N;
@@ -18,8 +17,7 @@ int main(void)
 			if(S[i] == x + '1') count++;
 		}
 		mn = min(mn, count);
-		mx = max(mx, count
-);
+		mx = max(mx, count);
 	}
 	cout << mx << " " << mn << endl;
 	return 0;

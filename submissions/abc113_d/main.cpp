@@ -9,19 +9,15 @@ using namespace std;
 #define rep2(i,n) rep3(i,0,n)
 #define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
 #define rrep2(i,n) rrep3(i,n,0)
-#define rrep3(i,begin,
-end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
+#define rrep3(i,begin,end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
 #define foreach(x,a) for(auto&x:a)
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 int ans[2][8];
-
 int main(){
   int H, W, K;
   cin >> H >> W >> K;
-
   ans[0][0] = 1;
   rep(h, H){
     rep(w, W){

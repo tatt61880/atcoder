@@ -1,23 +1,19 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
 int compare(const void *x, const void *y){
 	return *(char *)x - *(char *)y;
 }
-
 int main(void)
 {
 	int N, K;
 	scanf("%d%d", &N, &K);
 	char S[1000];
 	scanf("%s", S);
-
 	char ans[1000];
 	strcpy(ans, S);
 	int err = 0; // ansの確定部分までにおける、不一致の文字数。
-	for(int 
-i = 0; i < N; i++){ //先頭から順番に確定させていく。
+	for(int i = 0; i < N; i++){ //先頭から順番に確定させていく。
 		char buf[1000];
 		strcpy(buf, &ans[i]);
 		int buf_len = strlen(buf);
@@ -28,7 +24,6 @@ i = 0; i < N; i++){ //先頭から順番に確定させていく。
 			if(S[i] != buf[j]){
 				count++;
 			}
-
 			bool used[1000] = {0};
 			used[j] = 1;
 			// とりあえず、i + 1文字目以降すべて不一致とする。
@@ -57,6 +52,5 @@ i = 0; i < N; i++){ //先頭から順番に確定させていく。
 		//printf("ans = %s\n", ans);
 	}
 	printf("%s\n", ans);
-
 	return 0;
 }

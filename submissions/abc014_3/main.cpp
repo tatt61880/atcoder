@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main(void)
 {
 	int N;
@@ -14,8 +13,7 @@ int main(void)
 	// いもす法により求める。
 	int s[MAX * 10 + 2] = {0};
 	for(int i = 0; i < N; i++){
-		s[a[i]]&#4
-3;+;
+		s[a[i]]++;
 		s[b[i] + 1]--;
 	}
 	for(int i = 1; i < MAX * 10 + 2; i++){

@@ -1,6 +1,5 @@
 use strict;
 use warnings;
-
 my $buf = <>;
 chomp $buf;
 if("aiueo" =~ m/$buf/){

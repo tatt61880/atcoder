@@ -7,11 +7,9 @@ typedef long long ll;
 #define rep2(i,n) rep3(i,0,n)
 #define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
 #define repN(a) repX a
-#d
-efine repX(a0,a1,a2,x,...) x
+#define repX(a0,a1,a2,x,...) x
 const int MOD = 1e9+7;
 //}}}
-
 typedef pair<int,int> PII;
 int dx[]={1,0,-1,0};
 int dy[]={0,1,0,-1};
@@ -19,7 +17,6 @@ queue<PII> q;
 int H, W;
 char s[51][51];
 int dist[51][51];
-
 void f(int x, int y, int num){
 	if(x < 0 || W <= x) return;
 	if(y < 0 || H <= y) return;
@@ -28,7 +25,6 @@ void f(int x, int y, int num){
 		q.emplace(x, y);
 	}
 }
-
 int main(void){
 	cin >> H >> W;
 	rep(i, H) cin >> s[i];
@@ -38,7 +34,6 @@ int main(void){
 			if(s[i][j] == '.') total++;
 		}
 	}
-
 	q.emplace(0, 0);
 	dist[0][0] = 1;
 	while(!q.empty()){

@@ -12,21 +12,16 @@
 #include <cstring>
 #include <cctype>
 #include <cmath>
-#include <
-cassert>
+#include <cassert>
 using namespace std;
-
 typedef long long ll;
 typedef unsigned long long ull;
-
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
-
 int a[200000];
 int b[200000];
-
 int main(void)
 {
 	int N;
@@ -34,7 +29,6 @@ int main(void)
 	Rep(i, N){
 		cin >> a[i];
 	}
-
 	if(N % 2 == 0){
 		Rep(i, N){
 			if(i % 2 == 0){
@@ -52,7 +46,6 @@ int main(void)
 			}
 		}
 	}
-
 	Rep(i, N){
 		cout << b[i];
 		if(i != N-1){

@@ -1,10 +1,8 @@
 #include <stdio.h>
-
 int main(void)
 {
 	char c1, c2;
 	scanf("%c%c", &c1, &c2);
-
 	if(c1 == 'S'){
 		puts("0");
 	}else if(c1 == 'M'){

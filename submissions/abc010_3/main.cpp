@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-
 int main(void)
 {
 	double Sx, Sy, Gx, Gy;
@@ -11,8 +10,7 @@ int main(void)
 	for(int i = 0; i < n; i++){
 		double x, y;
 		scanf("%lf%lf", &x, &y);
-		if(sqrt(
-(Sx - x)*(Sx - x) + (Sy - y) * (Sy - y)) + sqrt((Gx - x)*(Gx - x) + (Gy - y) * (Gy - y)) - 1e-10 <= V * T){
+		if(sqrt((Sx - x)*(Sx - x) + (Sy - y) * (Sy - y)) + sqrt((Gx - x)*(Gx - x) + (Gy - y) * (Gy - y)) - 1e-10 <= V * T){
 			puts("YES");
 			return 0;
 		}

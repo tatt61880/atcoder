@@ -1,10 +1,8 @@
 #include <stdio.h>
-
 int main(void)
 {
 	int m, n, N;
 	scanf("%d%d%d", &m, &n, &N);
-
 	int sold = 0;
 	int small = 0;
 	while(N > 0){

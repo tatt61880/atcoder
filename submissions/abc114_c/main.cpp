@@ -9,13 +9,11 @@ using namespace std;
 #define rep2(i,n) rep3(i,0,n)
 #define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
 #define rrep2(i,n) rrep3(i,n,0)
-#define rrep3(i,begin,
-end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
+#define rrep3(i,begin,end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
 #define foreach(x,a) for(auto&x:a)
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 bool f(int n){
   bool flag3 = false;
   bool flag5 = false;
@@ -30,7 +28,6 @@ bool f(int n){
   }
   return flag3 && flag5 && flag7;
 }
-
 int main(){
   int N;
   cin >> N;
@@ -48,7 +45,6 @@ int main(){
       v.push_back(x);
     }
   }
-
   int ans = 0;
   for(auto &x: v){
     if(x <= N && f(x)) ans++;

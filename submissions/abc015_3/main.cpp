@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main(void)
 {
 	int N, K;
@@ -14,8 +13,7 @@ int main(void)
 	for(int i = 0; i < (1 << 3 * N); i++){
 		int ii = i;
 		int xorsum = 0;
-		for(int j =
- 0; j < N; j++){
+		for(int j = 0; j < N; j++){
 			int k = ii % 8;
 			if(k > K - 1){
 				goto A;

@@ -3,7 +3,6 @@
 using namespace std;
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (n); i++)
-
 int main(void)
 {
 	string s;
@@ -16,8 +15,7 @@ int main(void)
 	count[s[5] - '0']--;
 	count[s[6] - '0']--;
 	count[s[8] - '0']--;
-	c
-ount[s[9] - '0']--;
+	count[s[9] - '0']--;
 	Rep(i, 10){
 		if(count[i] != 0){
 			PrintLn("no");

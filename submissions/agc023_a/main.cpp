@@ -7,12 +7,10 @@ using namespace std;
 #define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
 #define repN(a) repX a
 #define repX(a0,a1,a2,x,...) x
-#defi
-ne foreach(x,a) for(auto &x:a)
+#define foreach(x,a) for(auto &x:a)
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
-
 ll A[200000];
 ll sumA[200001];
 int main(){

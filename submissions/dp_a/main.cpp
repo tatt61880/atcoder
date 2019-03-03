@@ -14,11 +14,9 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 int dp[100000];
 int h[100000];
 const int inf = 2000000000;
-
 int main(){
   int N;
   cin >> N;
@@ -26,14 +24,12 @@ int main(){
     cin >> h[i];
     dp[i] = inf;
   }
-  dp[0] = 
-0;
+  dp[0] = 0;
   rep(i, N - 1){
     dp[i + 1] = min(dp[i + 1], dp[i] + abs(h[i + 1] - h[i]));
     if(i + 2 > N - 1) continue;
     dp[i + 2] = min(dp[i + 2], dp[i] + abs(h[i + 2] - h[i]));
   }
-
   int ans = dp[N - 1];
   cout << ans << endl;
   return 0;

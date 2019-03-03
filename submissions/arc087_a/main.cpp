@@ -5,7 +5,6 @@
 using namespace std;
 #define rep(i,n) for(int i = 0, i##_len=(n); i < i##_len; ++i)
 typedef long long ll;
-
 int main(){
 	int N;
 	cin >> N;
@@ -14,8 +13,7 @@ int main(){
 	rep(i, N){
 		int a;
 		cin >> a;
-		if(mp.find(a) =
-= mp.end()){
+		if(mp.find(a) == mp.end()){
 			mp[a] = 1;
 		}else{
 			mp[a]++;

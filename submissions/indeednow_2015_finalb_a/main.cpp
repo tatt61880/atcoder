@@ -3,7 +3,6 @@ using namespace std;
 #define PrintLn(X) cout << X << endl
 typedef long long LL;
 LL MOD = 1000000007;
-
 LL pow_mod(LL a, LL b){
 	LL res = 1;
 	while(b > 0){
@@ -14,8 +13,7 @@ LL pow_mod(LL a, LL b){
 	return res;
 }
  
-LL nu
-m(int n){
+LL num(int n){
 	LL ret = 1;
 	ret *= pow_mod(n, 2);
 	ret %= MOD;
@@ -23,7 +21,6 @@ m(int n){
 	ret %= MOD;
 	ret *= pow_mod(8, MOD - 2);
 	ret %= MOD;
-
 	LL ret2 = 1;
 	ret2 *= n;
 	ret2 %= MOD;
@@ -33,10 +30,8 @@ m(int n){
 	ret2 %= MOD;
 	ret2 *= pow_mod(12, MOD - 2);
 	ret2 %= MOD;
-
 	return (ret + ret2) % MOD;
 }
-
 int main(void)
 {
 	int A, B;

@@ -1,6 +1,5 @@
 use strict;
 use warnings;
-
 <>;
 $_ = <>;
 $_ = lc;

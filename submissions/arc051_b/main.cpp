@@ -9,8 +9,7 @@ int main(void)
 	case  2: puts("3 2"); return 0;
 	case  3: puts("5 3"); return 0;
 	case  4: puts("8 5"); return 0;
-	case  5: puts("13 8"); return 0
-;
+	case  5: puts("13 8"); return 0;
 	case  6: puts("21 13"); return 0;
 	case  7: puts("34 21"); return 0;
 	case  8: puts("55 34"); return 0;
@@ -32,8 +31,7 @@ int main(void)
 	case 24: puts("121393 75025"); return 0;
 	case 25: puts("196418 121393"); return 0;
 	case 26: puts("317811 196418"); return 0;
-	case 27: puts("514229 317811"); re
-turn 0;
+	case 27: puts("514229 317811"); return 0;
 	case 28: puts("832040 514229"); return 0;
 	case 29: puts("1346269 832040"); return 0;
 	case 30: puts("2178309 1346269"); return 0;

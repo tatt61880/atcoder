@@ -12,18 +12,13 @@
 #include <cstring>
 #include <cmath>
 using namespace std;
-
-typedef long l
-ong LL;
+typedef long long LL;
 typedef unsigned long long ULL;
-
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
-
 LL cost[10][10];
-
 class Point{
 	public:
 		int x, y;
@@ -32,7 +27,6 @@ class Point{
 			return cost[x][y] > cost[p.x][p.y];
 		}
 };
-
 int main(void)
 {
 	int H, W;
@@ -53,7 +47,6 @@ int main(void)
 			}
 		}
 	}
-
 	LL lo, hi;
 	lo = 1;
 	hi = T;
@@ -66,7 +59,6 @@ int main(void)
 				cost[x][y] = -1;
 			}
 		}
-
 		v.push_back(S);
 		cost[S.x][S.y] = 0;
 		while(!v.empty()){
@@ -92,8 +84,7 @@ int main(void)
 			}
 		}
 		//PrintLn("lo=" << lo << " hi= " << hi << " mi=" << mi << " cost=" << cost[G.x][G.y]);
-		((cost[G.
-x][G.y] <= T) ? lo : hi) = mi;
+		((cost[G.x][G.y] <= T) ? lo : hi) = mi;
 	}
 	PrintLn(lo);
 	return 0;

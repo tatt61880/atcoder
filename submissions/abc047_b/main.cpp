@@ -11,8 +11,7 @@ int main(){
   switch(a){
   case 1: if(x>xn) xn=x; break;
   case 2: if(x<xx) xx=x; break;
-  case 3: if(y>yn) yn=y; bre
-ak;
+  case 3: if(y>yn) yn=y; break;
   case 4: if(y<yx) yx=y; break;
   }
  }

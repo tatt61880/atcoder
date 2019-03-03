@@ -6,6 +6,5 @@ int main(void)
 	std::cin >> S;
 	S[S.size() - 1]++;
 	std::cout << S << std::endl;
-	ret
-urn 0;
+	return 0;
 }

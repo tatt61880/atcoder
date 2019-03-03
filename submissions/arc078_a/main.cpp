@@ -12,17 +12,13 @@
 #include <cstring>
 #include <cctype>
 #include <cmath>
-#include <
-cassert>
+#include <cassert>
 using namespace std;
-
 typedef long long ll;
 typedef unsigned long long ull;
-
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
-
 int a[200000];
 int main(void)
 {
@@ -31,7 +27,6 @@ int main(void)
 	Rep(i, N) cin >> a[i];
 	ll sum = 0;
 	Rep(i, N) sum += a[i];
-
 	ll sum2 = 0;
 	ll ans = abs(sum - 2 * a[0]);
 	Rep(i, N){

@@ -1,7 +1,6 @@
 #include <cstdio>
 #define _USE_MATH_DEFINES
 #include <cmath>
-
 int main(void)
 {
 	double R, D;

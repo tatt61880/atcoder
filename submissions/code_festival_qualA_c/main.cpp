@@ -7,12 +7,10 @@ int num(int n){
 	}
 	return ret;
 }
-
 int main(void)
 {
 	int A, B;
 	cin >> A >> B;
-	cout << num(B) - num(A - 1) &
-lt;< endl;
+	cout << num(B) - num(A - 1) << endl;
 	return 0;
 }

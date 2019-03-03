@@ -1,6 +1,5 @@
 #include<iostream>
 using namespace std;
-
 typedef long long LL;
  
 LL pow_mod(LL N, LL P, LL M){
@@ -12,7 +11,6 @@ LL pow_mod(LL N, LL P, LL M){
 	}
 	return res;
 }
-
 int main()
 {
 	LL N,M,P;

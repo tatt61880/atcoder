@@ -1,29 +1,23 @@
 #include <iostream>
 using namespace std;
-
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
 typedef long long ll;
-
 int N, K;
 ll x[50];
 ll y[50];
-
 ll minX;
 ll maxX;
 ll minY;
 ll maxY;
-
 int main(void)
 {
-	cin >&
-gt; N >> K;
+	cin >> N >> K;
 	Rep(i, N){
 		cin >> x[i] >> y[i];
 	}
 	ll minS = 1LL << 62;
-
 	Rep(a, N){
 		Rep(b, N){
 			if(x[a] > x[b]) continue;

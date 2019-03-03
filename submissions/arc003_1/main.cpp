@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main(void)
 {
 	int N;
@@ -12,6 +11,5 @@ int main(void)
 		if(S[i] == 'F') sum++;
 	}
 	printf("%.15f\n", (double)sum / N);
-
 	return 0;
 }

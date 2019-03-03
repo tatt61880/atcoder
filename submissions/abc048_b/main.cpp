@@ -1,11 +1,8 @@
 #include <iostream>
 using namespace std;
-
 typedef long long ll;
-
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
-
 int main(void)
 {
 	ll a, b, x;
@@ -15,6 +12,5 @@ int main(void)
 	}else{
 		PrintLn((b / x) - ((a - 1) / x));
 	}
-	re
-turn 0;
+	return 0;
 }

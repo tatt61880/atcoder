@@ -1,7 +1,6 @@
 //{{{
 #include <bits/stdc++.h>
-using n
-amespace std;
+using namespace std;
 #define rep(...) repN((__VA_ARGS__,rep3,rep2,loop,~))(__VA_ARGS__)
 #define loop(n) rep2(_loop_,n)
 #define rep2(i,n) rep3(i,0,n)
@@ -12,7 +11,6 @@ amespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
-
 ll a[200000];
 int main(){
   int A, B, N;

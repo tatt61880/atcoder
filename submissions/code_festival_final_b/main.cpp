@@ -3,7 +3,6 @@
 using namespace std;
 #define println(x) cout << (x) << endl
 #define rep(i, n) for(int i = 0; i < (int)(n); ++i)
-
 int main(void)
 {
 	string s;
@@ -13,7 +12,6 @@ int main(void)
 		if(i % 2 == 0){
 			ans += (s[i] - '0');
 		}else{
-
 			ans -= (s[i] - '0');
 		}
 	}

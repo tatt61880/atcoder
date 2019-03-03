@@ -1,11 +1,9 @@
 use strict;
 use warnings;
-
 my $s = <>;
 chomp $s;
 my $len = length $s;
 my $k = <>;
-
 my %dict;
 my $count = 0;
 for(0..$len - $k){

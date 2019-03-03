@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main(void)
 {
 	int a, b, c;
@@ -27,4 +26,3 @@ int main(void)
 	printf("%d\n", b);
 	return 0;
 }
-

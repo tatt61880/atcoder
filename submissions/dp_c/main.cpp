@@ -14,10 +14,8 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 int dp[3][100000];
 int abc[3][100000];
-
 int main(){
   int N;
   cin >> N;
@@ -27,8 +25,7 @@ int main(){
     }
   }
   rep(j, 3){
-    dp
-[j][0] = abc[j][0];
+    dp[j][0] = abc[j][0];
   }
   rep(i, 1, N){
     rep(j, 3){
@@ -38,7 +35,6 @@ int main(){
       }
     }
   }
-
   int ans = 0;
   rep(j, 3){
     ans = max(ans, dp[j][N - 1]);

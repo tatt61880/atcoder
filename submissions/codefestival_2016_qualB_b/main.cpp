@@ -14,11 +14,9 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 int main(){
   int N, A, B;
-  cin >> N >> A
- >> B;
+  cin >> N >> A >> B;
   string S;
   cin >> S;
   int numAB = 0;

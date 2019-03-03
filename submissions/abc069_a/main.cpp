@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 using namespace std;
-
 #define PrintLn(X) cout << X << endl
 int main(void)
 {

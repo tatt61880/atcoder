@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
-
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
-
 int main(void)
 {
 	int N;

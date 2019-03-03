@@ -14,18 +14,15 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 int main(){
   int N;
   int a[100];
-  cin >> 
-N;
+  cin >> N;
   int sum = 0;
   rep(i, N){
     cin >> a[i];
     sum += a[i];
   }
-
   int ans = 0;
   int min = 100000;
   rep(i, N){

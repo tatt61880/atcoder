@@ -2,20 +2,15 @@
 #include <cstdio>
 #include <cmath>
 using namespace std;
-
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
-#define For(i, a, b) for(int i = a; i < (int)(b); &#43
-;+i)
-
+#define For(i, a, b) for(int i = a; i < (int)(b); ++i)
 int R, N, M;
-
 double f(int n){
 	if(n < 1 || n >= N) return 0;
 	return R * sqrt(1 - pow((double)(N - 2 * n) / N, 2.0));
 }
-
 int main(void)
 {
 	cin >> R >> N >> M;
@@ -28,4 +23,3 @@ int main(void)
 	printf("%.9lf", ans * 2);
 	return 0;
 }
-

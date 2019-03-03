@@ -9,26 +9,21 @@ using namespace std;
 #define rep2(i,n) rep3(i,0,n)
 #define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
 #define rrep2(i,n) rrep3(i,n,0)
-#define rrep3(i,begin,
-end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
+#define rrep3(i,begin,end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
 #define foreach(x,a) for(auto&x:a)
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 int x[100];
 int y[100];
 int h[100];
-
 int f(int dx, int dy, int hh){
   return hh + abs(dx) + abs(dy);
 }
-
 int main(){
   int N;
   cin >> N;
   rep(i, N) cin >> x[i] >> y[i] >> h[i];
-
   rep(i, N){
     if(h[i]){
       swap(x[i], x[0]);
@@ -37,7 +32,6 @@ int main(){
       break;
     }
   }
-
   rep(cx, 101){
     rep(cy, 101){
       int H = f(x[0] - cx, y[0] - cy, h[0]);

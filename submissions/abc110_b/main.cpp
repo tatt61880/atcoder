@@ -9,13 +9,11 @@ using namespace std;
 #define rep2(i,n) rep3(i,0,n)
 #define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
 #define rrep2(i,n) rrep3(i,n,0)
-#define rrep3(i,begin,
-end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
+#define rrep3(i,begin,end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
 #define foreach(x,a) for(auto&x:a)
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
-
 int x[100];
 int y[100];
 int main(){
@@ -25,7 +23,6 @@ int main(){
   rep(i, M) cin >> y[i];
   sort(x, x + N);
   sort(y, y + M);
-
   bool ans = x[N - 1] < y[0] && X < y[0] && y[0] <= Y;
   puts(ans ? "No War" : "War");
   return 0;

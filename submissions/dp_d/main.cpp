@@ -14,7 +14,6 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 ll dp[100001];
 int main(){
   int N, W;
@@ -23,8 +22,7 @@ int main(){
     ll w, v;
     cin >> w >> v;
     rrep(j, W){
-      if(j + w > W
-) continue;
+      if(j + w > W) continue;
       dp[j + w] = max(dp[j + w], dp[j] + v);
     }
   }

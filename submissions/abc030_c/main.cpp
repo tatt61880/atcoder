@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main(void)
 {
 	int N, M;
@@ -13,10 +12,8 @@ int main(void)
 		scanf("%lld", &a[i]);
 	}
 	for(int i = 0; i < M; i++){
-		scanf("%lld&
-#34;, &b[i]);
+		scanf("%lld", &b[i]);
 	}
-
 	enum site{
 		A,
 		B
@@ -51,7 +48,6 @@ int main(void)
 			if(i_b == b_max) break;
 		}
 	}
-
 	printf("%d\n", count / 2);
 	return 0;
 }

@@ -1,7 +1,6 @@
 $N = <>;
 $str = <>;
 chomp $str;
-
 $ans = 100000;
 @cmd = qw/AA AB AX AY BA BB BX BY XA XB XX XY YA YB YX YY/;
 foreach $L (@cmd){

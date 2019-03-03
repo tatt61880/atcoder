@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-
 int main(void)
 {
 	int N;
@@ -11,13 +10,11 @@ int main(void)
 		puts("NO");
 		return 0;
 	}
-
 	int count = 0;
 	while(N > 0){
 		if(CHECK(N - 3)){
 			N -= 3;
-		}else if(CHECK(N -
- 2)){
+		}else if(CHECK(N - 2)){
 			N -= 2;
 		}else if(CHECK(N - 1)){
 			N -= 1;
@@ -31,7 +28,6 @@ int main(void)
 			return 0;
 		}
 	}
-
 	puts("YES");
 	return 0;
 }

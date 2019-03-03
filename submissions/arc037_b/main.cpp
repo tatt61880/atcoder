@@ -6,21 +6,18 @@ using namespace std;
 	
 vector<int> v[100];
 int f[100] = {0};
-
 int connected(int n, int exception){
 	f[n] = 1;
 	int loop = 0;
 	for(auto& x: v[n]){
 		if(f[x] == 1) {
-			if(x != excepti
-on) loop++;
+			if(x != exception) loop++;
 			continue;
 		}
 		loop += connected(x, n);
 	}
 	return loop;
 }
-
 int main(void)
 {
 	int N, M;

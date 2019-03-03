@@ -1,10 +1,8 @@
 #include <iostream>
 using namespace std;
-
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 typedef long long ll;
-
 int main(void)
 {
 	int A, B;
@@ -12,8 +10,7 @@ int main(void)
 	if(A == B){
 		PrintLn("Draw");
 	}else if(A == 1 || (B != 1 && A > B)){
-		PrintLn(&#34
-;Alice");
+		PrintLn("Alice");
 	}else{
 		PrintLn("Bob");
 	}

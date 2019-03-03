@@ -5,7 +5,6 @@
 using namespace std;
 #define Rep(i, n) for(int i = 0; i < (n); i++)
 #define PrintLn(x) cout << (x) << endl;
-
 int main(void)
 {
 	int N;
@@ -13,12 +12,10 @@ int main(void)
 	map<string, pair<string, bool>> mp;
 	string S[20];
 	Rep(n, N) cin >> S[n];
-
 	int U[20];
 	bool V[20];
 	Rep(n, N){
-		str
-ing u, s, v;
+		string u, s, v;
 		cin >> u >> s >> s >> v >> s;
 		mp[S[n]] = pair<string, bool>(u, (v == "good"));
 	}
@@ -26,7 +23,6 @@ ing u, s, v;
 	index = 0;
 	map<string, int> StoI;
 	for(auto& x:mp) StoI[x.first] = index++;
-
 	index = 0;
 	for(auto& x:mp){
 		U[index] = StoI[x.second.first];
@@ -66,8 +62,7 @@ ing u, s, v;
 	Rep(n, N) P[n] = (((max_i >> (N - 1 - n)) & 1) == 1);
 	for(auto& x:StoI){
 		if(P[x.second]){
-			PrintLn(x.first
-);
+			PrintLn(x.first);
 		}
 	}
 	return 0;

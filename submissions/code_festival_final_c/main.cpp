@@ -2,7 +2,6 @@
 using namespace std;
 #define PrintLn(X) cout << (X) << endl
 typedef long long LL;
-
 LL f(int N){
 	int NN = N;
 	LL ret = 0;
@@ -14,16 +13,13 @@ LL f(int N){
 	}
 	return ret;
 }
-
 int main(void)
 {
 	LL A;
 	cin >> A;
-
 	while(1){
 		static int N = 10;
-		L
-L num = f(N);
+		LL num = f(N);
 		if(num == A){
 			PrintLn(N);
 			return 0;

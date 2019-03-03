@@ -1,7 +1,6 @@
 #include<iostream>
 #include<string>
 using namespace std;
-
 int main(void){
  string str;
  cin >> str;
@@ -14,7 +13,6 @@ int main(void){
   case 'E': e=1; break;
   }
  }
- cout << (!(n^s || w^e) ? "Y
-es" : "No") << endl;
+ cout << (!(n^s || w^e) ? "Yes" : "No") << endl;
  return 0;
 }

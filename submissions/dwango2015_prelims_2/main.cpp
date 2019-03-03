@@ -16,8 +16,7 @@ int main(void)
 			i++;
 		}else{
 			ans += count * (count + 1) / 2;
-			
-count = 0;
+			count = 0;
 		}
 	}
 	PrintLn(ans);

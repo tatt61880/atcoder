@@ -2,7 +2,6 @@
 #include <string>
 #include <cmath>
 using namespace std;
-
 #define Rep(i, n) for(int i = 0; i < (int)(n); i++)
 #define PrintLn(X) cout << X << endl
 int main(void)
@@ -11,8 +10,7 @@ int main(void)
 	cin >> x >> a >> b;
 	if(b <= a){
 		PrintLn("delicious");
-	}else if(b <= a
- + x){
+	}else if(b <= a + x){
 		PrintLn("safe");
 	}else{
 		PrintLn("dangerous");

@@ -8,12 +8,10 @@ const ll MOD = 1000000007;
 typedef struct{
 	//int black; //自分自身が黒の場合の場合の数
 	ll white; //自分自身が白の場合の場合の数
-	ll total; //black&
-#43;white
+	ll total; //black+white
 } Count;
 vector<int> v[100000];
 // aに対し、exception側が存在しないものとみなしたCountを返す関数。
-
 Count f(int a, int exception){
 	ll w = 1;
 	ll t = 1;

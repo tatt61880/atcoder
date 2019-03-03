@@ -1,23 +1,19 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-
 #define PrintLn(X) cout << (X) << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
-
 int main(void)
 {
 	char A[10][10];
 	char B[10][10];
 	Rep(y, 10) Rep(x, 10) cin >> A[y][x];
 	bool all_o_flag = true;
-
 	typedef struct{
 		int x;
 		int y;
 	} xy;
-	Rep
-(y, 10) Rep(x, 10) {
+	Rep(y, 10) Rep(x, 10) {
 		if(A[y][x] == 'o') continue;
 		all_o_flag = false;
 		Rep(y2, 10) Rep(x2, 10) B[y2][x2] = A[y2][x2];

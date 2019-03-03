@@ -14,10 +14,8 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)998244353;
 //}}}
-
 int main(){
-  
-int A, B, C, S;
+  int A, B, C, S;
   cin >> A >> B >> C >> S;
   bool ans = A + B + C <= S && S <= A + B + C + 3;
   puts(ans ? "Yes" : "No");

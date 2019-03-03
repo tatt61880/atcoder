@@ -9,17 +9,14 @@ using namespace std;
 #define rep2(i,n) rep3(i,0,n)
 #define rep3(i,begin,end) for(int i=(int)(begin),i##_end=(int)(end);i<i##_end;++i)
 #define rrep2(i,n) rrep3(i,n,0)
-#define rrep3(i,begin,end) for(int i=(in
-t)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
+#define rrep3(i,begin,end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
 #define foreach(x,a) for(auto&x:a)
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 int N;
 int a[200000];
 map<int, int> mp;
-
 bool f(int n){
   mp.clear();
   mp[a[0]] = 0;
@@ -53,7 +50,6 @@ bool f(int n){
   }
   return true;
 }
-
 int main(){
   cin >> N;
   rep(i, N) scanf("%d", &a[i]);
@@ -67,11 +63,9 @@ int main(){
     }
     if(flag){
       cout << 1 << endl;
- 
-     return 0;
+      return 0;
     }
   }
-
   int hi = N;
   int lo = 1;
   while(hi - lo > 1){

@@ -3,8 +3,7 @@
 using namespace std;
 #define repX(a,b,c,x,...) x
 #define repN(a) repX a
-#define rep(...) repN((
-__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
+#define rep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
 #define rrep(...) repN((__VA_ARGS__,rrep3,rrep2))(__VA_ARGS__)
 #define loop(n) rep2(i_,n)
 #define rep2(i,n) rep3(i,0,n)
@@ -15,9 +14,7 @@ __VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 ll N;
-
 ll f(ll n){
   ll ret = 1;
   if(n == 0) return 0;
@@ -27,7 +24,6 @@ ll f(ll n){
   }
   return ret;
 }
-
 int main(){
   cin >> N;
   ll ans = 0;

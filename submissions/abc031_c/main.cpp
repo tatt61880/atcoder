@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
 #define SQUARE(x) ((x) * (x))
-
 int main(void)
 {
 	int N;
@@ -11,13 +9,11 @@ int main(void)
 	for(int i = 0; i < N; i++){
 		scanf("%d", &A[i]);
 	}
-
 	int t_max = -10000;
 	for(int t = 0; t < N; t++){
 		int a_sum_max = -10000;
 		int t_sum;
-		for(int a = 0; a &lt
-; N; a++){
+		for(int a = 0; a < N; a++){
 			if(a == t) continue;
 			int a_sum_kouho = 0;
 			int t_sum_kouho = 0;
@@ -48,7 +44,6 @@ int main(void)
 			t_max = t_sum;
 		}
 	}
-
 	printf("%d\n", t_max);
 	return 0;
 }

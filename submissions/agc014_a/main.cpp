@@ -1,19 +1,15 @@
 #include <iostream>
 using namespace std;
-
 typedef long long ll;
 typedef unsigned long long ull;
-
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
-
 int main(void)
 {
 	int A, B, C;
 	cin >> A >> B >> C;
-	int
- ans = 0;
+	int ans = 0;
 	while(A % 2 == 0 && B % 2 == 0 && C % 2 == 0){
 		if(A == B && B == C){
 			PrintLn(-1);

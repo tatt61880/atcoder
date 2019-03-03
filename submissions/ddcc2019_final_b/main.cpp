@@ -3,8 +3,7 @@
 using namespace std;
 #define repX(a,b,c,x,...) x
 #define repN(a) repX a
-#define r
-ep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
+#define rep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
 #define rrep(...) repN((__VA_ARGS__,rrep3,rrep2))(__VA_ARGS__)
 #define loop(n) rep2(i_,n)
 #define rep2(i,n) rep3(i,0,n)
@@ -15,7 +14,6 @@ ep(...) repN((__VA_ARGS__,rep3,rep2,loop))(__VA_ARGS__)
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
-
 int ans[100000];
 int main(){
   ll N, K, R;
@@ -26,7 +24,6 @@ int main(){
     return 0;
   }
   //printf("mx=%lld\n", mx);
-
   int diff = N - K;
   rep(i, N){
     int n = i + 1;
@@ -40,8 +37,7 @@ int main(){
       //printf("diff=%d\n", diff);
       int num = N - K - diff;
       ans[num] = n;
-      i+&
-#43;;
+      i++;
       int id = N - 1;
       for(; i < N; i++){
         n = i + 1;
@@ -51,7 +47,6 @@ int main(){
       }
     }
   }
-
   rep(i, N){
     printf("%d%c", ans[i], i != N - 1 ? ' ' : '\n');
   }

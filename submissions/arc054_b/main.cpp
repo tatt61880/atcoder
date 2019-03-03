@@ -12,23 +12,18 @@
 #include <cstring>
 #include <cctype>
 #include <cmath>
-#
-include <cassert>
+#include <cassert>
 using namespace std;
-
 typedef long long ll;
 typedef unsigned long long ull;
-
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
-
 double P;
 double f(double x){
 	return x + P / pow(2, x / 1.5);
 }
-
 int main(void)
 {
 	cin >> P;
@@ -50,7 +45,6 @@ int main(void)
 		if(t4 < min) min = t4;
 		if(t5 < min) min = t5;
 		ans = min;
-
 		double L_ = LL;
 		double M_ = MM;
 		double H_ = HH;
@@ -60,8 +54,7 @@ int main(void)
 		}else if(min == t3){
 			LL = LM;
 			HH = MH;
-	
-	}else{
+		}else{
 			LL = M_;
 			MM = MH;
 		}

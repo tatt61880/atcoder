@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main(void)
 {
 	char S[101];
@@ -11,7 +10,6 @@ int main(void)
 		OK
 	};
 	int c = I;
-
 	for(int i = 0; S[i] != '\0'; i++){
 		switch(c){
 		case I:
@@ -21,8 +19,7 @@ int main(void)
 			break;
 		case C:
 			if(S[i] == 'c' || S[i] == 'C'){
-				c&#4
-3;+;
+				c++;
 			}
 			break;
 		case T:

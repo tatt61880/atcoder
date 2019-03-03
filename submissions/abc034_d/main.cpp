@@ -2,24 +2,18 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
 #define PrintLn(X) cout << X << endl
 #define rep(i, n) for(int i = 0; i < (int)(n); ++i)
-
 typedef struct {
 	double w;
 	double p;
 	double s;
 } Water;
-
 int N, K;
 vector<Water> v;
-
-bool operator<(const Water& left,
- const Water& right) {
+bool operator<(const Water& left, const Water& right) {
 	return left.s < right.s;
 }
-
 bool solve(double p)
 {
 	for(auto& x: v){
@@ -27,15 +21,12 @@ bool solve(double p)
 	}
 	sort(v.begin(), v.end());
 	reverse(v.begin(), v.end());
-
 	double sum = 0;
 	rep(i, K){
 		sum += v[i].s;
 	}
 	return sum >= 0;
 }
-
-
 int main(void)
 {
 	cin >> N >> K;
@@ -44,7 +35,6 @@ int main(void)
 		cin >> w >> p;
 		v.push_back({w, p, 0});
 	}
-
 	double hi = 100.0;
 	double lo = 0.0;
 	double mi;
