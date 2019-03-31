@@ -1,7 +1,8 @@
 ; userIdのみ要変更です。
 const userId: []char :: "tatt61880"
 
-const jsonPath: []char :: "https://kenkoooo.com/atcoder/atcoder-api/results?user="
+const jsonFilename: []char :: "data.json"
+const jsonUrl: []char :: "https://kenkoooo.com/atcoder/atcoder-api/results?user="
 const atcoderBase: []char :: "https://atcoder.jp/contests/"
 
 var dirHtml: []char
@@ -14,7 +15,7 @@ func main()
 		ret
 	end if
 
-	var jsonArray: list<\json@Json> :: (\json@makeJsonF("data.json") $ \json@JsonArray).value
+	var jsonArray: list<\json@Json> :: (\json@makeJsonF(@jsonFilename) $ \json@JsonArray).value
 	do jsonArray.head()
 	;"result":"AC"
 	;"problem_id":"abc023_c"
@@ -165,14 +166,14 @@ func fetchData(url: []char): []char
 end func
 
 func fetchJson(): bool
-	var data: []char :: @fetchData(@jsonPath ~ @userId)
+	var data: []char :: @fetchData(@jsonUrl ~ @userId)
 	if(data =& null)
 		do lib@exitCode(1)
 		do cui@print("JSONデータの取得に失敗しました。\n")
 		ret false
 	end if
 
-	var writer: file@Writer :: file@makeWriter("data.json", false)
+	var writer: file@Writer :: file@makeWriter(@jsonFilename, false)
 	do writer.writeStr(data)
 	do writer.fin()
 	ret true
