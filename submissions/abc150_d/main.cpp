@@ -38,24 +38,32 @@ template<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<"{"
 template<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const multiset<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<"{";for(ll i=0;i<(ll)j.size();++i)o<<(i>0?", ":"")<<j[i];o<<"}";return o;}
+#ifdef LOCAL
+inline void dump(void){cerr<<endl;}
+template<class Head,class... Tail> inline void dump(Head&& head,Tail&&... tail){cerr<<head<<" ";dump(tail...);}
+#define debug(...) do{cerr<<"[L."<<__LINE__<<"]\t"<<#__VA_ARGS__<<"=";dump(__VA_ARGS__);}while(0)
+#else
+#define dump(...)
+#define debug(...)
+#endif
 
 template<class T, class Compare>inline void sort(T&a, Compare comp) { sort(a.begin(), a.end(), comp); }
-template<class T> inline void sort(T&a) { sort(a.begin(), a.end()); }
-template<class T> inline void rsort(T&a) { sort(a.rbegin(), a.rend()); }
-template<class T> inline void reverse(T&a) { reverse(a.begin(), a.end()); }
-template<class T> inline bool next_permutation(T&a) { return next_permutation(a.begin(), a.end()); }
+template<class T>inline void sort(T&a) { sort(a.begin(), a.end()); }
+template<class T>inline void rsort(T&a) { sort(a.rbegin(), a.rend()); }
+template<class T>inline void reverse(T&a) { reverse(a.begin(), a.end()); }
+template<class T>inline bool next_permutation(T&a) { return next_permutation(a.begin(), a.end()); }
 template<class T, class U>inline bool binary_search(T&a, const U&v) { return binary_search(a.begin(), a.end(), v); }
 template<class T, class U>inline auto lower_bound(T&a, const U&v) { return lower_bound(a.begin(), a.end(), v); }
 template<class T, class U>inline auto upper_bound(T&a, const U&v) { return upper_bound(a.begin(), a.end(), v); }
-template<class T> inline T Sum(vector<T>&a){ return accumulate(a.begin(), a.end(), (T)0); }
-template<class T> inline T Max(vector<T>&a){ return *max_element(a.begin(), a.end()); }
-template<class T> inline T Min(vector<T>&a){ return *min_element(a.begin(), a.end()); }
+template<class T>inline T Sum(vector<T>&a){return accumulate(a.begin(), a.end(), (T)0);}
+template<class T>inline T max(vector<T>&a){return *max_element(a.begin(), a.end());}
+template<class T>inline T min(vector<T>&a){return *min_element(a.begin(), a.end());}
 
-template<class T, class U> inline bool chmax(T&a, const U&b){ return (b > a) ? (a = b, true) : false; }
-template<class T, class U> inline bool chmin(T&a, const U&b){ return (b < a) ? (a = b, true) : false; }
+template<class T,class U>inline bool chmax(T&a,const U&b){return(b>a)?(a=b,true):false;}
+template<class T,class U>inline bool chmin(T&a,const U&b){return(b<a)?(a=b,true):false;}
 
-ll gcd(const ll a, const ll b){ return b ? gcd(b, a % b) : a; }
-ll lcm(const ll a, const ll b){ return a / gcd(a, b) * b; }
+ll gcd(const ll a, const ll b){return b ? gcd(b, a % b) : a;}
+ll lcm(const ll a, const ll b){return a / gcd(a, b) * b;}
 
 class in {
   int n, m;
@@ -69,31 +77,19 @@ public:
 };
 
 template<class T> void print(const T& a){ cout << a; }
-inline int out(){ cout << '\n'; return 0; }
-template<class T> inline int out(const T& t){ print(t); cout<<'\n'; return 0; }
-template<class Head, class... Tail> inline int out(const Head& head, const Tail&... tail){ print(head); cout << " "; out(tail...); return 0; }
-
-#ifdef LOCAL
-#include "console_color.hpp"
-template<class T> void debug_print(const T& a){ cerr << a; }
-inline void dump(){ setColor(); cerr << " \n"; }
-template<class T> inline void dump(const T& t){ debug_print(t); setColor(); cerr << " \n"; }
-template<class Head,class... Tail> inline void dump(const Head& head, const Tail&... tail){ setColor(COL_WHITE, COL_DARK_YELLOW); debug_print(head); cerr<<" "; dump(tail...); }
-#define debug(...) do{ setColor(COL_WHITE, COL_DARK_BLUE); cerr<<"[L."<<__LINE__<<"] "<<#__VA_ARGS__<<": "; dump(__VA_ARGS__); }while(0)
-#else
-#define dump(...)
-#define debug(...)
-#endif
+int out(){ cout<<'\n'; return 0; }
+template<class T> int out(const T& t){ print(t); cout<<'\n'; return 0; }
+template<class Head, class... Tail> int out(const Head& head, const Tail&... tail){ print(head); cout << " "; out(tail...); return 0; }
 
 template<class T> vector<T> make_vector(size_t a){return vector<T>(a);}
 template<class T, class... Tail> auto make_vector(size_t a, Tail... tail){ return vector<decltype(make_vector<T>(tail...))>(a, make_vector<T>(tail...)); }
 #define Vector make_vector<ll>
 
-template <std::int_fast64_t Mod> class Modular {
+template <std::uint_fast64_t Mod> class Modular {
   using u64 = std::uint_fast64_t;
 public:
   u64 a;
-  constexpr Modular(std::int_fast64_t x = 0) noexcept : a(x % Mod + (x < 0 ? Mod : 0)) {}
+  constexpr Modular(const u64 x = 0) noexcept : a(x % Mod) {}
   constexpr u64 val() const noexcept { return a; }
   constexpr Modular operator+(const Modular rhs) const noexcept { return Modular(*this) += rhs; }
   constexpr Modular operator-(const Modular rhs) const noexcept { return Modular(*this) -= rhs; }
@@ -107,7 +103,7 @@ public:
   Modular &operator*=(const Modular rhs) noexcept { a = a * rhs.a % Mod; return *this; }
   Modular &operator/=(Modular rhs) noexcept { u64 exp = Mod - 2; while(exp){ if(exp % 2) *this *= rhs; rhs *= rhs; exp /= 2; } return *this; }
 };
-template <std::int_fast64_t Mod> ostream& operator<<(ostream& os, const Modular<Mod>& m){ return os << m.a; }
+template <std::uint_fast64_t Mod> ostream& operator<<(ostream& os, const Modular<Mod>& m){ return os << m.a; }
 
 const double pi=acos(-1);
 const double eps = 1e-9;
@@ -117,11 +113,18 @@ using mint = Modular<mod>;
 //}}}
 
 int main(){
-  ll a = in();
-  ll b = in();
-  ll ans = 0;
-  chmax(ans, a + b);
-  chmax(ans, 2 * a - 1);
-  chmax(ans, 2 * b - 1);
+  ll N = in();
+  ll M = in();
+  vi a = in(N);
+  ll g = a[0];
+  rep(i, N){
+    g = lcm(g, a[i]);
+    if(g > 2 * M) return out(0);
+  }
+  rep(i, N){
+    ll n = (g / a[i]);
+    if(n % 2 == 0) return out(0);
+  }
+  ll ans = (M * 2 / g + 1) / 2;
   out(ans);
-}
+}

@@ -117,11 +117,30 @@ using mint = Modular<mod>;
 //}}}
 
 int main(){
-  ll a = in();
-  ll b = in();
-  ll ans = 0;
-  chmax(ans, a + b);
-  chmax(ans, 2 * a - 1);
-  chmax(ans, 2 * b - 1);
-  out(ans);
-}
+  ll N = in();
+  vi A(N);
+  vi B(N);
+  rep(i, N){
+    A[i] = in();
+    B[i] = in();
+  }
+
+  auto ceil = [](ll a, ll b){
+    return (a + b - 1) / b;
+  };
+
+  int ans = 0;
+  rep(i, 1, N){
+    if(ceil(A[i], B[ans]) > ceil(A[ans], B[i])){
+      ans = i;
+    }
+  }
+
+  rep(i, N){
+    if(i == ans) continue;
+    if(ceil(A[i], B[ans]) >= ceil(A[ans], B[i])){
+      return out(-1);
+    }
+  }
+  out(ans + 1);
+}

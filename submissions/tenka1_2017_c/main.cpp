@@ -117,11 +117,18 @@ using mint = Modular<mod>;
 //}}}
 
 int main(){
-  ll a = in();
-  ll b = in();
-  ll ans = 0;
-  chmax(ans, a + b);
-  chmax(ans, 2 * a - 1);
-  chmax(ans, 2 * b - 1);
-  out(ans);
-}
+  ll N = in();
+  rep(h, 1, 3501){
+    rep(n, 1, 3501){
+      ll a = N * h * n;
+      ll b = 4 * h * n - N * n - N * h;
+      if(b == 0) continue;
+      if(a % b != 0) continue;
+      ll w = a / b;
+      if(w <= 0) continue;
+      debug(h, n, w);
+      out(h, n, w);
+      return 0;
+    }
+  }
+}

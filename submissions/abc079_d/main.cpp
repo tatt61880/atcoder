@@ -117,11 +117,34 @@ using mint = Modular<mod>;
 //}}}
 
 int main(){
-  ll a = in();
-  ll b = in();
+  ll H = in();
+  ll W = in();
+  vvi d = Vector(10, 10);
+  rep(h, 10){
+    rep(w, 10){
+      d[h][w] = in();
+    }
+  }
+
+  // 蟻本 p.98 全点対最短路問題 (ワーシャル-フロイド法)
+  // warshall_floyd
+  [&](int V, vvi& d){
+    rep(k, V){
+      rep(i, V){
+        rep(j, V){
+          chmin(d[i][j], d[i][k] + d[k][j]);
+        }
+      }
+    }
+  }(10, d);
+
   ll ans = 0;
-  chmax(ans, a + b);
-  chmax(ans, 2 * a - 1);
-  chmax(ans, 2 * b - 1);
+  rep(h, H){
+    rep(w, W){
+      ll a = in();
+      if(a == -1) continue;
+      ans += d[a][1];
+    }
+  }
   out(ans);
-}
+}

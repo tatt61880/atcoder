@@ -38,24 +38,32 @@ template<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<"{"
 template<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const multiset<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<"{";for(ll i=0;i<(ll)j.size();++i)o<<(i>0?", ":"")<<j[i];o<<"}";return o;}
+#ifdef LOCAL
+inline void dump(void){cerr<<endl;}
+template<class Head,class... Tail> inline void dump(Head&& head,Tail&&... tail){cerr<<head<<" ";dump(tail...);}
+#define debug(...) do{cerr<<"[L."<<__LINE__<<"]\t"<<#__VA_ARGS__<<"=";dump(__VA_ARGS__);}while(0)
+#else
+#define dump(...)
+#define debug(...)
+#endif
 
 template<class T, class Compare>inline void sort(T&a, Compare comp) { sort(a.begin(), a.end(), comp); }
-template<class T> inline void sort(T&a) { sort(a.begin(), a.end()); }
-template<class T> inline void rsort(T&a) { sort(a.rbegin(), a.rend()); }
-template<class T> inline void reverse(T&a) { reverse(a.begin(), a.end()); }
-template<class T> inline bool next_permutation(T&a) { return next_permutation(a.begin(), a.end()); }
+template<class T>inline void sort(T&a) { sort(a.begin(), a.end()); }
+template<class T>inline void rsort(T&a) { sort(a.rbegin(), a.rend()); }
+template<class T>inline void reverse(T&a) { reverse(a.begin(), a.end()); }
+template<class T>inline bool next_permutation(T&a) { return next_permutation(a.begin(), a.end()); }
 template<class T, class U>inline bool binary_search(T&a, const U&v) { return binary_search(a.begin(), a.end(), v); }
 template<class T, class U>inline auto lower_bound(T&a, const U&v) { return lower_bound(a.begin(), a.end(), v); }
 template<class T, class U>inline auto upper_bound(T&a, const U&v) { return upper_bound(a.begin(), a.end(), v); }
-template<class T> inline T Sum(vector<T>&a){ return accumulate(a.begin(), a.end(), (T)0); }
-template<class T> inline T Max(vector<T>&a){ return *max_element(a.begin(), a.end()); }
-template<class T> inline T Min(vector<T>&a){ return *min_element(a.begin(), a.end()); }
+template<class T>inline T Sum(vector<T>&a){return accumulate(a.begin(), a.end(), (T)0);}
+template<class T>inline T max(vector<T>&a){return *max_element(a.begin(), a.end());}
+template<class T>inline T min(vector<T>&a){return *min_element(a.begin(), a.end());}
 
-template<class T, class U> inline bool chmax(T&a, const U&b){ return (b > a) ? (a = b, true) : false; }
-template<class T, class U> inline bool chmin(T&a, const U&b){ return (b < a) ? (a = b, true) : false; }
+template<class T,class U>inline bool chmax(T&a,const U&b){return(b>a)?(a=b,true):false;}
+template<class T,class U>inline bool chmin(T&a,const U&b){return(b<a)?(a=b,true):false;}
 
-ll gcd(const ll a, const ll b){ return b ? gcd(b, a % b) : a; }
-ll lcm(const ll a, const ll b){ return a / gcd(a, b) * b; }
+ll gcd(const ll a, const ll b){return b ? gcd(b, a % b) : a;}
+ll lcm(const ll a, const ll b){return a / gcd(a, b) * b;}
 
 class in {
   int n, m;
@@ -69,21 +77,9 @@ public:
 };
 
 template<class T> void print(const T& a){ cout << a; }
-inline int out(){ cout << '\n'; return 0; }
-template<class T> inline int out(const T& t){ print(t); cout<<'\n'; return 0; }
-template<class Head, class... Tail> inline int out(const Head& head, const Tail&... tail){ print(head); cout << " "; out(tail...); return 0; }
-
-#ifdef LOCAL
-#include "console_color.hpp"
-template<class T> void debug_print(const T& a){ cerr << a; }
-inline void dump(){ setColor(); cerr << " \n"; }
-template<class T> inline void dump(const T& t){ debug_print(t); setColor(); cerr << " \n"; }
-template<class Head,class... Tail> inline void dump(const Head& head, const Tail&... tail){ setColor(COL_WHITE, COL_DARK_YELLOW); debug_print(head); cerr<<" "; dump(tail...); }
-#define debug(...) do{ setColor(COL_WHITE, COL_DARK_BLUE); cerr<<"[L."<<__LINE__<<"] "<<#__VA_ARGS__<<": "; dump(__VA_ARGS__); }while(0)
-#else
-#define dump(...)
-#define debug(...)
-#endif
+int out(){ cout<<'\n'; return 0; }
+template<class T> int out(const T& t){ print(t); cout<<'\n'; return 0; }
+template<class Head, class... Tail> int out(const Head& head, const Tail&... tail){ print(head); cout << " "; out(tail...); return 0; }
 
 template<class T> vector<T> make_vector(size_t a){return vector<T>(a);}
 template<class T, class... Tail> auto make_vector(size_t a, Tail... tail){ return vector<decltype(make_vector<T>(tail...))>(a, make_vector<T>(tail...)); }
@@ -116,12 +112,30 @@ const ll mod=(ll)1e9+7;
 using mint = Modular<mod>;
 //}}}
 
+ll comb(ll n, ll r) {
+  if(r<0||n<r) return 0;
+  const int kMax=1500000;
+  static ll fact[kMax+1],factr[kMax+1],inv[kMax+1];
+  if(fact[0]==0){
+    fact[0]=factr[0]=inv[1]=1;
+    for(int i=2;i<=kMax;++i) inv[i]=inv[mod%i]*(mod-mod/i)%mod;
+    for(int i=1;i<=kMax;++i) fact[i]=fact[i-1]*i%mod, factr[i]=factr[i-1]*inv[i]%mod;
+  }
+  return factr[r]*fact[n]%mod*factr[n-r]%mod;
+}
+
 int main(){
-  ll a = in();
-  ll b = in();
-  ll ans = 0;
-  chmax(ans, a + b);
-  chmax(ans, 2 * a - 1);
-  chmax(ans, 2 * b - 1);
+  ll N = in();
+  ll K = in();
+  vi A = in(N);
+  sort(A);
+
+  mint ans = 0;
+  rep(i, N){
+    ll X = i;
+    ll Y = N - 1 - i;
+    if(X >= K - 1) ans += comb(X, K - 1) * A[i];
+    if(Y >= K - 1) ans -= comb(Y, K - 1) * A[i];
+  }
   out(ans);
-}
+}

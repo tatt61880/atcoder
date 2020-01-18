@@ -117,11 +117,21 @@ using mint = Modular<mod>;
 //}}}
 
 int main(){
-  ll a = in();
-  ll b = in();
-  ll ans = 0;
-  chmax(ans, a + b);
-  chmax(ans, 2 * a - 1);
-  chmax(ans, 2 * b - 1);
+  string s = in();
+  ll N = sz(s);
+  ll level = 0;
+  ll mx = 0;
+  rep(i, N){
+    if(s[i] == '2'){
+      level++;
+    }else{
+      level--;
+    }
+    if(level == -1) return out(-1);
+    chmax(mx, level);
+  }
+
+  if(level != 0) return out(-1);
+  ll ans = mx;
   out(ans);
-}
+}

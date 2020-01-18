@@ -117,11 +117,30 @@ using mint = Modular<mod>;
 //}}}
 
 int main(){
-  ll a = in();
-  ll b = in();
+  ll N = in();
+  vi x(N);
+  vi y(N);
+  rep(i, N){
+    x[i] = in();
+    y[i] = in();
+  }
+
+  map<pii, ll> mp;
+  rep(i, N){
+    set<pii> st;
+    rep(j, N){
+      if(i == j)continue;
+      st.emplace(x[i] - x[j], y[i] - y[j]);
+    }
+    each(p, st){
+      mp[p]++;
+    }
+  }
+
   ll ans = 0;
-  chmax(ans, a + b);
-  chmax(ans, 2 * a - 1);
-  chmax(ans, 2 * b - 1);
+  each(x, mp){
+    chmax(ans, x.second);
+  }
+  ans = N - ans;
   out(ans);
-}
+}

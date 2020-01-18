@@ -38,6 +38,14 @@ template<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<"{"
 template<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const multiset<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<"{";for(ll i=0;i<(ll)j.size();++i)o<<(i>0?", ":"")<<j[i];o<<"}";return o;}
+#ifdef LOCAL
+inline void dump(void){cerr<<endl;}
+template<class Head,class... Tail> inline void dump(Head&& head,Tail&&... tail){cerr<<head<<" ";dump(tail...);}
+#define debug(...) do{cerr<<"[L."<<__LINE__<<"]\t"<<#__VA_ARGS__<<"=";dump(__VA_ARGS__);}while(0)
+#else
+#define dump(...)
+#define debug(...)
+#endif
 
 template<class T, class Compare>inline void sort(T&a, Compare comp) { sort(a.begin(), a.end(), comp); }
 template<class T> inline void sort(T&a) { sort(a.begin(), a.end()); }
@@ -48,8 +56,8 @@ template<class T, class U>inline bool binary_search(T&a, const U&v) { return bin
 template<class T, class U>inline auto lower_bound(T&a, const U&v) { return lower_bound(a.begin(), a.end(), v); }
 template<class T, class U>inline auto upper_bound(T&a, const U&v) { return upper_bound(a.begin(), a.end(), v); }
 template<class T> inline T Sum(vector<T>&a){ return accumulate(a.begin(), a.end(), (T)0); }
-template<class T> inline T Max(vector<T>&a){ return *max_element(a.begin(), a.end()); }
-template<class T> inline T Min(vector<T>&a){ return *min_element(a.begin(), a.end()); }
+template<class T> inline T max(vector<T>&a){ return *max_element(a.begin(), a.end()); }
+template<class T> inline T min(vector<T>&a){ return *min_element(a.begin(), a.end()); }
 
 template<class T, class U> inline bool chmax(T&a, const U&b){ return (b > a) ? (a = b, true) : false; }
 template<class T, class U> inline bool chmin(T&a, const U&b){ return (b < a) ? (a = b, true) : false; }
@@ -69,21 +77,9 @@ public:
 };
 
 template<class T> void print(const T& a){ cout << a; }
-inline int out(){ cout << '\n'; return 0; }
-template<class T> inline int out(const T& t){ print(t); cout<<'\n'; return 0; }
-template<class Head, class... Tail> inline int out(const Head& head, const Tail&... tail){ print(head); cout << " "; out(tail...); return 0; }
-
-#ifdef LOCAL
-#include "console_color.hpp"
-template<class T> void debug_print(const T& a){ cerr << a; }
-inline void dump(){ setColor(); cerr << " \n"; }
-template<class T> inline void dump(const T& t){ debug_print(t); setColor(); cerr << " \n"; }
-template<class Head,class... Tail> inline void dump(const Head& head, const Tail&... tail){ setColor(COL_WHITE, COL_DARK_YELLOW); debug_print(head); cerr<<" "; dump(tail...); }
-#define debug(...) do{ setColor(COL_WHITE, COL_DARK_BLUE); cerr<<"[L."<<__LINE__<<"] "<<#__VA_ARGS__<<": "; dump(__VA_ARGS__); }while(0)
-#else
-#define dump(...)
-#define debug(...)
-#endif
+int out(){ cout<<'\n'; return 0; }
+template<class T> int out(const T& t){ print(t); cout<<'\n'; return 0; }
+template<class Head, class... Tail> int out(const Head& head, const Tail&... tail){ print(head); cout << " "; out(tail...); return 0; }
 
 template<class T> vector<T> make_vector(size_t a){return vector<T>(a);}
 template<class T, class... Tail> auto make_vector(size_t a, Tail... tail){ return vector<decltype(make_vector<T>(tail...))>(a, make_vector<T>(tail...)); }
@@ -117,11 +113,26 @@ using mint = Modular<mod>;
 //}}}
 
 int main(){
-  ll a = in();
-  ll b = in();
-  ll ans = 0;
-  chmax(ans, a + b);
-  chmax(ans, 2 * a - 1);
-  chmax(ans, 2 * b - 1);
+  ll N = in();
+  ll K = in();
+  vi A = in(N);
+  mint ans1 = 0;
+  rep(i, N){
+    rep(j, i+1, N){
+      if(A[i] > A[j]) ++ans1;
+    }
+  }
+  map<ll, ll> mp;
+  rep(i, N){
+    ++mp[A[i]];
+  }
+  mint ans2 = 0;
+  each(x, mp){
+    ans2 += (N - x.second) * x.second;
+  }
+  ans2 /= 2;
+
+  mint ans = ans1 * K;
+  ans += ans2 * K * (K - 1) / 2;
   out(ans);
-}
+}
