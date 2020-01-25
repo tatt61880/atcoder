@@ -152,8 +152,16 @@ using mint = Modular<mod>;
 //}}}
 
 int main(){
-  ll a = in();
-  ll b = in();
-  ll ans = b % a == 0 ? (a + b) : (b - a);
+  ll N = in();
+  ll K = in();
+  vi A = in(N);
+  vi cum = in(N + 1);
+  rep(i, N){
+    cum[i + 1] = cum[i] + A[i];
+  }
+  ll ans = 0;
+  rep(l, N){
+    ans += cum.end() - lower_bound(cum, cum[l] + K);
+  }
   out(ans);
 }

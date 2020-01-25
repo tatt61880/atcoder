@@ -11,7 +11,6 @@ struct IoSetup {
   };
 } ioSetup;
 
-//{{{ rep rrep loop
 #define repX(a,b,c,d,x,...) x
 #define repN(a) repX a
 #define rep(...) repN((__VA_ARGS__,rep4,rep3,rep2,loop))(__VA_ARGS__)
@@ -23,11 +22,9 @@ struct IoSetup {
 #define rrep2(i,n) rrep3(i,0,n)
 #define rrep3(i,begin,end) for(ll i=(ll)(end-1),i##_end=(ll)(begin);i>=i##_end;--i)
 #define rrep4(i,begin,end,step) for(ll i=(ll)(end-1),i##_end=(ll)(begin);i>=i##_end;i-=step)
-//}}}
 #define each(x,a) for(auto&x:a)
 #define sz(x) ((ll)(x).size())
 
-//{{{ Type
 using ull = unsigned long long;
 using ll = long long;
 using pii = pair<ll, ll>;
@@ -37,9 +34,6 @@ using vi = vector<ll>;
 using vvi = vector<vi>;
 #define v(T) vector<T>
 #define vv(T) v(v(T))
-template<class T> vector<T> Vector(size_t a, T val){return vector<T>(a, val);}
-template<class... Tail> auto Vector(size_t a, Tail... tail){ return vector<decltype(Vector(tail...))>(a, Vector(tail...)); }
-//}}}
 
 //{{{ STL overload
 template<class T, class Compare>inline void sort(T&a, Compare comp) { sort(a.begin(), a.end(), comp); }
@@ -52,7 +46,6 @@ template<class T, class U>inline auto lower_bound(T&a, const U&v) { return lower
 template<class T, class U>inline auto upper_bound(T&a, const U&v) { return upper_bound(a.begin(), a.end(), v); }
 //}}}
 
-//{{{ Functions
 template<class T> inline T Sum(vector<T>&a){ return accumulate(a.begin(), a.end(), (T)0); }
 template<class T> inline T Max(vector<T>&a){ return *max_element(a.begin(), a.end()); }
 template<class T> inline T Min(vector<T>&a){ return *min_element(a.begin(), a.end()); }
@@ -63,6 +56,8 @@ template<class T, class U> inline bool chmin(T&a, const U&b){ return (b < a) ? (
 ll gcd(const ll a, const ll b){ return b ? gcd(b, a % b) : a; }
 ll lcm(const ll a, const ll b){ return a / gcd(a, b) * b; }
 ll ceil(const ll a, const ll b){ return (a + b - 1) / b; }
+
+//{{{ popcount
 ll popcount(ll a){
   a -= ((a >> 1) & 0x5555555555555555LL);
   a = (a & 0x3333333333333333LL) + ((a >> 2) & 0x3333333333333333LL);
@@ -104,11 +99,7 @@ template<class Head, class... Tail> inline int out(const Head& head, const Tail&
 
 //{{{ debug_print / debug_out
 #ifdef LOCAL
-#if 1 // Colorize
 #include "console_color.hpp"
-#else
-#define setColor(...)
-#endif
 template<class T> int debug_print(const T& a){ cerr << a; return 0; }
 inline int debug_out(){ cerr << '\n'; return 0; }
 template<class T> inline int debug_out(const T& t){ debug_print(t); cerr << '\n'; return 0; }
@@ -120,6 +111,10 @@ template<class Head, class... Tail> inline int debug_out(const Head& head, const
 #define debug(...)
 #endif
 //}}}
+
+template<class T> vector<T> make_vector(size_t a){return vector<T>(a);}
+template<class T, class... Tail> auto make_vector(size_t a, Tail... tail){ return vector<decltype(make_vector<T>(tail...))>(a, make_vector<T>(tail...)); }
+#define Vector make_vector<ll>
 
 //{{{ Modular
 template <std::int_fast64_t Mod> class Modular {
@@ -152,8 +147,27 @@ using mint = Modular<mod>;
 //}}}
 
 int main(){
-  ll a = in();
-  ll b = in();
-  ll ans = b % a == 0 ? (a + b) : (b - a);
+  ll c = in();
+  ll d = in();
+
+  auto f = [](ll x){
+    ll res = 0;
+    ll lo = 140;
+    ll hi = 170;
+    while(1){
+      if(x > hi){
+        res += hi - lo;
+      }else if(x < lo){
+        break;
+      }else{
+        res += x - lo;
+      }
+      lo *= 2;
+      hi *= 2;
+    }
+    return res;
+  };
+
+  ll ans = f(d) - f(c);
   out(ans);
 }

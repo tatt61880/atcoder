@@ -152,8 +152,32 @@ using mint = Modular<mod>;
 //}}}
 
 int main(){
-  ll a = in();
-  ll b = in();
-  ll ans = b % a == 0 ? (a + b) : (b - a);
-  out(ans);
+  // N以下の素数を要素に持つ vector<int> を返します。
+  auto Primes = [](int N){
+    vi res;
+    vector<bool> f(N + 1);
+    for(int i = 2; i * i <= N; ++i){
+      for(int t = i * i; t <= N; t += i) f[t] = true;
+    }
+    rep(i, 2, N + 1) if(!f[i]) res.push_back(i);
+    return res;
+  };
+  const int maxR = 100000;
+  vi isPrime(maxR + 1);
+  each(p, Primes(maxR)){
+    isPrime[p] = 1;
+  }
+  vi cnt(maxR + 1);
+  rep(i, 1, maxR + 1){
+    cnt[i] = (isPrime[i] && isPrime[(i + 1) / 2]) + cnt[i - 1];
+  }
+
+  vi primes = Primes(20000);
+  ll q = in();
+  loop(q){
+    ll l = in();
+    ll r = in();
+    ll ans = cnt[r] - cnt[l - 1];
+    out(ans);
+  }
 }
