@@ -1,6 +1,8 @@
 ; userIdのみ要変更です。
 const userId: []char :: "tatt61880"
-
+{
+https://kenkoooo.com/atcoder/atcoder-api/results?user=tatt61880
+}
 const jsonFilename: []char :: "data.json"
 const jsonUrl: []char :: "https://kenkoooo.com/atcoder/atcoder-api/results?user="
 const atcoderBase: []char :: "https://atcoder.jp/contests/"
