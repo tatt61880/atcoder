@@ -12,12 +12,17 @@ var dirSubmissions: []char
 var dictOldFilesFlag: dict<[]char, bool>
 var dictExtensions: dict<[]char, []char>
 
+var regexCode: regex@Regex
+var dictConstantId: dict<[]char, []char>
+var dictLanguage: dict<[]char, []char>
+
 func main()
 	{
 	if(!@fetchJson())
 		ret
 	end if
 	}
+	
 	var jsonArray: list<\json@Json> :: (\json@makeJsonF(@jsonFilename) $ \json@JsonArray).value
 	do jsonArray.head()
 	;"result":"AC"
@@ -28,9 +33,9 @@ func main()
 	;"id":660366
 	;"language":"C++ (GCC 4.9.2)"
 	var dictId: dict<[]char, int> :: #dict<[]char, int>
-	var dictConstantId: dict<[]char, []char> :: #dict<[]char, []char>
 	var dictEpochSecond: dict<[]char, int> :: #dict<[]char, int>
-	var dictLanguage: dict<[]char, []char> :: #dict<[]char, []char>
+	do @dictConstantId :: #dict<[]char, []char>
+	do @dictLanguage :: #dict<[]char, []char>
 
 	for i(0, ^jsonArray - 1)
 		var json: \json@Json :: jsonArray.get()
@@ -44,12 +49,12 @@ func main()
 			end if
 			do dictEpochSecond.add(problemId, epochSecond)
 			do dictId.add(problemId, json.find("id").toi())
-			do dictConstantId.add(problemId, json.find("contest_id").toStr())
-			do dictLanguage.add(problemId, json.find("language").toStr())
+			do @dictConstantId.add(problemId, json.find("contest_id").toStr())
+			do @dictLanguage.add(problemId, json.find("language").toStr())
 		end if
 	end for
 
-	do @dirHtml :: "\{file@exeDir()}html/"
+	do @dirHtml :: "\{wnd@exeDir()}html/"
 	do @dictOldFilesFlag :: #dict<[]char, bool>
 	if(file@exist(@dirHtml))
 		do file@forEach(@dirHtml, false, callback, null)
@@ -63,7 +68,7 @@ func main()
 		do file@makeDir(@dirHtml)
 	end if
 
-	do @dirSubmissions :: "\{file@exeDir()}submissions/"
+	do @dirSubmissions :: "\{wnd@exeDir()}submissions/"
 	if(!file@exist(@dirSubmissions))
 		if(!file@makeDir(@dirSubmissions))
 			do lib@exitCode(1)
@@ -78,13 +83,14 @@ func main()
 		ret
 	end if
 
-	var regexCode: regex@Regex :: regex@makeRegex("<pre id=\"submission-code\" class=\"prettyprint linenums\">([\\d\\D]+?)</pre>")
-	assert regexCode <>& null
-	var problemIds: [][]char :: dictId.toArrayKey() {["abc001_a", "abc001_b", ...]という感じの配列です}
-	for i(0, ^problemIds - 1)
-		var id: int :: dictId.get(problemIds[i], &)
-		var contestId: []char :: dictConstantId.get(problemIds[i], &)
-		var language: []char :: dictLanguage.get(problemIds[i], &)
+	do @regexCode :: regex@makeRegex("<pre id=\"submission-code\" class=\"prettyprint linenums\">([\\d\\D]+?)</pre>")
+	assert @regexCode <>& null
+	
+	do dictId.forEach(callback, null)
+
+	func callback(problemId: []char, id: int, d: kuin@Class): bool
+		var contestId: []char :: @dictConstantId.get(problemId, &)
+		var language: []char :: @dictLanguage.get(problemId, &)
 		var url: []char :: "\{@atcoderBase}\{contestId}/submissions/\{id}"
 		var filepath: []char :: "\{@dirHtml}\{contestId}#\{id}.html"
 		do @dictOldFilesFlag.add(filepath, false)
@@ -104,12 +110,12 @@ func main()
 			end while
 		end if
 		block
-			var dirProblem: []char :: "\{@dirSubmissions}\{problemIds[i]}/"
+			var dirProblem: []char :: "\{@dirSubmissions}\{problemId}/"
 			if(!file@exist(dirProblem))
 				if(!file@makeDir(dirProblem))
 					do lib@exitCode(1)
 					do cui@print("\{dirProblem}を作成できません。\n")
-					ret
+					ret false
 				end if
 			end if
 
@@ -117,7 +123,7 @@ func main()
 			if(extension =& null)
 				do @addExtension(language, &extension)
 			end if
-			var result: [][]char :: regexCode.find(&, data, -1)
+			var result: [][]char :: @regexCode.find(&, data, -1)
 			if(result =& null)
 				do cui@print("ERROR: Failed to find source code. [\{contestId}#\{id}]\n")
 			else
@@ -136,7 +142,8 @@ func main()
 				do writer.fin()
 			end if
 		end block
-	end for
+		ret true
+	end func
 
 	do @removeOldFiles()
 end func
@@ -196,7 +203,7 @@ var arrLanguages: [][]char
 var arrExtensions: [][]char
 
 func initExtensions(): bool
-	var extensionFilepath: []char :: "\{file@exeDir()}extensions.csv"
+	var extensionFilepath: []char :: "\{wnd@exeDir()}extensions.csv"
 	var reader: file@Reader :: file@makeReader(extensionFilepath)
 	if(reader =& null)
 		do lib@exitCode(1)
