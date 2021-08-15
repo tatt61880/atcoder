@@ -2,6 +2,7 @@
 const userId: []char :: "tatt61880"
 {
 https://kenkoooo.com/atcoder/atcoder-api/results?user=tatt61880
+https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=tatt61880&from_second=1627824210
 }
 const jsonFilename: []char :: "data.json"
 const jsonUrl: []char :: "https://kenkoooo.com/atcoder/atcoder-api/results?user="
