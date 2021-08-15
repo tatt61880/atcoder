@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main(void)
 {
 	char B[4][4];

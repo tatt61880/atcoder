@@ -6,6 +6,7 @@ using namespace std;
 	
 vector<int> v[100];
 int f[100] = {0};
+
 int connected(int n, int exception){
 	f[n] = 1;
 	int loop = 0;
@@ -18,6 +19,7 @@ int connected(int n, int exception){
 	}
 	return loop;
 }
+
 int main(void)
 {
 	int N, M;

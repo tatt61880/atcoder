@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 int f(int a, int b){
   int res;
   if(b < 0){
@@ -25,6 +26,7 @@ int f(int a, int b){
   }
   return res;
 }
+
 int x[100000];
 int main(){
   int N, K;

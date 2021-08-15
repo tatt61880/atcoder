@@ -7,6 +7,7 @@ int num(int n){
 	}
 	return ret;
 }
+
 int main(void)
 {
 	int A, B;

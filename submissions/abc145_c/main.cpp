@@ -12,6 +12,7 @@ using namespace std;
 #define rrep3(i,begin,end) for(int i=(int)(end-1),i##_end=(int)(begin);i>=i##_end;--i)
 #define foreach(x,a) for(auto&x:a)
 using ll=long long;
+
 template<class T,class U>ostream &operator<<(ostream &o,const pair<T,U>&j){o<<"{"<<j.first<<", "<<j.second<<"}";return o;}
 template<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
@@ -25,6 +26,7 @@ template<class Head,class... Tail> inline void dump(Head&& head,Tail&&... tail){
 #define dump(...)
 #define debug(...)
 #endif
+
 template<class T,class U>inline bool chmax(T&a,U b){return(a<b)?(a=b,true):false;}
 template<class T,class U>inline bool chmin(T&a,U b){return(a>b)?(a=b,true):false;}
 struct IoSetup{
@@ -34,6 +36,7 @@ struct IoSetup{
     cerr << fixed << setprecision(10);
   };
 } ioSetup;
+
 class in {
   int n;
 public:
@@ -42,10 +45,12 @@ public:
   template <class T> operator T() { T ret; cin >> ret; return ret; }
   template <class T> operator vector<T>() { vector<T> ret(n); for (int i = 0; i < n; i++) cin >> ret[i]; return ret; }
 };
+
 template<class T> void print(const T& a){ cout << a; }
 int out(){ putchar('\n'); return 0; }
 template<class T> int out(const T& t){ print(t); putchar('\n'); return 0; }
 template<class Head, class... Tail> int out(const Head& head, const Tail&... tail){ print(head); putchar(' '); out(tail...); return 0; }
+
 template <std::uint_fast64_t Mod> class Modular {
   using u64 = std::uint_fast64_t;
 public:
@@ -66,11 +71,14 @@ public:
 };
 template <std::uint_fast64_t Mod>
 ostream& operator<<(ostream& os, const Modular<Mod>& m){ return os << m.a; }
+
 ll gcd(ll a, ll b){return b ? gcd(b, a % b) : a;}
 ll lcm(ll a, ll b){return a / gcd(a, b) * b;}
+
 const ll mod=(ll)1e9+7;
 using mint = Modular<mod>;
 //}}}
+
 int main(){
   int N = in();
   vector<int> arr(N);
@@ -83,6 +91,7 @@ int main(){
     x[i] = in();
     y[i] = in();
   }
+
   double ans = 0;
   auto dist = [&](int a, int b){
     double res = 0;

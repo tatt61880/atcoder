@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 const int maxVal = 100000;
 int a[maxVal];
 int X[maxVal];
@@ -27,6 +28,7 @@ int main(){
   rep(i, maxVal){
     ans = max(ans, X[i]);
   }
+
   cout << ans << endl;
   return 0;
 }

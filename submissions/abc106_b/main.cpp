@@ -14,9 +14,11 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 int main(){
   int N;
   cin >> N;
+
   int ans = 0;
   rep(n, 1, N + 1){
     if(n % 2 == 0) continue;

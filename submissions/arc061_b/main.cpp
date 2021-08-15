@@ -14,25 +14,32 @@
 #include <cmath>
 #include <cassert>
 using namespace std;
+
 typedef long long LL;
 typedef unsigned long long ULL;
+
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 int a[100000];
 int b[100000];
 set<pair<int, int>> st;
+
 LL H, W, N;
 int exist(int a, int b){
 	return (1 <= a && a <= H && 1 <= b && b <= W && st.count(pair<int, int>(a, b)));
 }
+
 int cou[9];
+
 int main(void)
 {
 	LL ans[10] = {0};
 	cin >> H >> W >> N;
 	LL total = (H - 2) * (W - 2);
+
 	Rep(i, N){
 		cin >> a[i] >> b[i];
 		st.insert(pair<int, int>(a[i], b[i]));
@@ -71,9 +78,11 @@ int main(void)
 			if(cou[x])ans[cou[x]]++;
 		}
 	}
+
 	For(i, 1, 10){
 		ans[i] /= i;
 	}
+
 	ans[0] = total;
 	For(i, 1, 10){
 		ans[0] -= ans[i];

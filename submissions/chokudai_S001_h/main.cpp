@@ -1,20 +1,26 @@
 #include <iostream>
 using namespace std;
+
 typedef long long ll;
 typedef unsigned long long ull;
+
 ll MOD = 1000000007;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i <= (int)(b); ++i)
+
 int N;
 ll a[100000];
 int L[100000]; // LIS
 ll ans = 0;
+
 int LIS(void)
 {
 	int len;
 	int k;
 	int lo, hi, md;
+
 	L[0] = a[0];
 	len = 1;
 	for(k = 1; k < N; k++){

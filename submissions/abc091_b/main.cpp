@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 int main(){
   map<string, int> mp;
   string s;

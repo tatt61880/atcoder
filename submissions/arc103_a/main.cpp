@@ -11,6 +11,7 @@ using namespace std;
 #define rrep2(i,n) rrep3(i,n,0)
 #define rrep3(i,begin,end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
 //}}}
+
 int main(){
   int n;
   cin >> n;

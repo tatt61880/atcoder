@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 string s[1000];
 ll ans[1000][1000];
 string d;
@@ -22,6 +23,7 @@ typedef struct {
   int x;
   int y;
 } Pos;
+
 int N, M, K;
 int isValid(int x, int y){
   if(x < 0) return false;
@@ -31,11 +33,13 @@ int isValid(int x, int y){
   if(s[y][x] == '#') return false;
   return true;
 }
+
 int main(){
   cin >> N >> M >> K;
   cin >> d;
   d += d;
   rep(i, N) cin >> s[i];
+
   int Sx;
   int Sy;
   int Gx;

@@ -14,9 +14,11 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int dp[100000];
 int h[100000];
 const int inf = 2000000000;
+
 int main(){
   int N, K;
   cin >> N >> K;
@@ -32,6 +34,7 @@ int main(){
       }
     }
   }
+
   int ans = dp[N - 1];
   cout << ans << endl;
   return 0;

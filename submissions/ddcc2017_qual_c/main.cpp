@@ -1,8 +1,10 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int L[100000];
 int main(void)
 {
@@ -12,6 +14,7 @@ int main(void)
 		cin >> L[i];
 	}
 	sort(L, L + N);
+
 	int l = 0, r = N - 1;
 	int ans = 0;
 	while(1){

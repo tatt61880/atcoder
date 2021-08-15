@@ -4,6 +4,7 @@ using namespace std;
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, m, n) for(int i = m; i < (int)(n); ++i)
+
 int main(void)
 {
 	int N;

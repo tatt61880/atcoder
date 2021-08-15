@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
+
 #define SQUARE(x) ((x) * (x))
+
 int main(void)
 {
 	int N;
@@ -19,5 +21,6 @@ int main(void)
 		}
 	}
 	printf("%.15f\n", (double)d_max);
+
 	return 0;
 }

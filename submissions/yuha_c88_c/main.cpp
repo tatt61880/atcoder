@@ -5,6 +5,7 @@
 using namespace std;
 #define Rep(i, n) for(int i = 0; i < (n); i++)
 #define PrintLn(x) cout << (x) << endl;
+
 int main(void)
 {
 	int N;
@@ -12,6 +13,7 @@ int main(void)
 	map<string, pair<string, bool>> mp;
 	string S[20];
 	Rep(n, N) cin >> S[n];
+
 	int U[20];
 	bool V[20];
 	Rep(n, N){
@@ -23,6 +25,7 @@ int main(void)
 	index = 0;
 	map<string, int> StoI;
 	for(auto& x:mp) StoI[x.first] = index++;
+
 	index = 0;
 	for(auto& x:mp){
 		U[index] = StoI[x.second.first];

@@ -14,12 +14,14 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int main(){
   int N, x;
   cin >> N >> x;
   int a[100];
   rep(i, N) cin >> a[i];
   sort(a, a + N);
+
   int ans = 0;
   rep(i, N){
     if(i == N - 1){
@@ -33,6 +35,7 @@ int main(){
       }
     }
   }
+
   cout << ans << endl;
   return 0;
 }

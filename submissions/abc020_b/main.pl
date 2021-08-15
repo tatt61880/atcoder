@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 my $S = <>;
 chomp $S;
 $S =~ s/ //;

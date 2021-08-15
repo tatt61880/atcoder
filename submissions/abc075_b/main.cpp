@@ -1,9 +1,12 @@
 #include <iostream>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int H, W;
 char m[100][100];
+
 int sub(int h, int w)
 {
 	if(h < 0) return 0;
@@ -13,6 +16,7 @@ int sub(int h, int w)
 	if(m[h][w] == '#') return 1;
 	return 0;
 }
+
 int count(int h, int w)
 {
 	int res = 0;
@@ -25,10 +29,13 @@ int count(int h, int w)
 	}
 	return res;
 }
+
 int main(void)
 {
 	cin >> H >> W;
+
 	Rep(h, H) cin >> m[h];
+
 	Rep(h, H){
 		Rep(w, W){
 			if(m[h][w] == '.'){

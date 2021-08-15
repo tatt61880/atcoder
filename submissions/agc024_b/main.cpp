@@ -11,8 +11,10 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 int a[200000];
 int pos[200000];
+
 int main(){
   ll N;
   cin >> N;
@@ -20,6 +22,7 @@ int main(){
   rep(i, N){
     pos[a[i] - 1] = i;
   }
+
   int i = 0;
   int posCurr;
   int posPrev = pos[i];
@@ -39,6 +42,7 @@ int main(){
     posPrev = posCurr;
   }
   ans = N - ans;
+
   cout << ans << endl;
   return 0;
 }

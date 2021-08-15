@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 typedef long long ll;
 #if 0
 蜷郁ｨ・
@@ -26,6 +27,7 @@ typedef long long ll;
 4,2 W
 3,3 L
 #endif
+
 int main(void)
 {
 	ll X, Y;

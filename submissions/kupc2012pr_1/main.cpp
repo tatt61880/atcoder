@@ -3,6 +3,7 @@ using namespace std;
 #define PrintLn(X) cout << (X) << endl
 #define Rep(i, n) for(int i = 0; i < (n); i++)
 typedef long long LL;
+
 LL A(int m, int n){
 	if(m == 0) return n + 1;
 	if(m == 1) return n + 2;

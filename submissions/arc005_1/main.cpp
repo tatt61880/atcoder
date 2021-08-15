@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+
 #define SQUARE(x) ((x) * (x))
+
 int main(void)
 {
 	int N;
@@ -15,5 +17,6 @@ int main(void)
 		if(strcmp(S, "takahashikun") == 0) count++;
 	}
 	printf("%d\n", count);
+
 	return 0;
 }

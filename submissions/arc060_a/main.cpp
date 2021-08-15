@@ -11,11 +11,13 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 ll x[100];
 ll sumNum[100][2501] = {0};
 int main(){
   int N, A;
   cin >> N >> A;
+
   rep(i, N){
     cin >> x[i];
   }
@@ -29,6 +31,7 @@ int main(){
     }
     sumNum[1][x[n]]++;
   }
+
   ll ans = 0;
   rep(n, 1, N + 1){
     ans += sumNum[n][n * A];

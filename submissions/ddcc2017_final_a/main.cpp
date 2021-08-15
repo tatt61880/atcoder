@@ -11,11 +11,14 @@ using namespace std;
 #define rrep2(i,n) rrep3(i,n,0)
 #define rrep3(i,begin,end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
 //}}}
+
 int K;
+
 bool in(int x, int y, int r)
 {
   return x * x + y * y <= r * r;
 }
+
 int num(int size)
 {
   int res = 0;
@@ -36,6 +39,7 @@ int num(int size)
   }
   return res;
 }
+
 int main(void)
 {
   cin >> K;

@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 998244353;
 //}}}
+
 ll x[1000];
 ll y[1000];
 ll z[1000];
@@ -24,6 +25,7 @@ int main(){
     cin >> y[i];
     cin >> z[i];
   }
+
   rep(i, 8){
     rep(j, N){
       w[j] = 0;

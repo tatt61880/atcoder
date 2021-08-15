@@ -14,13 +14,16 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int H, W, N;
+
 int main(){
   cin >> H >> W >> N;
   int sy, sx;
   cin >> sy >> sx;
   string S, T;
   cin >> S >> T;
+
   int ans = true;
   // ←
   {
@@ -70,6 +73,7 @@ int main(){
       if(y != 1 && T[i] == 'U') y--;
     }
   }
+
 F:
   puts(ans ? "YES" : "NO");
   return 0;

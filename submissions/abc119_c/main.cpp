@@ -14,9 +14,12 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 const int inf = 100000000;
+
 int l[8];
 int N, A, B, C;
+
 int g(vector<int> v, int target){
   if(v.size() == 0) return inf;
   int sum = 0;
@@ -25,6 +28,7 @@ int g(vector<int> v, int target){
   }
   return (v.size() - 1) * 10 + abs(sum - target);
 }
+
 int f(vector<int> v[4]){
   int res = 0;
   res += g(v[0], A);
@@ -32,6 +36,7 @@ int f(vector<int> v[4]){
   res += g(v[2], C);
   return res;
 }
+
 int main(){
   cin >> N >> A >> B >> C;
   rep(i, N) cin >> l[i];

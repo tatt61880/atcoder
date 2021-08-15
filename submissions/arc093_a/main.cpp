@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = (ll)1e9+7;
 //}}}
+
 int a[100002];
 int ab[100000];
 int b[100000];
@@ -32,5 +33,6 @@ int main(){
     ans -= abs(a[i + 1] - a[i]) + abs(a[i + 2] - a[i + 1]) - abs(a[i + 2] - a[i]);
     cout << ans << endl;
   }
+
   return 0;
 }

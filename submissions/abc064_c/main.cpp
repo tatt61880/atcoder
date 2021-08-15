@@ -11,11 +11,14 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 ll gcd(ll a, ll b){return b ? gcd(b, a % b) : a;}
 ll lcm(ll a, ll b){return a / gcd(a, b) * b;}
+
 int main(){
   int N;
   cin >> N;
+
   set<int> st;
   int x = 0;
   rep(i, N){
@@ -33,6 +36,7 @@ int main(){
   if(ansMin == 0){
     ansMin = 1;
   }
+
   cout << ansMin << " " << ansMax << endl;
   return 0;
 }

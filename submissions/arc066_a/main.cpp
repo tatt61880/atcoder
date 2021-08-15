@@ -11,12 +11,14 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 int a[100000];
 int main(){
   int N;
   cin >> N;
   rep(i, N) cin >> a[i];
   sort(a, a+N);
+
   int ans = 1;
   rep(i, N){
     if(a[i] != (i + 2 - N % 2) / 2 * 2 + N % 2 - 1){

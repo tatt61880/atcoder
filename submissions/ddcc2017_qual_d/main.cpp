@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 char m[201][201];
 int main(void)
 {
@@ -9,6 +11,7 @@ int main(void)
 	int H, W;
 	int A, B;
 	cin >> H >> W >> A >> B;
+
 	Rep(i, H){
 		cin >> m[i];
 	}
@@ -37,6 +40,7 @@ int main(void)
 			}
 		}
 	}
+
 	int x = A + B;
 	x += (A + B) * (ab / 4) + (A > B ? A : B ) * (ab / 4);
 	if(a == 0 && b == 0 && ab_ == 0 && o == 0){
@@ -44,6 +48,7 @@ int main(void)
 		PrintLn(x);
 		return 0;
 	}
+
 	if(A * ((a + ab_) / 2) > B * ((b + ab_) / 2)){
 		x += A * ((a + ab_) / 2);
 		if(b || o){

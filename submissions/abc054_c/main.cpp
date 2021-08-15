@@ -11,7 +11,9 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 int path[8][8] = {0};
+
 int f(int arr[], int n){
   int start, end;
   start = 0;
@@ -22,9 +24,11 @@ int f(int arr[], int n){
   }
   return 1;
 }
+
 int main(){
   int N, M;
   cin >> N >> M;
+
   rep(i, M){
     int a, b;
     cin >> a >> b;
@@ -37,6 +41,7 @@ int main(){
   rep(i, 1, N){
     arr[i - 1] = i;
   }
+
   int ans = 0;
   do{
     ans += f(arr, N - 1);

@@ -11,8 +11,10 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 int f[100] = {0};
 int p[100][11];
+
 int countSameBitNum(int n, int m){
   int res = 0;
   while(n && m){
@@ -22,6 +24,7 @@ int countSameBitNum(int n, int m){
   }
   return res;
 }
+
 int main(){
   int N;
   cin >> N;
@@ -39,6 +42,7 @@ int main(){
       cin >> p[i][j];
     }
   }
+
   int ans = 0;
   rep(i, 1, 1024){
     int sum = 0;

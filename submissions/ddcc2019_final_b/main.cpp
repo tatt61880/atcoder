@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int ans[100000];
 int main(){
   ll N, K, R;
@@ -24,6 +25,7 @@ int main(){
     return 0;
   }
   //printf("mx=%lld\n", mx);
+
   int diff = N - K;
   rep(i, N){
     int n = i + 1;
@@ -47,6 +49,7 @@ int main(){
       }
     }
   }
+
   rep(i, N){
     printf("%d%c", ans[i], i != N - 1 ? ' ' : '\n');
   }

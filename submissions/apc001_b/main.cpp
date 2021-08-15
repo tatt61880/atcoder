@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 ll a[10000];
 ll b[10000];
 int main(){

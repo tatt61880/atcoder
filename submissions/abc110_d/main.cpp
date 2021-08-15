@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 ll modpow(ll a, ll b){
   if(b == 0) return 1;
   if(b & 1){
@@ -23,20 +24,24 @@ ll modpow(ll a, ll b){
     return half * half % mod;
   }
 }
+
 ll modfact(ll n){
   ll res = 1;
   rep(i, n) res = res * (i + 1) % mod;
   return res;
 }
+
 ll modcomb(ll n, ll r){
   ll res = 1;
   r = min(r, n - r);
   rep(i, r) res = res * (n - i) % mod;
   return res * modpow(modfact(r), mod - 2) % mod;
 }
+
 ll modh(ll n, ll r){
   return modcomb(n + r - 1, r);
 }
+
 int main(){
   int N, M;
   cin >> N >> M;

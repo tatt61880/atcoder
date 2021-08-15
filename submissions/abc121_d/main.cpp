@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 ll f(ll n)
 {
   switch(n % 4){
@@ -23,6 +24,7 @@ ll f(ll n)
     case 3: return 0;
   }
 }
+
 int main(){
   ll A, B;
   cin >> A >> B;

@@ -14,9 +14,12 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int a[200000];
 map<int, int> mp;
+
 int target[32];
+
 int f(int n){
   rep(i, 32){
     int num = target[i] - n;
@@ -33,6 +36,7 @@ int f(int n){
   }
   return 0;
 }
+
 int main(){
   int N;
   cin >> N;

@@ -14,8 +14,10 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 ll p[51];
 ll t[51];
+
 int f(int outsideLevel, ll remains){
   int includedLevel = outsideLevel;
   while(1){
@@ -26,6 +28,7 @@ int f(int outsideLevel, ll remains){
     if(!includedLevel) return 0;
   }
 }
+
 int main(){
   int N;
   ll X;
@@ -36,6 +39,7 @@ int main(){
     p[i + 1] = 2 * p[i] + 1;
     t[i + 1] = 2 * t[i] + 3;
   }
+
   ll ans = 0;
   int outsideLevel = N;
   ll remains = X;
@@ -52,6 +56,7 @@ int main(){
     remains--;
     outsideLevel = includedLevel;
   }
+
   cout << ans << endl;
   return 0;
 }

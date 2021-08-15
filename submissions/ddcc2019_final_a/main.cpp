@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int countl[100000];
 int countr[100000];
 int main(){
@@ -21,6 +22,7 @@ int main(){
   cin >> N;
   string S;
   cin >> S;
+
   int count;
   count = 0;
   rep(i, N){
@@ -40,6 +42,7 @@ int main(){
       count = 0;
     }
   }
+
   int maxCountSum = -1;
   int id;
   count = 0;
@@ -53,6 +56,7 @@ int main(){
     }
   }
   S[id] = '>';
+
   double ans = 0;
   rep(i, N){
     if(S[i] == '>'){

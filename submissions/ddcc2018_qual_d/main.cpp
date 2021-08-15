@@ -14,8 +14,10 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 ll a[31];
 ll m[31];
+
 bool f(ll n){
   rep(i, 2, 31){
     ll N = n;
@@ -28,11 +30,13 @@ bool f(ll n){
   }
   return true;
 }
+
 int main(){
   rep(i, 2, 30 + 1){
     cin >> a[i];
     m[i - 1] = a[i] % (i - 1);
   }
+
   vector<ll> v = {3, 5, 7, 11, 13, 17, 19, 23, 29};
   ll fact = 2;
   ll md = m[2];
@@ -50,6 +54,7 @@ int main(){
     md = mdNew;
     fact *= x;
   }
+
   for(ll N = md; N <= (ll)1000000000000; N += fact){
     if(f(N)){
       cout << N << endl;

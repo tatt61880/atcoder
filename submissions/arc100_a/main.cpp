@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 ll a[200000];
 ll sum[200000];
 int main(){
@@ -29,6 +30,7 @@ int main(){
     ansI += sum[N - 1] - sum[i] - a[i] * (N - 1 - i);
     ans = min(ans, ansI);
   }
+
   cout << ans << endl;
   return 0;
 } 

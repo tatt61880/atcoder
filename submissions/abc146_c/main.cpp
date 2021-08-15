@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 ll digit(ll num){
   int res = 0;
   while(num){
@@ -22,14 +23,17 @@ ll digit(ll num){
   }
   return res;
 }
+
 bool f(ll N, ll A, ll B, ll X){
   ll need = A * N + B * digit(N);
   return need <= X;
 }
+
 int main(){
   ll A, B, X;
   cin >> A >> B >> X;
   ll ans = 0;
+
   ll ok = 0;
   ll ng = 1e9 + 1;
   while(abs(ok - ng) > 1){

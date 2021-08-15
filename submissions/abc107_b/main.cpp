@@ -14,8 +14,10 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 char a[101][101];
 char b[101][101];
+
 int main(){
   int H, W;
   cin >> H >> W;

@@ -14,10 +14,12 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 ll x[200000];
 ll y[200000];
 ll maxY[200000];
 set<ll> st;
+
 int main(){
   ll H, W, N;
   // cin >> H >> W >> N;
@@ -36,6 +38,7 @@ int main(){
       maxY[w] = maxY[w - 1] + 1;
     }
   }
+
   ll ans = W;
   rep(i, N){
     ll xx = x[i];

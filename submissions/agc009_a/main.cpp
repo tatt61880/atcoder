@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 ll a[100000];
 ll b[100000];
 int main(){
@@ -24,6 +25,7 @@ int main(){
   }
   reverse(a, a + N);
   reverse(b, b + N);
+
   ll sum = 0;
   ll ans = 0;
   rep(i, N){

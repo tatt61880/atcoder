@@ -3,6 +3,7 @@
 using namespace std;
 #define println(x) cout << (x) << endl
 #define rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int main(void)
 {
 	string s;

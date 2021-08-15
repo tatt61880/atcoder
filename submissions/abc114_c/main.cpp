@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 bool f(int n){
   bool flag3 = false;
   bool flag5 = false;
@@ -28,6 +29,7 @@ bool f(int n){
   }
   return flag3 && flag5 && flag7;
 }
+
 int main(){
   int N;
   cin >> N;
@@ -45,6 +47,7 @@ int main(){
       v.push_back(x);
     }
   }
+
   int ans = 0;
   for(auto &x: v){
     if(x <= N && f(x)) ans++;

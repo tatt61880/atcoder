@@ -14,9 +14,11 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int main(){
   ll N;
   cin >> N;
+
   ll ans = 0;
   for(ll i = 1; i * i < N; i++){
     if(N % i == 0){

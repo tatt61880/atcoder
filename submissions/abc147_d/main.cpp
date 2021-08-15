@@ -12,6 +12,7 @@ using namespace std;
 #define rrep3(i,begin,end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
 #define foreach(x,a) for(auto&x:a)
 using ll=long long;
+
 class in {
   int n;
 public:
@@ -20,6 +21,7 @@ public:
   template <class T> operator T() { T ret; cin >> ret; return ret; }
   template <class T> operator vector<T>() { vector<T> ret(n); for (int i = 0; i < n; i++) cin >> ret[i]; return ret; }
 };
+
 template <std::uint_fast64_t Mod> class modint {
   using u64 = std::uint_fast64_t;
 public:
@@ -41,12 +43,15 @@ ostream& operator<<(ostream& os, const modint<Mod>& m){ return os << m.a; }
 const ll mod=(ll)1e9+7;
 using mint = modint<mod>;
 //}}}
+
 const int kMaxBit = 64;
 int bit0[kMaxBit];
 int bit1[kMaxBit];
+
 int main(){
   int N = in();
   vector<ll> A = in(N);
+
   mint ans = 0;
   rep(i, N){
     rep(b, kMaxBit){
@@ -56,6 +61,7 @@ int main(){
   rep(b, kMaxBit){
     bit0[b] = N - bit1[b];
   }
+
   rep(b, kMaxBit){
     ans += (1LL << b) % mod * bit0[b] % mod * bit1[b];
   }

@@ -4,10 +4,12 @@ using namespace std;
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (n); i++)
 typedef long long LL;
+
 typedef struct{
 	LL x;
 	LL y;
 } Point;
+
 Point f(int n)
 {
 	LL x, y;
@@ -16,6 +18,7 @@ Point f(int n)
 	x = sum - y;
 	return {x, y};
 }
+
 int main(void)
 {
 	int i, j;

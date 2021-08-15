@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 ll xors[200001] = {0};
 ll sums[200001] = {0};
 ll a[200000];

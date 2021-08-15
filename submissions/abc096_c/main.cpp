@@ -11,8 +11,10 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 int H, W;
 char s[51][51];
+
 int count(int w, int h){
 	if(h < 0) return 0;
 	if(w < 0) return 0;
@@ -28,11 +30,13 @@ bool isValid(int w, int h){
 	res += count(w, h + 1);
 	return res;
 }
+
 int main(){
 	cin >> H >> W;
 	rep(i, H) {
 		cin >> s[i];
 	}
+
 	bool ans = true;
 	rep(h, H) {
 		rep(w, W) {

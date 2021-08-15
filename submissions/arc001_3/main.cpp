@@ -11,12 +11,16 @@
 #include <cstring>
 #include <cmath>
 using namespace std;
+
 typedef long long LL;
+
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 int Q[8] = {0};
+
 void printQ(){
 	char buf[9] = "........";
 	/*
@@ -41,6 +45,7 @@ bool isValidQ(){
 	}
 	return true;
 }
+
 bool solve(int n){
 	For(i, n, 8){
 		if(Q[i] != -1) continue;
@@ -61,6 +66,7 @@ bool solve(int n){
 			Q[i] = -1;
 		}
 	}
+
 	bool flag = true;
 	Rep(k, 8) if(Q[k] == -1) flag = false;
 	if(flag){
@@ -69,6 +75,7 @@ bool solve(int n){
 	}
 	return false;
 }
+
 int main(void)
 {
 	char buf[9];
@@ -86,6 +93,7 @@ int main(void)
 			}
 		}
 	}
+
 	if(!solve(0)){
 		PrintLn("No Answer");
 	}

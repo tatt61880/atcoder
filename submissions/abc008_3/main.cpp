@@ -1,12 +1,15 @@
 #include <stdio.h>
+
 int main(void)
 {
 	int N;
 	scanf("%d", &N);
+
 	int C[100];
 	for(int i = 0; i < N; i++){
 		scanf("%d", &C[i]);
 	}
+
 	double ans = 0;
 	for(int i = 0; i < N; i++){
 		int target = C[i];

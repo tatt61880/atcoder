@@ -14,11 +14,13 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 ll A[100000];
 ll B[100000];
 int id[100000];
 vector<vector<ll>> a;
 vector<vector<ll>> b;
+
 int main(){
   int N;
   cin >> N;

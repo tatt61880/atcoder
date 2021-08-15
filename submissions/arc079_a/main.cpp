@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 int a[200001];
 int b[200001];
 int c[200000];
@@ -28,6 +29,7 @@ int main(){
   rep(i, M){
     if(b[i] == N && c[a[i]]) ans = true;
   }
+
   puts(ans ? "POSSIBLE" : "IMPOSSIBLE");
   return 0;
 }

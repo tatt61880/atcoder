@@ -1,9 +1,11 @@
 #include <stdio.h>
+
 int main(void)
 {
 	int R, C, K;
 	scanf("%d%d%d", &R, &C, &K);
 	char S[501];
+
 	int data[500][500]; // 点(i, j)を中央として、左右に白マスが何マス分続いているかを記録する。(左右で少ない方の値を採用)
 						// ※(i, j)と書いていますが、iは高さ方向です。
 	for(int i = 0; i < R; i++){
@@ -24,6 +26,7 @@ int main(void)
 		}
 		//printf("%s\n", S);
 	}
+
 #if 0
 	for(int i = 0; i < R; i++){
 		for(int j = 0; j < C; j++){
@@ -32,6 +35,7 @@ int main(void)
 		printf("\n");
 	}
 #endif
+
 	int count = 0;
 	for(int i = K - 1; i < R - (K - 1); i++){
 		for(int j = K - 1; j < C - (K - 1); j++){
@@ -47,6 +51,7 @@ int main(void)
 			if(ok) count++;
 		}
 	}
+
 	printf("%d\n", count);
 	return 0;
 }

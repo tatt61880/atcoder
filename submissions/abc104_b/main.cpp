@@ -11,10 +11,12 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 int main(){
   char S[11];
   cin >> S;
   bool ans = true;
+
   if(S[0] != 'A') ans = false;
   bool f = true;
   int N = strlen(S);
@@ -28,6 +30,7 @@ int main(){
     }
   }
   if(f) ans = false;
+
   puts(ans ? "AC" : "WA");
   return 0;
 }

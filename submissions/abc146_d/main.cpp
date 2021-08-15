@@ -14,12 +14,15 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 vector<pair<int, int>> v[100000];
 int colors[100000];
 int finished[100000];
+
 int main(){
   int N;
   cin >> N;
+
   rep(i, N - 1){
     int a, b;
     cin >> a >> b;
@@ -28,6 +31,7 @@ int main(){
     v[a].push_back(make_pair(b, i));
     v[b].push_back(make_pair(a, i));
   }
+
   int start = 0;
   int maxColor = 0;
   rep(i, N){
@@ -36,7 +40,9 @@ int main(){
       start = i;
     }
   }
+
   cout << maxColor << endl;
+
   queue<pair<int, int>> q;
   q.push(make_pair(start, 0));
   while(q.size()){
@@ -56,6 +62,7 @@ int main(){
       }
     }
   }
+
   rep(i, N - 1){
     if(colors[i] == 0) colors[i] = maxColor;
     cout << colors[i] << endl;

@@ -1,10 +1,12 @@
 #include <stdio.h>
+
 int main(void)
 {
 	char S[11];
 	char T[11];
 	scanf("%s", &S);
 	scanf("%s", &T);
+
 	int win = 1;
 	for(int i = 0; S[i] != '\0' || T[i] != '\0'; i++){
 		if(S[i] != T[i]){
@@ -17,6 +19,7 @@ int main(void)
 			win = 0;
 		}
 	}
+
 	if(win){
 		printf("You can win\n");
 	}else{

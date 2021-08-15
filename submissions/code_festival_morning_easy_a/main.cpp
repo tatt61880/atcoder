@@ -2,6 +2,7 @@
 #include <cstdio>
 using namespace std;
 #define Rep(i, n) for(int i = 0; i < (n); i++)
+
 int main(void)
 {
 	int n;

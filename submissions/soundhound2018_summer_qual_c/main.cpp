@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 998244353;
 //}}}
+
 int main(){
   int n, m, d;
   cin >> n >> m >> d;
@@ -24,6 +25,7 @@ int main(){
     p /= n;
     p /= n;
   }
+
   double ans = p * (m - 1);
   printf("%0.10lf\n", ans);
   return 0;

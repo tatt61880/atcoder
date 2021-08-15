@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 my $buf;
 $buf = <>; chomp $buf;
 my ($R, $C) = split / /, $buf;
@@ -10,6 +11,7 @@ for(0 .. $R - 1){
 	$buf = <>; chomp $buf;
 	push @maze, [split //, $buf];
 }
+
 for my $y(0 .. $R - 1){
 	for my $x(0 .. $C - 1){
 		if($maze[$y][$x] eq 'S'){
@@ -23,7 +25,9 @@ for my $y(0 .. $R - 1){
 		}
 	}
 }
+
 my @queue;
+
 push @queue, [$Sx, $Sy];
 $maze[$Sy][$Sx] = 1;
 while(@queue)
@@ -37,6 +41,7 @@ while(@queue)
 	if($x < $C - 1 && $maze[$y][$x + 1] eq '.') {$maze[$y][$x + 1] = $maze[$y][$x] + 1; push @queue, [$x + 1, $y]}
 	shift @queue;
 }
+
 push @queue, [$Gx, $Gy];
 $maze[$Gy][$Gx] = -1;
 while(@queue)
@@ -50,6 +55,7 @@ while(@queue)
 	if($x < $C - 1 && $maze[$y][$x + 1] eq '.') {$maze[$y][$x + 1] = $maze[$y][$x] - 1; push @queue, [$x + 1, $y]}
 	shift @queue;
 }
+
 my $max = 0;
 for my $y(0 .. $R - 1){
 	for my $x(0 .. $C - 1){

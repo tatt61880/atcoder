@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 my $n = <>;
 chomp $n;
 my @a;
@@ -9,6 +10,7 @@ for(1..$n){
 	$str = reverse $str;
 	push @a, $str;
 }
+
 @a = sort @a;
 foreach(@a) {
 	my $str = reverse $_;

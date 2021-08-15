@@ -14,12 +14,15 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int N;
+
 bool f(int x, int y){
   if(x < 0) x *= -1;
   if(y < 0) y *= -1;
   return x + y <= N;
 }
+
 int main(){
   cin >> N;
   int ans = 0;

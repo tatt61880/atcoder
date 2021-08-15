@@ -2,7 +2,9 @@
 #include <vector>
 using namespace std;
 #define rep(i, n) for(int i = 0; i < n; i++)
+
 #define INTEREST_MAX 100000
+
 int main(void)
 {
 	int n;

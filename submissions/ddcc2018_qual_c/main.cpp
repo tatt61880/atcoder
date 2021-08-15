@@ -14,7 +14,9 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 ll N;
+
 ll f(ll n){
   ll ret = 1;
   if(n == 0) return 0;
@@ -24,6 +26,7 @@ ll f(ll n){
   }
   return ret;
 }
+
 int main(){
   cin >> N;
   ll ans = 0;

@@ -4,7 +4,9 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int main(void)
 {
 	char S0[51];
@@ -12,6 +14,7 @@ int main(void)
 	char T[51];
 	cin >> S0 >> T;
 	vector<string> v;
+
 	Rep(i, strlen(S0) - strlen(T) + 1){
 		strcpy(S, S0);
 		bool flag = false;
@@ -30,6 +33,7 @@ int main(void)
 			v.push_back(S);
 		}
 	}
+
 	if(v.size() == 0){
 		cout << "UNRESTORABLE" << endl;
 	}else{

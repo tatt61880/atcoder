@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 998244353;
 //}}}
+
 int main(){
   int N, K;
   cin >> N >> K;
@@ -24,6 +25,7 @@ int main(){
     }
   }
   */
+
   int ans = 0;
   // (K - 1) * ans + 1 >= N;
   ans = ((N - 1) + (K - 2))/ (K - 1);

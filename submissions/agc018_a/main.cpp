@@ -14,7 +14,9 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)998244353;
 //}}}
+
 ll gcd(ll a, ll b){return b ? gcd(b, a % b) : a;}
+
 int A[100000];
 int main(){
   int N, K;

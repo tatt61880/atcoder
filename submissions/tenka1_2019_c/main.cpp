@@ -14,8 +14,11 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)998244353;
 //}}}
+
+
 int w[200001];
 int b[200001];
+
 int main(){
   int N;
   cin >> N;

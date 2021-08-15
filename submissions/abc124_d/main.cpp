@@ -14,24 +14,29 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int N, K;
 string S;
+
 void moveL(int &n){
   while(n != N - 1 && S[n] == '1') n++;
   while(n != N - 1 && S[n] == '0') n++;
 }
+
 void moveR(int &n){
   while(n < N && S[n] == '0') n++;
   if(S[n] == '0') n++;
   while(n < N && S[n] == '1') n++;
   if(S[n] == '1') n++;
 }
+
 int main(){
   cin >> N >> K;
   cin >> S;
   int ans = 0;
   int l = 0;
   int r = 0;
+
   if(S[0] == '1') moveR(r);
   rep(i, K) moveR(r);
   while(true){

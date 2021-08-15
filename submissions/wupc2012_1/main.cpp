@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
+
 int days[] = {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 int day(int m, int d){
 	int ret = 0;
@@ -9,6 +10,7 @@ int day(int m, int d){
 	}
 	return ret + d;
 }
+
 int main(void)
 {
 	int Ma, Da;

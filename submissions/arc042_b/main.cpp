@@ -3,8 +3,10 @@
 #include <algorithm>
 using namespace std;
 typedef long long LL;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int main(void)
 {
 	double x, y;

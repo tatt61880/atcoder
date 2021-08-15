@@ -14,11 +14,13 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int main(){
   string s;
   cin >> s;
   reverse(s.begin(), s.end());
   ll ans = 0;
+
   int num = 0;
   rep(i, s.size()){
     if(s[i] == 'B'){

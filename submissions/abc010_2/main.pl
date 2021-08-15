@@ -1,7 +1,9 @@
 use strict;
 use warnings;
+
 <>;
 my @A = split / /, <>;
+
 #123456789A
 #oxooxooxoo
 #oxoxoxoxox

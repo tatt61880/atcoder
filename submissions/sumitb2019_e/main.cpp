@@ -12,6 +12,7 @@ using namespace std;
 #define rrep3(i,begin,end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
 #define foreach(x,a) for(auto&x:a)
 using ll=long long;
+
 template <std::uint_fast64_t Mod> class modint {
   using u64 = std::uint_fast64_t;
   u64 a;
@@ -33,6 +34,7 @@ const ll mod=(ll)1e9+7;
 using mint = modint<mod>;
 ostream& operator<<(ostream& os, const mint& m){ return os << m.a; }
 //}}}
+
 int main(){
   int N;
   cin >> N;

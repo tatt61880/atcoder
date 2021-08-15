@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 int x[100];
 int y[100];
 int main(){
@@ -23,6 +24,7 @@ int main(){
   rep(i, M) cin >> y[i];
   sort(x, x + N);
   sort(y, y + M);
+
   bool ans = x[N - 1] < y[0] && X < y[0] && y[0] <= Y;
   puts(ans ? "No War" : "War");
   return 0;

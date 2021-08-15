@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int main(void)
 {
 	int N, M;
@@ -14,6 +15,7 @@ int main(void)
 	for(int i = 0; i < N; i++){
 		S[i][i] = 1;
 	}
+
 	int ans = 0;
 	int count;
 	for(int n = 1; n < 1 << 12; n++){

@@ -14,10 +14,13 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 const ll inf = 1e18;
+
 int A, B, Q;
 ll s[100000];
 ll t[100000];
+
 ll g(ll si, ll ti, ll x){
   ll res = inf;
   rep(ds, -1, 1){
@@ -35,6 +38,7 @@ ll g(ll si, ll ti, ll x){
   }
   return res;
 }
+
 ll f(ll x){
   ll si, ti;
   {
@@ -57,6 +61,7 @@ ll f(ll x){
   }
   return g(si, ti, x);
 }
+
 int main(){
   cin >> A >> B >> Q;
   rep(i, A) cin >> s[i];

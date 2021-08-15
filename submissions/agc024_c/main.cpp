@@ -11,7 +11,9 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 ll a[200000];
+
 int main(){
   ll N;
   cin >> N;
@@ -20,6 +22,7 @@ int main(){
     cout << "-1" << endl;
     return 0;
   }
+
   ll ans = 0;
   rep(i, 1, N){
     if(a[i] > a[i - 1] + 1){
@@ -38,6 +41,7 @@ int main(){
       }
     }
   }
+
   cout << ans << endl;
   return 0;
 }

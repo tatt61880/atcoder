@@ -14,21 +14,26 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 struct UnionFind{
   vector<int> parents;
   UnionFind(int n){
     parents.assign(n, -1);
   }
+
   int root(int x){
     if(parents[x] < 0) return x;
     else return parents[x] = root(parents[x]);
   }
+
   int size(int x){
     return -parents[root(x)];
   }
+
   bool same(int x, int y){
     return root(x) == root(y);
   }
+
   bool unite(int x, int y){
     x = root(x);
     y = root(y);
@@ -39,10 +44,12 @@ struct UnionFind{
     return true;
   }
 };
+
 int A[100000];
 int B[100000];
 ll diff;
 ll ans[100000];
+
 int main(){
   ll N, M;
   cin >> N >> M;
@@ -52,7 +59,9 @@ int main(){
     A[i]--;
     B[i]--;
   }
+
   UnionFind uni(N);
+
   rrep(i, M){
     if(i == M - 1){
       ans[i] = (ll)N * (N - 1) / 2;

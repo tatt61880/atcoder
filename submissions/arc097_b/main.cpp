@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 int parents[100001];
 int p[100001];
 int root(int x){
@@ -20,12 +21,14 @@ int root(int x){
     return parents[x] = root(parents[x]);
   }
 }
+
 void unite(int x, int y){
   x = root(x);
   y = root(y);
   if(x == y) return;
   parents[x] = y;
 }
+
 int main(){
   int N, M;
   cin >> N >> M;
@@ -33,11 +36,13 @@ int main(){
   rep(i, 1, N){
     parents[i] = i;
   }
+
   rep(i, M){
     int x, y;
     cin >> x >> y;
     unite(x, y);
   }
+
   int ans = 0;
   rep(i, N){
     int id = i + 1;
@@ -45,6 +50,7 @@ int main(){
       ans++;
     }
   }
+
   cout << ans << endl;
   return 0;
 }

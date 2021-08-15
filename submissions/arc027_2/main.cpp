@@ -12,27 +12,33 @@
 #include <cstring>
 #include <cmath>
 using namespace std;
+
 typedef long long LL;
 typedef unsigned long long ULL;
 const LL MOD = 1000000007;
+
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 int N;
 string str1, str2;
+
 void f(char a, char d){
 	Rep(i, N){
 		if(str1[i] == a) str1[i] = d;
 		if(str2[i] == a) str2[i] = d;
 	}
 }
+
 void g(char a1, char a2){
 	Rep(i, N){
 		if(str1[i] == a1) str1[i] = a2;
 		if(str2[i] == a1) str2[i] = a2;
 	}
 }
+
 int main(void){
 	cin >> N;
 	cin >> str1 >> str2;

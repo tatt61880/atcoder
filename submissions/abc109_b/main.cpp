@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)998244353;
 //}}}
+
 int main(){
   set<string> st;
   int n;

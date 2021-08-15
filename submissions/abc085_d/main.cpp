@@ -4,8 +4,10 @@
 #include <vector>
 #include <set>
 using namespace std;
+
 #define printLn(X) cout << X << endl
 #define rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int a[100000];
 int b[100000];
 int main(){

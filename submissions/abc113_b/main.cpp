@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int H[1000];
 int main(){
   int N, T, A;
@@ -21,6 +22,7 @@ int main(){
   int ans = 0;
   int minDiff;
   int diff;
+
   rep(i, N){
     int h;
     cin >> h;

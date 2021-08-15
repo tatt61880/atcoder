@@ -12,6 +12,7 @@ using namespace std;
 #define rrep3(i,begin,end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
 #define foreach(x,a) for(auto&x:a)
 using ll=long long;
+
 class in {
   int n;
 public:
@@ -20,6 +21,7 @@ public:
   template <class T> operator T() { T ret; cin >> ret; return ret; }
   template <class T> operator vector<T>() { vector<T> ret(n); for (int i = 0; i < n; i++) cin >> ret[i]; return ret; }
 };
+
 template <std::uint_fast64_t Mod> class modint {
   using u64 = std::uint_fast64_t;
 public:
@@ -41,12 +43,15 @@ ostream& operator<<(ostream& os, const modint<Mod>& m){ return os << m.a; }
 const ll mod=(ll)1e9+7;
 using mint = modint<mod>;
 //}}}
+
 int A[80][80];
 int s[80][80][15000];
+
 struct Pos{
   int x;
   int y;
 };
+
 int main(){
   int H = in();
   int W = in();
@@ -56,7 +61,9 @@ int main(){
     A[h][w] -= B;
     if(A[h][w] < 0) A[h][w] *= -1;
   }
+
   s[0][0][A[0][0]] = 1;
+
   const int kMax = 15000;
   rep(y, H) rep(x, W){
     if(x != W - 1){
@@ -66,6 +73,7 @@ int main(){
         s[y][x + 1][abs(v - A[y][x + 1])] = 1;
       }
     }
+
     if(y != H - 1){
       rep(v, kMax){
         if(!s[y][x][v]) continue;
@@ -74,6 +82,7 @@ int main(){
       }
     }
   }
+
   int ans = 1000000;
   rep(v, kMax){
     if(!s[H - 1][W - 1][v]) continue;

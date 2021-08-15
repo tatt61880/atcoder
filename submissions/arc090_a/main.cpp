@@ -10,6 +10,7 @@ typedef long long ll;
 #define repX(a0,a1,a2,x,...) x
 const int MOD = 1e9+7;
 //}}}
+
 int A[2][100];
 int main(){
 	int N;

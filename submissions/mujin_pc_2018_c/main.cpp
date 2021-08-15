@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 string s[2000];
 int r[2000][2000];
 int l[2000][2000];
@@ -20,6 +21,7 @@ int main(){
   int N, M;
   cin >> N >> M;
   rep(i, N) cin >> s[i];
+
   rep(n, N){
     rep(m, M){
       if(m == 0 || s[n][m] == '#'){

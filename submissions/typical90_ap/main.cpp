@@ -18,6 +18,7 @@ func main()
 	do cui@print("\{ans}\n")
 end func
 #endif
+
 //{{{ C++ code below is transpiled from Kuin code above by Kuin Programming Language v.2021.6.17
 #if defined(_WIN32)
 #define _CRT_SECURE_NO_WARNINGS
@@ -53,11 +54,13 @@ static int64_t classTable_[21];
 #include <sys/stat.h>
 #include <type_traits>
 #include <vector>
+
 namespace {
 	template<typename T> std::size_t bufLen_() { return 0; }
 	template<> std::size_t bufLen_<char16_t>() { return 1; }
 }
 static int64_t exitCode_ = 0;
+
 struct Class_ {
 	Class_() : Y(0LL) {}
 	virtual ~Class_() {}
@@ -154,6 +157,7 @@ template<typename T1, typename T2> struct dictImpl_ {
 	dictImpl_* CR;
 	bool R;
 };
+
 #if _MSC_VER >= 1900 && _MSC_VER < 1922
 static std::string utf16ToUtf8_(const std::u16string& s) {
 	const int16_t* p = reinterpret_cast<const int16_t*>(s.data());
@@ -171,14 +175,18 @@ static std::u16string utf8ToUtf16_(const std::string& s) {
 	return std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t>{}.from_bytes(s);
 }
 #endif
+
 #if defined(_WIN32)
+
 #pragma comment(lib, "shlwapi.lib")
 #define STRICT
 #define _WIN32_DCOM
 #include <Windows.h>
 #include <Shlwapi.h>
 #include <io.h>
+
 const char newLine_[] = { '\r', '\n' };
+
 static void normPath_(char16_t* p, bool d) {
 	if (*p == 0)
 		return;
@@ -194,6 +202,7 @@ static void normPath_(char16_t* p, bool d) {
 		p[1] = 0;
 	}
 }
+
 static bool fileExists_(const char16_t* p) {
 	return PathFileExistsW(reinterpret_cast<const wchar_t*>(p)) != 0;
 }
@@ -232,12 +241,16 @@ static void sleep_(int64_t t) {
 		Sleep(10000);
 	Sleep(static_cast<DWORD>(t % 10000));
 }
+
 #else
+
 #include <unistd.h>
 #include <fcntl.h>
 #include <dirent.h>
 #define _A_SUBDIR 0x10
+
 const char newLine_[] = { '\n' };
+
 static void normPath_(char* p, bool d) {
 	if (*p == 0)
 		return;
@@ -248,6 +261,7 @@ static void normPath_(char* p, bool d) {
 		p[l + 1] = 0;
 	}
 }
+
 static bool fileExists_(const char16_t* p) {
 	struct stat b;
 	std::u16string s = p;
@@ -357,7 +371,9 @@ static void sleep_(int64_t t) {
 	timespec r = { t / 1000, t % 1000 * 1000000 };
 	nanosleep(&r, nullptr);
 }
+
 #endif
+
 static bool fileForEach_(const std::u16string& p, bool r, bool(*f)(type_(Array_<char16_t>), bool, type_(Class_)), type_(Class_) d) {
 	if (p.size() > 512)
 		return false;
@@ -424,6 +440,7 @@ static bool fileForEach_(const std::u16string& p, bool r, bool(*f)(type_(Array_<
 				if (wcscmp(b, L".") == 0 || wcscmp(b, L"..") == 0)
 					continue;
 				p3 += reinterpret_cast<const char16_t*>(b);
+
 #else
 				const char* n = t->d_name;
 				if (strcmp(n, ".") == 0 || strcmp(n, "..") == 0)
@@ -451,6 +468,7 @@ static bool fileForEach_(const std::u16string& p, bool r, bool(*f)(type_(Array_<
 #endif
 	return a;
 }
+
 static bool delDir_(const std::u16string& p) {
 	if (p.size() > 512)
 		return false;
@@ -537,6 +555,7 @@ static bool delDir_(const std::u16string& p) {
 	}
 	return a;
 }
+
 static bool copyDir_(const std::u16string& d, const std::u16string& s) {
 	if (s.size() > 512)
 		return false;
@@ -631,6 +650,7 @@ static bool copyDir_(const std::u16string& d, const std::u16string& s) {
 #endif
 	return a;
 }
+
 static bool moveDir_(const char16_t* d, const char16_t* s) {
 #if defined(_WIN32)
 	if (::MoveFileExW(reinterpret_cast<const wchar_t*>(s), reinterpret_cast<const wchar_t*>(d), MOVEFILE_COPY_ALLOWED | MOVEFILE_WRITE_THROUGH | MOVEFILE_REPLACE_EXISTING))
@@ -644,6 +664,7 @@ static bool moveDir_(const char16_t* d, const char16_t* s) {
 		return false;
 	return true;
 }
+
 static bool makeDir2_(const char16_t* p) {
 	char16_t b[512];
 	int64_t l = fullPath_(b, p);
@@ -665,6 +686,7 @@ static bool makeDir2_(const char16_t* p) {
 	}
 	return true;
 }
+
 template<typename T> struct newArraysRec_ {
 	T operator()() { throw 0; }
 	template<typename A, typename... B> T operator()(A h, B... t) { throw 0; }
@@ -701,6 +723,7 @@ type_(Array_<T>) newArrayBin_(int64_t l, const void* d) {
 		r->B[l] = 0;
 	return r;
 }
+
 template<typename T> type_(Array_<T>) toArray_(type_(List_<T>) l) {
 	type_(Array_<T>) a = new_(Array_<T>)();
 	a->L = l->Len();
@@ -715,6 +738,7 @@ template<typename T> type_(Array_<T>) toArray_(type_(List_<T>) l) {
 		a->B[a->L] = 0;
 	return a;
 }
+
 template<typename T> struct copy_ {};
 template<typename T> struct copy_<type_(Array_<T>)> {
 	type_(Array_<T>) operator()(type_(Array_<T>) t) {
@@ -818,6 +842,7 @@ template<> struct copy_ <uint8_t> { uint8_t operator()(uint8_t t) { return t; } 
 template<> struct copy_ <uint16_t> { uint16_t operator()(uint16_t t) { return t; } };
 template<> struct copy_ <uint32_t> { uint32_t operator()(uint32_t t) { return t; } };
 template<> struct copy_ <uint64_t> { uint64_t operator()(uint64_t t) { return t; } };
+
 static type_(Array_<char16_t>) toStr_(int64_t v) {
 	std::stringstream s;
 	s << v;
@@ -932,6 +957,7 @@ static type_(Array_<char16_t>) toStr_(uint64_t v) {
 static type_(Array_<char16_t>) toStr_(type_(Array_<char16_t>) v) {
 	return v;
 }
+
 static int64_t cmp_(type_(Array_<char16_t>) a, type_(Array_<char16_t>) b) {
 	int64_t p = 0;
 	while (p < a->L && p < b->L)
@@ -950,6 +976,7 @@ static int64_t cmp_(uint8_t a, uint8_t b) { return static_cast<int64_t>(a) - sta
 static int64_t cmp_(uint16_t a, uint16_t b) { return static_cast<int64_t>(a) - static_cast<int64_t>(b); }
 static int64_t cmp_(uint32_t a, uint32_t b) { return static_cast<int64_t>(a) - static_cast<int64_t>(b); }
 static int64_t cmp_(uint64_t a, uint64_t b) { return a > b ? 1LL : (a < b ? -1LL : 0LL); }
+
 static type_(Array_<uint8_t>) makeBin_(const void* v, std::size_t s) {
 	type_(Array_<uint8_t>) r = new_(Array_<uint8_t>)();
 	r->L = s;
@@ -1059,6 +1086,7 @@ template<typename T> type_(Array_<uint8_t>) toBinFunc_(T v) {
 	int64_t p = -1;
 	return makeBin_(&p, sizeof(p));
 }
+
 template<typename T> struct fromBin_ {};
 template<typename T> struct fromBin_<type_(Array_<T>)> {
 	type_(Array_<T>) operator()(type_(Array_<uint8_t>) b, int64_t& o) {
@@ -1154,6 +1182,7 @@ template<typename T> T fromBinFunc_(type_(Array_<uint8_t>) b, int64_t& o) {
 	o += sizeof(void*);
 	return nullptr;
 }
+
 template<typename T> type_(Array_<T>) sub_(type_(Array_<T>) a, int64_t start, int64_t len) {
 	if (len == -1)
 		len = a->L - start;
@@ -1168,6 +1197,7 @@ template<typename T> type_(Array_<T>) sub_(type_(Array_<T>) a, int64_t start, in
 		r->B[len] = 0;
 	return r;
 }
+
 template<typename T> type_(T) as_(const int64_t * y, type_(Class_) c, int64_t o) {
 	if (c == nullptr)
 		return nullptr;
@@ -1181,6 +1211,7 @@ template<typename T> type_(T) as_(const int64_t * y, type_(Class_) c, int64_t o)
 		m = y[m];
 	}
 }
+
 static bool is_(const int64_t * y, type_(Class_) c, int64_t o) {
 	int64_t m = c->Y;
 	for (; ; )
@@ -1192,6 +1223,7 @@ static bool is_(const int64_t * y, type_(Class_) c, int64_t o) {
 		m = y[m];
 	}
 }
+
 template<typename T> T min_(type_(Array_<T>) a) {
 	if (a->L == 0)
 		return (T)0;
@@ -1203,6 +1235,7 @@ template<typename T> T min_(type_(Array_<T>) a) {
 	}
 	return r;
 }
+
 template<typename T> T max_(type_(Array_<T>) a) {
 	if (a->L == 0)
 		return (T)0;
@@ -1214,6 +1247,7 @@ template<typename T> T max_(type_(Array_<T>) a) {
 	}
 	return r;
 }
+
 template<typename T> type_(Array_<T>) repeat_(type_(Array_<T>) a, int64_t n) {
 	type_(Array_<T>) r = new_(Array_<T>)();
 	r->L = a->L * n;
@@ -1227,6 +1261,7 @@ template<typename T> type_(Array_<T>) repeat_(type_(Array_<T>) a, int64_t n) {
 		r->B[r->L] = 0;
 	return r;
 }
+
 template<typename T1, typename T2> dictImpl_<T1, T2>* dictRotateLeft_(dictImpl_<T1, T2> * n)
 {
 	dictImpl_<T1, T2>* r = n->CR;
@@ -1308,6 +1343,7 @@ template<typename T1, typename T2> dictImpl_<T1, T2>* dictDelMinRec_(dictImpl_<T
 		n = dictMoveRedLeft_<T1, T2>(n);
 	n->CL = dictDelMinRec_<T1, T2>(n->CL);
 	return dictFixUp_<T1, T2>(n);
+
 }
 template<typename T1, typename T2> dictImpl_<T1, T2>* dictDelRec_(dictImpl_<T1, T2> * n, T1 k, bool* d) {
 	if (n == nullptr)
@@ -1408,6 +1444,7 @@ template<typename T1, typename T2> void dictFreeRec_(dictImpl_<T1, T2> * n) {
 	dictFreeRec_<T1, T2>(n->CR);
 	delPrim_(n);
 }
+
 static int64_t powI_(int64_t a, int64_t b) {
 	switch (b)
 	{
@@ -1436,6 +1473,7 @@ static int64_t powI_(int64_t a, int64_t b) {
 	}
 	return r;
 }
+
 template<typename T> void reverse_(type_(Array_<T>) me) { std::reverse<T*>(me->B, me->B + me->L); }
 template<typename T> bool sortCmp_(const T & a, const T & b) { return cmp_(a, b) < 0; }
 template<typename T> void sort_(type_(Array_<T>) me) { std::sort<T*, bool(*)(const T&, const T&)>(me->B, me->B + me->L, sortCmp_<T>); }
@@ -1456,19 +1494,23 @@ static uint64_t endian_(uint64_t me_)
 	me_ = ((me_ & 0x0000ffff0000ffff) << 16) | ((me_ & 0xffff0000ffff0000) >> 16);
 	return ((me_ & 0x00000000ffffffff) << 32) | ((me_ & 0xffffffff00000000) >> 32);
 }
+
 struct reader_ {
 	reader_() : F(nullptr) {}
 	std::FILE* F;
 };
+
 struct writer_ {
 	writer_() : F(nullptr) {}
 	std::FILE* F;
 };
+
 template<typename T>
 struct listPtr_ {
 	listPtr_<T>() {}
 	typename T::iterator I;
 };
+
 static void init_() {
 	setlocale(LC_ALL, "");
 }

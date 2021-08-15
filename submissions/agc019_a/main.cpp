@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 int main(){
   ll Q, H, S, D, N;
   cin >> Q >> H >> S >> D;

@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 int a[55];
 int primes[55555 * 5];
 int main(){

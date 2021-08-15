@@ -1,22 +1,29 @@
 #include <iostream>
 using namespace std;
+
 typedef long long ll;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 const ll md = 1000000007LL;
 ll dp[3][3][52];
+
 enum{
 	r,
 	g,
 	b
 };
+
 int main(void)
 {
 	int N;
 	cin >> N;
+
 	char data[2][53];
 	cin >> data[0];
 	cin >> data[1];
+
 	Rep(i, N){
 		if(i == 0){
 			if(data[0][0] == data[1][0]){
@@ -74,6 +81,7 @@ int main(void)
 	ans += dp[r][b][N - 1]; ans %= md;
 	ans += dp[g][r][N - 1]; ans %= md;
 	ans += dp[b][g][N - 1]; ans %= md;
+
 #if 0
 	PrintLn(dp[r][r][N - 1]);
 	PrintLn(dp[g][g][N - 1]);

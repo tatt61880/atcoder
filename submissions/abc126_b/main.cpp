@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int main(){
   string S;
   cin >> S;
@@ -21,6 +22,7 @@ int main(){
   int y = (S[2] - '0') * 10 + S[3] - '0';
   bool a = (0 <= x && x <= 99 && 1 <= y && y <= 12);
   bool b = (0 <= y && y <= 99 && 1 <= x && x <= 12);
+
   if(a){
     if(b){
       puts("AMBIGUOUS");

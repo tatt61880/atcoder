@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)998244353;
 //}}}
+
 ll nums[100001];
 int main(){
   int N;
@@ -29,10 +30,12 @@ int main(){
     }
     nums[D]++;
   }
+
   if(nums[0] != 1){
     cout << 0 << endl;
     return 0;
   }
+
   ll ans = 1;
   int num = 1;
   int i = 1;

@@ -11,11 +11,13 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 ll a[100000];
 ll c[100000];
 ll abc[100000];
 ll modExp3[100001];
 ll numABC;
+
 int main(){
   string S;
   cin >> S;

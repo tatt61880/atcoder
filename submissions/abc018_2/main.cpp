@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+
 int main(void)
 {
 	char S[101];
@@ -8,6 +9,7 @@ int main(void)
 	scanf("%s", S);
 	buf[strlen(S)] = '\0';
 	scanf("%d", &N);
+
 	for(int i = 0; i < N; i++){
 		int l, r;
 		scanf("%d %d", &l, &r);

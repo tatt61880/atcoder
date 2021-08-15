@@ -3,11 +3,13 @@
 using namespace std;
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (n); i++)
+
 void invalid(void)
 {
 	PrintLn("invalid");
 	exit(0);
 }
+
 int main(void)
 {
 	int n;

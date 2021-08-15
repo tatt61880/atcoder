@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 typedef long long ll;
+
 char a[51][51];
 char b[51][51];
 int main(void)
@@ -11,6 +13,7 @@ int main(void)
 	cin >> N >> M;
 	Rep(n, N) cin >> a[n];
 	Rep(m, M) cin >> b[m];
+
 	Rep(h, N - M + 1){
 		Rep(w, N - M + 1){
 			bool f = true;
@@ -29,5 +32,6 @@ int main(void)
 		}
 	}
 	PrintLn("No");
+
 	return 0;
 }

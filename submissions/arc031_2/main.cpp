@@ -1,14 +1,17 @@
 #include <iostream>
 #include <queue>
 using namespace std;
+
 #define PrintLn(X) cout << (X) << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int main(void)
 {
 	char A[10][10];
 	char B[10][10];
 	Rep(y, 10) Rep(x, 10) cin >> A[y][x];
 	bool all_o_flag = true;
+
 	typedef struct{
 		int x;
 		int y;

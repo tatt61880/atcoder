@@ -14,7 +14,9 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 char c[10][11];
+
 int main(){
   int H, W;
   cin >> H >> W;

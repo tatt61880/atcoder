@@ -14,16 +14,20 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int x[100];
 int y[100];
 int h[100];
+
 int f(int dx, int dy, int hh){
   return hh + abs(dx) + abs(dy);
 }
+
 int main(){
   int N;
   cin >> N;
   rep(i, N) cin >> x[i] >> y[i] >> h[i];
+
   rep(i, N){
     if(h[i]){
       swap(x[i], x[0]);
@@ -32,6 +36,7 @@ int main(){
       break;
     }
   }
+
   rep(cx, 101){
     rep(cy, 101){
       int H = f(x[0] - cx, y[0] - cy, h[0]);

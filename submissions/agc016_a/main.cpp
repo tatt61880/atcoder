@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
+
 bool uni(char *s)
 {
 	char c = *s;
@@ -10,12 +11,14 @@ bool uni(char *s)
 	}
 	return true;
 }
+
 int f(char c, char *s)
 {
 	char str[101];
 	strcpy(str, s);
 	int len = strlen(str);
 	int ret = 0;
+
 	while(!uni(str)){
 		ret++;
 		len--;
@@ -26,10 +29,12 @@ int f(char c, char *s)
 	}
 	return ret;
 }
+
 int main(int n)
 {
 	char s[101];
 	cin >> s;
+
 	int ans = 1000;
 	for(char c = 'a'; c <= 'z'; c++){
 		int num = f(c, s);

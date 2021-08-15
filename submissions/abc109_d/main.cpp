@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)998244353;
 //}}}
+
 int a[501][501];
 int ans[250000][4];
 int main(){

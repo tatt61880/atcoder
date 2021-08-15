@@ -14,9 +14,11 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int N;
 int a[200000];
 map<int, int> mp;
+
 bool f(int n){
   mp.clear();
   mp[a[0]] = 0;
@@ -50,6 +52,7 @@ bool f(int n){
   }
   return true;
 }
+
 int main(){
   cin >> N;
   rep(i, N) scanf("%d", &a[i]);
@@ -66,6 +69,7 @@ int main(){
       return 0;
     }
   }
+
   int hi = N;
   int lo = 1;
   while(hi - lo > 1){

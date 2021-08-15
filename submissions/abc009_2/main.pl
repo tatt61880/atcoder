@@ -1,11 +1,14 @@
 use strict;
 use warnings;
+
 <>;
 my @A;
+
 while(<>){
 	chomp;
 	push @A, $_;
 }
+
 my $max = "";
 for(reverse sort {$a <=> $b} @A){
 	if($max eq ""){

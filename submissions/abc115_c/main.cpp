@@ -14,14 +14,17 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int p[100000];
 int main(){
   int N, K;
   cin >> N >> K;
+
   rep(i, N){
     cin >> p[i];
   }
   sort(p, p + N);
+
   int ans = p[N - 1] - p[0];
   rep(i, N - K + 1){
     ans = min(ans, p[i + K - 1] - p[i]);

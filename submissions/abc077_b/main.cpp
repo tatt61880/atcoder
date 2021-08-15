@@ -2,6 +2,7 @@
 #include <string>
 #include <cmath>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 int main(void)
 {

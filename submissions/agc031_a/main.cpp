@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int main(){
   int N;
   cin >> N;
@@ -23,6 +24,7 @@ int main(){
   rep(i, N){
     nums[s[i] - 'a']++;
   }
+
   ll ans = 1;
   rep(i, 26){
     ans *= (nums[i] + 1);

@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 int a[100000];
 ll ab[100000];
 int b[100000];
@@ -25,6 +26,7 @@ int main(){
   sort(a, a + N);
   sort(b, b + N);
   sort(c, c + N);
+
   {
     int ai = 0;
     int bi = 0;
@@ -71,6 +73,7 @@ int main(){
   rep(i, N){
     ans += ab[i] * bc[i];
   }
+
   cout << ans << endl;
   return 0;
 }

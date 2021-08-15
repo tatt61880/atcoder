@@ -1,7 +1,10 @@
 #include <stdio.h>
+
+
 int min(int h, int m){
 	return h * 60 + m;
 }
+
 int main(void)
 {
 	int N;
@@ -10,6 +13,7 @@ int main(void)
 	for(int i = 0; i < N; i++){
 		scanf("%d", &t[i]);
 	}
+
 	int min = 10000000;
 	for(int i = 0; i < (1 << N); i++){
 		int l = 0;

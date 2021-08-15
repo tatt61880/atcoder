@@ -14,8 +14,10 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 char A[1001][1001];
 int H, W;
+
 bool f(int x, int y){
   if(x < 0) return 0;
   if(y < 0) return 0;
@@ -23,13 +25,17 @@ bool f(int x, int y){
   if(y >= H) return 0;
   return (A[y][x] == '.');
 }
+
 int dx[] = {0, 1, 0, -1};
 int dy[] = {1, 0, -1, 0};
+
 int main(){
   cin >> H >> W;
+
   rep(i, H){
     cin >> A[i];
   }
+
   int count = 0;
   stack<pair<int, int>> st;
   rep(h, H){
@@ -40,6 +46,7 @@ int main(){
       }
     }
   }
+
   int ans = 0;
   while(count != H * W){
     ans++;
@@ -61,6 +68,7 @@ int main(){
     }
     st = st2;
   }
+
   cout << ans << endl;
   return 0;
 }

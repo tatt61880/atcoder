@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #define MAX 10000
 int main(void)
 {
@@ -21,6 +22,7 @@ int main(void)
 		puts("-1");
 		return 0;
 	}
+
 	double P, Q;
 	P = (double)B / (max - min);
 	Q = (N * A - P * sum) / N;

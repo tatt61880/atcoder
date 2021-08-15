@@ -8,11 +8,14 @@
 #include <cstring>
 #include <cmath>
 using namespace std;
+
 typedef long long LL;
+
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 int main(void)
 {
 	int n;
@@ -32,6 +35,7 @@ int main(void)
 	}
 	LL P[1254];
 	Rep(i, pnum) P[i] = (LL)primes[i] * primes[i] * primes[i];
+
 	map<LL, int> mp;
 	while(n--){
 		LL v;
@@ -39,6 +43,7 @@ int main(void)
 		for(int p = 0; P[p] < v + 1; ++p) while(v % P[p] == 0) v /= P[p];
 		mp[v]++;
 	}
+
 	int max = 0;
 	for(map<LL, int>::iterator itr = mp.begin(); itr != mp.end(); ++itr) if(itr->second > max) max = itr->second;
 	PrintLn(max);

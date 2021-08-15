@@ -14,14 +14,17 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int dp1[10];
 int dp2[100];
 int dp3[1000];
+
 int main(){
   int N;
   cin >> N;
   string S;
   cin >> S;
+
   rep(i, N){
     int d = S[i] - '0';
     int d2 = -1;

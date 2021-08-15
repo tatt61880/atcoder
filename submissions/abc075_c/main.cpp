@@ -2,15 +2,19 @@
 #include <vector>
 #include <queue>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int N, M;
 int a[50];
 int b[50];
 vector<int> vs[100];
+
 int main(void)
 {
 	cin >> N >> M;
+
 	Rep(i, M){
 		cin >> a[i] >> b[i];
 		a[i]--;
@@ -18,11 +22,13 @@ int main(void)
 		vs[a[i]].push_back(b[i]);
 		vs[b[i]].push_back(a[i]);
 	}
+
 	int ans = 0;
 	Rep(i, M){
 		int A = a[i];
 		int B = b[i];
 		int nums[50] = {0};
+
 		queue<int> q;
 		nums[A] = 1;
 		for(auto &x: vs[A]){
@@ -46,6 +52,7 @@ int main(void)
 		ans++;
 F:;
 	}
+
 	PrintLn(ans);
 	return 0;
 }

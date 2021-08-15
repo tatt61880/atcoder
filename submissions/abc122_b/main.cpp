@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 bool f(string s){
   rep(i, s.size()){
     bool f = true;
@@ -24,6 +25,7 @@ bool f(string s){
   }
   return true;
 }
+
 int main(){
   string s;
   cin >> s;

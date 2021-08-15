@@ -11,11 +11,14 @@
 #include <cstring>
 #include <cmath>
 using namespace std;
+
 typedef long long LL;
+
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 int main(void)
 {
 	string so;
@@ -23,6 +26,7 @@ int main(void)
 	cin >> so;
 	sr = so;
 	reverse(sr.begin(), sr.end());
+
 	int len = so.size();
 	if(so == sr){
 		len -= len % 2;

@@ -14,15 +14,20 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int dp[100001];
+
 int main(){
   int N, M;
   cin >> N >> M;
   string S;
   cin >> S;
+
   stack<int> st;
   st.push(N);
+
   dp[N] = 1;
+
   while(st.size()){
     int pos = st.top();
     st.pop();
@@ -42,6 +47,7 @@ int main(){
       return 0;
     }
   }
+
   int pos = 0;
   while(1){
     int ans = dp[pos];

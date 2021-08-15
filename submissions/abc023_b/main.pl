@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 my $N = <>;
 if($N % 2 == 0){
 	print "-1\n";
@@ -7,6 +8,7 @@ if($N % 2 == 0){
 }else{
 	my $S = <>;
 	chomp $S;
+
 	my $A = "b";
 	for(1..($N / 2)){
 		if($_ % 3 == 1){

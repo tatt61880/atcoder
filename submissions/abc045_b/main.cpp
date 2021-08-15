@@ -1,7 +1,9 @@
 #include<string>
 #include<iostream>
 using namespace std;
+
 void p(char c){ cout<<c<<endl; }
+
 int main(void)
 {
  string a,b,c;

@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 my $A = <>;
 chomp $A;
 if($A eq "a"){

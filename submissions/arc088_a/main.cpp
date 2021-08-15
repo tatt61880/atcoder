@@ -11,9 +11,11 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 int main(){
   ll X, Y;
   cin >> X >> Y;
+
   int ans = 0;
   while(X <= Y){
     ans++;

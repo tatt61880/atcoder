@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)998244353;
 //}}}
+
 int digitSum(ll n){
   int res = 0;
   while(n){
@@ -30,6 +31,7 @@ int digit(ll n){
   }while(n);
   return res;
 }
+
 int f(ll n){
   int res = 0;
   while(n){
@@ -38,6 +40,7 @@ int f(ll n){
   }
   return res;
 }
+
 int main(){
   ll N;
   cin >> N;

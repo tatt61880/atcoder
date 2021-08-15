@@ -3,14 +3,17 @@
 #include <vector>
 #include <map>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
+
 int main(void)
 {
 	int N, K;
 	cin >> N >> K;
 	priority_queue<int> pq;
 	map<int, int> mp;
+
 	Rep(i, N){
 		int x;
 		cin >> x;

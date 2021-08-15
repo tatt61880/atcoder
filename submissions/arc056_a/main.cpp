@@ -3,10 +3,12 @@
 #include <cmath>
 #include <algorithm>
 using namespace std;
+
 int main(void)
 {
 	long long a, b, k, l;
 	scanf("%lld %lld %lld %lld", &a, &b, &k, &l);
+
 	int p = k / l;
 	long long ans;
 	if(k % l == 0){

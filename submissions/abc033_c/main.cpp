@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <string.h>
+
 int main(void)
 {
 	char S[100001];
 	scanf("%s", S);
+
 	int answer = 0;
 	int flag = 1;
 	int len = strlen(S);

@@ -14,10 +14,12 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 typedef struct {
   int h;
   int w;
 } Pos;
+
 char m[400][400];
 int main(){
   int H, W;

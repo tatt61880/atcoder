@@ -11,10 +11,13 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 int a[100000];
+
 int main(){
   ll A, B, C, K;
   cin >> A >> B >> C >> K;
+
   ll ans = 0;
   if(K % 2){
     ans = -A + B;
@@ -22,6 +25,7 @@ int main(){
     ans = A - B;
   }
   //cout << "Unfair" << endl;
+
   cout << ans << endl;
   return 0;
 }

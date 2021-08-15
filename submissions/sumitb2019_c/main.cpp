@@ -14,7 +14,9 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int dp[100001];
+
 int main(){
   int X;
   cin >> X;
@@ -24,6 +26,7 @@ int main(){
       if(dp[i] && i + n <= X) dp[i + n] = 1;
     }
   }
+
   int ans = dp[X];
   cout << ans << endl;
   return 0;

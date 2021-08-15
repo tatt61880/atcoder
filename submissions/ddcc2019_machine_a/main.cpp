@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int main(){
   int xs, ys;
   int xa, ya;
@@ -23,6 +24,7 @@ int main(){
   cin >> xa >> ya;
   cin >> xb >> yb;
   cin >> xe >> ye;
+
   const int XSP = 500;
   const int YSP = 500;
   const int XAS = 60;
@@ -33,11 +35,13 @@ int main(){
   const int AS = unit;
   const int BS = unit;
   const int ES = unit * 2;
+
   int xp;
   int yp;
   int as = 0;
   int bs = 0;
   int es = 0;
+
   xp = xa;
   yp = ya;
   as = AS;
@@ -56,5 +60,6 @@ int main(){
   bs = 0;
   es = ES;
   printf("%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\n", xp,XSP,XAS,XDS,yp,YSP,YAS,YDS,as,bs,es);
+
   return 0;
 }

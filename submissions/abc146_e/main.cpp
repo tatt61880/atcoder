@@ -14,37 +14,46 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 ll A[200000];
 ll B[200005];
+
 int main(){
   int N, K;
   cin >> N >> K;
   rep(i, N){
     cin >> A[i];
   }
+
   rep(i, N){
     B[i + 1] = B[i] + A[i];
     B[i + 1] %= K;
   }
+
   rep(i, N + 1){
     B[i] += N - i;
     B[i] %= K;
   }
+
   map<ll, int> mp;
   rep(i, N + 1){
     mp[B[i]]++;
   }
+
   //rep(i, N + 1){ cout << B[i] << " "; } cout << endl;
   // rep(i, N + 1){ cout << mp[i] << " "; } cout << endl;
+
   map<int, int> cnt;
   int l = 0;
   int r = min(N, K - 1);
+
   ll ans = 0;
   rep(i, r + 1){
     ans += cnt[B[i]];
     cnt[B[i]]++;
   }
   //cout << ans << endl;
+
   while(1){
     if(r == N) break;
     cnt[B[l]]--;
@@ -53,6 +62,7 @@ int main(){
     ans += cnt[B[r]];
     cnt[B[r]]++;
   }
+
   cout << ans << endl;
   return 0;
 }

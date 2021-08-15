@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)998244353;
 //}}}
+
 bool a[100];
 int main(){
   int N, M, A, B;
@@ -30,5 +31,6 @@ int main(){
     ans += a[i] ? A : B;
   }
   cout << ans << endl;
+
   return 0;
 }

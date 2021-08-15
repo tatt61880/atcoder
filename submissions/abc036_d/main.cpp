@@ -12,6 +12,7 @@ typedef struct{
 } Count;
 vector<int> v[100000];
 // aに対し、exception側が存在しないものとみなしたCountを返す関数。
+
 Count f(int a, int exception){
 	ll w = 1;
 	ll t = 1;

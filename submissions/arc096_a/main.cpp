@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 int main(){
   int A, B, C, X, Y;
   cin >> A >> B >> C >> X >> Y;

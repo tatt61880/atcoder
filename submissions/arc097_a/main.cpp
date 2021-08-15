@@ -17,6 +17,7 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 vector<string> ss;
 int main(){
   string s;
@@ -37,5 +38,6 @@ int main(){
       return 0;
     }
   }
+
   return 0;
 }

@@ -4,7 +4,9 @@ using namespace std;
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define PrintLn(X) cout << X << endl
 typedef long long ll;
+
 int dp[2048] = {1};
+
 int main(){
 	ll A, B;
 	cin >> A >> B;

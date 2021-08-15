@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int main(){
   int M, K;
   cin >> M >> K;
@@ -22,6 +23,7 @@ int main(){
     max_num *= 2;
   }
   max_num--;
+
   if(K == 0){
     rep(i, max_num + 1){
       if(i != max_num){

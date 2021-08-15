@@ -14,9 +14,11 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 ll A[100000];
 ll B[100000];
 ll C[100000];
+
 int main(){
   int N, M;
   cin >> N >> M;
@@ -24,6 +26,7 @@ int main(){
     cin >> A[i];
   }
   sort(A, A + N);
+
   vector<pair<ll, ll>> v;
   rep(i, M){
     cin >> B[i];

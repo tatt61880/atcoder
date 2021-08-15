@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 vector<int> V[100001];
 vector<int> v;
 int visited[100001];
@@ -26,6 +27,7 @@ void tsort(int x){
   }
   v.push_back(x);
 }
+
 int main(){
   int N, M;
   cin >> N >> M;

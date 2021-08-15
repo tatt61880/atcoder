@@ -14,7 +14,9 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int nums[15];
+
 int f(int n){
   n--;
   int res = 0;
@@ -23,6 +25,7 @@ int f(int n){
   }
   return res;
 }
+
 int main(){
   int N;
   cin >> N;

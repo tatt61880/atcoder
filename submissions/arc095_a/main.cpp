@@ -11,6 +11,7 @@ using namespace std;
 typedef long long ll;
 const ll MOD = 1e9+7;
 //}}}
+
 int x[200000];
 int y[200000];
 int main(){
@@ -19,6 +20,7 @@ int main(){
   rep(i, N) cin >> x[i];
   rep(i, N) y[i] = x[i];
   sort(x, x + N);
+
   rep(i, N){
     if(y[i] < x[N / 2]){
       cout << x[N / 2] << endl;

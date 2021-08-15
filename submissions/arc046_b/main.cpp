@@ -1,6 +1,7 @@
 #include <iostream>
 #define PrintLn(X) cout << X << endl
 using namespace std;
+
 int main(void)
 {
 	int N, T, A;

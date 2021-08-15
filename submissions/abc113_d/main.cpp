@@ -14,10 +14,13 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int ans[2][8];
+
 int main(){
   int H, W, K;
   cin >> H >> W >> K;
+
   ans[0][0] = 1;
   rep(h, H){
     rep(w, W){

@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 int main(){
   int N;
   cin >> N;
@@ -23,6 +24,7 @@ int main(){
   rep(i, N){
     if(A[i] == 0) include_zero = true;
   }
+
   ll ans = 0;
   if(include_zero){
     rep(i, N){

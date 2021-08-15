@@ -6,6 +6,7 @@ using namespace std;
 	
 vector<int> v[100000];
 int f[100000] = {0};
+
 void connected(int n){
 	f[n] = 1;
 	for(auto& x: v[n]){
@@ -13,6 +14,7 @@ void connected(int n){
 		connected(x);
 	}
 }
+
 int main(void)
 {
 	int N, M;

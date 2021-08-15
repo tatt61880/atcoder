@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <map>
 using namespace std;
+
 int main(void)
 {
 	pair<int, int> a[100000];

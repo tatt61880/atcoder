@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 my ($R, $C) = split / /, <>;
 my ($Sx, $Sy) = split / /, <>;
 my ($Gx, $Gy) = split / /, <>;
@@ -8,9 +9,11 @@ for(0 .. $R - 1)
 {
 	push @maze, [split //, <>];
 }
+
 my @queue;
 push @queue, [$Sx - 1, $Sy - 1];
 $maze[$Sx - 1][$Sy - 1] = 0;
+
 while(@queue)
 {
 	my $x = $queue[0][0];

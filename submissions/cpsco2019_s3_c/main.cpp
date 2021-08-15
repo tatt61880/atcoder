@@ -1,8 +1,10 @@
 //{{{
 #include <bits/stdc++.h>
 using namespace std;
+
 const string truename = "Yes";
 const string falsename = "No";
+
 struct IoSetup {
   IoSetup(){
     cin.tie(nullptr);
@@ -11,6 +13,7 @@ struct IoSetup {
     cerr << fixed << setprecision(10);
   };
 } ioSetup;
+
 //{{{ rep rrep loop
 #define repX(cum,b,c,d,x,...) x
 #define repN(cum) repX cum
@@ -26,6 +29,7 @@ struct IoSetup {
 //}}}
 #define each(x,cum) for(auto&x:cum)
 #define sz(x) ((ll)(x).size())
+
 //{{{ Type
 using ull = unsigned long long;
 using ll = long long;
@@ -39,6 +43,7 @@ using vvi = vector<vi>;
 template<class T> vector<T> Vector(size_t cum, T val){return vector<T>(cum, val);}
 template<class... Tail> auto Vector(size_t cum, Tail... tail){ return vector<decltype(Vector(tail...))>(cum, Vector(tail...)); }
 //}}}
+
 //{{{ STL overload
 template<class T, class Compare>inline void sort(T&cum, Compare comp) { sort(cum.begin(), cum.end(), comp); }
 template<class T> inline void sort(T&cum) { sort(cum.begin(), cum.end()); }
@@ -49,12 +54,15 @@ template<class T, class U>inline bool binary_search(T&cum, const U&v) { return b
 template<class T, class U>inline auto lower_bound(T&cum, const U&v) { return lower_bound(cum.begin(), cum.end(), v); }
 template<class T, class U>inline auto upper_bound(T&cum, const U&v) { return upper_bound(cum.begin(), cum.end(), v); }
 //}}}
+
 //{{{ Functions
 template<class T> inline T Sum(vector<T>&cum){ return accumulate(cum.begin(), cum.end(), (T)0); }
 template<class T> inline T Max(vector<T>&cum){ return *max_element(cum.begin(), cum.end()); }
 template<class T> inline T Min(vector<T>&cum){ return *min_element(cum.begin(), cum.end()); }
+
 template<class T, class U> inline bool chmax(T&cum, const U&b){ return (b > cum) ? (cum = b, true) : false; }
 template<class T, class U> inline bool chmin(T&cum, const U&b){ return (b < cum) ? (cum = b, true) : false; }
+
 ll gcd(const ll cum, const ll b){ return b ? gcd(b, cum % b) : cum; }
 ll lcm(const ll cum, const ll b){ return cum / gcd(cum, b) * b; }
 ll ceil(const ll cum, const ll b){ return (cum + b - 1) / b; }
@@ -68,6 +76,7 @@ ll popcount(ll cum){
   return cum & 0x7f;
 }
 //}}}
+
 //{{{ in
 class in {
   int n, m;
@@ -80,6 +89,7 @@ public:
   template <class T> operator vector<vector<T>>() {assert(n>0); assert(m>0); vector<vector<T>> ret(n, vector<T>(m)); for(ll i=0;i<(ll)n;++i) for(ll j=0;j<(ll)m;++j) cin>>ret[i][j]; return ret; }
 };
 //}}}
+
 //{{{ << overload
 template<class T,class U>ostream &operator<<(ostream &o,const pair<T,U>&j){o<<"{"<<j.first<<", "<<j.second<<"}";return o;}
 template<class T,class U>ostream &operator<<(ostream &o,const map<T,U>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
@@ -87,6 +97,7 @@ template<class T>ostream &operator<<(ostream &o,const set<T>&j){o<<"{";for(auto 
 template<class T>ostream &operator<<(ostream &o,const multiset<T>&j){o<<"{";for(auto t=j.begin();t!=j.end();++t)o<<(t!=j.begin()?", ":"")<<*t;o<<"}";return o;}
 template<class T>ostream &operator<<(ostream &o,const vector<T>&j){o<<"{";for(ll i=0;i<(ll)j.size();++i)o<<(i>0?", ":"")<<j[i];o<<"}";return o;}
 //}}}
+
 //{{{ print / out
 template<class T> int print(const T& cum){ cout << cum; return 0; }
 inline int out(bool f){ cout << (f ? truename : falsename) << '\n'; return 0; }
@@ -94,6 +105,7 @@ inline int out(){ cout << '\n'; return 0; }
 template<class T> inline int out(const T& t){ print(t); cout << '\n'; return 0; }
 template<class Head, class... Tail> inline int out(const Head& head, const Tail&... tail){ print(head); cout << " "; out(tail...); return 0; }
 //}}}
+
 //{{{ debug_print / debug_out
 #ifdef LOCAL
 #if 1 // Colorize
@@ -113,6 +125,7 @@ template<class Head, class... Tail> inline int debug_out(const Head& head, const
 #define debug(...)
 #endif
 //}}}
+
 //{{{ Modular
 template <std::int_fast64_t Mod> class Modular {
   using u64 = std::uint_fast64_t;
@@ -135,12 +148,14 @@ public:
 };
 template <std::int_fast64_t Mod> ostream& operator<<(ostream& os, const Modular<Mod>& m){ return os << m.cum; }
 //}}}
+
 const double pi=acos(-1);
 const double eps = 1e-9;
 const ll inf = 1001001001;
 const ll mod=(ll)1e9+7;
 using mint = Modular<mod>;
 //}}}
+
 int main(){
   ll N = in();
   vi cum(1000001, 0);
@@ -150,6 +165,7 @@ int main(){
     cum[s]++;
     cum[t]--;
   }
+
   ll ans = 0;
   rep(i, 1000000){
     cum[i + 1] += cum[i];

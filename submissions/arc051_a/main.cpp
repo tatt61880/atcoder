@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
 #define PrintLn(X) cout << (X) << endl
+
 int X1, Y1, R;
 int x2, y2, x3, y3;
+
 bool inCircle(int x, int y)
 {
 	return (X1 - x) * (X1 - x) + (Y1 - y) * (Y1 - y) <= R * R;
@@ -14,6 +16,7 @@ bool inBox(int x, int y)
 void Print(bool covered){
 	PrintLn(covered ? "NO" : "YES");
 }
+
 int main(void)
 {
 	cin >> X1 >> Y1 >> R;

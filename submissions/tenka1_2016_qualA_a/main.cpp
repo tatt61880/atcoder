@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 int main(){
   int ans = 0;
   rep(i, 1, 101){

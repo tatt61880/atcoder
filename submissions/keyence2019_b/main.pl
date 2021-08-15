@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+
 $_ = <>;
 chomp;
 if(m/^.*keyence$/){

@@ -3,8 +3,10 @@
 #include <vector>
 #include <set>
 using namespace std;
+
 vector<int> x;
 vector<int> y;
+
 bool test(const vector<int> &v, int X)
 {
 	set<int> st;
@@ -22,11 +24,13 @@ bool test(const vector<int> &v, int X)
 	}
 	return st.count(X);
 }
+
 int main(){
 	string s;
 	cin >> s;
 	int X, Y;
 	cin >> X >> Y;
+
 	bool f = true;
 	int num = 0;
 	y.push_back(0);

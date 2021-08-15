@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 bool check(string &s, int Q, int N, int pos, vector<char> &t, vector<char> &d, bool left_check)
 {
   char c = s[pos];
@@ -27,6 +28,7 @@ bool check(string &s, int Q, int N, int pos, vector<char> &t, vector<char> &d, b
   }
   return true;
 }
+
 int main()
 {
   int N, Q;

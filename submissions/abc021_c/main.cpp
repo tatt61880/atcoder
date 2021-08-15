@@ -12,17 +12,21 @@
 #include <cstring>
 #include <cmath>
 using namespace std;
+
 typedef long long LL;
 typedef unsigned long long ULL;
 const LL MOD = 1000000007;
+
 #define PrintLn(X) cout << X << endl
 #define Loop(n) for(int loop_ = n; loop_; --loop_)
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 #define For(i, a, b) for(int i = a; i < (int)(b); ++i)
+
 int cost[100];
 bool sort_func(const int a, const int b){
     return cost[a] > cost[b];
 }
+
 int main(void)
 {
 	int N;
@@ -68,6 +72,7 @@ int main(void)
 			}
 		}
 	}
+
 	PrintLn(count[b - 1]);
 	return 0;
 }

@@ -12,6 +12,7 @@ using namespace std;
 #define rrep3(i,begin,end) for(int i=(int)(begin-1),i##_end=(int)(end);i>=i##_end;--i)
 #define foreach(x,a) for(auto&x:a)
 using ll=long long;
+
 class in {
   int n;
 public:
@@ -20,6 +21,7 @@ public:
   template <class T> operator T() { T ret; cin >> ret; return ret; }
   template <class T> operator vector<T>() { vector<T> ret(n); for (int i = 0; i < n; i++) cin >> ret[i]; return ret; }
 };
+
 template <std::uint_fast64_t Mod> class modint {
   using u64 = std::uint_fast64_t;
   u64 a;
@@ -41,13 +43,16 @@ const ll mod=(ll)1e9+7;
 using mint = modint<mod>;
 ostream& operator<<(ostream& os, const mint& m){ return os << m.a; }
 //}}}
+
 int main(){
   int N = 3;
   vector<int> A = in(N);
+
   int sum = 0;
   rep(i, 3){
     sum += A[i];
   }
+
   bool ans = sum >= 22;
   puts(ans ? "bust" : "win");
   return 0;

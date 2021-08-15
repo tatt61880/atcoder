@@ -1,8 +1,10 @@
 #include <stdio.h>
+
 int main(void)
 {
 	int N;
 	scanf("%d", &N);
+
 	int sum = 0;
 	int a[101];
 	for(int i = 0; i < N; i++){
@@ -14,6 +16,7 @@ int main(void)
 		return 0;
 	}
 	int ave = sum / N; // 平均人数
+
 	int sub_sum = 0;
 	int sub_count = 0;
 	int parts = 0;
@@ -26,6 +29,7 @@ int main(void)
 			parts++;
 		}
 	}
+
 	printf("%d\n", N - parts);
 	return 0;
 }

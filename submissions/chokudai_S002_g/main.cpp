@@ -14,10 +14,13 @@ using namespace std;
 using ll=long long;
 const ll mod=(ll)1e9+7;
 //}}}
+
 ll A[200000];
 ll B[200000];
+
 ll gcd(ll a, ll b){return b ? gcd(b, a % b) : a;}
 ll lcm(ll a, ll b){return a / gcd(a, b) * b;}
+
 int main(){
   int N;
   cin >> N;

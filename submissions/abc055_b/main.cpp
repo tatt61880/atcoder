@@ -1,9 +1,11 @@
 #include <iostream>
 using namespace std;
+
 #define PrintLn(X) cout << X << endl
 #define Rep(i, n) for(int i = 0; i < (int)(n); ++i)
 typedef long long ll;
 const int md = 1000000007;
+
 int main(void)
 {
 	int N;

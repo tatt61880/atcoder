@@ -14,6 +14,7 @@ using namespace std;
 using ll=long long;
 const ll MOD=(ll)1e9+7;
 //}}}
+
 void f(string s, string t)
 {
   rep(i, s.size()){
@@ -29,6 +30,7 @@ void f(string s, string t)
   bool ans = s == t;
   puts(ans ? "Yes" : "No");
 }
+
 int main(){
   string s, t;
   cin >> s >> t;
@@ -41,8 +43,10 @@ int main(){
     v.emplace_back(t[i], s[i]);
   }
   sort(v.begin(), v.end());
+
   string newS;
   string newT;
+
   bool flag = true;
   foreach(x, v){
     char ct = x.first;
@@ -62,6 +66,7 @@ int main(){
       newT += ct;
     }
   }
+
   f(newS, newT);
   return 0;
 }

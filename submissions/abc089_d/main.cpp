@@ -10,10 +10,12 @@ using namespace std;
 typedef long long ll;
 const int MOD = 1e9+7;
 //}}}
+
 int cost[100000];
 int main(){
 	int H, W, D;
 	cin >> H >> W >> D;
+
 	map<int, pair<int, int>> m;
 	rep(h, H){
 		rep(w, W){
@@ -22,6 +24,7 @@ int main(){
 			m[a] = make_pair(h, w);
 		}
 	}
+
 	rep(d, D){
 		int prev_h = 0;
 		int prev_w = 0;
