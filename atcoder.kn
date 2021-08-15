@@ -99,6 +99,7 @@ func main()
 		if(!file@exist(filepath))
 			do data :: @fetchData(url)
 			var writer: file@Writer :: file@makeWriter(filepath, false)
+			do data :: data.replace("\u000D", "") { 取得してきたデータの改行が 0x0D 0x0D 0x0A となってしまうため、 0x0D 0x0A になるようにします。 }
 			do writer.writeStr(data)
 			do writer.fin()
 		else
