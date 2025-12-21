@@ -23,7 +23,13 @@ func main()
 		ret
 	end if
 	}
-	
+
+	{
+	if(!@fetchContestProblemJson())
+		ret
+	end if
+	}
+
 	var jsonArray: list<\json@Json> :: (\json@makeJsonF(@jsonFilename) $ \json@JsonArray).value
 	do jsonArray.head()
 	;"result":"AC"
@@ -185,6 +191,21 @@ func fetchJson(): bool
 	end if
 
 	var writer: file@Writer :: file@makeWriter(@jsonFilename, false)
+	do writer.writeStr(data)
+	do writer.fin()
+	ret true
+end func
+
+func fetchContestProblemJson(): bool
+	var url: []char :: "https://kenkoooo.com/atcoder/resources/contest-problem.json"
+	var data: []char :: @fetchData(url)
+	if(data =& null)
+		do lib@exitCode(1)
+		do cui@print("JSONデータの取得に失敗しました。\n\{url}\n")
+		ret false
+	end if
+
+	var writer: file@Writer :: file@makeWriter("contest-problem.json", false)
 	do writer.writeStr(data)
 	do writer.fin()
 	ret true
