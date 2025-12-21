@@ -84,7 +84,7 @@ func main()
 		ret
 	end if
 
-	do @regexCode :: regex@makeRegex("<pre id=\"submission-code\" class=\"prettyprint linenums\">([\\d\\D]+?)</pre>")
+	do @regexCode :: regex@makeRegex("<pre id=\"submission-code\" [^>]*>([\\d\\D]+?)</pre>")
 	assert @regexCode <>& null
 	
 	do dictId.forEach(callback, null)

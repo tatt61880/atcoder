@@ -1,0 +1,7 @@
+func main()
+	var a: []char :: cui@input()
+	var b: []char :: cui@input()
+	
+	var ans: []char :: ^a > ^b ?(a, b)
+	do cui@print("\{ans}\n")
+end func

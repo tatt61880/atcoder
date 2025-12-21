@@ -1,0 +1,45 @@
+var n: int
+var a: []int
+var dp: [][]int
+
+func main()
+	do @n :: cui@inputInt()
+	do @a :: #[@n]int
+	for i(0, @n - 1)
+		do @a[i] :: cui@inputInt()
+	end for
+	
+	do @dp :: #[@n + 1, @n + 1]int
+	for i(0, @n)
+		do @dp[i].fill(lib@intMin)
+	end for
+	
+	var ans: int :: @dfs(0, @n)
+	do cui@print("\{ans}\n")
+end func
+
+; メモ化再帰
+func dfs(l: int, r: int): int
+	if(@dp[l][r] <> lib@intMin)
+		ret @dp[l][r]
+	end if
+	
+	if(l = r)
+		ret 0
+	end if
+	
+	var res: int :: lib@intMin
+	
+	var cand1: int :: -dfs(l + 1, r) + @a[l]
+	if(cand1 > res)
+		do res :: cand1
+	end if
+	
+	var cand2: int :: -dfs(l, r - 1) + @a[r - 1]
+	if(cand2 > res)
+		do res :: cand2
+	end if
+	
+	do @dp[l][r] :: res
+	ret res
+end func

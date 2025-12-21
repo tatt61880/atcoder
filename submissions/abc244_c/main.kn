@@ -1,0 +1,25 @@
+func main()
+	var n: int :: cui@inputInt()
+	var usedNums: []bool :: #[2 * n + 2]bool
+	for x(0, 2 * n + 1)
+		do usedNums[x] :: false
+	end for
+	
+	for t(1, n + 1)
+		for x(1, 2 * n + 1)
+			if(!usedNums[x])
+				do usedNums[x] :: true
+				do cui@print("\{x}\n")
+				do cui@flush()
+				break x
+			end if
+		end for
+		
+		if(t = n + 1)
+			ret
+		end if
+		
+		var a: int :: cui@inputInt()
+		do usedNums[a] :: true
+	end for
+end func

@@ -1,0 +1,6 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var ans: bool :: n % 3 = 0
+	do cui@print((ans ?("YES", "NO")) ~ "\n")
+end func

@@ -1,0 +1,5 @@
+func main()
+	for(1, 1000)
+		do cui@print("3\n")
+	end for
+end func

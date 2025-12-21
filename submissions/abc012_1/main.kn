@@ -1,0 +1,5 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	do cui@print("\{b} \{a}\n")
+end func

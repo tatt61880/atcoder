@@ -1,0 +1,8 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	do cui@print("\{1 + (b > a ?(1, 0)) + (c > a ?(1, 0))}\n")
+	do cui@print("\{1 + (c > b ?(1, 0)) + (a > b ?(1, 0))}\n")
+	do cui@print("\{1 + (a > c ?(1, 0)) + (b > c ?(1, 0))}\n")
+end func

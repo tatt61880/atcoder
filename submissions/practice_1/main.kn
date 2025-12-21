@@ -1,0 +1,8 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	var s: []char :: cui@input()
+	
+	do cui@print("\{a + b + c} \{s}\n")
+end func

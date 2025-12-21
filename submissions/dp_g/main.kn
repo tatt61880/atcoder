@@ -1,0 +1,49 @@
+var g: [][]int
+var dp: []int
+
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	do @g :: #[n, 0]int
+	do @dp :: #[n]int
+	
+	for(1, m)
+		var x: int :: cui@inputInt() - 1
+		var y: int :: cui@inputInt() - 1
+		do @g[x] :~ [y]
+	end for
+	
+	for i(0, n - 1)
+		do @dp[i] :: -1
+	end for
+	
+	var ans: int :: 0
+	for v(0, n - 1)
+		var t: int :: @rec(v)
+		if(ans < t)
+			do ans :: t
+		end if
+	end for
+	
+	do cui@print("\{ans}\n")
+end func
+
+; メモ化再帰
+func rec(v: int): int
+	if(@dp[v] <> -1)
+		ret @dp[v]
+	end if
+	
+	var res: int :: 0
+	for i(0, ^@g[v] - 1)
+		var nv: int :: @g[v][i]
+		var cand: int :: rec(nv) + 1
+		if(res < cand)
+			do res :: cand
+		end if
+	end for
+	
+	do @dp[v] :: res
+	ret res
+end func

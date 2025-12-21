@@ -1,0 +1,17 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: int :: cui@inputInt()
+	var t: int :: cui@inputInt()
+	var ans: int :: 0
+	
+	var w: int :: 0
+	for(1, n)
+		var a: int :: cui@inputInt()
+		do w :+ a
+		if(s <= w & w <= t)
+			do ans :+ 1
+		end if
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

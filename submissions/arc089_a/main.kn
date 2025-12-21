@@ -1,0 +1,25 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var ct: int :: 0
+	var cx: int :: 0
+	var cy: int :: 0
+	var ans: bool :: true
+	for loop(1, n)
+		var t: int :: cui@inputInt()
+		var x: int :: cui@inputInt()
+		var y: int :: cui@inputInt()
+		var dt: int :: t - ct
+		var dd: int :: (x - cx).abs() + (y - cy).abs()
+		if(dd <= dt & (dt - dd) % 2 = 0)
+			do ct :: t
+			do cx :: x
+			do cy :: y
+			skip loop
+		end if
+		do ans :: false
+		break loop
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func
