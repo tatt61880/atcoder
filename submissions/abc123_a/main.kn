@@ -1,0 +1,11 @@
+func main()
+	var n: int :: 5
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	do a.sort()
+	var k: int :: cui@inputInt()
+	var ans: bool :: a[4] - a[0] <= k
+	do cui@print((ans ?("Yay!", ":(")) ~ "\n")
+end func

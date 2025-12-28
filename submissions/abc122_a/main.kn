@@ -1,0 +1,12 @@
+func main()
+	switch(cui@inputChar())
+	case 'A'
+		do cui@print("T\n")
+	case 'T'
+		do cui@print("A\n")
+	case 'C'
+		do cui@print("G\n")
+	case 'G'
+		do cui@print("C\n")
+	end switch
+end func

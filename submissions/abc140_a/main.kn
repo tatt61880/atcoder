@@ -1,0 +1,3 @@
+func main()
+	do cui@print("\{cui@inputInt() ^ 3}\n")
+end func

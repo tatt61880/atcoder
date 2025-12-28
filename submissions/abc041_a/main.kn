@@ -1,0 +1,6 @@
+func main()
+	var s: []char :: cui@input()
+	var i: int :: cui@inputInt()
+	var ans: char :: s[i - 1]
+	do cui@print("\{ans}\n")
+end func

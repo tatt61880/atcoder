@@ -1,0 +1,13 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var n: int :: cui@inputInt()
+	
+	while(true)
+		if(n % a = 0 & n % b = 0)
+			do cui@print("\{n}\n")
+			ret
+		end if
+		do n :+ 1
+	end while
+end func

@@ -1,0 +1,6 @@
+func main()
+	var w: int :: cui@inputInt()
+	var h: int :: cui@inputInt()
+	var ans: bool :: w * 3 = h * 4
+	do cui@print((ans ?("4:3", "16:9")) ~ "\n")
+end func

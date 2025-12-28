@@ -1,0 +1,10 @@
+func main()
+	var n: int :: cui@inputInt()
+	if(n < 1200)
+		do cui@print("ABC\n")
+	elif(n < 2800)
+		do cui@print("ARC\n")
+	else
+		do cui@print("AGC\n")
+	end if
+end func

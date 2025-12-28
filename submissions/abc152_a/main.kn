@@ -1,0 +1,3 @@
+func main()
+	do cui@print(cui@inputStr() = cui@inputStr() ?("Yes\n", "No\n"))
+end func

@@ -1,0 +1,5 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: bool :: n < 1200
+	do cui@print((ans ?("ABC", "ARC")) ~ "\n")
+end func

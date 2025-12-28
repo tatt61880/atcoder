@@ -1,0 +1,5 @@
+func main()
+	var ans: []char :: cui@input()
+	do ans[3] :: '8'
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,7 @@
+func main()
+	var s: []char :: cui@input()
+	var t: []char :: cui@input()
+	do t.reverse()
+	var ans: bool :: s = t
+	do cui@print((ans ?("YES", "NO")) ~ "\n")
+end func

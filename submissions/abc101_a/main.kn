@@ -1,0 +1,8 @@
+func main()
+	var s: []char :: cui@input()
+	var ans: int :: 0
+	for i(0, ^s - 1)
+		do ans :+ s[i] = '+' ?(1, -1)
+	end for
+	do cui@print("\{ans}\n")
+end func

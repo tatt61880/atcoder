@@ -1,0 +1,11 @@
+func main()
+	var x: char :: cui@inputChar()
+	var y: char :: cui@inputChar()
+	if(x < y)
+		do cui@print("<\n")
+	elif(x > y)
+		do cui@print(">\n")
+	else
+		do cui@print("=\n")
+	end if
+end func

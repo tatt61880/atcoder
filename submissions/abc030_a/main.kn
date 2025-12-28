@@ -1,0 +1,14 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	switch(a * d - b * c)
+	case 0
+		do cui@print("DRAW\n")
+	case 1 to 10000
+		do cui@print("AOKI\n")
+	default
+		do cui@print("TAKAHASHI\n")
+	end switch
+end func

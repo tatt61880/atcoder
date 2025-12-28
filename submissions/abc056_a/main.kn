@@ -1,0 +1,6 @@
+func main()
+	var a: char :: cui@inputChar()
+	var b: char :: cui@inputChar()
+	var ans: bool :: a = b
+	do cui@print((ans ?("H", "D")) ~ "\n")
+end func

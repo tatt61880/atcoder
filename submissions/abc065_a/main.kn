@@ -1,0 +1,13 @@
+func main()
+	var x: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	
+	if(-a + b <= 0)
+		do cui@print("delicious\n")
+	elif(-a + b <= x)
+		do cui@print("safe\n")
+	else
+		do cui@print("dangerous\n")
+	end if
+end func

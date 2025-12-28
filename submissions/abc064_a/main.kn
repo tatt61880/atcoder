@@ -1,0 +1,8 @@
+func main()
+	var r: int :: cui@inputInt()
+	var g: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	
+	var ans: bool :: (g * 10 + b) % 4 = 0
+	do cui@print((ans ?("YES", "NO")) ~ "\n")
+end func

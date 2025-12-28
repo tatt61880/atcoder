@@ -1,0 +1,8 @@
+func main()
+	var n: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	var ans: int :: n > k ?(k * x + (n - k) * y, n * x)
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,4 @@
+func main()
+	var ans: int :: 600 + 100 * ^cui@input().split("o")
+	do cui@print("\{ans}\n")
+end func

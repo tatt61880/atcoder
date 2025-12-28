@@ -1,0 +1,5 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: bool :: n % 10 = n / 100
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

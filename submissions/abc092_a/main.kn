@@ -1,0 +1,8 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	var ans: int :: lib@min(a, b) + lib@min(c, d)
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,5 @@
+func main()
+	var a: [][]char :: cui@input().split("/")
+	var ans: bool :: a[0].toInt(&) * 10000 + a[1].toInt(&) * 100 + a[2].toInt(&) <= 20190430
+	do cui@print((ans ?("Heisei", "TBD")) ~ "\n")
+end func

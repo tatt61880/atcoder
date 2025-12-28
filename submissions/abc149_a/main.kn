@@ -1,0 +1,4 @@
+func main()
+	var s: []char :: cui@inputStr()
+	do cui@print("\{cui@inputStr() ~ s}\n")
+end func

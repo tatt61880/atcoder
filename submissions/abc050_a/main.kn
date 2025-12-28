@@ -1,0 +1,13 @@
+func main()
+	var a: int :: cui@inputInt()
+	var op: char :: cui@inputChar()
+	var b: int :: cui@inputInt()
+	var ans: int :: 0
+	switch(op)
+	case '+'
+		do ans :: a + b
+	default
+		do ans :: a - b
+	end switch
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,8 @@
+func main()
+	var dic: dict<int, bool> :: #dict<int, bool>
+	for(1, 3)
+		do dic.add(cui@inputInt(), true)
+	end for
+	var ans: int :: ^dic
+	do cui@print("\{ans}\n")
+end func

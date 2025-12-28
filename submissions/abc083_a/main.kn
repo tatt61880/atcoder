@@ -1,0 +1,11 @@
+func main()
+	var l: int :: cui@inputInt() + cui@inputInt()
+	var r: int :: cui@inputInt() + cui@inputInt()
+	if(l > r)
+		do cui@print("Left\n")
+	elif(l = r)
+		do cui@print("Balanced\n")
+	else
+		do cui@print("Right\n")
+	end if
+end func

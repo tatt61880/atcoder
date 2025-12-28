@@ -1,0 +1,11 @@
+func main()
+	var a: int :: (cui@inputInt() + 11) % 13
+	var b: int :: (cui@inputInt() + 11) % 13
+	if(a > b)
+		do cui@print("Alice\n")
+	elif(a < b)
+		do cui@print("Bob\n")
+	else
+		do cui@print("Draw\n")
+	end if
+end func

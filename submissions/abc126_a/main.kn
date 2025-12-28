@@ -1,0 +1,7 @@
+func main()
+	var n: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	var s: []char :: cui@input()
+	do s[k - 1] :: s[k - 1].offset(0x20)
+	do cui@print("\{s}\n")
+end func
