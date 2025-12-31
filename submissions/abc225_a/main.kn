@@ -1,0 +1,13 @@
+func main()
+	var s: []char :: cui@input()
+	do s.sort()
+	var ans: int :: 0
+	if(s[0] = s[1] & s[1] = s[2])
+		do ans :: 1
+	elif(s[0] = s[1] | s[1] = s[2])
+		do ans :: 3
+	else
+		do ans :: 6
+	end if
+	do cui@print("\{ans}\n")
+end func

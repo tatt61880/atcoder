@@ -1,0 +1,6 @@
+func main()
+	var h: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var ans: int :: (h + a - 1) / a
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,10 @@
+func main()
+	var n: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var ans: int :: (k % n + a - 1) % n
+	if(ans = 0)
+		do ans :: n
+	end if
+	do cui@print("\{ans}\n")
+end func

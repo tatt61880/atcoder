@@ -1,0 +1,4 @@
+func main()
+	var s: []char :: cui@inputStr()
+	do cui@print("\{s}\{s[^s - 1] = 's' ?("e", "")}s\n")
+end func

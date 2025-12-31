@@ -1,0 +1,12 @@
+func main()
+	var s: int :: cui@inputInt()
+	var t: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	if(s < t)
+		var ans: bool :: s <= x & x < t
+		do cui@print((ans ?("Yes", "No")) ~ "\n")
+	else
+		var ans: bool :: !(t <= x & x < s)
+		do cui@print((ans ?("Yes", "No")) ~ "\n")
+	end if
+end func

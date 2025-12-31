@@ -1,0 +1,11 @@
+func main()
+	var n: int :: cui@inputInt()
+	switch(n % 10)
+	case 2, 4, 5, 7, 9
+		do cui@print("hon\n")
+	case 0, 1, 6, 8
+		do cui@print("pon\n")
+	case 3
+		do cui@print("bon\n")
+	end switch
+end func

@@ -1,0 +1,13 @@
+func main()
+	var s: []char :: cui@inputStr()
+	switch(s)
+	case "RRR"
+		do cui@print("3\n")
+	case "RRS", "SRR"
+		do cui@print("2\n")
+	case "SSS"
+		do cui@print("0\n")
+	default
+		do cui@print("1\n")
+	end switch
+end func

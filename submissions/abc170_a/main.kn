@@ -1,0 +1,8 @@
+func main()
+	for i(1, 5)
+		var n: int :: cui@inputInt()
+		if(n = 0)
+			do cui@print("\{i}\n")
+		end if
+	end for
+end func

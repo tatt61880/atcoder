@@ -1,0 +1,6 @@
+func main()
+	var x: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	var z: int :: cui@inputInt()
+	do cui@print("\{z} \{x} \{y}\n")
+end func

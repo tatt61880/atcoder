@@ -1,0 +1,3 @@
+func main()
+	do cui@print("\{cui@inputInt() ^ 2 + cui@inputInt() ^ 2 < cui@inputInt() ^ 2 ?("Yes", "No")}\n")
+end func

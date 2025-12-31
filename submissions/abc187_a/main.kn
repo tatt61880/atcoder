@@ -1,0 +1,15 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var ans: int :: lib@max(f(a), f(b))
+	do cui@print("\{ans}\n")
+	
+	func f(a: int): int
+		var res: int :: 0
+		while(a <> 0)
+			do res :+ a % 10
+			do a :/ 10
+		end while
+		ret res
+	end func
+end func

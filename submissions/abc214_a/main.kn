@@ -1,0 +1,12 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: int :: 0
+	if(n <= 125)
+		do ans :: 4
+	elif(n <= 211)
+		do ans :: 6
+	else
+		do ans :: 8
+	end if
+	do cui@print("\{ans}\n")
+end func

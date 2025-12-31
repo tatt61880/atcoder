@@ -1,0 +1,7 @@
+func main()
+	var k: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var ans: bool :: a % k = 0 | a / k <> b / k
+	do cui@print((ans ?("OK", "NG")) ~ "\n")
+end func

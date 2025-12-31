@@ -1,0 +1,12 @@
+func main()
+	var x: int :: cui@inputInt()
+	if(x < 40)
+		do cui@print("\{40 - x}\n")
+	elif(x < 70)
+		do cui@print("\{70 - x}\n")
+	elif(x < 90)
+		do cui@print("\{90 - x}\n")
+	else
+		do cui@print("expert\n")
+	end if
+end func

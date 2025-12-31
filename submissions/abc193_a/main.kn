@@ -1,0 +1,6 @@
+func main()
+	var a: float :: cui@inputFloat()
+	var b: float :: cui@inputFloat()
+	var ans: float :: (a - b) / a * 100.0
+	do cui@print("\{ans}\n")
+end func
