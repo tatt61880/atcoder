@@ -1,0 +1,8 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var ans: int :: 45
+	for i(0, 8)
+		do ans :- [s[i]].toInt(&)
+	end for
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,14 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	if(x <= a)
+		do cui@print("1\n")
+	elif(x > b)
+		do cui@print("0\n")
+	else
+		var ans: float :: c $ float / (b - a) $ float
+		do cui@print("\{ans}\n")
+	end if
+end func
