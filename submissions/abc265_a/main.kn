@@ -1,0 +1,7 @@
+func main()
+	var x: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	var n: int :: cui@inputInt()
+	var ans: int :: lib@min(x * n, x * (n % 3) + y * (n / 3))
+	do cui@print("\{ans}\n")
+end func

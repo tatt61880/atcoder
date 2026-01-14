@@ -1,0 +1,6 @@
+func main()
+	var a: float :: cui@inputInt() $ float
+	var b: float :: cui@inputInt() $ float
+	var ans: float :: b / a
+	do cui@print("\{ans.toStrFmt(".3f")}\n")
+end func

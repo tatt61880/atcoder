@@ -1,0 +1,11 @@
+func main()
+	var n: int :: cui@inputInt()
+	for(1, n)
+		switch(cui@inputStr())
+		case "and", "not", "that", "the", "you"
+			do cui@print("Yes\n")
+			ret
+		end switch
+	end for
+	do cui@print("No\n")
+end func

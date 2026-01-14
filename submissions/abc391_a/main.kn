@@ -1,0 +1,14 @@
+func main()
+	var s: []char :: cui@input()
+	var dic: dict<char, char> :: #dict<char, char>
+	do dic.add('N', 'S')
+	do dic.add('E', 'W')
+	do dic.add('W', 'E')
+	do dic.add('S', 'N')
+	var ans: []char :: s
+	for i(0, ^s - 1)
+		var c: char :: s[i]
+		do s[i] :: dic.get(c, &)
+	end for
+	do cui@print("\{ans}\n")
+end func

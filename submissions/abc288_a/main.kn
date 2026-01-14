@@ -1,0 +1,8 @@
+func main()
+	var n: int :: cui@inputInt()
+	for(1, n)
+		var a: int :: cui@inputInt()
+		var b: int :: cui@inputInt()
+		do cui@print("\{a + b}\n")
+	end for
+end func

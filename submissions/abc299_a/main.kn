@@ -1,0 +1,7 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: cui@inputStr()
+	do s :: s.replace(".", "")
+	var ans: bool :: s = "|*|"
+	do cui@print((ans ?("in", "out")) ~ "\n")
+end func

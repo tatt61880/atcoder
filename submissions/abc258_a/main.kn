@@ -1,0 +1,6 @@
+func main()
+	var n: int :: cui@inputInt()
+	var h: int :: 21 + (n >= 60 ?(1, 0))
+	var m: int :: n % 60
+	do cui@print("\{h}:\{m.toStrFmt("02d")}\n")
+end func

@@ -1,0 +1,9 @@
+func main()
+	var dic: dict<int, bool> :: #dict<int, bool>
+	do dic.add(cui@inputInt(), true)
+	do dic.add(cui@inputInt(), true)
+	do dic.add(cui@inputInt(), true)
+	do dic.add(cui@inputInt(), true)
+	do dic.add(cui@inputInt(), true)
+	do cui@print("\{^dic}\n")
+end func

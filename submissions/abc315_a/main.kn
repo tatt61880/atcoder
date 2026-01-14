@@ -1,0 +1,9 @@
+func main()
+	var ans: []char :: cui@input()
+	do ans :: ans.replace("a", "")
+	do ans :: ans.replace("e", "")
+	do ans :: ans.replace("i", "")
+	do ans :: ans.replace("o", "")
+	do ans :: ans.replace("u", "")
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,7 @@
+func main()
+	do cui@input()
+	do cui@print((
+	|cui@input().replace("l", "1").replace("o", "0") =
+	|cui@input().replace("l", "1").replace("o", "0")
+	|?("Yes\n", "No\n")))
+end func

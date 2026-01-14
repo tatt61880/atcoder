@@ -1,0 +1,12 @@
+func main()
+	var s: []char :: cui@inputStr()
+	
+	var ans: int :: 0
+	for i(0, ^s - 1)
+		if('A' <= s[i] & s[i] <= 'Z')
+			do ans :: i + 1
+		end if
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

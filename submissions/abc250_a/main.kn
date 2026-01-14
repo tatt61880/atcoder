@@ -1,0 +1,20 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	var r: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	var ans: int :: 0
+	if(r <> 1)
+		do ans :+ 1
+	end if
+	if(r <> h)
+		do ans :+ 1
+	end if
+	if(c <> 1)
+		do ans :+ 1
+	end if
+	if(c <> w)
+		do ans :+ 1
+	end if
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,13 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var ans: bool :: false
+	for i(1, 349)
+		if(i = 316)
+			skip i
+		end if
+		if(s = "ABC\{i.toStrFmt("03d")}")
+			do ans :: true
+		end if
+	end for
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

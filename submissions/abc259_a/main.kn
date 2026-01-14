@@ -1,0 +1,9 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	var t: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	var ans: int :: m < x ?(t - x * d + m * d, t)
+	do cui@print("\{ans}\n")
+end func

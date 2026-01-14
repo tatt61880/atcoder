@@ -1,0 +1,14 @@
+func main()
+	var n: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	var p: int :: cui@inputInt()
+	for(2, n)
+		var t: int :: cui@inputInt()
+		if(t - p <= d)
+			do cui@print("\{t}\n")
+			ret
+		end if
+		do p :: t
+	end for
+	do cui@print("-1\n")
+end func

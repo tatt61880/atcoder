@@ -1,0 +1,24 @@
+{
+func main()
+	var s: []char :: cui@input()
+	var a: regex@Regex :: regex@makeRegex("(.*)\\|.*\\|(.*)")
+	do s :: a.replace(s, "$1$2", true)
+	do cui@print("\{s}\n")
+end func
+}
+
+func main()
+	var s: []char :: cui@input()
+	var ans: []char :: ""
+	var f: bool :: true
+	for i(0, ^s - 1)
+		if(s[i] = '|')
+			do f :: !f
+			skip i
+		end if
+		if(f)
+			do ans :~ [s[i]]
+		end if
+	end for
+	do cui@print("\{ans}\n")
+end func
