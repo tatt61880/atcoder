@@ -1,0 +1,25 @@
+func main()
+	var deg: int :: cui@inputInt()
+	var dis: int :: cui@inputInt()
+	var dir: [][]char :: ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
+	
+	var di: int :: 0
+	for i(0, 15)
+		if(1125 + 2250 * (di - 1) <= deg * 10 & deg * 10 < 3375 + 2250 * (di - 1))
+			break i
+		end if
+		do di :+ 1
+	end for
+	
+	var ws: []int :: [25, 155, 335, 545, 795, 1075, 1385, 1715, 2075, 2445, 2845, 3265]
+	
+	var w: int :: 0
+	for i(0, 11)
+		if(dis * 10 < ws[w] * 6)
+			break i
+		end if
+		do w :+ 1
+	end for
+	
+	do cui@print("\{w <> 0 ?(dir[di % 16], "C")} \{w}\n")
+end func

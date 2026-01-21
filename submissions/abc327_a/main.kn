@@ -1,0 +1,6 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: cui@inputStr()
+	var ans: bool :: ^s.replace("ab", "").replace("ba", "") <> ^s
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

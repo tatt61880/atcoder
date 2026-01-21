@@ -1,0 +1,10 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var ans: bool :: true
+	for i(1, 16, 2)
+		if(s[i] <> '0')
+			do ans :: false
+		end if
+	end for
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func
