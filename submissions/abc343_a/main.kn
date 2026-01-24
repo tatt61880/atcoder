@@ -1,0 +1,8 @@
+func main()
+	switch(cui@input())
+	case "0 0"
+		do cui@print("1\n")
+	default
+		do cui@print("0\n")
+	end switch
+end func

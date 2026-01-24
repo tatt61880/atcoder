@@ -1,0 +1,10 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	if(a <> b)
+		var ans: int :: 6 - a - b
+		do cui@print("\{ans}\n")
+	else
+		do cui@print("-1\n")
+	end if
+end func

@@ -1,0 +1,4 @@
+func main()
+	var n: int :: cui@inputInt()
+	do cui@print("\{['0'.offset(n)].repeat(n)}\n")
+end func
