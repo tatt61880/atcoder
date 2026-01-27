@@ -1,0 +1,14 @@
+func main()
+	var n: int :: cui@inputInt()
+	var c1: char :: cui@inputChar()
+	var c2: char :: cui@inputChar()
+	
+	var s: []char :: cui@inputStr()
+	for i(0, n - 1)
+		if(s[i] <> c1)
+			do s[i] :: c2
+		end if
+	end for
+	
+	do cui@print("\{s}\n")
+end func

@@ -1,0 +1,10 @@
+func main()
+	var h: int :: cui@inputInt()
+	for i(1, 100)
+		if(2 ^ i - 1 > h)
+			var ans: int :: i
+			do cui@print("\{ans}\n")
+			ret
+		end if
+	end for
+end func

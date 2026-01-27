@@ -1,0 +1,6 @@
+func main()
+	var s: []char :: cui@inputStr()
+	do s.sort()
+	var ans: bool :: s = "122333"
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

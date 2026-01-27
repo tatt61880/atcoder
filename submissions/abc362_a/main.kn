@@ -1,0 +1,15 @@
+func main()
+	var r: int :: cui@inputInt()
+	var g: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var ans: int :: 0
+	switch(cui@inputChar())
+	case 'R'
+		do ans :: [g, b].min()
+	case 'G'
+		do ans :: [b, r].min()
+	case 'B'
+		do ans :: [r, g].min()
+	end switch
+	do cui@print("\{ans}\n")
+end func

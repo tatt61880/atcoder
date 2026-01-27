@@ -1,0 +1,16 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: [][]char :: #[n][]char
+	for i(0, n - 1)
+		do s[i] :: cui@input()
+	end for
+	
+	var ans: bool :: true
+	for i(0, n - 3)
+		if(s[i] = "sweet" & s[i + 1] = "sweet")
+			do ans :: false
+		end if
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

@@ -1,0 +1,10 @@
+func main()
+	var s: []char :: cui@input().replace(" ", "")
+	do s.sort()
+	for i(1, 4)
+		var c: char :: '0'.offset(i)
+		do s :: s.replace([c, c], [c] ~ " " ~ [c])
+	end for
+	var ans: int :: ^s - 4
+	do cui@print("\{ans}\n")
+end func

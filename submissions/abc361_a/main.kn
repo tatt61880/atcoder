@@ -1,0 +1,11 @@
+func main()
+	var n: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	do a :: a.sub(0, k) ~ [x] ~ a.sub(k, n - k)
+	do cui@print("\{a.join(" ")}\n")
+end func

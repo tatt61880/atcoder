@@ -1,0 +1,13 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var ans: int :: 0
+	if(a = b)
+		do ans :: 1
+	elif((a + b) / 2 * 2 = a + b)
+		do ans :: 3
+	else
+		do ans :: 2
+	end if
+	do cui@print("\{ans}\n")
+end func

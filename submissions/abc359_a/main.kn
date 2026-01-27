@@ -1,0 +1,10 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: int :: 0
+	for(1, n)
+		if(cui@input() = "Takahashi")
+			do ans :+ 1
+		end if
+	end for
+	do cui@print("\{ans}\n")
+end func
