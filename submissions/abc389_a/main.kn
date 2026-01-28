@@ -1,0 +1,7 @@
+func main()
+	var a: char :: cui@inputChar()
+	var x: char :: cui@inputChar()
+	var b: char :: cui@inputChar()
+	var ans: int :: [a].toInt(&) * [b].toInt(&)
+	do cui@print("\{ans}\n")
+end func
