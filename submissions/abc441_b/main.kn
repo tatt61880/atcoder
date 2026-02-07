@@ -1,0 +1,37 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var s: []char :: cui@inputStr()
+	var t: []char :: cui@inputStr()
+	
+	var q: int :: cui@inputInt()
+	for(1, q)
+		var w: []char :: cui@inputStr()
+		var isT: bool :: f(w, s)
+		if(isT)
+			var isA: bool :: f(w, t)
+			if(isA)
+				do cui@print("Unknown\n")
+			else
+				do cui@print("Takahashi\n")
+			end if
+		else
+			do cui@print("Aoki\n")
+		end if
+	end for
+	
+	func f(w: []char, s: []char): bool
+		for i(0, ^w - 1)
+			for j(0, ^s - 1)
+				if(w[i] = s[j])
+					skip i
+				end if
+			end for
+			
+			ret false
+		end for
+		
+		ret true
+	end func
+end func

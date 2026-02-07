@@ -1,0 +1,14 @@
+func main()
+	var a: char :: cui@inputChar()
+	var b: char :: cui@inputChar()
+	var c: char :: cui@inputChar()
+	
+	var x: int :: [a].toInt(&)
+	var y: int :: [c].toInt(&) + 1
+	
+	if(y = 9)
+		do x :+ 1
+		do y :: 1
+	end if
+	do cui@print("\{x}-\{y}\n")
+end func

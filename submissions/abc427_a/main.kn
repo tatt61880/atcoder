@@ -1,0 +1,4 @@
+func main()
+	var s: []char :: cui@inputStr()
+	do cui@print("\{s.sub(0, ^s / 2)}\{s.sub(^s / 2 + 1, ^s / 2)}\n")
+end func

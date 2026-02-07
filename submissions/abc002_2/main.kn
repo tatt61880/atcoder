@@ -1,0 +1,10 @@
+func main()
+	var s: []char :: cui@input()
+	do s :: s.replace("a", "")
+	do s :: s.replace("i", "")
+	do s :: s.replace("u", "")
+	do s :: s.replace("e", "")
+	do s :: s.replace("o", "")
+	
+	do cui@print("\{s}\n")
+end func

@@ -1,0 +1,6 @@
+func main()
+	var p: []char :: cui@inputStr()
+	var l: int :: cui@inputInt()
+	var ans: bool :: ^p >= l
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

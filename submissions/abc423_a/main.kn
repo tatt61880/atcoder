@@ -1,0 +1,17 @@
+func main()
+	var x: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	
+	var ok: int :: 0
+	var ng: int :: x / 1000 + 1
+	while((ok - ng).abs() > 1)
+		var mid: int :: (ok + ng) / 2
+		if(mid * 1000 + mid * c <= x)
+			do ok :: mid
+		else
+			do ng :: mid
+		end if
+	end while
+	var ans: int :: ok * 1000
+	do cui@print("\{ans}\n")
+end func

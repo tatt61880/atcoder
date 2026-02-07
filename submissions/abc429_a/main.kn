@@ -1,0 +1,12 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	for i(1, n)
+		if(i <= m)
+			do cui@print("OK\n")
+		else
+			do cui@print("Too Many Requests\n")
+		end if
+	end for
+end func

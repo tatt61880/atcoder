@@ -1,0 +1,4 @@
+func main()
+	var x: int :: cui@inputStr().replace(".", "").toInt(&)
+	do cui@print("\{x >= 380 ?(1, x >= 375 ?(2, 3))}\n")
+end func

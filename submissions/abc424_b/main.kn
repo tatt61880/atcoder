@@ -1,0 +1,16 @@
+func main()
+ var n: int ::cui@inputInt()
+ var m: int ::cui@inputInt()
+ var k: int ::cui@inputInt()
+ var p: []int :: #[n + 1]int
+ var ans: []int :: #[0]int
+ for(1, k)
+  var a: int ::cui@inputInt()
+  var b: int ::cui@inputInt()
+  do p[a] :+ 1
+  if(p[a] = m)
+    do ans :~ [a]
+  end if
+ end for
+ do cui@print(ans.join(" ") ~ "\n")
+end func

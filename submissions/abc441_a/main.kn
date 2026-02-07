@@ -1,0 +1,9 @@
+func main()
+	var p: int :: cui@inputInt()
+	var q: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	
+	var ans: bool :: p <= x & x <= p + 99 & q <= y & y <= q + 99
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

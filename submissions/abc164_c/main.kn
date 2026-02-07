@@ -1,0 +1,12 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var d: dict<[]char, bool> :: #dict<[]char, bool>
+	
+	for(1, n)
+		do d.add(cui@input(), true)
+	end for
+	
+	var ans: int :: ^d
+	do cui@print("\{ans}\n")
+end func

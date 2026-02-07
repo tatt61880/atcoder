@@ -1,0 +1,6 @@
+func main()
+	var r: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	var ans: bool :: [1600, 1200][x - 1] <= r & r <= [2999, 2399][x - 1]
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

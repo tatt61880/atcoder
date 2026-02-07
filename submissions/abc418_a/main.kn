@@ -1,0 +1,7 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: cui@inputStr()
+	do s.reverse()
+	var ans: bool :: ^s >= 3 & s.sub(0, 3) = "aet"
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

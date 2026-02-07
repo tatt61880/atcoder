@@ -1,0 +1,13 @@
+func main()
+	var s: []char :: cui@inputStr()
+	for i(0, 25)
+		var c: char :: 'a'.offset(i)
+		for j(0, ^s - 1)
+			if(s[j] = c)
+				skip i
+			end if
+		end for
+		do cui@print("\{c}\n")
+		ret
+	end for
+end func
