@@ -1,0 +1,29 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var ans: int :: 0
+	var dic: dict<int, bool> :: #dict<int, bool>
+	for loop(1, m)
+		var r: int :: cui@inputInt()
+		var c: int :: cui@inputInt()
+		for i(0, 1)
+			for j(0, 1)
+				var key: int :: (r + i) * n + c + j
+				if(dic.exist(key))
+					skip loop
+				end if
+			end for
+		end for
+		
+		do ans :+ 1
+		
+		for i(0, 1)
+			for j(0, 1)
+				var key: int :: (r + i) * n + c + j
+				do dic.add(key, true)
+			end for
+		end for
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

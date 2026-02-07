@@ -1,0 +1,79 @@
+func main()
+	var n: int :: cui@inputInt()
+	var u: []int :: #[n]int
+	var d: []int :: #[n]int
+	var l: []int :: #[n]int
+	var r: []int :: #[n]int
+	for i(0, n - 1)
+		do u[i] :: cui@inputInt()
+		do d[i] :: cui@inputInt()
+		do l[i] :: cui@inputInt()
+		do r[i] :: cui@inputInt()
+	end for
+	
+	const size: int :: 2000
+	const debug: bool :: size <> 2000
+	
+	var counts: [][]int :: #[size + 1, size + 1]int
+	for i(0, n - 1)
+		
+		do counts[d[i]][r[i]] :+ 1
+		do counts[u[i] - 1][l[i] - 1] :+ 1
+		do counts[d[i]][l[i] - 1] :- 1
+		do counts[u[i] - 1][r[i]] :- 1
+	end for
+	
+	if(debug)
+		for y(1, size)
+			for x(1, size)
+				do cui@print("\{counts[y][x].toStrFmt("2d")}")
+			end for
+			do cui@print("\n")
+		end for
+		do cui@print("\n")
+	end if
+	
+	for y(size, 1, -1)
+		for x(size, 1, -1)
+			do counts[y][x - 1] :+ counts[y][x]
+		end for
+	end for
+	for x(size, 1, -1)
+		for y(size, 1, -1)
+			do counts[y - 1][x] :+ counts[y][x]
+		end for
+	end for
+	
+	if(debug)
+		for y(1, size)
+			for x(1, size)
+				do cui@print("\{counts[y][x]}")
+			end for
+			do cui@print("\n")
+		end for
+	end if
+	
+	; 雲が1つしかない場所の2次元累積和
+	var cumSolos: [][]int :: #[size + 1, size + 1]int
+	var count0: int :: 0
+	for y(1, size)
+		for x(1, size)
+			do cumSolos[y][x] :: counts[y][x] = 1 ?(1, 0)
+			do cumSolos[y][x] :+ cumSolos[y - 1][x]
+			do cumSolos[y][x] :+ cumSolos[y][x - 1]
+			do cumSolos[y][x] :- cumSolos[y - 1][x - 1]
+			if(counts[y][x] = 0)
+				do count0 :+ 1
+			end if
+		end for
+	end for
+	
+	for i(0, n - 1)
+		var ans: int :: count0
+		do ans :+ cumSolos[d[i]][r[i]]
+		do ans :- cumSolos[u[i] - 1][r[i]]
+		do ans :- cumSolos[d[i]][l[i] - 1]
+		do ans :+ cumSolos[u[i] - 1][l[i] - 1]
+		do cui@print("\{ans}\n")
+	end for
+end func
