@@ -1,0 +1,20 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var f: []bool :: #[n + 1]bool
+	for i(0, n - 1)
+		var a: int :: cui@inputInt()
+		do f[a] :: true
+		for j(1, m)
+			if(!f[j])
+				break j
+			end if
+			if(j = m)
+				do cui@print("\{n - i}\n")
+				ret
+			end if
+		end for
+	end for
+	do cui@print("0\n")
+end func

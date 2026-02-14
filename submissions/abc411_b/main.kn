@@ -1,0 +1,18 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var cum: []int :: #[n]int
+	
+	for i(1, n - 1)
+		var d: int :: cui@inputInt()
+		do cum[i] :: cum[i - 1] + d
+	end for
+	
+	for i(0, n - 2)
+		var ans: []int :: #[n - i - 1]int
+		for j(i + 1, n - 1)
+			do ans[j - i - 1] :: cum[j] - cum[i]
+		end for
+		do cui@print("\{ans.join(" ")}\n")
+	end for
+end func

@@ -1,0 +1,11 @@
+func main()
+	var s: []char :: cui@inputStr()
+	
+	var n: int :: 0
+	for i(0, ^s - 1)
+		if(s[i] = '#')
+			do cui@print("\{i + 1}\{n % 2 = 0 ?(',', '\n')}")
+			do n :+ 1
+		end if
+	end for
+end func

@@ -1,0 +1,16 @@
+func main()
+	var x: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	
+	var num: int :: 0
+	for i(1, 6)
+		for j(1, 6)
+			if(i + j >= x | (i - j).abs() >= y)
+				do num :+ 1
+			end if
+		end for
+	end for
+	
+	var ans: float :: num $ float / 36.0
+	do cui@print("\{ans}\n")
+end func

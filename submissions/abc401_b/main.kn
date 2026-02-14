@@ -1,0 +1,18 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: int :: 0
+	var f: bool :: false
+	for(1, n)
+		switch(cui@input())
+		case "login"
+			do f :: true
+		case "logout"
+			do f :: false
+		case "private"
+			if(!f)
+				do ans :+ 1
+			end if
+		end switch
+	end for
+	do cui@print("\{ans}\n")
+end func

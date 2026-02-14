@@ -1,0 +1,38 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	var b: []int :: #[m]int
+	for i(0, m - 1)
+		do b[i] :: cui@inputInt()
+	end for
+	
+	var ans: []int :: #[0]int
+	
+	do b.sort()
+	
+	var i: int :: 0
+	var j: int :: 0
+	while loop(i < n)
+		while(j <> m & a[i] >= b[j])
+			if(a[i] = b[j])
+				do i :+ 1
+				if(i = n)
+					break loop
+				end if
+			end if
+			
+			do j :+ 1
+		end while
+		
+		do ans :~ [a[i]]
+		do i :+ 1
+	end while
+	
+	do cui@print("\{ans.join(" ")}\n")
+end func
