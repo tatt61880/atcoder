@@ -1,0 +1,11 @@
+func main()
+	var n: int :: (cui@inputStr() ~ cui@inputStr()).toInt(&)
+	var ans: bool :: false
+	for i(1, 1000)
+		if(i ^ 2 = n)
+			do ans :: true
+			break i
+		end if
+	end for
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

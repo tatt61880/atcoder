@@ -1,0 +1,5 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var ans: int :: ^s + 1 - ^s.split("00")
+	do cui@print("\{ans}\n")
+end func

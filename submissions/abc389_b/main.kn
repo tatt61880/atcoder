@@ -1,0 +1,11 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var v: int :: 1
+	for i(1, 20)
+		do v :* i
+		if(v = n)
+			do cui@print("\{i}\n")
+		end if
+	end for
+end func

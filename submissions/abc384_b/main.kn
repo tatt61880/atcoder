@@ -1,0 +1,21 @@
+func main()
+	var n: int :: cui@inputInt()
+	var r: int :: cui@inputInt()
+	
+	for(1, n)
+		var d: int :: cui@inputInt()
+		var a: int :: cui@inputInt()
+		if(d = 1)
+			if(1600 <= r & r < 2800)
+				do r :+ a
+			end if
+		else
+			if(1200 <= r & r < 2400)
+				do r :+ a
+			end if
+		end if
+	end for
+	
+	var ans: int :: r
+	do cui@print("\{ans}\n")
+end func

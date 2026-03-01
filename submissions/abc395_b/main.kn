@@ -1,0 +1,14 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: [][]char :: #[n, n]char
+	
+	for i(0, (n - 1) / 2)
+		for y(i, n - i - 1)
+			for x(i, n - i - 1)
+				do s[y][x] :: i % 2 = 0 ?('#', '.')
+			end for
+		end for
+	end for
+	
+	do cui@print(s.join("\n") ~ "\n")
+end func

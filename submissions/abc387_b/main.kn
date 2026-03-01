@@ -1,0 +1,14 @@
+func main()
+	var x: int :: cui@inputInt()
+	var ans: int :: 0
+	
+	for i(1, 9)
+		for j(1, 9)
+			if(i * j <> x)
+				do ans :+ i * j
+			end if
+		end for
+	end for
+	
+	do cui@print("\{ans}\n")
+end func
