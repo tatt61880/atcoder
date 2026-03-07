@@ -1,0 +1,35 @@
+func main()
+	var s: []char :: cui@input() ~ "#"
+	var t: []char :: cui@input() ~ "#"
+	
+	var ans: int :: 0
+	var i: int :: 0
+	var j: int :: 0
+	while(i <> ^s & j <> ^t)
+		var cntS: int :: 0
+		var cntT: int :: 0
+		while(s[i] = 'A')
+			do i :+ 1
+			do cntS :+ 1
+		end while
+		while(t[j] = 'A')
+			do j :+ 1
+			do cntT :+ 1
+		end while
+		
+		if(s[i] <> t[j])
+			do cui@print("-1\n")
+			ret
+		end if
+		do i :+ 1
+		do j :+ 1
+		do ans :+ (cntS - cntT).abs()
+	end while
+	
+	if(^s <> i | ^t <> j)
+		do cui@print("-1\n")
+		ret
+	end if
+	
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,24 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var n: int :: ^s
+	
+	for i(n, 1, -1)
+		for j(0, 25)
+			var c: char :: 'a'.offset(j)
+			var cnt: int :: 0
+			for k(0, ^s - 1)
+				if(s[k] = c)
+					do cnt :+ 1
+				end if
+			end for
+			
+			if(cnt = i)
+				do s :: s.replace([c], "")
+			end if
+		end for
+		if(^s <> n)
+			do cui@print("\{s}\n")
+			ret
+		end if
+	end for
+end func

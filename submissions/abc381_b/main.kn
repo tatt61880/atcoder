@@ -1,0 +1,22 @@
+func main()
+	var s: []char :: cui@input()
+	var n: int :: ^s
+	
+	var ans: bool :: n % 2 = 0
+	
+	for i(0, n - 2, 2)
+		if(s[i] <> s[i + 1])
+			do ans :: false
+		end if
+	end for
+	
+	do s.sort()
+	
+	for i(1, n - 2, 2)
+		if(s[i] = s[i + 1])
+			do ans :: false
+		end if
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

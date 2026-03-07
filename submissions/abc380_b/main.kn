@@ -1,0 +1,8 @@
+func main()
+	var s: [][]char :: cui@input().split("|")
+	var ans: []int :: #[^s - 2]int
+	for i(1, ^s - 2)
+		do ans[i - 1] :: ^s[i]
+	end for
+	do cui@print("\{ans.join(" ")}\n")
+end func
