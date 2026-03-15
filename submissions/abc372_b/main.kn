@@ -1,0 +1,16 @@
+func main()
+ var m:int::cui@inputInt()
+ var sum:int
+ var ans:[]int::#[0]int
+ while(sum<>m)
+  for i(10,0,-1)
+   if(sum+3^i<=m)
+    do sum:+3^i
+    do ans:~[i]
+    break i
+   end if
+  end for
+ end while
+ do cui@print("\{^ans}\n")
+ do cui@print(ans.join(" ")~"\n")
+end func
