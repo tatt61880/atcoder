@@ -1,0 +1,4 @@
+func main()
+ var r:float::0.5*cui@inputFloat()
+ do cui@print("\{lib@pi*r^2.0}\n")
+end func
