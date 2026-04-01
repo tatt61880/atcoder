@@ -1,0 +1,32 @@
+func main()
+	var ab: []int :: #[0]int
+	
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var a: dict<int, bool> :: #dict<int, bool>
+	for i(0, n - 1)
+		var x: int :: cui@inputInt()
+		do a.add(x, true)
+		do ab :~ [x]
+	end for
+	
+	var b: dict<int, bool> :: #dict<int, bool>
+	for i(0, m - 1)
+		var x: int :: cui@inputInt()
+		do b.add(x, true)
+		do ab :~ [x]
+	end for
+	
+	do ab.sort()
+	
+	var ans: bool :: false
+	for i(0, ^ab - 2)
+		if(a.get(ab[i], &) & a.get(ab[i + 1], &))
+			do ans :: true
+			break i
+		end if
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func
