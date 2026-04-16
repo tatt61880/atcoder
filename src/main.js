@@ -66,7 +66,7 @@
       {
         const td = tr.insertCell();
         const a = document.createElement('a');
-        a.href = `https://yukicoder.me/submissions/${submitId}/`;
+        a.href = `https://atcoder.jp/contests/${submitId}/submissions/${submitId}`;
         a.innerText = submitId;
         td.appendChild(a);
       }
