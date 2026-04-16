@@ -1,0 +1,19 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: cui@inputStr()
+	var t: []char :: "b"
+	
+	for i(1, (n - 1) / 2)
+		switch(i % 3)
+		case 1
+			do t :: "a\{t}c"
+		case 2
+			do t :: "c\{t}a"
+		case 0
+			do t :: "b\{t}b"
+		end switch
+	end for
+	
+	var ans: int :: s = t ?(n / 2, -1)
+	do cui@print("\{ans}\n")
+end func

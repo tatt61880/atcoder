@@ -1,0 +1,13 @@
+func main()
+	var t: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	
+	var prev: int :: -x
+	for i(0, t)
+		var a: int :: cui@inputInt()
+		if((prev - a).abs() >= x)
+			do prev :: a
+			do cui@print("\{i} \{a}\n")
+		end if
+	end for
+end func

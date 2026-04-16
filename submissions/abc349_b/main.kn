@@ -1,0 +1,25 @@
+func main()
+	var s: []char :: cui@inputStr()
+	
+	var nums: []int :: #[26]int
+	for i(0, ^s - 1)
+		do nums[s[i] $ int - 'a' $ int] :+ 1
+	end for
+	
+	do nums.sort()
+	
+	var ans: bool :: true
+	for i(0, 24, 2)
+		if(nums[i] <> nums[i + 1])
+			do ans :: false
+			break i
+		end if
+	end for
+	for i(0, 22)
+		if(nums[i] <> 0 & nums[i] = nums[i + 3])
+			do ans :: false
+			break i
+		end if
+	end for
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func
