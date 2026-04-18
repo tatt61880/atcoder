@@ -41,7 +41,7 @@
 
     {
       const td = document.createElement('th');
-      td.innerText = '提出ID';
+      td.innerText = '提出したソースコード';
       tr.appendChild(td);
     }
 
@@ -52,6 +52,7 @@
     for (const submission of submissionsList) {
       const problemId = submission;
       const tr = tbody.insertRow();
+
       {
         const td = tr.insertCell();
         const a = document.createElement('a');
@@ -67,7 +68,7 @@
   async function appendEditorial(contents, base, task) {
     // ページタイトル
     {
-      let title = await getTitle(base, task);
+      let title = await getTitle(task);
       if (title === null) {
         title = task;
       }
@@ -82,19 +83,19 @@
     // 問題URL
     {
       const problemUrl = getProblemUrl(task);
-      if (problemUrl !== null) {
-        const p = document.createElement('p');
-        p.classList.add('narrow');
-        p.innerText = '問題URL: ';
-        contents.appendChild(p);
+      const p = document.createElement('p');
+      p.classList.add('narrow');
+      p.innerText = '問題URL: ';
+      contents.appendChild(p);
 
+      if (problemUrl !== null) {
         const a = document.createElement('a');
         a.href = problemUrl;
         a.innerText = problemUrl;
         p.appendChild(a);
-
-        contents.appendChild(document.createElement('hr'));
       }
+
+      contents.appendChild(document.createElement('hr'));
     }
 
     // 解説
@@ -194,9 +195,9 @@
     return await fetchJson(`${base}submissions/kuinSubmissions.json`);
   }
 
-  async function getTitle(base, task) {
+  async function getTitle(task) {
     if (task === null) return null;
-    const m = /(?<contest>(?:abc|arc|agc)\d+)_(?<id>.)/.exec(task);
+    const m = /(?<contest>.*)_(?<id>.*)/.exec(task);
     if (m !== null) {
       return `${m.groups.contest} - ${m.groups.id}`;
     } else {
@@ -206,7 +207,7 @@
 
   function getProblemUrl(task) {
     if (task === null) return null;
-    const m = /(?<contest>(?:abc|arc|agc)\d+)_(.)/.exec(task);
+    const m = /(?<contest>(?:abc|arc|agc|dp|hhkb|nomura|practice|zone)\d*)_(?<id>.*)/.exec(task);
     if (m !== null) {
       return `https://atcoder.jp/contests/${m.groups.contest}/tasks/${task}`;
     } else {
