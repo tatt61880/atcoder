@@ -17,6 +17,10 @@ var regexCode: regex@Regex
 var dictConstantId: dict<[]char, []char>
 var dictLanguage: dict<[]char, []char>
 
+const submissionDir: []char :: ".\\submissions\\"
+const kuinSubmissionDir: []char :: @submissionDir ~ "kuinSubmissions.json"
+var contestIdsForKuin: [][]char
+
 func main()
 	{
 	if(!@fetchJson())
@@ -153,6 +157,40 @@ func main()
 	end func
 
 	do @removeOldFiles()
+	
+	block
+		do @contestIdsForKuin :: #[0][]char
+		do file@forEach(@submissionDir, true, callbackSubmissions, null)
+
+		do @contestIdsForKuin.sort()
+		var jsonText: []char :: ""
+		do jsonText :~ "[\n"
+		for i(0, ^@contestIdsForKuin - 1)
+			if(i <> ^@contestIdsForKuin - 1)
+				do jsonText :~ "  \"\{@contestIdsForKuin[i]}\",\n"
+			else
+				do jsonText :~ "  \"\{@contestIdsForKuin[i]}\"\n"
+			end if
+		end for
+		do jsonText :~ "]\n"
+
+		var writer: file@Writer :: file@makeWriter("\{@kuinSubmissionDir}", false)
+		do writer.writeStr(jsonText)
+		do writer.fin()
+
+		func callbackSubmissions(path: []char, isDir: bool, data: kuin@Class): bool
+			if(isDir)
+				ret true
+			end if
+			if(file@ext(path) = "kn")
+				var ss: [][]char :: path.split("/")
+				if(^ss >= 2)
+					do @contestIdsForKuin :~ ["\{ss[^ss - 2]}"]
+				end if
+			end if
+			ret true
+		end func
+	end block
 end func
 
 func fetchData(url: []char): []char

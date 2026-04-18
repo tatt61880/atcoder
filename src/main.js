@@ -17,7 +17,7 @@
     }
 
     if (task === null) {
-      // await appendAcList(contents, base);
+      await appendAcList(contents, base);
     } else {
       await appendEditorial(contents, base, task);
     }
@@ -38,45 +38,26 @@
     contents.appendChild(table);
     table.appendChild(thead);
     const tr = thead.insertRow();
+
     {
       const td = document.createElement('th');
       td.innerText = '提出ID';
       tr.appendChild(td);
     }
-    {
-      const td = document.createElement('th');
-      td.innerText = '言語';
-      tr.appendChild(td);
-    }
-    {
-      const td = document.createElement('th');
-      td.innerText = '問題タイトル';
-      tr.appendChild(td);
-    }
+
     const tbody = document.createElement('tbody');
     table.appendChild(tbody);
 
     const submissionsList = await getSubmissionsList(base);
     for (const submission of submissionsList) {
-      // const problemId = submission[0];
-      const submitId = submission[1];
-      const language = submission[2];
-      const title = submission[5];
+      const problemId = submission;
       const tr = tbody.insertRow();
       {
         const td = tr.insertCell();
         const a = document.createElement('a');
-        a.href = `https://atcoder.jp/contests/${submitId}/submissions/${submitId}`;
-        a.innerText = submitId;
+        a.href = `?task=${problemId}`;
+        a.innerText = problemId;
         td.appendChild(a);
-      }
-      {
-        const td = tr.insertCell();
-        td.innerText = language;
-      }
-      {
-        const td = tr.insertCell();
-        td.innerText = title;
       }
     }
     p.innerText = `${submissionsList.length}件`;
@@ -210,7 +191,7 @@
   }
 
   async function getSubmissionsList(base) {
-    return await fetchJson(`${base}submissions/newestSubmissions.json`);
+    return await fetchJson(`${base}submissions/kuinSubmissions.json`);
   }
 
   async function getTitle(base, task) {
