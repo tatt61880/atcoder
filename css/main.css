@@ -89,3 +89,12 @@ pre:has(.language-kuin) {
   background-color: #fff5f5;
   border: 2px solid #ff8888;
 }
+
+a.submit-link {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 15px;
+  margin: 4px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}

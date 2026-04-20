@@ -41,6 +41,12 @@
 
     {
       const td = document.createElement('th');
+      td.innerText = 'コンテスト';
+      tr.appendChild(td);
+    }
+
+    {
+      const td = document.createElement('th');
       td.innerText = '提出したソースコード';
       tr.appendChild(td);
     }
@@ -49,19 +55,43 @@
     table.appendChild(tbody);
 
     const submissionsList = await getSubmissionsList(base);
+
+    const contestMap = new Map();
+
     for (const submission of submissionsList) {
       const problemId = submission;
+      const m = /(?<contest>.*)_(?<id>.*)/.exec(problemId);
+      if (!m) continue;
+
+      const { contest, id } = m.groups;
+
+      if (!contestMap.has(contest)) {
+        contestMap.set(contest, []);
+      }
+      contestMap.get(contest).push({ problemId, id });
+    }
+
+    for (const [contest, problems] of contestMap) {
       const tr = tbody.insertRow();
 
       {
         const td = tr.insertCell();
-        const a = document.createElement('a');
-        a.href = `?task=${problemId}`;
-        a.innerText = problemId;
-        td.appendChild(a);
+        td.innerText = contest;
+      }
+
+      {
+        const td = tr.insertCell();
+
+        for (const { problemId, id } of problems) {
+          const a = document.createElement('a');
+          a.href = `?task=${problemId}`;
+          a.innerText = id;
+          a.classList.add('submit-link');
+          td.appendChild(a);
+          td.append(' ');
+        }
       }
     }
-    p.innerText = `${submissionsList.length}件`;
   }
 
   // 解説
