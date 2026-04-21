@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "name": "atcoder",
+  "version": "1.0.1",
+  "description": "tatt61880 - atcoder",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatt61880/atcoder.git"
+  },
+  "author": "@tatt61880",
+  "bugs": {
+    "url": "https://github.com/tatt61880/atcoder/issues"
+  },
+  "homepage": "https://github.com/tatt61880/atcoder#readme",
+  "scripts": {
+    "eslint": "eslint ./src/*.js --fix",
+    "htmlhint": "htmlhint ./*.html",
+    "stylelint": "stylelint ./css/*.css --fix"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/eslint-parser": "^7.18.9",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "htmlhint": "^1.1.4",
+    "prettier": "^2.8.2",
+    "stylelint": "^15.10.1",
+    "stylelint-config-recess-order": "^4.2.0",
+    "stylelint-config-standard": "^34.0.0"
+  }
+}

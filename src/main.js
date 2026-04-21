@@ -130,26 +130,26 @@
     }
 
     // 解説
-    if (0) {
-      let editorial = await getEditorial(base, task);
-      if (editorial !== null) {
-        const h2 = document.createElement('h2');
-        h2.innerText = '解説';
-        contents.appendChild(h2);
+    // {
+    //   let editorial = await getEditorial(base, task);
+    //   if (editorial !== null) {
+    //     const h2 = document.createElement('h2');
+    //     h2.innerText = '解説';
+    //     contents.appendChild(h2);
 
-        editorial = editorial.replaceAll('\\(', '\\\\(');
-        editorial = editorial.replaceAll('\\)', '\\\\)');
-        const md = window.markdownit();
-        const result = md.render(editorial);
-        const div = document.createElement('div');
-        div.innerHTML = result;
-        contents.appendChild(div);
+    //     editorial = editorial.replaceAll('\\(', '\\\\(');
+    //     editorial = editorial.replaceAll('\\)', '\\\\)');
+    //     const md = window.markdownit();
+    //     const result = md.render(editorial);
+    //     const div = document.createElement('div');
+    //     div.innerHTML = result;
+    //     contents.appendChild(div);
 
-        window.renderMathInElement(div);
+    //     window.renderMathInElement(div);
 
-        contents.appendChild(document.createElement('hr'));
-      }
-    }
+    //     contents.appendChild(document.createElement('hr'));
+    //   }
+    // }
 
     // 提出したソースコード
     {
@@ -171,20 +171,20 @@
     }
 
     // 提出URL
-    if (0) {
-      const submissionUrl = await getSubmissionUrl(base, task);
-      if (submissionUrl !== null) {
-        const p = document.createElement('p');
-        p.classList.add('narrow');
-        p.innerText = '提出URL: ';
-        contents.appendChild(p);
+    // {
+    //   const submissionUrl = await getSubmissionUrl(base, task);
+    //   if (submissionUrl !== null) {
+    //     const p = document.createElement('p');
+    //     p.classList.add('narrow');
+    //     p.innerText = '提出URL: ';
+    //     contents.appendChild(p);
 
-        const a = document.createElement('a');
-        a.href = submissionUrl;
-        a.innerText = submissionUrl;
-        p.appendChild(a);
-      }
-    }
+    //     const a = document.createElement('a');
+    //     a.href = submissionUrl;
+    //     a.innerText = submissionUrl;
+    //     p.appendChild(a);
+    //   }
+    // }
   }
 
   function analyzeUrl() {
@@ -238,7 +238,10 @@
 
   function getProblemUrl(task) {
     if (task === null) return null;
-    const m = /(?<contest>(?:abc|arc|agc|dp|hhkb|nomura|practice|zone)\d*)_(?<id>.*)/.exec(task);
+    const m =
+      /(?<contest>(?:abc|arc|agc|dp|hhkb|nomura|practice|zone)\d*)_(?<id>.*)/.exec(
+        task
+      );
     if (m !== null) {
       return `https://atcoder.jp/contests/${m.groups.contest}/tasks/${task}`;
     } else {
@@ -246,17 +249,17 @@
     }
   }
 
-  async function getSubmissionUrl(base, task) {
-    const res = await fetchText(`${base}submissions/${task}/submission.url`);
-    if (res !== null) {
-      return res.split('=')[1];
-    }
-    return null;
-  }
+  // async function getSubmissionUrl(base, task) {
+  //   const res = await fetchText(`${base}submissions/${task}/submission.url`);
+  //   if (res !== null) {
+  //     return res.split('=')[1];
+  //   }
+  //   return null;
+  // }
 
-  async function getEditorial(base, task) {
-    return await fetchText(`${base}md/${task}.md`);
-  }
+  // async function getEditorial(base, task) {
+  //   return await fetchText(`${base}md/${task}.md`);
+  // }
 
   async function getSrc(base, task) {
     return await fetchText(`${base}submissions/${task}/main.kn`);

@@ -1,5 +1,6 @@
 /data/
 /html/
+/node_modules/
 
 data.json
 *.exe
