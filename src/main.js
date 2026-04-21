@@ -55,6 +55,7 @@
     table.appendChild(tbody);
 
     const submissionsList = await getSubmissionsList(base);
+    p.innerText = `${submissionsList.length}件`;
 
     const contestMap = new Map();
 
