@@ -1,0 +1,14 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: []int :: #[n + 1]int
+	for i(1, n)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	for i(1, n - 1)
+		var s: int :: cui@inputInt()
+		do a[i + 1] :+ a[i] / s * cui@inputInt()
+	end for
+	
+	do cui@print("\{a[n]}\n")
+end func
