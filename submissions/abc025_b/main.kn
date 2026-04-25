@@ -1,0 +1,19 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	
+	var ans: int :: 0
+	for(1, n)
+		var s: []char :: cui@inputStr()
+		var d: int :: cui@inputInt()
+		do d :: lib@max(d, a)
+		do d :: lib@min(d, b)
+		if(s = "West")
+			do d :: -d
+		end if
+		do ans :+ d
+	end for
+	
+	do cui@print("\{ans < 0 ?("West ", ans = 0 ?("", "East "))}\{ans.abs()}\n")
+end func
