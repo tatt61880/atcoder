@@ -1,0 +1,33 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	var n: int :: cui@inputInt()
+	var s: [][]char :: #[h, w]char
+	for i(0, h - 1)
+		for j(0, w - 1)
+			do s[i][j] :: '.'
+		end for
+	end for
+	
+	var d: int :: 0
+	var x: int :: 0
+	var y: int :: 0
+	var dx: []int :: [0, 1, 0, -1]
+	var dy: []int :: [-1, 0, 1, 0]
+	
+	for(1, n)
+		if(s[y][x] = '.')
+			do d :: (d + 1) % 4
+			do s[y][x] :: '#'
+		else
+			do d :: (d + 3) % 4
+			do s[y][x] :: '.'
+		end if
+		do x :: (x + w + dx[d]) % w
+		do y :: (y + h + dy[d]) % h
+	end for
+	
+	for i(0, h - 1)
+		do cui@print(s[i] ~ "\n")
+	end for
+end func
