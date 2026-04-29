@@ -8,7 +8,7 @@
   async function onloadApp() {
     const urlQueryParams = analyzeUrl();
     const base = urlQueryParams.base;
-    const task = urlQueryParams.task;
+    const tasks = urlQueryParams.tasks;
 
     const contents = document.getElementById('data');
     if (contents === null) {
@@ -16,10 +16,10 @@
       return;
     }
 
-    if (task === null) {
+    if (tasks === null) {
       await appendAcList(contents, base);
     } else {
-      await appendEditorial(contents, base, task);
+      await appendTasks(contents, base, tasks);
     }
   }
 
@@ -41,13 +41,13 @@
 
     {
       const td = document.createElement('th');
-      td.innerText = 'コンテスト';
+      td.innerText = 'コンテスト毎のまとめ';
       tr.appendChild(td);
     }
 
     {
       const td = document.createElement('th');
-      td.innerText = '提出したソースコード';
+      td.innerText = '個別のソースコード';
       tr.appendChild(td);
     }
 
@@ -77,7 +77,12 @@
 
       {
         const td = tr.insertCell();
-        td.innerText = contest;
+        const a = document.createElement('a');
+        a.href = `?tasks=${problems
+          .map(({ problemId }) => problemId)
+          .join(',')}`;
+        a.innerText = contest;
+        td.appendChild(a);
       }
 
       {
@@ -85,113 +90,75 @@
 
         for (const { problemId, id } of problems) {
           const a = document.createElement('a');
-          a.href = `?task=${problemId}`;
+          a.href = `?tasks=${problemId}`;
           a.innerText = id;
           a.classList.add('submit-link');
           td.appendChild(a);
-          td.append(' ');
         }
       }
     }
   }
 
-  // 解説
-  async function appendEditorial(contents, base, task) {
-    // ページタイトル
-    {
-      let title = await getTitle(task);
-      if (title === null) {
-        title = task;
-      }
-      document.title = title;
+  // 提出内容
+  async function appendTasks(contents, base, tasks) {
+    for (const task of tasks.split(',')) {
+      // ページタイトル
+      {
+        let title = await getTitle(task);
+        if (title === null) {
+          title = task;
+        }
+        document.title = title;
 
-      const h1 = document.createElement('h1');
-      h1.innerText = title;
-      contents.appendChild(h1);
-      contents.appendChild(document.createElement('hr'));
-    }
-
-    // 問題URL
-    {
-      const problemUrl = getProblemUrl(task);
-      const p = document.createElement('p');
-      p.classList.add('narrow');
-      p.innerText = '問題URL: ';
-      contents.appendChild(p);
-
-      if (problemUrl !== null) {
-        const a = document.createElement('a');
-        a.href = problemUrl;
-        a.innerText = problemUrl;
-        p.appendChild(a);
+        const h1 = document.createElement('h2');
+        h1.innerText = title;
+        contents.appendChild(h1);
       }
 
-      contents.appendChild(document.createElement('hr'));
-    }
+      // 問題URL
+      {
+        const problemUrl = getProblemUrl(task);
+        const p = document.createElement('p');
+        p.classList.add('narrow');
+        p.innerText = '問題URL: ';
+        contents.appendChild(p);
 
-    // 解説
-    // {
-    //   let editorial = await getEditorial(base, task);
-    //   if (editorial !== null) {
-    //     const h2 = document.createElement('h2');
-    //     h2.innerText = '解説';
-    //     contents.appendChild(h2);
+        if (problemUrl !== null) {
+          const a = document.createElement('a');
+          a.href = problemUrl;
+          a.innerText = problemUrl;
+          p.appendChild(a);
+        }
+      }
 
-    //     editorial = editorial.replaceAll('\\(', '\\\\(');
-    //     editorial = editorial.replaceAll('\\)', '\\\\)');
-    //     const md = window.markdownit();
-    //     const result = md.render(editorial);
-    //     const div = document.createElement('div');
-    //     div.innerHTML = result;
-    //     contents.appendChild(div);
+      // 提出したソースコード
+      {
+        const src = await getSrc(base, task);
+        if (src !== null) {
+          const h2 = document.createElement('h3');
+          h2.innerText = '提出したソースコード (言語: Kuin)';
+          contents.appendChild(h2);
 
-    //     window.renderMathInElement(div);
+          const pre = document.createElement('pre');
+          pre.classList.add('code');
+          contents.appendChild(pre);
 
-    //     contents.appendChild(document.createElement('hr'));
-    //   }
-    // }
+          const editor = elemToKuinEditor(pre);
+          editor.setValue(src);
+          editor.navigateTo(0, 0);
+        }
 
-    // 提出したソースコード
-    {
-      const src = await getSrc(base, task);
-      if (src !== null) {
-        const h2 = document.createElement('h2');
-        h2.innerText = '提出したソースコード (言語: Kuin)';
-        contents.appendChild(h2);
-
-        const id = 'code';
-        const pre = document.createElement('pre');
-        pre.setAttribute('id', id);
-        contents.appendChild(pre);
-
-        const editor = elemToKuinEditor(pre);
-        editor.setValue(src);
-        editor.navigateTo(0, 0);
+        contents.appendChild(document.createElement('hr'));
       }
     }
-
-    // 提出URL
-    // {
-    //   const submissionUrl = await getSubmissionUrl(base, task);
-    //   if (submissionUrl !== null) {
-    //     const p = document.createElement('p');
-    //     p.classList.add('narrow');
-    //     p.innerText = '提出URL: ';
-    //     contents.appendChild(p);
-
-    //     const a = document.createElement('a');
-    //     a.href = submissionUrl;
-    //     a.innerText = submissionUrl;
-    //     p.appendChild(a);
-    //   }
-    // }
   }
 
   function analyzeUrl() {
     const res = {
       base: '',
-      task: null,
+      tasks: null,
     };
+
     res.base = location.href.split('?')[0];
     const queryStrs = location.href.split('?')[1];
     if (queryStrs === undefined) return res;
@@ -200,8 +167,8 @@
       const paramName = paramArray[0];
       const paramVal = paramArray[1];
       switch (paramName) {
-        case 'task':
-          res.task = paramVal;
+        case 'tasks':
+          res.tasks = paramVal;
           break;
       }
     }

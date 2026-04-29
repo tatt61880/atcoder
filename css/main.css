@@ -12,10 +12,6 @@ body {
   background-color: white;
 }
 
-#code {
-  margin: 0;
-}
-
 ul,
 ol,
 blockquote,
@@ -47,7 +43,7 @@ hr {
 }
 
 h1 {
-  padding-left: 8px;
+  padding-left: 5px;
   margin: 0;
   font-weight: bold;
   color: #000055;
@@ -55,7 +51,7 @@ h1 {
 }
 
 h2 {
-  padding-left: 12px;
+  padding-left: 10px;
   margin: 0;
   font-weight: bold;
   color: #000055;
@@ -63,7 +59,11 @@ h2 {
 }
 
 h3 {
-  margin: 5px 10px;
+  padding-left: 15px;
+  margin: 0;
+  font-weight: bold;
+  color: #000055;
+  background-color: #c0cbff;
 }
 
 table {
@@ -98,4 +98,12 @@ a.submit-link {
   text-decoration: none;
   border: 1px solid #999999;
   border-radius: 5px;
+}
+
+.code {
+  margin: 0;
+}
+
+h2:not(:first-child) {
+  margin-top: 10px;
 }
