@@ -11,30 +11,30 @@ func main()
 	end for
 	
 	var ans: int :: 0
-	for id_(0, 2 ^ n - 1)
-		var id: bit16 :: id_ $ bit16
+	for maskInt(0, 2 ^ n - 1)
+		var mask: bit16 :: maskInt $ bit16
 		
 		var num: int :: 0
 		for i(0, n - 1)
-			if(id.and(1b16.shl(i)) <> 0b16)
+			if(mask.and(1b16.shl(i)) <> 0b16)
 				do num :+ 1
 			end if
 		end for
 		
 		if(num <= ans)
-			skip id_
+			skip maskInt
 		end if
 		
 		for i(0, n - 1)
-			if(id.and(1b16.shl(i)) = 0b16)
+			if(mask.and(1b16.shl(i)) = 0b16)
 				skip i
 			end if
 			for j(i + 1, n - 1)
-				if(id.and(1b16.shl(j)) = 0b16)
+				if(mask.and(1b16.shl(j)) = 0b16)
 					skip j
 				end if
 				if(!xy[i][j])
-					skip id_
+					skip maskInt
 				end if
 			end for
 		end for
