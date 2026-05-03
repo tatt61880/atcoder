@@ -1,0 +1,5 @@
+func main()
+	var x: int :: cui@inputInt()
+	var ans: bool :: 3 <= x & x <= 18
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func
