@@ -1,0 +1,12 @@
+func main()
+	var s: []char :: cui@inputStr()
+	
+	var ans: bool :: isPalindrome(s) & isPalindrome(s.sub(0, (^s - 1) / 2))
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+	
+	func isPalindrome(s: []char): bool
+		var t: []char :: ##s
+		do t.reverse()
+		ret s = t
+	end func
+end func

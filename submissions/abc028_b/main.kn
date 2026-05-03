@@ -1,0 +1,11 @@
+func main()
+	var s: []char :: cui@inputStr()
+	
+	var cnt: []int :: #[6]int
+	
+	for i(0, ^s - 1)
+		do cnt[s[i] $ int - 'A' $ int] :+ 1
+	end for
+	
+	do cui@print("\{cnt.join(" ")}\n")
+end func

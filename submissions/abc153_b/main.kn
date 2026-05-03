@@ -1,0 +1,11 @@
+func main()
+	var h: int :: cui@inputInt()
+	var n: int :: cui@inputInt()
+	for(1, n)
+		var a: int :: cui@inputInt()
+		do h :- a
+	end for
+	
+	var ans: bool :: h <= 0
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

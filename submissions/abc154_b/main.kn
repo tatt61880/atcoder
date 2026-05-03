@@ -1,0 +1,3 @@
+func main()
+	do cui@print("\{"x".repeat(^cui@input())}\n")
+end func
