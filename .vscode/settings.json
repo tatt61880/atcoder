@@ -1,4 +1,7 @@
 {
+  "[bat]": {
+    "files.encoding": "shiftjis"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   }
