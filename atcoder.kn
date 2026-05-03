@@ -1,11 +1,4 @@
-; userIdのみ要変更です。
-const userId: []char :: "tatt61880"
-{
-https://kenkoooo.com/atcoder/atcoder-api/results?user=tatt61880
-https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=tatt61880&from_second=1627824210
-}
 const jsonFilename: []char :: "data.json"
-const jsonUrl: []char :: "https://kenkoooo.com/atcoder/atcoder-api/results?user="
 const atcoderBase: []char :: "https://atcoder.jp/contests/"
 
 var dirHtml: []char
@@ -22,18 +15,6 @@ const kuinSubmissionDir: []char :: @submissionDir ~ "kuinSubmissions.json"
 var contestIdsForKuin: [][]char
 
 func main()
-	{
-	if(!@fetchJson())
-		ret
-	end if
-	}
-
-	{
-	if(!@fetchContestProblemJson())
-		ret
-	end if
-	}
-
 	var jsonArray: list<\json@Json> :: (\json@makeJsonF(@jsonFilename) $ \json@JsonArray).value
 	do jsonArray.head()
 	;"result":"AC"
@@ -218,35 +199,6 @@ func fetchData(url: []char): []char
 	end if
 	do cui@print("データの取得に失敗しました。[\{url}]\n")
 	ret null
-end func
-
-func fetchJson(): bool
-	var data: []char :: @fetchData(@jsonUrl ~ @userId)
-	if(data =& null)
-		do lib@exitCode(1)
-		do cui@print("JSONデータの取得に失敗しました。\n")
-		ret false
-	end if
-
-	var writer: file@Writer :: file@makeWriter(@jsonFilename, false)
-	do writer.writeStr(data)
-	do writer.fin()
-	ret true
-end func
-
-func fetchContestProblemJson(): bool
-	var url: []char :: "https://kenkoooo.com/atcoder/resources/contest-problem.json"
-	var data: []char :: @fetchData(url)
-	if(data =& null)
-		do lib@exitCode(1)
-		do cui@print("JSONデータの取得に失敗しました。\n\{url}\n")
-		ret false
-	end if
-
-	var writer: file@Writer :: file@makeWriter("contest-problem.json", false)
-	do writer.writeStr(data)
-	do writer.fin()
-	ret true
 end func
 
 func removeOldFiles()

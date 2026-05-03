@@ -1,6 +1,7 @@
 import gzip
 import json
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -15,10 +16,14 @@ def save_submissions(user: str, from_second: int, output_path: str = "data.json"
     })
 
     url = f"{base_url}?{query}"
+    print(url)
 
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                      "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/120.0.0.0 Safari/537.36"
+        ),
         "Accept": "application/json",
         "Accept-Encoding": "gzip",
     }
@@ -43,9 +48,28 @@ def save_submissions(user: str, from_second: int, output_path: str = "data.json"
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-if len(sys.argv) != 2:
-    print("使い方: python save_submissions.py <from_second>")
-    sys.exit(1)
+def get_days_ago_from_args() -> int:
+    if len(sys.argv) == 1:
+        return 10
 
-x = int(sys.argv[1])
-save_submissions("tatt61880", x)
+    if len(sys.argv) != 2:
+        print("使い方: python save_submissions.py [days_ago]")
+        sys.exit(1)
+
+    try:
+        days_ago = int(sys.argv[1])
+    except ValueError:
+        print("days_ago には整数を指定してください。")
+        sys.exit(1)
+
+    if days_ago < 0:
+        print("days_ago には0以上の整数を指定してください。")
+        sys.exit(1)
+
+    return days_ago
+
+
+days_ago = get_days_ago_from_args()
+from_second = int(time.time()) - days_ago * 24 * 60 * 60
+
+save_submissions("tatt61880", from_second)
