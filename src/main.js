@@ -56,6 +56,7 @@
 
     const submissionsList = await getSubmissionsList(base);
     p.innerText = `${submissionsList.length}件`;
+    p.classList.add('total-num');
 
     const contestMap = new Map();
 

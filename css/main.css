@@ -107,3 +107,7 @@ a.submit-link {
 h2:not(:first-child) {
   margin-top: 10px;
 }
+
+.total-num {
+  font-size: 2rem;
+}
