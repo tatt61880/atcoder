@@ -62,15 +62,17 @@
 
     for (const submission of submissionsList) {
       const problemId = submission.problem_id;
-      const m = /(?<contest>.*)_(?<id>.*)/.exec(problemId);
+      const contestId = submission.contest_id;
+
+      const m = /(?:.*)_(?<id>.*)/.exec(problemId);
       if (!m) continue;
 
-      const { contest, id } = m.groups;
+      const { id } = m.groups;
 
-      if (!contestMap.has(contest)) {
-        contestMap.set(contest, []);
+      if (!contestMap.has(contestId)) {
+        contestMap.set(contestId, []);
       }
-      contestMap.get(contest).push({ problemId, id });
+      contestMap.get(contestId).push({ problemId, id });
     }
 
     for (const [contest, problems] of contestMap) {
@@ -102,6 +104,14 @@
 
   // 提出内容
   async function appendTasks(contents, base, tasks) {
+    const submissionsList = await getSubmissionsList(base);
+    const problemContestMap = new Map();
+    for (const submission of submissionsList) {
+      const problemId = submission.problem_id;
+      const contestId = submission.contest_id;
+      problemContestMap[problemId] = contestId;
+    }
+
     for (const task of tasks.split(',')) {
       // ページタイトル
       {
@@ -118,7 +128,8 @@
 
       // 問題URL
       {
-        const problemUrl = getProblemUrl(task);
+        const contestId = problemContestMap[task];
+        const problemUrl = getProblemUrl(contestId, task);
         const p = document.createElement('p');
         p.classList.add('narrow');
         p.innerText = '問題URL: ';
@@ -204,17 +215,10 @@
     }
   }
 
-  function getProblemUrl(task) {
+  function getProblemUrl(contestId, task) {
+    if (contestId === null) return null;
     if (task === null) return null;
-    const m =
-      /(?<contest>(?:abc|arc|agc|dp|hhkb|nomura|practice|zone)\d*)_(?<id>.*)/.exec(
-        task
-      );
-    if (m !== null) {
-      return `https://atcoder.jp/contests/${m.groups.contest}/tasks/${task}`;
-    } else {
-      return null;
-    }
+    return `https://atcoder.jp/contests/${contestId}/tasks/${task}`;
   }
 
   // async function getSubmissionUrl(base, task) {
