@@ -2,5 +2,6 @@
 /html/
 /node_modules/
 
+contests.json
 data.json
 *.exe

@@ -1,4 +1,5 @@
-const jsonFilename: []char :: "data.json"
+const contestJsonFilename: []char :: "problems.json"
+const dataJsonFilename: []char :: "data.json"
 const atcoderBase: []char :: "https://atcoder.jp/contests/"
 
 var dirHtml: []char
@@ -9,13 +10,33 @@ var dictExtensions: dict<[]char, []char>
 var regexCode: regex@Regex
 var dictConstantId: dict<[]char, []char>
 var dictLanguage: dict<[]char, []char>
+var contestIdMap: dict<[]char, []char>
 
 const submissionDir: []char :: ".\\submissions\\"
 const kuinSubmissionDir: []char :: @submissionDir ~ "kuinSubmissions.json"
-var contestIdsForKuin: [][]char
+var problemsIdsForKuin: [][]char
 
 func main()
-	var jsonArray: list<\json@Json> :: (\json@makeJsonF(@jsonFilename) $ \json@JsonArray).value
+	block
+		do @contestIdMap :: #dict<[]char, []char>
+		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@contestJsonFilename) $ \json@JsonArray).value
+		do jsonArray.head()
+		; "id": "1202Contest_a",
+		; "contest_id": "DEGwer2023",
+		; "problem_index": "A",
+		; "name": "DEGwer's Doctoral Dissertation",
+		; "title": "A. DEGwer's Doctoral Dissertation"
+		for i(0, ^jsonArray - 1)
+			var json: \json@Json :: jsonArray.get()
+			do jsonArray.next()
+
+			var problemId: []char :: json.find("id").toStr()
+			var contestId: []char :: json.find("contest_id").toStr()
+			do @contestIdMap.add(problemId, contestId)
+		end for
+	end block
+
+	var jsonArray: list<\json@Json> :: (\json@makeJsonF(@dataJsonFilename) $ \json@JsonArray).value
 	do jsonArray.head()
 	;"result":"AC"
 	;"problem_id":"abc023_c"
@@ -140,18 +161,17 @@ func main()
 	do @removeOldFiles()
 	
 	block
-		do @contestIdsForKuin :: #[0][]char
+		do @problemsIdsForKuin :: #[0][]char
 		do file@forEach(@submissionDir, true, callbackSubmissions, null)
 
-		do @contestIdsForKuin.sort()
+		do @problemsIdsForKuin.sort()
 		var jsonText: []char :: ""
 		do jsonText :~ "[\n"
-		for i(0, ^@contestIdsForKuin - 1)
-			if(i <> ^@contestIdsForKuin - 1)
-				do jsonText :~ "  \"\{@contestIdsForKuin[i]}\",\n"
-			else
-				do jsonText :~ "  \"\{@contestIdsForKuin[i]}\"\n"
-			end if
+
+		for i(0, ^@problemsIdsForKuin - 1)
+			var problemId: []char :: @problemsIdsForKuin[i]
+			var contestId: []char :: @contestIdMap.get(problemId, &)
+			do jsonText :~ "  {\n    \"problem_id\": \"\{problemId}\",\n    \"contest_id\": \"\{contestId}\"\n  }\{i <> ^@problemsIdsForKuin - 1 ?(",", "")}\n"
 		end for
 		do jsonText :~ "]\n"
 
@@ -166,7 +186,7 @@ func main()
 			if(file@ext(path) = "kn")
 				var ss: [][]char :: path.split("/")
 				if(^ss >= 2)
-					do @contestIdsForKuin :~ ["\{ss[^ss - 2]}"]
+					do @problemsIdsForKuin :~ ["\{ss[^ss - 2]}"]
 				end if
 			end if
 			ret true

@@ -61,7 +61,7 @@
     const contestMap = new Map();
 
     for (const submission of submissionsList) {
-      const problemId = submission;
+      const problemId = submission.problem_id;
       const m = /(?<contest>.*)_(?<id>.*)/.exec(problemId);
       if (!m) continue;
 

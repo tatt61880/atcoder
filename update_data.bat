@@ -7,6 +7,8 @@ if "%DAYS%"=="" (
   python save_submissions.py %DAYS%
 )
 
+python save_problems.py
+
 atcoder.exe
 
 pause
