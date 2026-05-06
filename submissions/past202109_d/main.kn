@@ -1,0 +1,28 @@
+func main()
+	var x: int :: @num(cui@inputInt())
+	var y: int :: @num(cui@inputInt())
+	if(x = y)
+		do cui@print("Z\n")
+	elif(x > y)
+		do cui@print("X\n")
+	else
+		do cui@print("Y\n")
+	end if
+end func
+
+func num(n: int): int
+	var factors: []int :: math@primeFactors(n)
+	var factNums: dict<int, int> :: #dict<int, int>
+	for i(0, ^factors - 1)
+		do factNums.add(factors[i], factNums.get(factors[i], &) + 1)
+	end for
+	var ans: lib@Int :: #lib@Int
+	do ans.value :: 1
+	do factNums.forEach(f, ans)
+	ret ans.value
+	
+	func f(key: int, value: int, ans: kuin@Class): bool
+		do (ans $ lib@Int).value :* value + 1
+		ret true
+	end func
+end func

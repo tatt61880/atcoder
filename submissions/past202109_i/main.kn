@@ -1,0 +1,73 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: []int :: #[n]int
+	var cnt: int :: 0
+	var pq: @PriorityQueue :: #@PriorityQueue
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+		while(a[i] % 2 = 0)
+			do cnt :+ 1
+			do a[i] :/ 2
+		end while
+		do pq.add(a[i])
+	end for
+	
+	for(1, cnt)
+		var v: int :: pq.top()
+		do pq.pop()
+		do v :* 3
+		do pq.add(v)
+	end for
+	
+	var ans: int :: pq.top()
+	do cui@print("\{ans}\n")
+end func
+
+class PriorityQueue()
+	var data: []int
+	+var len: int
+	*func ctor()
+		do me.data :: #[1024]int
+		do me.len :: 0
+	end func
+	+func add(elem: int)
+		var n: int :: me.len
+		if(^me.data = me.len)
+			do me.data :~ #[me.len]int
+		end if
+		do me.data[me.len] :: elem
+		do me.len :+ 1
+		
+		while(n <> 0)
+			var i: int :: (n - 1) / 2
+			if(me.data[n] < me.data[i])
+				var tmp: int :: me.data[n]
+				do me.data[n] :: me.data[i]
+				do me.data[i] :: tmp
+			end if
+			do n :: i
+		end while
+	end func
+	+func pop()
+		var n: int :: me.len - 1
+		do me.data[0] :: me.data[n]
+		do me.len :- 1
+		var i: int :: 0
+		var j: int :: 1
+		while(j < n)
+			if(j <> n - 1 & me.data[j] > me.data[j + 1])
+				do j :+ 1
+			end if
+			if(me.data[i] > me.data[j])
+				var tmp: int :: me.data[j]
+				do me.data[j] :: me.data[i]
+				do me.data[i] :: tmp
+			end if
+			do i :: j
+			do j :: 2 * i + 1
+		end while
+	end func
+	+func top(): int
+		ret me.data[0]
+	end func
+end class

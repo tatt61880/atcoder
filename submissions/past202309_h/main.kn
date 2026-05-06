@@ -1,0 +1,38 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	; dp[i][j] = v
+	; i: 勉強した日数
+	; j: 前日に勉強したか否か
+	var dp: [][]int :: #[n + 1, 2]int
+	for i(0, n - 1)
+		for j(0, 1)
+			do dp[i][j] :: -1
+		end for
+	end for
+	do dp[0][0] :: 0
+	
+	for x(0, n - 1)
+		for i(n - 1, 0, -1)
+			if(dp[i][0] <> -1)
+				do dp[i + 1][1] :: lib@max(dp[i + 1][1], dp[i][0]) {勉強した}
+				do dp[i][0] :: lib@max(dp[i][0], dp[i][0] + a[x]) {遊んだ}
+			end if
+			if(dp[i][1] <> -1)
+				do dp[i][0] :: lib@max(dp[i][0], dp[i][1] + a[x]) {遊んだ}
+			end if
+		end for
+	end for
+	
+	var ans: int :: 0
+	for i(m, n - 1)
+		do ans :: lib@max(ans, dp[i][0])
+		do ans :: lib@max(ans, dp[i][1])
+	end for
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,9 @@
+func main()
+	var s: []char :: cui@input()
+	var n: int :: 0
+	for i(0, ^s - 1)
+		do n :+ s[i] $ int - '0' $ int
+	end for
+	var ans: int :: ^s - (n = 1 ?(1, 0))
+	do cui@print("\{ans}\n")
+end func

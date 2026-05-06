@@ -1,0 +1,51 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	; 最小のアメの個数を求める
+	var ok: int :: a.min()
+	var ng: int :: a.max() + k * m
+	while((ok - ng).abs() > 1)
+		var mid: int :: (ok + ng) / 2
+		
+		var isOk: bool :: true
+		var num: int :: m
+		for i(0, n - 1)
+			if(a[i] < mid)
+				do num :- (mid - a[i] + k - 1) / k
+			end if
+			if(num < 0)
+				do isOk :: false
+				break i
+			end if
+		end for
+		
+		if(isOk)
+			do ok :: mid
+		else
+			do ng :: mid
+		end if
+	end while
+	
+	for i(0, n - 1)
+		if(a[i] < ok)
+			var num: int :: (ok - a[i] + k - 1) / k
+			do m :- num
+			do a[i] :+ num * k
+		end if
+	end for
+	
+	for i(0, n - 1)
+		if(m > 0 & a[i] = ok)
+			do m :- 1
+			do a[i] :+ k
+		end if
+	end for
+	
+	do cui@print("\{a.join(" ")}\n")
+end func
