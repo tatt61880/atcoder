@@ -1,0 +1,39 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var t: int :: cui@inputInt()
+	
+	var x: int :: 0
+	var y: int :: 0
+	var cnt: int :: 0
+	for i(0, ^s - 1)
+		switch(s[i])
+		case 'L'
+			do x :- 1
+		case 'R'
+			do x :+ 1
+		case 'U'
+			do y :+ 1
+		case 'D'
+			do y :- 1
+		case '?'
+			do cnt :+ 1
+		end switch
+	end for
+	
+	if(t = 1)
+		var ans: int :: x.abs() + y.abs() + cnt
+		do cui@print("\{ans}\n")
+	else
+		var ans: int :: x.abs() + y.abs()
+		if(ans > cnt)
+			do ans :- cnt
+		else
+			if((cnt - ans) % 2 = 0)
+				do ans :: 0
+			else
+				do ans :: 1
+			end if
+		end if
+		do cui@print("\{ans}\n")
+	end if
+end func

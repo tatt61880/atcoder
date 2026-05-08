@@ -308,6 +308,10 @@
     "contest_id": "abc035"
   },
   {
+    "problem_id": "abc035_b",
+    "contest_id": "abc035"
+  },
+  {
     "problem_id": "abc036_a",
     "contest_id": "abc036"
   },
@@ -1640,11 +1644,23 @@
     "contest_id": "abc329"
   },
   {
+    "problem_id": "abc329_b",
+    "contest_id": "abc329"
+  },
+  {
     "problem_id": "abc330_a",
     "contest_id": "abc330"
   },
   {
+    "problem_id": "abc330_b",
+    "contest_id": "abc330"
+  },
+  {
     "problem_id": "abc331_a",
+    "contest_id": "abc331"
+  },
+  {
+    "problem_id": "abc331_b",
     "contest_id": "abc331"
   },
   {
