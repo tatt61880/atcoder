@@ -58,11 +58,13 @@
     p.setAttribute('id', 'total-num');
 
     const contestMap = new Map();
+    const contestTitleMap = new Map();
     const problemIndexMap = new Map();
 
     for (const submission of submissionsList) {
       const problemId = submission.problem_id;
       const contestId = submission.contest_id;
+      contestTitleMap[contestId] = submission.contest_title;
       const problemIndex = submission.problem_index;
       problemIndexMap[problemId] = problemIndex;
 
@@ -77,23 +79,26 @@
       contestMap.get(contestId).push({ problemId, id });
     }
 
-    for (const [contest, problems] of contestMap) {
+    for (const [contestId, problemsId] of contestMap) {
       const tr = tbody.insertRow();
 
+      // コンテスト毎のまとめ
       {
         const td = tr.insertCell();
         const a = document.createElement('a');
-        a.href = `?tasks=${problems
+        a.href = `?tasks=${problemsId
           .map(({ problemId }) => problemId)
           .join(',')}`;
-        a.innerText = contest;
+        a.innerText = contestTitleMap[contestId];
+        // a.innerText = contestId;
         td.appendChild(a);
       }
 
+      // 個別のソースコード
       {
         const td = tr.insertCell();
 
-        for (const { problemId } of problems) {
+        for (const { problemId } of problemsId) {
           const a = document.createElement('a');
           a.href = `?tasks=${problemId}`;
           a.innerText = problemIndexMap[problemId];
@@ -110,23 +115,26 @@
     const problemContestMap = new Map();
     const problemIndexMap = new Map();
     const problemNameMap = new Map();
+    const contestTitleMap = new Map();
     for (const submission of submissionsList) {
       const problemId = submission.problem_id;
       const contestId = submission.contest_id;
       const problemIndex = submission.problem_index;
       const name = submission.name;
+      const contestTitle = submission.contest_title;
       problemContestMap[problemId] = contestId;
       problemIndexMap[problemId] = problemIndex;
       problemNameMap[problemId] = name;
+      contestTitleMap[problemId] = contestTitle;
     }
 
     for (const task of tasks.split(',')) {
       // ページタイトル
       {
-        const contestId = problemContestMap[task];
+        const contestTitle = contestTitleMap[task];
         const problemIndex = problemIndexMap[task];
         const name = problemNameMap[task];
-        const title = `${contestId}: ${problemIndex} - ${name}`;
+        const title = `${contestTitle}: ${problemIndex} - ${name}`;
         document.title = title;
 
         const h1 = document.createElement('h2');
@@ -218,18 +226,6 @@
     if (task === null) return null;
     return `https://atcoder.jp/contests/${contestId}/tasks/${task}`;
   }
-
-  // async function getSubmissionUrl(base, task) {
-  //   const res = await fetchText(`${base}submissions/${task}/submission.url`);
-  //   if (res !== null) {
-  //     return res.split('=')[1];
-  //   }
-  //   return null;
-  // }
-
-  // async function getEditorial(base, task) {
-  //   return await fetchText(`${base}md/${task}.md`);
-  // }
 
   async function getSrc(base, task) {
     return await fetchText(`${base}submissions/${task}/main.kn`);

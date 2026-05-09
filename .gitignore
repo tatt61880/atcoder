@@ -2,6 +2,7 @@
 /html/
 /node_modules/
 
+contests.json
 problems.json
 data.json
 *.exe

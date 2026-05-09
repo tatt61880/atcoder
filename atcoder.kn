@@ -1,4 +1,5 @@
-const contestJsonFilename: []char :: "problems.json"
+const contestJsonFilename: []char :: "contests.json"
+const problemsJsonFilename: []char :: "problems.json"
 const dataJsonFilename: []char :: "data.json"
 const atcoderBase: []char :: "https://atcoder.jp/contests/"
 
@@ -10,6 +11,7 @@ var dictExtensions: dict<[]char, []char>
 var regexCode: regex@Regex
 var dictConstantId: dict<[]char, []char>
 var dictLanguage: dict<[]char, []char>
+var contestTitleMap: dict<[]char, []char>
 var problemDataMap: dict<[]char, [][]char>
 
 const submissionDir: []char :: ".\\submissions\\"
@@ -18,8 +20,27 @@ var problemsIdsForKuin: [][]char
 
 func main()
 	block
-		do @problemDataMap :: #dict<[]char, [][]char>
+		do @contestTitleMap :: #dict<[]char, []char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@contestJsonFilename) $ \json@JsonArray).value
+		do jsonArray.head()
+		; "id": "abc001",
+		; "start_epoch_second": 1381579200,
+		; "duration_second": 7200,
+		; "title": "AtCoder Beginner Contest 001",
+		; "rate_change": "
+		for i(0, ^jsonArray - 1)
+			var json: \json@Json :: jsonArray.get()
+			do jsonArray.next()
+			
+			var contestId: []char :: json.find("id").toStr()
+			var title: []char :: json.find("title").toStr()
+			do @contestTitleMap.add(contestId, title)
+		end for
+	end block
+
+	block
+		do @problemDataMap :: #dict<[]char, [][]char>
+		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@problemsJsonFilename) $ \json@JsonArray).value
 		do jsonArray.head()
 		; "id": "1202Contest_a",
 		; "contest_id": "DEGwer2023",
@@ -173,9 +194,12 @@ func main()
 		for i(0, ^@problemsIdsForKuin - 1)
 			var problemId: []char :: @problemsIdsForKuin[i]
 			var problemData: [][]char :: @problemDataMap.get(problemId, &)
+			var contestId: []char :: problemData[0]
+			var contestTitle: []char :: @contestTitleMap.get(contestId, &).replace("\"", "\\\"")
 			do jsonText :~ "  {\n"
 			| ~ "    \"problem_id\": \"\{problemId}\",\n"
-			| ~ "    \"contest_id\": \"\{problemData[0]}\",\n"
+			| ~ "    \"contest_id\": \"\{contestId}\",\n"
+			| ~ "    \"contest_title\": \"\{contestTitle}\",\n"
 			| ~ "    \"problem_index\": \"\{problemData[1]}\",\n"
 			| ~ "    \"name\": \"\{problemData[2]}\"\n"
 			| ~ "  }\{i <> ^@problemsIdsForKuin - 1 ?(",", "")}\n"
