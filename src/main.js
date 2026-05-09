@@ -59,10 +59,13 @@
     p.setAttribute('id', 'total-num');
 
     const contestMap = new Map();
+    const problemIndexMap = new Map();
 
     for (const submission of submissionsList) {
       const problemId = submission.problem_id;
       const contestId = submission.contest_id;
+      const problemIndex = submission.problem_index;
+      problemIndexMap[problemId] = problemIndex;
 
       const m = /(?:.*)_(?<id>.*)/.exec(problemId);
       if (!m) continue;
@@ -91,10 +94,10 @@
       {
         const td = tr.insertCell();
 
-        for (const { problemId, id } of problems) {
+        for (const { problemId } of problems) {
           const a = document.createElement('a');
           a.href = `?tasks=${problemId}`;
-          a.innerText = id;
+          a.innerText = problemIndexMap[problemId];
           a.classList.add('submit-link');
           td.appendChild(a);
         }
@@ -106,19 +109,25 @@
   async function appendTasks(contents, base, tasks) {
     const submissionsList = await getSubmissionsList(base);
     const problemContestMap = new Map();
+    const problemIndexMap = new Map();
+    const problemNameMap = new Map();
     for (const submission of submissionsList) {
       const problemId = submission.problem_id;
       const contestId = submission.contest_id;
+      const problemIndex = submission.problem_index;
+      const name = submission.name;
       problemContestMap[problemId] = contestId;
+      problemIndexMap[problemId] = problemIndex;
+      problemNameMap[problemId] = name;
     }
 
     for (const task of tasks.split(',')) {
       // ページタイトル
       {
-        let title = await getTitle(task);
-        if (title === null) {
-          title = task;
-        }
+        const contestId = problemContestMap[task];
+        const problemIndex = problemIndexMap[task];
+        const name = problemNameMap[task];
+        const title = `${contestId}: ${problemIndex} - ${name}`;
         document.title = title;
 
         const h1 = document.createElement('h2');
@@ -203,16 +212,6 @@
 
   async function getSubmissionsList(base) {
     return await fetchJson(`${base}submissions/kuinSubmissions.json`);
-  }
-
-  async function getTitle(task) {
-    if (task === null) return null;
-    const m = /(?<contest>.*)_(?<id>.*)/.exec(task);
-    if (m !== null) {
-      return `${m.groups.contest} - ${m.groups.id}`;
-    } else {
-      return null;
-    }
   }
 
   function getProblemUrl(contestId, task) {
