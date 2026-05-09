@@ -28,7 +28,6 @@
     const h1 = document.createElement('h1');
     h1.innerText = 'AtCoderの最新ACコード一覧';
     contents.appendChild(h1);
-    contents.appendChild(document.createElement('hr'));
 
     const p = document.createElement('p');
     contents.appendChild(p);
