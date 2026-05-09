@@ -26,7 +26,7 @@
   // ACコード一覧
   async function appendAcList(contents, base) {
     const h1 = document.createElement('h1');
-    h1.innerText = 'AtCoderの最新ACコード一覧';
+    h1.innerText = 'tatt61880によるAtCoderの最新ACコード一覧';
     contents.appendChild(h1);
 
     const p = document.createElement('p');
