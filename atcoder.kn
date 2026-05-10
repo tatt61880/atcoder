@@ -9,14 +9,15 @@ var dictOldFilesFlag: dict<[]char, bool>
 var dictExtensions: dict<[]char, []char>
 
 var regexCode: regex@Regex
-var dictConstantId: dict<[]char, []char>
+var dictContestId: dict<[]char, []char>
+var dictProblemId: dict<[]char, []char>
 var dictLanguage: dict<[]char, []char>
 var contestTitleMap: dict<[]char, []char>
-var problemDataMap: dict<[]char, [][]char>
+var cpDataMap: dict<[]char, [][]char>
 
 const submissionDir: []char :: ".\\submissions\\"
 const kuinSubmissionDir: []char :: @submissionDir ~ "kuinSubmissions.json"
-var problemsIdsForKuin: [][]char
+var cpIdsForKuin: [][]char
 
 func main()
 	; コンテスト情報取得
@@ -41,7 +42,7 @@ func main()
 	
 	; 問題情報取得
 	block
-		do @problemDataMap :: #dict<[]char, [][]char>
+		do @cpDataMap :: #dict<[]char, [][]char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@problemsJsonFilename) $ \json@JsonArray).value
 		do jsonArray.head()
 		; "id": "1202Contest_a",
@@ -55,9 +56,12 @@ func main()
 			
 			var problemId: []char :: json.find("id").toStr()
 			var contestId: []char :: json.find("contest_id").toStr()
-			var problem_index: []char :: json.find("problem_index").toStr()
+			var problemIndex: []char :: json.find("problem_index").toStr()
 			var name: []char :: json.find("name").toStr()
-			do @problemDataMap.add(problemId, [contestId, problem_index, name])
+			
+			; 同じ問題が複数のコンテストで使用されることがあるため(例: "arc065_a" は "abc049", "abs", "arc065" の3つのコンテストに紐づいています )
+			var cpId: []char :: "\{contestId}/\{problemId}"
+			do @cpDataMap.add(cpId, [contestId, problemId, problemIndex, name])
 		end for
 	end block
 	
@@ -75,7 +79,8 @@ func main()
 		;"id":660366
 		;"language":"C++ (GCC 4.9.2)"
 		var dictEpochSecond: dict<[]char, int> :: #dict<[]char, int>
-		do @dictConstantId :: #dict<[]char, []char>
+		do @dictContestId :: #dict<[]char, []char>
+		do @dictProblemId :: #dict<[]char, []char>
 		do @dictLanguage :: #dict<[]char, []char>
 		
 		for i(0, ^jsonArray - 1)
@@ -83,15 +88,21 @@ func main()
 			do jsonArray.next()
 			if(json.find("result").toStr() = "AC")
 				var problemId: []char :: json.find("problem_id").toStr()
+				var contestId: []char :: json.find("contest_id").toStr()
+				var submissionId: int :: json.find("id").toi()
+				var language: []char :: json.find("language").toStr()
+				var cpId: []char :: "\{contestId}/\{problemId}"
+
 				var epochSecond: int :: json.find("epoch_second").toi()
-				var epochSecondPrev: int :: dictEpochSecond.get(problemId, &)
+				var epochSecondPrev: int :: dictEpochSecond.get(cpId, &)
 				if(epochSecondPrev > epochSecond)
 					skip i
 				end if
-				do dictEpochSecond.add(problemId, epochSecond)
-				do dictSubmissionId.add(problemId, json.find("id").toi())
-				do @dictConstantId.add(problemId, json.find("contest_id").toStr())
-				do @dictLanguage.add(problemId, json.find("language").toStr())
+				do dictEpochSecond.add(cpId, epochSecond)
+				do dictSubmissionId.add(cpId, submissionId)
+				do @dictContestId.add(cpId, contestId)
+				do @dictProblemId.add(cpId, problemId)
+				do @dictLanguage.add(cpId, language)
 			end if
 		end for
 	end block
@@ -130,9 +141,10 @@ func main()
 	
 	do dictSubmissionId.forEach(callbackSubmissions, null)
 	
-	func callbackSubmissions(problemId: []char, submissionId: int, d: kuin@Class): bool
-		var contestId: []char :: @dictConstantId.get(problemId, &)
-		var language: []char :: @dictLanguage.get(problemId, &)
+	func callbackSubmissions(cpId: []char, submissionId: int, d: kuin@Class): bool
+		var contestId: []char :: @dictContestId.get(cpId, &)
+		var problemId: []char :: @dictProblemId.get(cpId, &)
+		var language: []char :: @dictLanguage.get(cpId, &)
 		var url: []char :: "\{@atcoderBase}\{contestId}/submissions/\{submissionId}"
 		var filepath: []char :: "\{@dirHtml}\{contestId}#\{submissionId}.html"
 		do @dictOldFilesFlag.add(filepath, false)
@@ -152,7 +164,7 @@ func main()
 			end while
 		end if
 		block
-			var dirProblem: []char :: "\{@dirSubmissions}\{problemId}/"
+			var dirProblem: []char :: "\{@dirSubmissions}\{contestId}/"
 			if(!file@exist(dirProblem))
 				if(!file@makeDir(dirProblem))
 					do lib@exitCode(1)
@@ -176,9 +188,8 @@ func main()
 				do srcCode :: srcCode.replace("&gt;", ">")
 				do srcCode :: srcCode.replace("&#39;", "'")
 				do srcCode :: srcCode.replace("&#43;", "+")
-				;do srcCode :: srcCode.replace("", "")
 				
-				var srcFilepath: []char :: "\{dirProblem}main.\{extension}"
+				var srcFilepath: []char :: "\{dirProblem}\{problemId}.\{extension}"
 				var writer: file@Writer :: file@makeWriter(srcFilepath, false)
 				do writer.writeStr(srcCode)
 				do writer.fin()
@@ -190,25 +201,28 @@ func main()
 	do @removeOldFiles()
 	
 	block
-		do @problemsIdsForKuin :: #[0][]char
+		do @cpIdsForKuin :: #[0][]char
 		do file@forEach(@submissionDir, true, callbackSubmissions2, null)
 		
-		do @problemsIdsForKuin.sort()
+		do @cpIdsForKuin.sort()
 		var jsonText: []char :: ""
 		do jsonText :~ "[\n"
 		
-		for i(0, ^@problemsIdsForKuin - 1)
-			var problemId: []char :: @problemsIdsForKuin[i]
-			var problemData: [][]char :: @problemDataMap.get(problemId, &)
-			var contestId: []char :: problemData[0]
+		for i(0, ^@cpIdsForKuin - 1)
+			var cpId: []char :: @cpIdsForKuin[i]
+			var cpData: [][]char :: @cpDataMap.get(cpId, &)
+			var contestId: []char :: cpData[0]
+			var problemId: []char :: cpData[1]
+			var problemIndex: []char :: cpData[2]
+			var name: []char :: cpData[3]
 			var contestTitle: []char :: @contestTitleMap.get(contestId, &).replace("\"", "\\\"")
 			do jsonText :~ "  {\n"
 			|~"    \"problem_id\": \"\{problemId}\",\n"
 			|~"    \"contest_id\": \"\{contestId}\",\n"
 			|~"    \"contest_title\": \"\{contestTitle}\",\n"
-			|~"    \"problem_index\": \"\{problemData[1]}\",\n"
-			|~"    \"name\": \"\{problemData[2]}\"\n"
-			|~"  }\{i <> ^@problemsIdsForKuin - 1 ?(",", "")}\n"
+			|~"    \"problem_index\": \"\{problemIndex}\",\n"
+			|~"    \"name\": \"\{name}\"\n"
+			|~"  }\{i <> ^@cpIdsForKuin - 1 ?(",", "")}\n"
 		end for
 		do jsonText :~ "]\n"
 		
@@ -223,7 +237,10 @@ func main()
 			if(file@ext(path) = "kn")
 				var ss: [][]char :: path.split("/")
 				if(^ss >= 2)
-					do @problemsIdsForKuin :~ ["\{ss[^ss - 2]}"]
+					var contestId: []char :: ss[^ss - 2]
+					var problemId: []char :: ss[^ss - 1].sub(0, ^ss[^ss - 1] - 3)
+					var cpId: []char :: "\{contestId}/\{problemId}"
+					do @cpIdsForKuin :~ [cpId]
 				end if
 			end if
 			ret true
