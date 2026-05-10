@@ -7,7 +7,7 @@ import urllib.parse
 import urllib.request
 
 
-def save_submissions(user: str, from_second: int, output_path: str = "data.json") -> None:
+def save_submissions(user: str, from_second: int, output_path: str = "submissions.json") -> None:
     base_url = "https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions"
 
     query = urllib.parse.urlencode({

@@ -1,7 +1,7 @@
 const contestJsonFilename: []char :: "contests.json"
 const problemsJsonFilename: []char :: "problems.json"
 const cpJsonFilename: []char :: "contest-problem.json"
-const dataJsonFilename: []char :: "data.json"
+const submissionsJsonFilename: []char :: "submissions.json"
 const atcoderBase: []char :: "https://atcoder.jp/contests/"
 
 var dirHtml: []char
@@ -92,7 +92,7 @@ func main()
 	
 	; ユーザーの提出情報取得
 	block
-		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@dataJsonFilename) $ \json@JsonArray).value
+		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@submissionsJsonFilename) $ \json@JsonArray).value
 		do jsonArray.head()
 		;"result":"AC"
 		;"problem_id":"abc023_c"

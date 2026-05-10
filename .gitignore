@@ -4,5 +4,6 @@
 
 contests.json
 problems.json
-data.json
+contest-problem.json
+submissions.json
 *.exe
