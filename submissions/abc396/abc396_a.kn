@@ -1,0 +1,20 @@
+func main()
+	var n: int :: cui@inputInt()
+	var p: int :: -1
+	var c: int :: 0
+	var ans: bool :: false
+	for i(1, n)
+		var a: int :: cui@inputInt()
+		if(a <> p)
+			do p :: a
+			do c :: 1
+		else
+			do c :+ 1
+			if(c = 3)
+				do ans :: true
+				break i
+			end if
+		end if
+	end for
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

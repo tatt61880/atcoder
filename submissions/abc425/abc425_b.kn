@@ -1,0 +1,43 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var p: []int :: #[n]int
+	for i(0, n - 1)
+		do p[i] :: cui@inputInt()
+	end for
+	
+	var used: []bool :: #[n + 1]bool
+	
+	var ans: bool :: true
+	
+	for i(0, n - 1)
+		if(p[i] = -1)
+			skip i
+		end if
+		if(used[p[i]])
+			do ans :: false
+			break i
+		end if
+		do used[p[i]] :: true
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+	if(ans)
+		var a: []int :: #[n]int
+		for i(0, n - 1)
+			if(p[i] = -1)
+				for x(1, n)
+					if(!used[x])
+						do used[x] :: true
+						do a[i] :: x
+						break x
+					end if
+				end for
+			else
+				do a[i] :: p[i]
+			end if
+		end for
+		
+		do cui@print("\{a.join(" ")}\n")
+	end if
+end func

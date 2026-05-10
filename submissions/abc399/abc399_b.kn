@@ -1,0 +1,22 @@
+func main()
+	var n: int :: cui@inputInt()
+	var p: []int :: #[n]int
+	for i(0, n - 1)
+		do p[i] :: cui@inputInt()
+	end for
+	var q: []int :: ##p
+	do q.sort()
+	do q.reverse()
+	
+	var ans: []int :: #[n]int
+	for i(0, n - 1)
+		for j(0, n - 1)
+			if(p[i] = q[j])
+				do ans[i] :: j + 1
+				skip i
+			end if
+		end for
+	end for
+	
+	do cui@print(ans.join("\n"))
+end func

@@ -1,0 +1,12 @@
+func main()
+	var c1: char :: cui@inputChar()
+	var c2: char :: cui@inputChar()
+	var c3: char :: cui@inputChar()
+	if(c1 <> c2)
+		do cui@print("A\n")
+	elif(c1 = '<')
+		do cui@print(c3 = '<' ?("B\n", "C\n"))
+	else
+		do cui@print(c3 = '<' ?("C\n", "B\n"))
+	end if
+end func

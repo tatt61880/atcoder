@@ -1,0 +1,12 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt() * n + i
+	end for
+	
+	do a.sort()
+	
+	var ans: int :: 0
+	do cui@print("\{a[0] % n + 1} \{a[1] % n + 1} \{a[2] % n + 1}\n")
+end func

@@ -1,0 +1,17 @@
+func main()
+	var s: []char :: cui@inputStr()
+	
+	var cntUpper: int :: 0
+	for i(0, ^s - 1)
+		if(s[i] <= 'Z')
+			do cntUpper :+ 1
+		end if
+	end for
+	
+	if(cntUpper * 2 > ^s)
+		do s :: s.upper()
+	else
+		do s :: s.lower()
+	end if
+	do cui@print("\{s}\n")
+end func

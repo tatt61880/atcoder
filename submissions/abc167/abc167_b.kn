@@ -1,0 +1,18 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	
+	var ans: int :: 0
+	
+	if(a >= k)
+		do ans :: k
+	elif(a + b >= k)
+		do ans :: a
+	else
+		do ans :: a - (k - a - b)
+	end if
+	
+	do cui@print("\{ans}\n")
+end func

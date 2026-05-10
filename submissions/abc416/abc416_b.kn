@@ -1,0 +1,19 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var t: []char :: ##s
+	
+	var flag: bool :: true
+	for i(0, ^s - 1)
+		switch(s[i])
+		case '.'
+			if(flag)
+				do t[i] :: 'o'
+				do flag :: false
+			end if
+		case '#'
+			do flag :: true
+		end switch
+	end for
+	
+	do cui@print("\{t}\n")
+end func

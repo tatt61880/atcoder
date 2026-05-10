@@ -1,0 +1,20 @@
+func main()
+	var n: int :: cui@inputInt()
+	var nums: dict<[]char, int> :: #dict<[]char, int>
+	
+	var max: int :: 0
+	var s: [][]char :: #[n][]char
+	for i(0, n - 1)
+		do s[i] :: cui@input()
+		var v: int :: nums.get(s[i], &)
+		do nums.add(s[i], v + 1)
+		do max :: lib@max(max, v + 1)
+	end for
+	
+	for i(0, n - 1)
+		if(nums.get(s[i], &) = max)
+			do cui@print("\{s[i]}\n")
+			ret
+		end if
+	end for
+end func

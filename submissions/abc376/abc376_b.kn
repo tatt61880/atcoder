@@ -1,0 +1,38 @@
+func main()
+	var n: int :: cui@inputInt()
+	var q: int :: cui@inputInt()
+	
+	var l: int :: 0
+	var r: int :: 1
+	
+	var ans: int :: 0
+	for(1, q)
+		var h: char :: cui@inputChar()
+		var t: int :: cui@inputInt() - 1
+		
+		var x: int
+		var y: int
+		
+		if(h = 'L')
+			do x :: l
+			do y :: r
+			do l :: t
+		else
+			do x :: r
+			do y :: l
+			do r :: t
+		end if
+		
+		if(x > t)
+			var tmp: int :: t
+			do t :: x
+			do x :: tmp
+		end if
+		if(x < y & y < t)
+			do ans :+ n - (t - x)
+		else
+			do ans :+ t - x
+		end if
+	end for
+	do cui@print("\{ans}\n")
+end func

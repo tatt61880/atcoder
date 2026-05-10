@@ -1,0 +1,127 @@
+func main()
+	var r: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	var l: int :: cui@inputInt()
+	var dl: int :: d + l
+	
+	const mod: int :: 1000000007
+	
+	var comb: @Comb :: (#@Comb).init(r * c, mod)
+	
+	var ans: @ModInt :: (#@ModInt).init(0, mod)
+	
+	var coef: []int :: #[3]int
+	do coef[0] :: 1
+	do coef[1] :: 2
+	do coef[2] :: 1
+	
+	for i(0, 2)
+		for j(0, 2)
+			var a: int :: x - i
+			var b: int :: y - j
+			var ways: int
+			if(a < 0 | b < 0)
+				do ways :: 0
+			else
+				do ways :: comb.comb(a * b, dl)
+			end if
+			do ways :: ways * coef[i] % mod
+			do ways :: ways * coef[j] % mod
+			
+			if((i + j) % 2 = 0)
+				do ans.add(ways)
+			else
+				do ans.sub(ways)
+			end if
+		end for
+	end for
+	
+	do ans.mul(comb.comb(dl, d))
+	do ans.mul((r - x + 1) * (c - y + 1))
+	do cui@print("\{ans}\n")
+end func
+
+; val, mod, a, b: 0 to mod.
+class ModInt()
+	+var val: int
+	var mod: int
+	+*func toStr(): []char
+		ret "\{me.val}"
+	end func
+	+func init(val: int, mod: int): ModInt
+		do me.val :: val % mod
+		do me.mod :: mod
+		ret me
+	end func
+	+func add(a: int): ModInt
+		do me.val :+ a
+		if(me.val >= me.mod)
+			do me.val :- me.mod
+		end if
+		ret me
+	end func
+	+func sub(a: int): ModInt
+		if(me.val < a)
+			do me.val :+ me.mod
+		end if
+		do me.val :- a
+		ret me
+	end func
+	+func mul(a: int): ModInt
+		do me.val :: me.val * a % me.mod
+		ret me
+	end func
+	+func div(a: int): ModInt
+		do me.val :: me.val * me.modPow(a, me.mod - 2) % me.mod
+		ret me
+	end func
+	+func pow(a: int): ModInt
+		do me.val :: me.modPow(me.val, a)
+		ret me
+	end func
+	func modPow(a: int, b: int): int
+		if(b = 0)
+			ret 1
+		end if
+		var res: int :: me.modPow(a, b / 2)
+		do res :: res * res % me.mod
+		if(b % 2 = 1)
+			do res :: res * a % me.mod
+		end if
+		ret res
+	end func
+end class
+
+class Comb()
+	var mod: int
+	var fact: []int
+	var inv: []int
+	
+	+func init(n: int, mod: int): Comb
+		do me.mod :: mod
+		do me.fact :: #[n + 1]int
+		do me.inv :: #[n + 1]int
+		do me.fact[0] :: 1
+		for i(1, n)
+			do me.fact[i] :: me.fact[i - 1] * i % mod
+		end for
+		do me.inv[n] :: math@modPow(me.fact[n], mod - 2, mod)
+		for i(n, 1, -1)
+			do me.inv[i - 1] :: me.inv[i] * i % mod
+		end for
+		ret me
+	end func
+	
+	+func comb(n: int, r: int): int
+		if(n < 0)
+			ret 0
+		end if
+		if(r > n)
+			ret 0
+		end if
+		ret me.fact[n] * me.inv[n - r] % me.mod * me.inv[r] % me.mod
+	end func
+end class

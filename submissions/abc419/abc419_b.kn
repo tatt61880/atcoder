@@ -1,0 +1,16 @@
+func main()
+	var q: int :: cui@inputInt()
+	var a: []int :: #[0]int
+	for(1, q)
+		var t: int :: cui@inputInt()
+		if(t = 1)
+			var x: int :: cui@inputInt()
+			do a :~ [x]
+		else
+			do a.sort()
+			var ans: int :: a[0]
+			do a[0] :: lib@intMax
+			do cui@print("\{ans}\n")
+		end if
+	end for
+end func

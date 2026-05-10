@@ -1,0 +1,36 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	
+	var s: [][]char :: #[h + 2][]char
+	
+	do s[0] :: ".".repeat(w + 2)
+	do s[h + 1] :: ".".repeat(w + 2)
+	
+	for i(1, h)
+		do s[i] :: "." ~ cui@input() ~ "."
+	end for
+	
+	var ans: bool :: true
+	
+	for i(1, h)
+		for j(1, w)
+			if(s[i][j] <> '#')
+				skip j
+			end if
+			
+			var cnt: int :: 0
+			do cnt :+ s[i - 1][j] = '#' ?(1, 0)
+			do cnt :+ s[i + 1][j] = '#' ?(1, 0)
+			do cnt :+ s[i][j - 1] = '#' ?(1, 0)
+			do cnt :+ s[i][j + 1] = '#' ?(1, 0)
+			
+			if(cnt <> 2 & cnt <> 4)
+				do ans :: false
+				break i
+			end if
+		end for
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

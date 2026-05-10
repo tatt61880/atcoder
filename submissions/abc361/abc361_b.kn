@@ -1,0 +1,30 @@
+func main()
+	var x1: []int :: #[2]int
+	var y1: []int :: #[2]int
+	var z1: []int :: #[2]int
+	for i(0, 1)
+		do x1[i] :: cui@inputInt()
+		do y1[i] :: cui@inputInt()
+		do z1[i] :: cui@inputInt()
+	end for
+	var x2: []int :: #[2]int
+	var y2: []int :: #[2]int
+	var z2: []int :: #[2]int
+	for i(0, 1)
+		do x2[i] :: cui@inputInt()
+		do y2[i] :: cui@inputInt()
+		do z2[i] :: cui@inputInt()
+	end for
+	
+	var ans: bool :: f(x1, x2) & f(y1, y2) & f(z1, z2)
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+	
+	func f(a: []int, b: []int): bool
+		if(b.max() <= a.min())
+			ret false
+		elif(a.max() <= b.min())
+			ret false
+		end if
+		ret true
+	end func
+end func

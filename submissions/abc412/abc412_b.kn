@@ -1,0 +1,19 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var t: []char :: cui@inputStr()
+	
+	var ans: bool :: true
+	
+	for i(1, ^s - 1)
+		if('A' <= s[i] & s[i] <= 'Z')
+			for j(0, ^t - 1)
+				if(t[j] = s[i - 1])
+					skip i
+				end if
+			end for
+			do ans :: false
+		end if
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

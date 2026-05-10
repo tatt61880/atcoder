@@ -1,0 +1,13 @@
+func main()
+	var n: int :: cui@inputInt()
+	for i(0, n)
+		for j(0, n)
+			for k(0, n)
+				if(i + j + k > n)
+					skip k
+				end if
+				do cui@print("\{i} \{j} \{k}\n")
+			end for
+		end for
+	end for
+end func

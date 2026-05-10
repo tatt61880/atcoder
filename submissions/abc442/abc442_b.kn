@@ -1,0 +1,21 @@
+func main()
+	var q: int :: cui@inputInt()
+	var playing: bool :: false
+	var vol: int :: 0
+	
+	for(1, q)
+		switch(cui@inputInt())
+		case 1
+			do vol :+ 1
+		case 2
+			if(vol <> 0)
+				do vol :- 1
+			end if
+		case 3
+			do playing :: !playing
+		end switch
+		
+		var ans: bool :: playing & vol >= 3
+		do cui@print((ans ?("Yes", "No")) ~ "\n")
+	end for
+end func

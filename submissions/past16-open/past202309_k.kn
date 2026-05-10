@@ -1,0 +1,113 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: [][]char :: #[n][]char
+	for i(0, n - 1)
+		do s[i] :: cui@input()
+	end for
+	
+	const U: int :: 0
+	const R: int :: 1
+	const D: int :: 2
+	const L: int :: 3
+	
+	var p: [][][]int :: #[n, n, 4]int
+	var prev: int
+	var sx: int
+	var sy: int
+	for y(0, n - 1)
+		for x(0, n - 1)
+			if(s[y][x] = 'X')
+				do p[y][x][U] :: 0
+				do p[y][x][L] :: 0
+				
+			else
+				if(s[y][x] = 'S')
+					do sx :: x
+					do sy :: y
+				end if
+				do prev :: y = 0 ?(0, p[y - 1][x][U])
+				do p[y][x][U] :: prev + 1
+				
+				do prev :: x = 0 ?(0, p[y][x - 1][L])
+				do p[y][x][L] :: prev + 1
+			end if
+		end for
+	end for
+	for y(n - 1, 0, -1)
+		for x(n - 1, 0, -1)
+			if(s[y][x] = 'X')
+				do p[y][x][R] :: 0
+				do p[y][x][D] :: 0
+			else
+				do prev :: y = n - 1 ?(0, p[y + 1][x][D])
+				do p[y][x][D] :: prev + 1
+				
+				do prev :: x = n - 1 ?(0, p[y][x + 1][R])
+				do p[y][x][R] :: prev + 1
+			end if
+		end for
+	end for
+	
+	var dx: []int :: [0, 1, 0, -1]
+	var dy: []int :: [-1, 0, 1, 0]
+	for i(1, n - 1)
+		var ans: int :: -1
+		
+		var size: int :: (n + i - 1) / i
+		var map: [][]int :: #[size, size]int
+		for y(0, size - 1)
+			for x(0, size - 1)
+				do map[y][x] :: -1
+			end for
+		end for
+		
+		var xd: int :: sx % i
+		var yd: int :: sy % i
+		var qu: queue<Pos> :: #queue<Pos>
+		var xp0: int :: sx / i
+		var yp0: int :: sy / i
+		do qu.add((#Pos).Init(xp0, yp0))
+		do map[yp0][xp0] :: 0
+		while loop(^qu <> 0)
+			var pos: Pos :: qu.get()
+			var xp: int :: pos.x
+			var yp: int :: pos.y
+			
+			; 現在までのステップ数
+			var step: int :: map[yp][xp]
+			
+			var x: int :: xp * i + xd
+			var y: int :: yp * i + yd
+			for ii(0, 3)
+				if(p[y][x][ii] <= i)
+					; 移動できない。
+					skip ii
+				end if
+				var xNext: int :: x + dx[ii] * i
+				var yNext: int :: y + dy[ii] * i
+				if(s[yNext][xNext] = 'G')
+					do ans :: step + 1
+					break loop
+				end if
+				var xpNext: int :: xp + dx[ii]
+				var ypNext: int :: yp + dy[ii]
+				if(map[ypNext][xpNext] = -1)
+					do map[ypNext][xpNext] :: step + 1
+					do qu.add((#Pos).Init(xpNext, ypNext))
+				end if
+			end for
+		end while
+		
+		do cui@print("\{ans}\n")
+	end for
+	
+	class Pos()
+		+var x: int
+		+var y: int
+		+func Init(x_: int, y_: int): Pos
+			do me.x :: x_
+			do me.y :: y_
+			ret me
+		end func
+	end class
+end func

@@ -1,0 +1,7 @@
+func main()
+ if(cui@input()="Y")
+  do cui@print(cui@input().upper())
+ else
+  do cui@print(cui@input())
+ end if
+end func

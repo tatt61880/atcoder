@@ -1,0 +1,12 @@
+func main()
+	var s: [][]char :: #[4][]char
+	for i(0, 3)
+		do s[i] :: cui@input()
+		do s[i].reverse()
+	end for
+	
+	do cui@print("\{s[3]}\n")
+	do cui@print("\{s[2]}\n")
+	do cui@print("\{s[1]}\n")
+	do cui@print("\{s[0]}\n")
+end func

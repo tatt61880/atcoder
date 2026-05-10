@@ -1,0 +1,12 @@
+func main()
+	var l: int :: cui@inputInt()
+	var r: int :: cui@inputInt()
+	switch(l * 10 + r)
+	case 10
+		do cui@print("Yes\n")
+	case 1
+		do cui@print("No\n")
+	default
+		do cui@print("Invalid\n")
+	end switch
+end func

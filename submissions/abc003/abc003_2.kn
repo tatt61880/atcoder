@@ -1,0 +1,29 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var t: []char :: cui@inputStr()
+	
+	var ans: bool :: true
+	
+	for i(0, ^s - 1)
+		if(s[i] <> t[i])
+			var c: char
+			if(s[i] = '@')
+				do c :: t[i]
+			elif(t[i] = '@')
+				do c :: s[i]
+			else
+				do ans :: false
+				break i
+			end if
+			
+			switch(c)
+			case 'a', 't', 'c', 'o', 'd', 'e', 'r'
+			default
+				do ans :: false
+				break i
+			end switch
+		end if
+	end for
+	
+	do cui@print((ans ?("You can win", "You will lose")) ~ "\n")
+end func

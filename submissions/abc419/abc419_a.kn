@@ -1,0 +1,12 @@
+func main()
+	switch(cui@input())
+	case "red"
+		do cui@print("SSS\n")
+	case "blue"
+		do cui@print("FFF\n")
+	case "green"
+		do cui@print("MMM\n")
+	default
+		do cui@print("Unknown\n")
+	end switch
+end func

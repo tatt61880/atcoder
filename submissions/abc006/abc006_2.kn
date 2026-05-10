@@ -1,0 +1,16 @@
+func main()
+	var n: int :: cui@inputInt()
+	if(n <= 2)
+		do cui@print("0\n")
+		ret
+	end if
+	
+	var a: []int :: #[n + 1]int
+	do a[3] :: 1
+	for i(4, n)
+		do a[i] :: (a[i - 1] + a[i - 2] + a[i - 3]) % 10007
+	end for
+	
+	var ans: int :: a[n]
+	do cui@print("\{ans}\n")
+end func

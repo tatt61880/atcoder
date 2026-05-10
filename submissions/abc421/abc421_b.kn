@@ -1,0 +1,17 @@
+func main()
+	var a: []int :: #[11]int
+	do a[1] :: cui@inputInt()
+	do a[2] :: cui@inputInt()
+	for i(3, 10)
+		do a[i] :: rev(a[i - 1] + a[i - 2])
+	end for
+	
+	var ans: int :: a[10]
+	do cui@print("\{ans}\n")
+	
+	func rev(n: int): int
+		var s: []char :: n.toStr()
+		do s.reverse()
+		ret s.toInt(&)
+	end func
+end func

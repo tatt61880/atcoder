@@ -1,0 +1,9 @@
+func main()
+	var n: int :: cui@inputInt()
+	var l: int :: cui@inputInt()
+	var r: int :: cui@inputInt()
+	
+	var ans: bool :: cui@input().sub(l - 1, r - l + 1).replace("o", "") = ""
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

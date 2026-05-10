@@ -1,0 +1,12 @@
+func main()
+	var ans: int :: 1
+	switch(cui@input())
+	case "fine fine"
+		do ans :: 4
+	case "fine sick"
+		do ans :: 3
+	case "sick fine"
+		do ans :: 2
+	end switch
+	do cui@print("\{ans}\n")
+end func

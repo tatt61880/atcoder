@@ -1,0 +1,27 @@
+func main()
+	var k: int :: cui@inputInt()
+	var g: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var gv: int :: 0
+	var mv: int :: 0
+	
+	for(1, k)
+		if(gv = g)
+			do gv :: 0
+		elif(mv = 0)
+			do mv :: m
+		else
+			if(mv <= g - gv)
+				; 全部移せる
+				do gv :+ mv
+				do mv :: 0
+			else
+				do mv :- g - gv
+				do gv :: g
+			end if
+		end if
+	end for
+	
+	do cui@print("\{gv} \{mv}\n")
+end func

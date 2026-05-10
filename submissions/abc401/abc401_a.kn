@@ -1,0 +1,5 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: bool :: 200 <= n & n <= 299
+	do cui@print((ans ?("Success", "Failure")) ~ "\n")
+end func

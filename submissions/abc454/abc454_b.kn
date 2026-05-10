@@ -1,0 +1,12 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var f: dict<int, bool> :: #dict<int, bool>
+	for i(0, n - 1)
+		do f.add(cui@inputInt(), true)
+	end for
+	
+	do cui@print((^f = n ?("Yes", "No")) ~ "\n")
+	do cui@print((^f = m ?("Yes", "No")) ~ "\n")
+end func

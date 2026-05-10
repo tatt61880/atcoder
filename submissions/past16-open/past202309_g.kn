@@ -1,0 +1,60 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: []int :: #[3 * n]int
+	for i(0, 3 * n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	var ans: int :: 0
+	
+	var idxs: []int :: lib@range(1, n * 3 - 1, 1)
+	while loop(permutationNext(idxs), skip)
+		for i(0, n - 1)
+			var min: int :: 3 * i - 1
+			var x: int :: min = -1 ?(0, idxs[min])
+			var y: int :: idxs[min + 1]
+			var z: int :: idxs[min + 2]
+			if(!(x < y & y < z))
+				skip loop
+			end if
+			var ax: int :: a[x]
+			var ay: int :: a[y]
+			var az: int :: a[z]
+			if(ax >= ay + az | ay >= ax + az | az >= ax + ay)
+				skip loop
+			end if
+		end for
+		do ans :+ 1
+	end while
+	for i(1, n - 1)
+		do ans :/ i
+	end for
+	do cui@print("\{ans}\n")
+	
+	func permutationNext(array: []int): bool
+		var left: int :: ^array - 2
+		while(left >= 0 & array[left] >= array[left + 1])
+			do left :- 1
+		end while
+		if(left < 0)
+			ret false
+		end if
+		var right: int :: ^array - 1
+		while(array[left] >= array[right])
+			do right :- 1
+		end while
+		var tmp: int :: array[left]
+		do array[left] :: array[right]
+		do array[right] :: tmp
+		do left :+ 1
+		do right :: ^array - 1
+		while(left < right)
+			do tmp :: array[left]
+			do array[left] :: array[right]
+			do array[right] :: tmp
+			do left :+ 1
+			do right :- 1
+		end while
+		ret true
+	end func
+end func

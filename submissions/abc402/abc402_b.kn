@@ -1,0 +1,12 @@
+func main()
+	var q: int :: cui@inputInt()
+	var que: queue<int> :: #queue<int>
+	for(1, q)
+		if(cui@inputInt() = 1)
+			do que.add(cui@inputInt())
+		else
+			var ans: int :: que.get()
+			do cui@print("\{ans}\n")
+		end if
+	end for
+end func

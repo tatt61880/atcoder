@@ -1,0 +1,41 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	var s: [][]char :: #[h][]char
+	for i(0, h - 1)
+		do s[i] :: cui@input()
+	end for
+	
+	var ans: int :: 0
+	for y1(0, h - 1)
+		for x1(0, w - 1)
+			if(s[y1][x1] <> '.')
+				skip x1
+			end if
+			for y2(0, h - 1)
+				for x2(0, w - 1)
+					if(s[y2][x2] <> '.')
+						skip x2
+					end if
+					var cnt: int :: 0
+					for y(0, h - 1)
+						for x(0, w - 1)
+							if(s[y][x] <> '.')
+								skip x
+							end if
+							if((y1 - y).abs() + (x1 - x).abs() <= d)
+								do cnt :+ 1
+							elif((y2 - y).abs() + (x2 - x).abs() <= d)
+								do cnt :+ 1
+							end if
+						end for
+					end for
+					do ans :: lib@max(ans, cnt)
+				end for
+			end for
+		end for
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

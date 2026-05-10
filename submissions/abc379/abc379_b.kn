@@ -1,0 +1,7 @@
+func main()
+	var n: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	var s: [][]char :: cui@input().split("O".repeat(k))
+	var ans: int :: ^s - 1
+	do cui@print("\{ans}\n")
+end func

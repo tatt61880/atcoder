@@ -1,0 +1,11 @@
+func main()
+	var dic: dict<[]char, int> :: #dict<[]char, int>
+	do dic.add("Ocelot", 0)
+	do dic.add("Serval", 1)
+	do dic.add("Lynx", 2)
+	
+	var x: int :: dic.get(cui@inputStr(), &)
+	var y: int :: dic.get(cui@inputStr(), &)
+	var ans: bool :: x >= y
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

@@ -1,0 +1,6 @@
+func main()
+	var m: int :: cui@inputInt()
+	
+	var ans: bool :: 4 <= m & m <= 9
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

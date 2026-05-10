@@ -1,0 +1,9 @@
+func main()
+	var s: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	
+	var ans: int :: x / (a + b) * a * s + lib@min(a, x % (a + b)) * s
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,6 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ss: [][]char :: cui@inputStr().split("/")
+	var ans: bool :: ^ss = 2 & ^ss[0] = ^ss[1] & ss[0] = "1".repeat(^ss[0]) & ss[1] = "2".repeat(^ss[1])
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

@@ -1,0 +1,15 @@
+func main()
+	var n: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	
+	var num: int :: 0
+	var ans: int :: -1
+	
+	while(num < k)
+		do ans :+ 1
+		do num :+ n
+		do n :+ 1
+	end while
+	
+	do cui@print("\{ans}\n")
+end func

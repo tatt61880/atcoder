@@ -1,0 +1,19 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: [][]char :: #[n][]char
+	for i(0, n - 1)
+		do s[i] :: cui@input()
+	end for
+	
+	var ans: []char :: ""
+	
+	for i(1, 50)
+		for j(0, n - 1)
+			if(^s[j] = i)
+				do ans :~ s[j]
+			end if
+		end for
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

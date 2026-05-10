@@ -1,0 +1,11 @@
+func main()
+	var cnt: []int :: #[14]int
+	for(1, 7)
+		var n: int :: cui@inputInt()
+		do cnt[n] :+ 1
+	end for
+	do cnt.sort()
+	do cnt.reverse()
+	var ans: bool :: cnt[0] >= 3 & cnt[1] >= 2
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func
