@@ -1,0 +1,27 @@
+func main()
+	var s: []char :: cui@input()
+	
+	var n: int :: ^s
+	var targets: [][]char :: ["eraser", "erase", "dreamer", "dream"]
+	for id(0, 3)
+		var target: []char :: targets[id]
+		for i(0, n - ^target)
+			for j(0, ^target - 1)
+				if(s[i + j] <> target[j])
+					skip i
+				end if
+			end for
+			for j(0, ^target - 1)
+				do s[i + j] :: ' '
+			end for
+		end for
+	end for
+	
+	var ans: bool :: true
+	for i(0, n - 1)
+		if(s[i] <> ' ')
+			do ans :: false
+		end if
+	end for
+	do cui@print((ans ?("YES", "NO")) ~ "\n")
+end func
