@@ -1,0 +1,5 @@
+func main()
+	var l: int :: cui@inputInt()
+	var r: int :: cui@inputInt()
+	do cui@print("\{"atcoder".sub(l - 1, r - l + 1)}\n")
+end func

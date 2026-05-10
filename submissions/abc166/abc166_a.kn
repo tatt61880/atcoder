@@ -1,0 +1,9 @@
+func main()
+	var s: []char :: cui@inputStr()
+	switch(s)
+	case "ABC"
+		do cui@print("ARC\n")
+	case "ARC"
+		do cui@print("ABC\n")
+	end switch
+end func

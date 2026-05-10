@@ -1,0 +1,11 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	if(b = 0)
+		do cui@print("Gold\n")
+	elif(a = 0)
+		do cui@print("Silver\n")
+	else
+		do cui@print("Alloy\n")
+	end if
+end func

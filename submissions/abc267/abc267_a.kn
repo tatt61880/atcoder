@@ -1,0 +1,12 @@
+func main()
+	var s: []char :: cui@inputStr()
+	
+	var dic: dict<[]char, int> :: #dict<[]char, int>
+	do dic.add("Monday", 5)
+	do dic.add("Tuesday", 4)
+	do dic.add("Wednesday", 3)
+	do dic.add("Thursday", 2)
+	do dic.add("Friday", 1)
+	
+	do cui@print("\{dic.get(s, &)}\n")
+end func

@@ -1,0 +1,9 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: []int :: #[3]int
+	for i(0, 2)
+		do a[i] :: cui@inputInt()
+	end for
+	var ans: bool :: a[2] <> a.min() & a[2] <> a.max()
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

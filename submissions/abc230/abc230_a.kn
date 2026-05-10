@@ -1,0 +1,5 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: int :: 0
+	do cui@print("AGC\{(n < 42 ?(n, n + 1)).toStrFmt("03d")}\n")
+end func

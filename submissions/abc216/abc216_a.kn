@@ -1,0 +1,13 @@
+func main()
+	var s: [][]char :: cui@input().split(".")
+	var x: int :: s[0].toInt(&)
+	var y: int :: s[1].toInt(&)
+	switch(y)
+	case 0 to 2
+		do cui@print("\{x}-\n")
+	case 3 to 6
+		do cui@print("\{x}\n")
+	default
+		do cui@print("\{x}+\n")
+	end switch
+end func

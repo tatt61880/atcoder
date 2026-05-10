@@ -1,0 +1,19 @@
+func main()
+	var n: int :: cui@inputInt()
+	var p: int :: cui@inputInt()
+	var q: int :: cui@inputInt()
+	var r: int :: cui@inputInt()
+	var s: int :: cui@inputInt()
+	var a: []int :: #[n]int
+	for i(1, n)
+		if(p <= i & i <= q)
+			do a[i - 1 + r - p] :: cui@inputInt()
+		elif(r <= i & i <= s)
+			do a[i - 1 + p - r] :: cui@inputInt()
+		else
+			do a[i - 1] :: cui@inputInt()
+		end if
+	end for
+	
+	do cui@print("\{a.join(" ")}\n")
+end func

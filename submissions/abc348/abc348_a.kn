@@ -1,0 +1,4 @@
+func main()
+	var ans: []char :: "oox".repeat(34).sub(0, cui@inputInt())
+	do cui@print("\{ans}\n")
+end func

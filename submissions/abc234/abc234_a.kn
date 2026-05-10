@@ -1,0 +1,9 @@
+func main()
+	var t: int :: cui@inputInt()
+	var ans: int :: f(f(f(t) + t) + f(f(t)))
+	do cui@print("\{ans}\n")
+	
+	func f(x: int): int
+		ret x ^ 2 + 2 * x + 3
+	end func
+end func

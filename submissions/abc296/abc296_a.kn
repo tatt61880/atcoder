@@ -1,0 +1,6 @@
+func main()
+	do cui@input()
+	var s: []char :: cui@inputStr()
+	var ans: bool :: s = s.replace("FF", "").replace("MM", "")
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

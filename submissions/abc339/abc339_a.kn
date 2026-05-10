@@ -1,0 +1,4 @@
+func main()
+	var ss: [][]char :: cui@inputStr().split(".")
+	do cui@print(ss[^ss - 1] ~ "\n")
+end func

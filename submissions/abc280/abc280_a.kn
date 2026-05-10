@@ -1,0 +1,9 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	var s: []char :: ""
+	for(1, h)
+		do s :~ cui@input()
+	end for
+	do cui@print("\{^s.split("#") - 1}\n")
+end func

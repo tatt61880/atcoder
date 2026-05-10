@@ -1,0 +1,15 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	var ans: int :: 0
+	for(1, n)
+		var p: int :: cui@inputInt()
+		var q: int :: cui@inputInt()
+		do ans :+ p * q
+	end for
+	if(ans < s)
+		do ans :+ k
+	end if
+	do cui@print("\{ans}\n")
+end func

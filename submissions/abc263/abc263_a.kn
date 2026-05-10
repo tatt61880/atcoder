@@ -1,0 +1,10 @@
+func main()
+	var n: int :: 5
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	do a.sort()
+	var ans: bool :: a[0] = a[1] & (a[1] = a[2] | a[2] = a[3]) & a[3] = a[4]
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

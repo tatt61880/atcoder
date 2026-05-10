@@ -1,0 +1,4 @@
+func main()
+	var s: []char :: cui@inputStr()
+	do cui@print("\{s[^s / 2]}\n")
+end func

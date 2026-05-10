@@ -1,0 +1,12 @@
+func main()
+	var ans: int :: 1
+	for(1, 9)
+		var a: int :: cui@inputInt()
+		do ans :+ a
+	end for
+	for(1, 8)
+		var a: int :: cui@inputInt()
+		do ans :- a
+	end for
+	do cui@print("\{ans}\n")
+end func

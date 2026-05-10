@@ -1,0 +1,4 @@
+func main()
+	var s: []char :: cui@inputStr()
+	do cui@print("0\{s.sub(0, 3)}\n")
+end func

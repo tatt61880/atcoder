@@ -1,0 +1,12 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	do a :- d
+	var ans: []int :: #[0]int
+	while(a <> b)
+		do a :+ d
+		do ans :~ [a]
+	end while
+	do cui@print("\{ans.join(" ")}\n")
+end func

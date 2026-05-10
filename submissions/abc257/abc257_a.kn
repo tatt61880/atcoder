@@ -1,0 +1,6 @@
+func main()
+	var s: []char :: "ABCDEFGHIJKLMNOPQRSTUVWXYZ".repeat(cui@inputInt())
+	do s.sort()
+	var x: int :: cui@inputInt()
+	do cui@print("\{s[x - 1]}\n")
+end func

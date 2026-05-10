@@ -1,0 +1,3 @@
+func main()
+	do cui@print("\{cui@input().upper()}\n")
+end func

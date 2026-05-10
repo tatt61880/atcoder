@@ -1,0 +1,19 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: cui@inputStr()
+	var ans: bool :: f(s)
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+	
+	func f(s: []char): bool
+		var res: bool :: false
+		for i(0, ^s - 1)
+			switch(s[i])
+			case 'o'
+				do res :: true
+			case 'x'
+				ret false
+			end switch
+		end for
+		ret res
+	end func
+end func

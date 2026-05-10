@@ -1,0 +1,6 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var ans: bool :: (a - b).abs() < 3
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

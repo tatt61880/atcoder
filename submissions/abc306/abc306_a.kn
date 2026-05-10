@@ -1,0 +1,8 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: cui@inputStr()
+	for i(0, ^s - 1)
+		do cui@print("\{s[i]}\{s[i]}")
+	end for
+	do cui@print("\n")
+end func

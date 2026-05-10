@@ -1,0 +1,16 @@
+func main()
+	var n: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	for(1, lib@min(k, n))
+		do cui@inputInt()
+	end for
+	
+	var ss: [][]char :: #[n][]char
+	for i(0, n - 1)
+		do ss[i] :: "0"
+	end for
+	for i(1, n - lib@min(k, n))
+		do ss[i - 1] :: cui@inputStr()
+	end for
+	do cui@print("\{ss.join(" ")}\n")
+end func

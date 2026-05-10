@@ -1,0 +1,9 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var ans: bool :: false
+	switch(s)
+	case "ACE", "BDF", "CEG", "DFA", "EGB", "FAC", "GBD"
+		do ans :: true
+	end switch
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

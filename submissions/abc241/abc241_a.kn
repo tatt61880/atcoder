@@ -1,0 +1,13 @@
+func main()
+	var n: int :: 10
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	var ans: int :: 0
+	for(1, 3)
+		do ans :: a[ans]
+	end for
+	do cui@print("\{ans}\n")
+end func

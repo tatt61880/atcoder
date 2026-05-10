@@ -1,0 +1,9 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var t: char :: s[a - 1]
+	do s[a - 1] :: s[b - 1]
+	do s[b - 1] :: t
+	do cui@print("\{s}\n")
+end func

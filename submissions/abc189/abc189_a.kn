@@ -1,0 +1,5 @@
+func main()
+	var c: []char :: cui@input()
+	var ans: bool :: c[0] = c[1] & c[1] = c[2]
+	do cui@print((ans ?("Won", "Lost")) ~ "\n")
+end func

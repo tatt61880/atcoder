@@ -1,0 +1,10 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: []int :: #[n]int
+	for i(0, n - 1)
+		for(1, 7)
+			do ans[i] :+ cui@inputInt()
+		end for
+	end for
+	do cui@print("\{ans.join(" ")}\n")
+end func

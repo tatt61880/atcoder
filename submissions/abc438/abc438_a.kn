@@ -1,0 +1,5 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	do cui@print("\{(7 + b - 1 - a % 7) % 7 + 1}\n")
+end func

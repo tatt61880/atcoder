@@ -1,0 +1,17 @@
+func main()
+	var M: int :: cui@inputInt()
+	var D: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	do d :+ 1
+	if(d > D)
+		do d :: 1
+		do m :+ 1
+		if(m > M)
+			do m :: 1
+			do y :+ 1
+		end if
+	end if
+	do cui@print("\{y} \{m} \{d}\n")
+end func

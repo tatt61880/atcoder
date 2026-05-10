@@ -1,0 +1,11 @@
+func main()
+	var s: []char :: cui@inputStr()
+	do s.sort()
+	if(s[0] <> s[1])
+		do cui@print("\{s[0]}\n")
+	elif(s[1] <> s[2])
+		do cui@print("\{s[2]}\n")
+	else
+		do cui@print("-1\n")
+	end if
+end func

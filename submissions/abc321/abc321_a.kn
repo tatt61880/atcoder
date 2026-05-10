@@ -1,0 +1,12 @@
+func main()
+	var n: []char :: cui@inputStr()
+	var x: []char :: ##n
+	do x.sort()
+	do x.reverse()
+	for i(0, 9)
+		var c: char :: '0'.offset(i)
+		do x :: x.replace([c, c], [c])
+	end for
+	var ans: bool :: n = x
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

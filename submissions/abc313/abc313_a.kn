@@ -1,0 +1,9 @@
+func main()
+	var n: int :: cui@inputInt()
+	var p: []int :: #[n]int
+	for i(0, n - 1)
+		do p[i] :: cui@inputInt()
+	end for
+	var ans: int :: lib@max(0, p.sub(1, n - 1).max() + 1 - p[0])
+	do cui@print("\{ans}\n")
+end func

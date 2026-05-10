@@ -1,0 +1,12 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var n: int :: ^s
+	for i(0, n - 1)
+		var i1: int :: i = n - 1 ?(0, i + 1)
+		var i2: int :: i >= n - 2 ?(i + 2 - n, i + 2)
+		if(s[i] <> s[i1] & s[i] <> s[i2])
+			do cui@print("\{i + 1}\n")
+			ret
+		end if
+	end for
+end func

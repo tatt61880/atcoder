@@ -1,0 +1,10 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ss: [][]char :: #[n][]char
+	for i(0, n - 1)
+		do ss[i] :: cui@input()
+	end for
+	
+	do ss.reverse()
+	do cui@print("\{ss.join("\n")}\n")
+end func

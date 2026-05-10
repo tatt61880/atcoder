@@ -1,0 +1,6 @@
+func main()
+	var s: []char :: cui@inputStr()
+	for i(0, ^s - 1)
+		do cui@print([s[i]] ~ (i = ^s - 1 ?("\n", " ")))
+	end for
+end func

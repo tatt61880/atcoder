@@ -1,0 +1,23 @@
+func main()
+	var v: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	while(true)
+		do v :- a
+		if(v < 0)
+			do cui@print("F\n")
+			ret
+		end if
+		do v :- b
+		if(v < 0)
+			do cui@print("M\n")
+			ret
+		end if
+		do v :- c
+		if(v < 0)
+			do cui@print("T\n")
+			ret
+		end if
+	end while
+end func

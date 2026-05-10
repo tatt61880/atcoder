@@ -1,0 +1,4 @@
+func main()
+	var ans: bool :: cui@input() = "Hello,World!"
+	do cui@print((ans ?("AC", "WA")) ~ "\n")
+end func

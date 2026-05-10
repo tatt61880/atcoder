@@ -1,0 +1,11 @@
+func main()
+	var n: float :: cui@inputFloat()
+	var v: int :: (1.08 * n) $ int
+	if(v < 206)
+		do cui@print("Yay!\n")
+	elif(v = 206)
+		do cui@print("so-so\n")
+	else
+		do cui@print(":(\n")
+	end if
+end func

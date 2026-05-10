@@ -1,0 +1,14 @@
+func main()
+	var n: int :: cui@inputInt()
+	var diff: int :: 0
+	for(1, n)
+		do diff :+ cui@inputInt() - cui@inputInt()
+	end for
+	if(diff > 0)
+		do cui@print("Takahashi\n")
+	elif(diff < 0)
+		do cui@print("Aoki\n")
+	else
+		do cui@print("Draw\n")
+	end if
+end func

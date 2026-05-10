@@ -1,0 +1,4 @@
+func main()
+	var ans: bool :: cui@inputInt() % 2 = 0
+	do cui@print((ans ?("White", "Black")) ~ "\n")
+end func

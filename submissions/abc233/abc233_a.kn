@@ -1,0 +1,6 @@
+func main()
+	var x: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	var ans: int :: lib@max(0, (y - x + 9) / 10)
+	do cui@print("\{ans}\n")
+end func
