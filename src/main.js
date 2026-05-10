@@ -9,7 +9,7 @@
     const urlQueryParams = analyzeUrl();
     const base = urlQueryParams.base;
     const contestId = urlQueryParams.contest;
-    const tasks = urlQueryParams.tasks;
+    const problemId = urlQueryParams.task;
 
     const contentsElem = document.getElementById('contents-data');
     if (contentsElem === null) {
@@ -20,7 +20,7 @@
     if (contestId === null) {
       await appendAcList(contentsElem, base);
     } else {
-      await appendTasks(contentsElem, base, contestId, tasks);
+      await appendTasks(contentsElem, base, contestId, problemId);
     }
   }
 
@@ -70,20 +70,17 @@
     for (const submission of submissionsList) {
       const contestId = submission.contest_id;
       const problemId = submission.problem_id;
-      const cpId = `${contestId}/${problemId}`;
+
       contestTitleMap[contestId] = submission.contest_title;
       const problemIndex = submission.problem_index;
+
+      const cpId = `${contestId}/${problemId}`;
       problemIndexMap[cpId] = problemIndex;
-
-      const m = /(?:.*)_(?<id>.*)/.exec(problemId);
-      if (!m) continue;
-
-      const { id } = m.groups;
 
       if (!contestMap.has(contestId)) {
         contestMap.set(contestId, []);
       }
-      contestMap.get(contestId).push({ problemId, id });
+      contestMap.get(contestId).push(problemId);
     }
 
     for (const [contestId, problemsId] of contestMap) {
@@ -93,11 +90,8 @@
       {
         const td = tr.insertCell();
         const a = document.createElement('a');
-        a.href = `?contest=${contestId}&tasks=${problemsId
-          .map(({ problemId }) => problemId)
-          .join(',')}`;
+        a.href = `?contest=${contestId}`;
         a.innerText = contestTitleMap[contestId];
-        // a.innerText = contestId;
         td.appendChild(a);
       }
 
@@ -105,9 +99,9 @@
       {
         const td = tr.insertCell();
 
-        for (const { problemId } of problemsId) {
+        for (const problemId of problemsId) {
           const a = document.createElement('a');
-          a.href = `?contest=${contestId}&tasks=${problemId}`;
+          a.href = `?contest=${contestId}&task=${problemId}`;
           const cpId = `${contestId}/${problemId}`;
           a.innerText = problemIndexMap[cpId];
           a.classList.add('submit-link');
@@ -118,32 +112,27 @@
   }
 
   // 提出内容
-  async function appendTasks(contentsElem, base, contestId, tasks) {
+  async function appendTasks(
+    contentsElem,
+    base,
+    contestIdTarget,
+    problemIdTarget
+  ) {
     const submissionsList = await getSubmissionsList(base);
-    const problemContestMap = new Map();
-    const problemIndexMap = new Map();
-    const problemNameMap = new Map();
-    const contestTitleMap = new Map();
+
     for (const submission of submissionsList) {
       const contestId = submission.contest_id;
+      if (contestId !== contestIdTarget) continue;
+
       const problemId = submission.problem_id;
-      const cpId = `${contestId}/${problemId}`;
+      if (problemIdTarget !== null && problemId !== problemIdTarget) continue;
+
+      const contestTitle = submission.contest_title;
       const problemIndex = submission.problem_index;
       const name = submission.name;
-      const contestTitle = submission.contest_title;
-      problemContestMap[problemId] = contestId;
-      problemIndexMap[cpId] = problemIndex;
-      problemNameMap[problemId] = name;
-      contestTitleMap[contestId] = contestTitle;
-    }
 
-    for (const problemId of tasks.split(',')) {
       // ページタイトル
       {
-        const cpId = `${contestId}/${problemId}`;
-        const contestTitle = contestTitleMap[contestId];
-        const problemIndex = problemIndexMap[cpId];
-        const name = problemNameMap[problemId];
         const title = `${contestTitle}: ${problemIndex} - ${name}`;
         document.title = title;
 
@@ -154,7 +143,6 @@
 
       // 問題URL
       {
-        const contestId = problemContestMap[problemId];
         const problemUrl = getProblemUrl(contestId, problemId);
         const p = document.createElement('p');
         p.classList.add('narrow');
@@ -171,7 +159,6 @@
 
       // 提出したソースコード
       {
-        const contestId = problemContestMap[problemId];
         const src = await getSrc(base, contestId, problemId);
         if (src !== null) {
           const h2 = document.createElement('h3');
@@ -196,7 +183,7 @@
     const res = {
       base: '',
       contest: null,
-      tasks: null,
+      task: null,
     };
 
     res.base = location.href.split('?')[0];
@@ -210,8 +197,8 @@
         case 'contest':
           res.contest = paramVal;
           break;
-        case 'tasks':
-          res.tasks = paramVal;
+        case 'task':
+          res.task = paramVal;
           break;
       }
     }
