@@ -38,7 +38,7 @@ func main()
 			do @contestTitleMap.add(contestId, title)
 		end for
 	end block
-
+	
 	; 問題情報取得
 	block
 		do @problemDataMap :: #dict<[]char, [][]char>
@@ -62,7 +62,7 @@ func main()
 	end block
 	
 	var dictSubmissionId: dict<[]char, int> :: #dict<[]char, int>
-
+	
 	; ユーザーの提出情報取得
 	block
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@dataJsonFilename) $ \json@JsonArray).value
@@ -203,12 +203,12 @@ func main()
 			var contestId: []char :: problemData[0]
 			var contestTitle: []char :: @contestTitleMap.get(contestId, &).replace("\"", "\\\"")
 			do jsonText :~ "  {\n"
-			| ~ "    \"problem_id\": \"\{problemId}\",\n"
-			| ~ "    \"contest_id\": \"\{contestId}\",\n"
-			| ~ "    \"contest_title\": \"\{contestTitle}\",\n"
-			| ~ "    \"problem_index\": \"\{problemData[1]}\",\n"
-			| ~ "    \"name\": \"\{problemData[2]}\"\n"
-			| ~ "  }\{i <> ^@problemsIdsForKuin - 1 ?(",", "")}\n"
+			|~"    \"problem_id\": \"\{problemId}\",\n"
+			|~"    \"contest_id\": \"\{contestId}\",\n"
+			|~"    \"contest_title\": \"\{contestTitle}\",\n"
+			|~"    \"problem_index\": \"\{problemData[1]}\",\n"
+			|~"    \"name\": \"\{problemData[2]}\"\n"
+			|~"  }\{i <> ^@problemsIdsForKuin - 1 ?(",", "")}\n"
 		end for
 		do jsonText :~ "]\n"
 		
