@@ -1,0 +1,18 @@
+func main()
+	switch(cui@input())
+	case "SUN"
+		do cui@print("7\n")
+	case "MON"
+		do cui@print("6\n")
+	case "TUE"
+		do cui@print("5\n")
+	case "WED"
+		do cui@print("4\n")
+	case "THU"
+		do cui@print("3\n")
+	case "FRI"
+		do cui@print("2\n")
+	case "SAT"
+		do cui@print("1\n")
+	end switch
+end func

@@ -1,0 +1,3 @@
+func main()
+	do cui@print([cui@inputChar().offset(1), '\n'])
+end func

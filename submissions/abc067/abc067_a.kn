@@ -1,0 +1,6 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var ans: bool :: a * b % 3 = 0 | (a + b) % 3 = 0
+	do cui@print((ans ?("Possible", "Impossible")) ~ "\n")
+end func

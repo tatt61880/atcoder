@@ -1,0 +1,13 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var t: []char :: cui@inputStr()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var u: []char :: cui@inputStr()
+	if(s = u)
+		do a :- 1
+	else
+		do b :- 1
+	end if
+	do cui@print("\{a} \{b}\n")
+end func

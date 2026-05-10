@@ -1,0 +1,11 @@
+func main()
+	var a: float :: cui@inputFloat()
+	var b: float :: cui@inputFloat()
+	var d: float :: cui@inputFloat()
+	var theta: float :: d * lib@pi / 180.0
+	
+	var x: float :: a * lib@cos(theta) - b * lib@sin(theta)
+	var y: float :: a * lib@sin(theta) + b * lib@cos(theta)
+	
+	do cui@print("\{x} \{y}\n")
+end func

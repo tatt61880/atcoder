@@ -1,0 +1,45 @@
+func main()
+	var t: int :: cui@inputInt()
+	for(1, t)
+		var n: int :: cui@inputInt()
+		var m: int :: cui@inputInt()
+		var a: int :: cui@inputInt()
+		var b: int :: cui@inputInt()
+		
+		var ans: int :: @floorSum(n, a, b, m)
+		do cui@print("\{ans}\n")
+	end for
+end func
+
+func floorSum(n: int, a: int, b: int, m: int): int
+	if(n = 0)
+		ret 0
+	end if
+	
+	var res: int :: 0
+	if(a >= m)
+		do res :+ n * (n - 1) * (a / m) / 2
+		do a :% m
+	end if
+	
+	if(b >= m)
+		do res :+ n * (b / m)
+		do b :% m
+	end if
+	
+	if(a = 0)
+		ret res
+	end if
+	
+	var yMax: int :: (a * n + b) / m
+	var xMax: int :: yMax * m - b
+	
+	if(yMax = 0)
+		ret res
+	end if
+	
+	do res :+ (n - (xMax + a - 1) / a) * yMax
+	do res :+ floorSum(yMax, m, (a - xMax % a) % a, a)
+	
+	ret res
+end func

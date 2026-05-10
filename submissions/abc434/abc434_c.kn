@@ -1,0 +1,28 @@
+func main()
+	var T: int :: cui@inputInt()
+	for(1, T)
+		var n: int :: cui@inputInt()
+		var h: int :: cui@inputInt()
+		
+		var min: int :: h
+		var max: int :: h
+		var tPrev: int :: 0
+		var ans: bool :: true
+		for loop(1, n)
+			var t: int :: cui@inputInt()
+			var l: int :: cui@inputInt()
+			var u: int :: cui@inputInt()
+			
+			do max :+ t - tPrev
+			do min :- t - tPrev
+			do tPrev :: t
+			do min :: lib@max(min, 1)
+			if(min > u | max < l)
+				do ans :: false
+			end if
+			do min :: lib@max(min, l)
+			do max :: lib@min(max, u)
+		end for
+		do cui@print((ans ?("Yes", "No")) ~ "\n")
+	end for
+end func

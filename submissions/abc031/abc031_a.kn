@@ -1,0 +1,7 @@
+func main()
+	var a: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	
+	var ans: int :: lib@min(a + 1, d + 1) * lib@max(a, d)
+	do cui@print("\{ans}\n")
+end func

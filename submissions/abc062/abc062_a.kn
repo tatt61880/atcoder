@@ -1,0 +1,6 @@
+func main()
+	var a: int :: [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][cui@inputInt()]
+	var b: int :: [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][cui@inputInt()]
+	var ans: bool :: a = b
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

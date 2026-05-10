@@ -1,0 +1,23 @@
+func main()
+	var s: []char :: cui@input()
+	var nums: []int :: #[10]int
+	for i(0, ^s - 1)
+		do nums[s[i] $ int - '0' $ int] :+ 1
+	end for
+	
+	for d(1, 9)
+		if(nums[d] <> 0)
+			do nums[d] :- 1
+			do cui@print("\{d}")
+			break d
+		end if
+	end for
+	
+	for d(0, 9)
+		for(1, nums[d])
+			do cui@print("\{d}")
+		end for
+	end for
+	
+	do cui@print("\n")
+end func

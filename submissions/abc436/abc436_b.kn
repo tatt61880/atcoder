@@ -1,0 +1,21 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: [][]int :: #[n, n]int
+	
+	var i: int :: 0
+	var j: int :: (n - 1) / 2
+	
+	for v(1, n * n)
+		do a[i][j] :: v
+		do i :: (i - 1 + n) % n
+		do j :: (j + 1) % n
+		if(a[i][j] <> 0)
+			do i :: (i + 2) % n
+			do j :: (j - 1 + n) % n
+		end if
+	end for
+	
+	for x(0, n - 1)
+		do cui@print("\{a[x].join(" ")}\n")
+	end for
+end func

@@ -1,0 +1,19 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	
+	var ans: int :: 0
+	for na(0, a)
+		for nb(0, b)
+			for nc(0, c)
+				if(na * 500 + nb * 100 + nc * 50 = x)
+					do ans :+ 1
+				end if
+			end for
+		end for
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

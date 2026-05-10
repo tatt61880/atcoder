@@ -1,0 +1,16 @@
+func main()
+	var m: int :: cui@inputInt()
+	var vv: int :: 0
+	if(m < 100)
+		do vv :: 0
+	elif(m <= 5000)
+		do vv :: m / 100
+	elif(m <= 30000)
+		do vv :: 50 + m / 1000
+	elif(m <= 70000)
+		do vv :: (m / 1000 - 30) / 5 + 80
+	else
+		do vv :: 89
+	end if
+	do cui@print("\{vv.toStrFmt("02d")}\n")
+end func

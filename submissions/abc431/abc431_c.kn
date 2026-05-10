@@ -1,0 +1,27 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	
+	var h: []int :: #[n]int
+	for i(0, n - 1)
+		do h[i] :: cui@inputInt()
+	end for
+	do h.sort()
+	
+	var b: []int :: #[m]int
+	for i(0, m - 1)
+		do b[i] :: cui@inputInt()
+	end for
+	do b.sort()
+	
+	var ans: bool :: true
+	
+	for i(0, k - 1)
+		if(h[i] > b[m - k + i])
+			do ans :: false
+		end if
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

@@ -1,0 +1,17 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var sums: []int :: #[m]int
+	var nums: []int :: #[m]int
+	for(1, n)
+		var a: int :: cui@inputInt()
+		var b: int :: cui@inputInt()
+		do sums[a - 1] :+ b
+		do nums[a - 1] :+ 1
+	end for
+	
+	for i(0, m - 1)
+		var ans: float :: sums[i] $ float / nums[i] $ float
+		do cui@print("\{ans}\n")
+	end for
+end func

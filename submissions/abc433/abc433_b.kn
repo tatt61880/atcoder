@@ -1,0 +1,18 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	for i(0, n - 1)
+		var ans: int :: -1
+		for j(i - 1, 0, -1)
+			if(a[i] < a[j])
+				do ans :: j + 1
+				break j
+			end if
+		end for
+		do cui@print("\{ans}\n")
+	end for
+end func

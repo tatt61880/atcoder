@@ -1,0 +1,6 @@
+func main()
+	var a: []int :: [cui@inputInt(), cui@inputInt(), cui@inputInt()]
+	do a.sort()
+	var ans: int :: a[0] - a[1] + a[2]
+	do cui@print("\{ans}\n")
+end func

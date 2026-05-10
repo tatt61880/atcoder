@@ -1,0 +1,26 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var s: [][]char :: #[n, n]char
+	for i(0, n - 1)
+		do s[i] :: cui@inputStr()
+	end for
+	
+	var ans: int :: 0
+	var dic: dict<[]char, bool> :: #dict<[]char, bool>
+	for y(0, n - m)
+		for x(0, n - m)
+			var key: []char :: #[0]char
+			for i(0, m - 1)
+				for j(0, m - 1)
+					do key :~ [s[y + i][x + j]]
+				end for
+			end for
+			if(!dic.exist(key))
+				do ans :+ 1
+				do dic.add(key, true)
+			end if
+		end for
+	end for
+	do cui@print("\{ans}\n")
+end func

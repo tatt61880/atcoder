@@ -1,0 +1,10 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	
+	if(a + b < 10)
+		do cui@print("\{a + b}\n")
+	else
+		do cui@print("error\n")
+	end if
+end func

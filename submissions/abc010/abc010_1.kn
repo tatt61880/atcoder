@@ -1,0 +1,4 @@
+func main()
+	var ans: []char :: cui@input() ~ "pp"
+	do cui@print("\{ans}\n")
+end func

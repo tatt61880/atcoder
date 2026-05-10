@@ -1,0 +1,17 @@
+func main()
+	var x: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	var z: int :: cui@inputInt()
+	
+	while(x >= y * z)
+		if(x = y * z)
+			do cui@print("Yes\n")
+			ret
+		end if
+		do x :+ 1
+		do y :+ 1
+	end while
+	
+	var ans: int :: 0
+	do cui@print("No\n")
+end func

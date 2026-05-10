@@ -1,0 +1,7 @@
+func main()
+	var x: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var ans: bool :: (x - a).abs() < (x - b).abs()
+	do cui@print((ans ?("A", "B")) ~ "\n")
+end func

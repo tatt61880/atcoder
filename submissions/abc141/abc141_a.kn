@@ -1,0 +1,10 @@
+func main()
+	switch(cui@inputChar())
+	case 'S'
+		do cui@print("Cloudy\n")
+	case 'C'
+		do cui@print("Rainy\n")
+	case 'R'
+		do cui@print("Sunny\n")
+	end switch
+end func

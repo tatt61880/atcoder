@@ -1,0 +1,6 @@
+func main()
+	var a: char :: cui@inputChar()
+	var b: char :: cui@inputChar()
+	var ans: bool :: a = '9' | b = '9'
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

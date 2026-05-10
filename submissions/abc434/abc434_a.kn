@@ -1,0 +1,7 @@
+func main()
+	var w: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	
+	var ans: int :: (w * 1000 + b) / b
+	do cui@print("\{ans}\n")
+end func

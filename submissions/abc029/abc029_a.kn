@@ -1,0 +1,5 @@
+func main()
+	var w: []char :: cui@input()
+	var ans: []char :: w ~ "s"
+	do cui@print("\{ans}\n")
+end func

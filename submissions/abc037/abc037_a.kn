@@ -1,0 +1,11 @@
+func main()
+	var a: []int :: #[2]int
+	for i(0, 1)
+		do a[i] :: cui@inputInt()
+	end for
+	var c: int :: cui@inputInt()
+	
+	do a.sort()
+	var ans: int :: c / a[0]
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,6 @@
+func main()
+	var s: []char :: cui@input()
+	do s.sort()
+	var ans: bool :: s[0] = s[1] & s[1] <> s[2] & s[2] = s[3]
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

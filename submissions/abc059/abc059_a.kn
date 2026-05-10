@@ -1,0 +1,7 @@
+func main()
+	for(1, 3)
+		var s: []char :: cui@inputStr()
+		do cui@print("\{(s[0] $ int - 0x20) $ char}")
+	end for
+	do cui@print("\n")
+end func

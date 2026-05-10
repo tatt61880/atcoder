@@ -1,0 +1,60 @@
+func main()
+	var n: int :: cui@inputInt()
+	var q: int :: cui@inputInt()
+	
+	var bit: @Bit :: (#@Bit).init(n)
+	for i(0, n - 1)
+		var a: int :: cui@inputInt()
+		do bit.add(i, a)
+	end for
+	
+	for(1, q)
+		var t: int :: cui@inputInt()
+		if(t = 0)
+			; 加算クエリ
+			var p: int :: cui@inputInt()
+			var x: int :: cui@inputInt()
+			do bit.add(p, x)
+		else
+			; 総和クエリ
+			var l: int :: cui@inputInt()
+			var r: int :: cui@inputInt()
+			var v: int :: bit.sum(r) - bit.sum(l)
+			do cui@print("\{v}\n")
+		end if
+	end for
+end func
+
+; [0, n)
+class Bit()
+	var n: int
+	var data: []int
+	
+	+func init(n: int): Bit
+		do me.n :: n
+		do me.data :: #[n]int
+		
+		ret me
+	end func
+	
+	; i is 0-indexed
+	+func add(i: int, v: int)
+		while(i < me.n)
+			do me.data[i] :+ v
+			do i :: (i $ bit64).or(((i + 1) $ bit64)) $ int
+		end while
+	end func
+	
+	; [0, i), i is 0-indexed
+	+func sum(i: int): int
+		do i :- 1
+		var res: int :: 0
+		
+		while(i >= 0)
+			do res :+ me.data[i]
+			do i :: (i $ bit64).and(((i + 1) $ bit64)) $ int - 1
+		end while
+		
+		ret res
+	end func
+end class

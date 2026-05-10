@@ -1,0 +1,54 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var s: []char :: cui@input()
+	
+	var as: []int :: #[n + 1]int
+	var bs: []int :: #[n + 1]int
+	for i(0, n - 1)
+		do as[i + 1] :: as[i] + (s[i] = 'a' ?(1, 0))
+		do bs[i + 1] :: bs[i] + (s[i] = 'b' ?(1, 0))
+	end for
+	
+	var ans: int :: 0
+	for r(1, n)
+		; A個以上になるalを求める。
+		var al: int
+		block
+			var okL: int :: 0
+			var ngL: int :: r + 1
+			while((okL - ngL).abs() > 1)
+				var midL: int :: (okL + ngL) / 2
+				if(as[r] - as[midL - 1] >= a)
+					do okL :: midL
+				else
+					do ngL :: midL
+				end if
+			end while
+			do al :: okL
+		end block
+		
+		; B個未満になるblを求める。
+		var bl: int
+		block
+			var ngL: int :: 0
+			var okL: int :: r + 1
+			while((okL - ngL).abs() > 1)
+				var midL: int :: (okL + ngL) / 2
+				if(bs[r] - bs[midL - 1] < b)
+					do okL :: midL
+				else
+					do ngL :: midL
+				end if
+			end while
+			do bl :: okL
+		end block
+		
+		if(al >= bl)
+			do ans :+ al - bl + 1
+		end if
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

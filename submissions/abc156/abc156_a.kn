@@ -1,0 +1,6 @@
+func main()
+	var n: int :: cui@inputInt()
+	var r: int :: cui@inputInt()
+	var ans: int :: r + (n < 10 ?(100 * (10 - n), 0))
+	do cui@print("\{ans}\n")
+end func

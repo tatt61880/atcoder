@@ -1,0 +1,75 @@
+func main()
+	var t: int :: cui@inputInt()
+	var dx: []int :: [0, 1, 0, -1]
+	var dy: []int :: [-1, 0, 1, 0]
+	
+	for(1, t)
+		var h: int :: cui@inputInt()
+		var w: int :: cui@inputInt()
+		var s: [][]char :: #[h][]char
+		for y(0, h - 1)
+			do s[y] :: cui@input()
+		end for
+		
+		var dp: [][][]int :: #[h, w, 4]int
+		do dp[0][0][1] :: 1
+		var qu: queue<int> :: #queue<int>
+		var st: stack<int> :: #stack<int>
+		do st.add(1)
+		
+		var minV: int :: w + h + 1
+		
+		while(^st + ^qu <> 0)
+			var k: int :: ^st <> 0 ?(st.get(), qu.get())
+			var d: int :: k % 4
+			do k :/ 4
+			var x: int :: k % w
+			do k :/ w
+			var y: int :: k
+			var type: char :: s[y][x]
+			var v: int :: dp[y][x][d]
+			
+			for dd(-1, 1)
+				var dv: int :: 1
+				switch(type)
+				case 'A'
+					if(dd = 0)
+						do dv :: 0
+					end if
+				case 'B'
+					if(dd = -1 & d % 2 = 0 | dd = 1 & d % 2 = 1)
+						do dv :: 0
+					end if
+				case 'C'
+					if(dd = -1 & d % 2 = 1 | dd = 1 & d % 2 = 0)
+						do dv :: 0
+					end if
+				end switch
+				var nd: int :: (d + dd + 4) % 4
+				var nx: int :: x + dx[nd]
+				var ny: int :: y + dy[nd]
+				var nk: int :: (ny * w + nx) * 4 + nd
+				var nv: int :: v + dv
+				if(y = h - 1 & x = w - 1 & nd = 1)
+					if(nv < minV)
+						do minV :: nv
+					end if
+				end if
+				if(nx = -1 | nx = w | ny = -1 | ny = h)
+					skip dd
+				end if
+				if(dp[ny][nx][nd] = 0 | nv < dp[ny][nx][nd])
+					do dp[ny][nx][nd] :: nv
+					if(nv = v)
+						do st.add(nk)
+					else
+						do qu.add(nk)
+					end if
+				end if
+			end for
+		end while
+		
+		var ans: int :: minV - 1
+		do cui@print("\{ans}\n")
+	end for
+end func

@@ -1,0 +1,5 @@
+func main()
+	var s: []char :: cui@input() ~ cui@input() ~ cui@input()
+	var ans: []char :: [s[0], s[4], s[8]]
+	do cui@print("\{ans}\n")
+end func

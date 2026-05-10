@@ -1,0 +1,11 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	switch(a)
+	case 0 to 5
+		do b :: 0
+	case 6 to 12
+		do b :/ 2
+	end switch
+	do cui@print("\{b}\n")
+end func

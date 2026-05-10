@@ -1,0 +1,6 @@
+func main()
+	var k: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	var ans: bool :: k * 500 >= x
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

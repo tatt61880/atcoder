@@ -1,0 +1,4 @@
+func main()
+	var ans: int :: cui@inputChar() $ int - 'A' $ int + 1
+	do cui@print("\{ans}\n")
+end func

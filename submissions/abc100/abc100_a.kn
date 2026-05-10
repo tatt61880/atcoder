@@ -1,0 +1,6 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var ans: bool :: a <= 8 & b <= 8
+	do cui@print((ans ?("Yay!", ":(")) ~ "\n")
+end func

@@ -1,0 +1,7 @@
+func main()
+	var a: []char :: cui@inputStr()
+	var b: []char :: cui@inputStr()
+	var c: []char :: cui@inputStr()
+	var ans: bool :: a[^a - 1] = b[0] & b[^b - 1] = c[0]
+	do cui@print((ans ?("YES", "NO")) ~ "\n")
+end func

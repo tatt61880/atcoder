@@ -1,0 +1,6 @@
+func main()
+	var x: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var ans: int :: x < a ?(0, 10)
+	do cui@print("\{ans}\n")
+end func

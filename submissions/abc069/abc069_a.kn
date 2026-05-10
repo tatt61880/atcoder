@@ -1,0 +1,5 @@
+func main()
+	var n: int :: cui@inputInt() - 1
+	var m: int :: cui@inputInt() - 1
+	do cui@print("\{n * m}\n")
+end func

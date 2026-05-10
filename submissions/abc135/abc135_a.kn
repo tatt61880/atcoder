@@ -1,0 +1,8 @@
+func main()
+	var x: int :: cui@inputInt() + cui@inputInt()
+	if(x % 2 = 0)
+		do cui@print("\{x / 2}\n")
+	else
+		do cui@print("IMPOSSIBLE\n")
+	end if
+end func

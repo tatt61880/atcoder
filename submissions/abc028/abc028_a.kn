@@ -1,0 +1,13 @@
+func main()
+	var n: int :: cui@inputInt()
+	switch(n)
+	case 0 to 59
+		do cui@print("Bad\n")
+	case 60 to 89
+		do cui@print("Good\n")
+	case 90 to 99
+		do cui@print("Great\n")
+	case 100
+		do cui@print("Perfect\n")
+	end switch
+end func

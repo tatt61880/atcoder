@@ -1,0 +1,6 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var ans: int :: b % a = 0 ?(a + b, b - a)
+	do cui@print("\{ans}\n")
+end func

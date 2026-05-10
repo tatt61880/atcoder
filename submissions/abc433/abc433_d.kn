@@ -1,0 +1,34 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	var numDicts: []dict<int, int> :: #[11]dict<int, int>
+	for j(0, 10)
+		do numDicts[j] :: #dict<int, int>
+	end for
+	for i(0, n - 1)
+		var x: int :: a[i]
+		for j(1, 10)
+			do x :* 10
+			do x :% m
+			var num: int :: numDicts[j].get(x, &)
+			do numDicts[j].add(x, num + 1)
+		end for
+	end for
+	
+	var ans: int :: 0
+	for i(0, n - 1)
+		var x: int :: a[i]
+		var d: int :: 0
+		while(x <> 0)
+			do x :/ 10
+			do d :+ 1
+		end while
+		do ans :+ numDicts[d].get((m * a[i] - a[i]) % m, &)
+	end for
+	do cui@print("\{ans}\n")
+end func

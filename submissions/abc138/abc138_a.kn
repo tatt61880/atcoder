@@ -1,0 +1,9 @@
+func main()
+	var a: int :: cui@inputInt()
+	var s: []char :: cui@input()
+	if(a < 3200)
+		do cui@print("red\n")
+	else
+		do cui@print("\{s}\n")
+	end if
+end func

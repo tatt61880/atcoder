@@ -1,0 +1,8 @@
+func main()
+	var n: int :: cui@inputInt()
+	if(n = 1)
+		do cui@print("ABC\n")
+	else
+		do cui@print("chokudai\n")
+	end if
+end func

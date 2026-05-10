@@ -1,0 +1,7 @@
+func main()
+	var p: int :: cui@inputInt()
+	var q: int :: cui@inputInt()
+	var r: int :: cui@inputInt()
+	var ans: int :: [p + q, q + r, r + p].min()
+	do cui@print("\{ans}\n")
+end func

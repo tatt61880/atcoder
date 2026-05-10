@@ -1,0 +1,4 @@
+func main()
+	var s: []char :: cui@input().split(" ")[1]
+	do cui@print("A\{s[0]}C\n")
+end func

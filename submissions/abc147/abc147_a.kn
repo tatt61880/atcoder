@@ -1,0 +1,8 @@
+func main()
+	var n: int :: cui@inputInt() + cui@inputInt() + cui@inputInt()
+	if(n > 21)
+		do cui@print("bust\n")
+	else
+		do cui@print("win\n")
+	end if
+end func

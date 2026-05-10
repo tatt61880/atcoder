@@ -1,0 +1,5 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: int :: 800 * n - 200 * (n / 15)
+	do cui@print("\{ans}\n")
+end func

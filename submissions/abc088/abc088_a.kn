@@ -1,0 +1,7 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	
+	var ans: bool :: n % 500 <= a
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

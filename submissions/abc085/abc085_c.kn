@@ -1,0 +1,16 @@
+func main()
+	var n: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	
+	for a(0, n)
+		for b(0, n - a)
+			var c: int :: n - a - b
+			if(a * 10000 + b * 5000 + c * 1000 = y)
+				do cui@print("\{a} \{b} \{c}\n")
+				ret
+			end if
+		end for
+	end for
+	
+	do cui@print("-1 -1 -1\n")
+end func

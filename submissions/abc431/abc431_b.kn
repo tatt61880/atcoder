@@ -1,0 +1,22 @@
+func main()
+	var x: int :: cui@inputInt()
+	var n: int :: cui@inputInt()
+	var w: []int :: #[n]int
+	for i(0, n - 1)
+		do w[i] :: cui@inputInt()
+	end for
+	
+	var ans: int :: x
+	var q: int :: cui@inputInt()
+	var e: []bool :: #[n]bool
+	for(1, q)
+		var p: int :: cui@inputInt() - 1
+		if(e[p])
+			do ans :- w[p]
+		else
+			do ans :+ w[p]
+		end if
+		do e[p] :: !e[p]
+		do cui@print("\{ans}\n")
+	end for
+end func

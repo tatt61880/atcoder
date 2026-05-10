@@ -1,0 +1,57 @@
+var n: int
+var dp: [][][]float
+
+func main()
+	do @n :: cui@inputInt()
+	var v1: int :: 0
+	var v2: int :: 0
+	var v3: int :: 0
+	
+	for idx(0, @n - 1)
+		var a: int :: cui@inputInt()
+		switch(a)
+		case 1
+			do v1 :+ 1
+		case 2
+			do v2 :+ 1
+		case 3
+			do v3 :+ 1
+		end switch
+	end for
+	
+	do @dp :: #[@n + 1, @n + 1, @n + 1]float
+	for i(0, @n)
+		for j(0, @n)
+			do @dp[i][j].fill(-1.0)
+		end for
+	end for
+	
+	var ans: float :: @rec(v1, v2, v3)
+	do cui@print("\{ans}\n")
+end func
+
+; 再帰関数
+func rec(i: int, j: int, k: int): float
+	if(@dp[i][j][k] >= 0.0)
+		ret @dp[i][j][k]
+	end if
+	if(i = 0 & j = 0 & k = 0)
+		ret 0.0
+	end if
+	
+	var res: float :: 0.0
+	if(i > 0)
+		do res :+ rec(i - 1, j, k) * (i $ float)
+	end if
+	if(j > 0)
+		do res :+ rec(i + 1, j - 1, k) * (j $ float)
+	end if
+	if(k > 0)
+		do res :+ rec(i, j + 1, k - 1) * (k $ float)
+	end if
+	do res :+ (@n $ float)
+	do res :/ ((i + j + k) $ float)
+	
+	do @dp[i][j][k] :: res
+	ret res
+end func
