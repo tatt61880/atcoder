@@ -8,33 +8,34 @@
   async function onloadApp() {
     const urlQueryParams = analyzeUrl();
     const base = urlQueryParams.base;
+    const contestId = urlQueryParams.contest;
     const tasks = urlQueryParams.tasks;
 
-    const contents = document.getElementById('data');
-    if (contents === null) {
-      console.error('Error! #contents === null');
+    const contentsElem = document.getElementById('contents-data');
+    if (contentsElem === null) {
+      console.error('Error! #contents-data === null');
       return;
     }
 
-    if (tasks === null) {
-      await appendAcList(contents, base);
+    if (contestId === null) {
+      await appendAcList(contentsElem, base);
     } else {
-      await appendTasks(contents, base, tasks);
+      await appendTasks(contentsElem, base, contestId, tasks);
     }
   }
 
   // ACコード一覧
-  async function appendAcList(contents, base) {
+  async function appendAcList(contentsElem, base) {
     const h1 = document.createElement('h1');
     h1.innerText = 'tatt61880によるAtCoderの最新ACコード一覧';
-    contents.appendChild(h1);
+    contentsElem.appendChild(h1);
 
     const p = document.createElement('p');
-    contents.appendChild(p);
+    contentsElem.appendChild(p);
 
     const table = document.createElement('table');
     const thead = document.createElement('thead');
-    contents.appendChild(table);
+    contentsElem.appendChild(table);
     table.appendChild(thead);
     const tr = thead.insertRow();
 
@@ -92,7 +93,7 @@
       {
         const td = tr.insertCell();
         const a = document.createElement('a');
-        a.href = `?tasks=${problemsId
+        a.href = `?contest=${contestId}&tasks=${problemsId
           .map(({ problemId }) => problemId)
           .join(',')}`;
         a.innerText = contestTitleMap[contestId];
@@ -106,7 +107,7 @@
 
         for (const { problemId } of problemsId) {
           const a = document.createElement('a');
-          a.href = `?tasks=${problemId}`;
+          a.href = `?contest=${contestId}&tasks=${problemId}`;
           const cpId = `${contestId}/${problemId}`;
           a.innerText = problemIndexMap[cpId];
           a.classList.add('submit-link');
@@ -117,7 +118,7 @@
   }
 
   // 提出内容
-  async function appendTasks(contents, base, tasks) {
+  async function appendTasks(contentsElem, base, contestId, tasks) {
     const submissionsList = await getSubmissionsList(base);
     const problemContestMap = new Map();
     const problemIndexMap = new Map();
@@ -125,7 +126,6 @@
     const contestTitleMap = new Map();
     for (const submission of submissionsList) {
       const problemId = submission.problem_id;
-      const contestId = submission.contest_id;
       const problemIndex = submission.problem_index;
       const name = submission.name;
       const contestTitle = submission.contest_title;
@@ -146,7 +146,7 @@
 
         const h1 = document.createElement('h2');
         h1.innerText = title;
-        contents.appendChild(h1);
+        contentsElem.appendChild(h1);
       }
 
       // 問題URL
@@ -156,7 +156,7 @@
         const p = document.createElement('p');
         p.classList.add('narrow');
         p.innerText = '問題URL: ';
-        contents.appendChild(p);
+        contentsElem.appendChild(p);
 
         if (problemUrl !== null) {
           const a = document.createElement('a');
@@ -173,18 +173,18 @@
         if (src !== null) {
           const h2 = document.createElement('h3');
           h2.innerText = '提出したソースコード (言語: Kuin)';
-          contents.appendChild(h2);
+          contentsElem.appendChild(h2);
 
           const pre = document.createElement('pre');
           pre.classList.add('code');
-          contents.appendChild(pre);
+          contentsElem.appendChild(pre);
 
           const editor = elemToKuinEditor(pre);
           editor.setValue(src);
           editor.navigateTo(0, 0);
         }
 
-        contents.appendChild(document.createElement('hr'));
+        contentsElem.appendChild(document.createElement('hr'));
       }
     }
   }
@@ -192,6 +192,7 @@
   function analyzeUrl() {
     const res = {
       base: '',
+      contest: null,
       tasks: null,
     };
 
@@ -203,6 +204,9 @@
       const paramName = paramArray[0];
       const paramVal = paramArray[1];
       switch (paramName) {
+        case 'contest':
+          res.contest = paramVal;
+          break;
         case 'tasks':
           res.tasks = paramVal;
           break;
