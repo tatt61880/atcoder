@@ -7,7 +7,7 @@ import urllib.parse
 import urllib.request
 
 
-def save_contests(output_path: str = "contests.json") -> None:
+def save_json(output_path: str = "contests.json") -> None:
     url = "https://kenkoooo.com/atcoder/resources/contests.json"
     print(url)
 
@@ -40,5 +40,7 @@ def save_contests(output_path: str = "contests.json") -> None:
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+    time.sleep(1)
 
-save_contests()
+
+save_json()

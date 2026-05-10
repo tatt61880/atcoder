@@ -7,7 +7,7 @@ import urllib.parse
 import urllib.request
 
 
-def save_problems(output_path: str = "problems.json") -> None:
+def save_json(output_path: str = "problems.json") -> None:
     url = "https://kenkoooo.com/atcoder/resources/problems.json"
     print(url)
 
@@ -40,5 +40,7 @@ def save_problems(output_path: str = "problems.json") -> None:
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+    time.sleep(1)
 
-save_problems()
+
+save_json()
