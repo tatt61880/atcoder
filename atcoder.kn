@@ -61,7 +61,7 @@ func main()
 		end for
 	end block
 	
-	var dictId: dict<[]char, int> :: #dict<[]char, int>
+	var dictSubmissionId: dict<[]char, int> :: #dict<[]char, int>
 
 	; ユーザーの提出情報取得
 	block
@@ -89,7 +89,7 @@ func main()
 					skip i
 				end if
 				do dictEpochSecond.add(problemId, epochSecond)
-				do dictId.add(problemId, json.find("id").toi())
+				do dictSubmissionId.add(problemId, json.find("id").toi())
 				do @dictConstantId.add(problemId, json.find("contest_id").toStr())
 				do @dictLanguage.add(problemId, json.find("language").toStr())
 			end if
@@ -99,8 +99,8 @@ func main()
 	do @dirHtml :: "\{wnd@exeDir()}html/"
 	do @dictOldFilesFlag :: #dict<[]char, bool>
 	if(file@exist(@dirHtml))
-		do file@forEach(@dirHtml, false, callback, null)
-		func callback(filepath: []char, isDir: bool, data: kuin@Class): bool
+		do file@forEach(@dirHtml, false, callbackAddRemoveFlag, null)
+		func callbackAddRemoveFlag(filepath: []char, isDir: bool, data: kuin@Class): bool
 			if(!isDir)
 				do @dictOldFilesFlag.add(filepath, true)
 			end if
@@ -128,13 +128,13 @@ func main()
 	do @regexCode :: regex@makeRegex("<pre id=\"submission-code\" [^>]*>([\\d\\D]+?)</pre>")
 	assert @regexCode <>& null
 	
-	do dictId.forEach(callback, null)
+	do dictSubmissionId.forEach(callbackSubmissions, null)
 	
-	func callback(problemId: []char, id: int, d: kuin@Class): bool
+	func callbackSubmissions(problemId: []char, submissionId: int, d: kuin@Class): bool
 		var contestId: []char :: @dictConstantId.get(problemId, &)
 		var language: []char :: @dictLanguage.get(problemId, &)
-		var url: []char :: "\{@atcoderBase}\{contestId}/submissions/\{id}"
-		var filepath: []char :: "\{@dirHtml}\{contestId}#\{id}.html"
+		var url: []char :: "\{@atcoderBase}\{contestId}/submissions/\{submissionId}"
+		var filepath: []char :: "\{@dirHtml}\{contestId}#\{submissionId}.html"
 		do @dictOldFilesFlag.add(filepath, false)
 		
 		var data: []char
@@ -167,7 +167,7 @@ func main()
 			end if
 			var result: [][]char :: @regexCode.find(&, data, -1)
 			if(result =& null)
-				do cui@print("ERROR: Failed to find source code. [\{contestId}#\{id}]\n")
+				do cui@print("ERROR: Failed to find source code. [\{contestId}#\{submissionId}]\n")
 			else
 				var srcCode: []char :: result[1]
 				do srcCode :: srcCode.replace("&#34;", "\"")
@@ -191,7 +191,7 @@ func main()
 	
 	block
 		do @problemsIdsForKuin :: #[0][]char
-		do file@forEach(@submissionDir, true, callbackSubmissions, null)
+		do file@forEach(@submissionDir, true, callbackSubmissions2, null)
 		
 		do @problemsIdsForKuin.sort()
 		var jsonText: []char :: ""
@@ -216,7 +216,7 @@ func main()
 		do writer.writeStr(jsonText)
 		do writer.fin()
 		
-		func callbackSubmissions(path: []char, isDir: bool, data: kuin@Class): bool
+		func callbackSubmissions2(path: []char, isDir: bool, data: kuin@Class): bool
 			if(isDir)
 				ret true
 			end if
@@ -259,8 +259,8 @@ func fetchData(url: []char): []char
 end func
 
 func removeOldFiles()
-	do @dictOldFilesFlag.forEach(callback, null)
-	func callback(filepath: []char, oldFlag: bool, data: kuin@Class): bool
+	do @dictOldFilesFlag.forEach(callbackRemoveFile, null)
+	func callbackRemoveFile(filepath: []char, oldFlag: bool, data: kuin@Class): bool
 		if(oldFlag)
 			do file@delFile(filepath)
 		end if
