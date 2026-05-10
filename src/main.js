@@ -125,22 +125,25 @@
     const problemNameMap = new Map();
     const contestTitleMap = new Map();
     for (const submission of submissionsList) {
+      const contestId = submission.contest_id;
       const problemId = submission.problem_id;
+      const cpId = `${contestId}/${problemId}`;
       const problemIndex = submission.problem_index;
       const name = submission.name;
       const contestTitle = submission.contest_title;
       problemContestMap[problemId] = contestId;
-      problemIndexMap[problemId] = problemIndex;
+      problemIndexMap[cpId] = problemIndex;
       problemNameMap[problemId] = name;
-      contestTitleMap[problemId] = contestTitle;
+      contestTitleMap[contestId] = contestTitle;
     }
 
-    for (const task of tasks.split(',')) {
+    for (const problemId of tasks.split(',')) {
       // ページタイトル
       {
-        const contestTitle = contestTitleMap[task];
-        const problemIndex = problemIndexMap[task];
-        const name = problemNameMap[task];
+        const cpId = `${contestId}/${problemId}`;
+        const contestTitle = contestTitleMap[contestId];
+        const problemIndex = problemIndexMap[cpId];
+        const name = problemNameMap[problemId];
         const title = `${contestTitle}: ${problemIndex} - ${name}`;
         document.title = title;
 
@@ -151,8 +154,8 @@
 
       // 問題URL
       {
-        const contestId = problemContestMap[task];
-        const problemUrl = getProblemUrl(contestId, task);
+        const contestId = problemContestMap[problemId];
+        const problemUrl = getProblemUrl(contestId, problemId);
         const p = document.createElement('p');
         p.classList.add('narrow');
         p.innerText = '問題URL: ';
@@ -168,8 +171,8 @@
 
       // 提出したソースコード
       {
-        const contestId = problemContestMap[task];
-        const src = await getSrc(base, contestId, task);
+        const contestId = problemContestMap[problemId];
+        const src = await getSrc(base, contestId, problemId);
         if (src !== null) {
           const h2 = document.createElement('h3');
           h2.innerText = '提出したソースコード (言語: Kuin)';
