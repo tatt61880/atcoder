@@ -1,9 +1,0 @@
-func main()
-	var h: int :: cui@inputInt()
-	var w: int :: cui@inputInt()
-	do cui@print("\{"#".repeat(w)}\n")
-	for(1, h - 2)
-		do cui@print("#\{".".repeat(w - 2)}#\n")
-	end for
-	do cui@print("\{"#".repeat(w)}\n")
-end func

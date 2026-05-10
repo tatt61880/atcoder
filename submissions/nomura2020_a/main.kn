@@ -1,9 +1,0 @@
-func main()
- var ans:int
- do ans:-cui@inputInt()*60
- do ans:-cui@inputInt()
- do ans:+cui@inputInt()*60
- do ans:+cui@inputInt()
- do ans:-cui@inputInt()
- do cui@print("\{ans}\n")
-end func

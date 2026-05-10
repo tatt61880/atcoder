@@ -1,4 +1,0 @@
-func main()
-	var a: int :: cui@inputInt()
-	do cui@print("\{a ^ cui@inputInt()}")
-end func

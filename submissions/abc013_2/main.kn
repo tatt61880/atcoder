@@ -1,7 +1,0 @@
-func main()
-	var a: int :: cui@inputInt()
-	var b: int :: cui@inputInt()
-	var d: int :: (a - b).abs()
-	var ans: int :: lib@min(d, 10 - d)
-	do cui@print("\{ans}\n")
-end func

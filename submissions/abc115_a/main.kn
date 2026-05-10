@@ -1,3 +1,0 @@
-func main()
-	do cui@print("Christmas\{" Eve".repeat(25 - cui@inputInt())}\n")
-end func

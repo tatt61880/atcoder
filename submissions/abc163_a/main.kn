@@ -1,3 +1,0 @@
-func main()
-	do cui@print("\{cui@inputFloat() * 6.28}\n")
-end func

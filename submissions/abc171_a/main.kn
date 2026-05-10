@@ -1,8 +1,0 @@
-func main()
-	switch(cui@inputChar())
-	case 'A' to 'Z'
-		do cui@print("A\n")
-	default
-		do cui@print("a\n")
-	end switch
-end func

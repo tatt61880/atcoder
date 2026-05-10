@@ -1,8 +1,0 @@
-func main()
-	switch(cui@input())
-	case "1 7", "3 3", "5 5", "7 7", "9 9"
-		do cui@print("Yes\n")
-	default
-		do cui@print("No\n")
-	end switch
-end func

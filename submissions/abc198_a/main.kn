@@ -1,3 +1,0 @@
-func main()
-	do cui@print("\{cui@inputInt() - 1}\n")
-end func

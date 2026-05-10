@@ -1,3 +1,0 @@
-func main()
-	do cui@print((cui@inputInt() > cui@inputInt() ?("", "un")) ~ "safe\n")
-end func

@@ -1,8 +1,0 @@
-func main()
-	var x: []char :: cui@input() ~ "#"
-	do x :: x.replace(".000#", "")
-	do x :: x.replace("00#", "")
-	do x :: x.replace("0#", "")
-	do x :: x.replace("#", "")
-	do cui@print("\{x}\n")
-end func

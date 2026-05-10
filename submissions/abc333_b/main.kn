@@ -1,6 +1,0 @@
-func main()
-	var s: []char :: cui@inputStr()
-	var t: []char :: cui@inputStr()
-	var ans: bool :: ((s[0] $ int - s[1] $ int).abs() % 3 = 1) = ((t[0] $ int - t[1] $ int).abs() % 3 = 1)
-	do cui@print((ans ?("Yes", "No")) ~ "\n")
-end func

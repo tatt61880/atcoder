@@ -1,3 +1,0 @@
-func main()
-	do cui@print("\{((5 - cui@inputInt()).abs() - 1).abs() = 1 ?("YES", "NO")}\n")
-end func

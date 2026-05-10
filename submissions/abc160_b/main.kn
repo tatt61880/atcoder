@@ -1,5 +1,0 @@
-func main()
-	var x: int :: cui@inputInt()
-	var ans: int :: (x / 500) * 1000 + x % 500 / 5 * 5
-	do cui@print("\{ans}\n")
-end func

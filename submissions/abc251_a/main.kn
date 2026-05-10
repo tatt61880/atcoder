@@ -1,3 +1,0 @@
-func main()
-	do cui@print("\{cui@input().repeat(6).sub(0, 6)}\n")
-end func

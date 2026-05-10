@@ -1,5 +1,0 @@
-<>;
-while(<>){
-	print;
-	print;
-}

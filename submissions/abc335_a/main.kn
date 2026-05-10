@@ -1,5 +1,0 @@
-func main()
-	var s: []char :: cui@inputStr()
-	do s[^s - 1] :: '4'
-	do cui@print(s ~ "\n")
-end func

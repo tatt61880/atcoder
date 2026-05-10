@@ -1,8 +1,0 @@
-func main()
-	switch(cui@input()[0])
-	case 'a', 'e', 'i', 'o', 'u'
-		do cui@print("vowel\n")
-	default
-		do cui@print("consonant\n")
-	end switch
-end func

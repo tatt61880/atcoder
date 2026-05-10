@@ -1,1 +1,0 @@
-$N=<>;print"$N";print"1\n"for(1..$N);

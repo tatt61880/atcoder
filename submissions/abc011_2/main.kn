@@ -1,5 +1,0 @@
-func main()
-	var s: []char :: cui@input().lower()
-	do s[0] :: [s[0]].upper()[0]
-	do cui@print("\{s}\n")
-end func

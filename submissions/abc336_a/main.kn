@@ -1,4 +1,0 @@
-func main()
-	var n: int :: cui@inputInt()
-	do cui@print("L" ~ ['o'].repeat(n) ~ "ng\n")
-end func

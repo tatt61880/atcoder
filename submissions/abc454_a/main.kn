@@ -1,5 +1,0 @@
-func main()
- var l:int::cui@inputInt()
- var r:int::cui@inputInt()
- do cui@print("\{r-l+1}\n")
-end func

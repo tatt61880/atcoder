@@ -18,6 +18,8 @@ var cpDataMap: dict<[]char, [][]char>
 const submissionDir: []char :: ".\\submissions\\"
 const kuinSubmissionDir: []char :: @submissionDir ~ "kuinSubmissions.json"
 var cpIdsForKuin: [][]char
+var numSubmissions: int
+var numSubmissionsTotal: int
 
 func main()
 	; コンテスト情報取得
@@ -139,9 +141,12 @@ func main()
 	do @regexCode :: regex@makeRegex("<pre id=\"submission-code\" [^>]*>([\\d\\D]+?)</pre>")
 	assert @regexCode <>& null
 	
+	do @numSubmissions :: 0
+	do @numSubmissionsTotal :: ^dictSubmissionId
 	do dictSubmissionId.forEach(callbackSubmissions, null)
 	
 	func callbackSubmissions(cpId: []char, submissionId: int, d: kuin@Class): bool
+		do @numSubmissions :+ 1
 		var contestId: []char :: @dictContestId.get(cpId, &)
 		var problemId: []char :: @dictProblemId.get(cpId, &)
 		var language: []char :: @dictLanguage.get(cpId, &)
@@ -151,6 +156,7 @@ func main()
 		
 		var data: []char
 		if(!file@exist(filepath))
+			do cui@print("\{@numSubmissions} / \{@numSubmissionsTotal}: ")
 			do data :: @fetchData(url)
 			var writer: file@Writer :: file@makeWriter(filepath, false)
 			do data :: data.replace("\u000D", "") { 取得してきたデータの改行が 0x0D 0x0D 0x0A となってしまうため、 0x0D 0x0A になるようにします。 }
@@ -255,7 +261,7 @@ func fetchData(url: []char): []char
 	end if
 	var http: net@Http :: net@makeHttp(url, false, "Kuin")
 	do cui@print("Fetching data: \{url}\n")
-	do lib@sleep(1500)
+	do lib@sleep(3000)
 	
 	if(http =& null)
 		do cui@print("接続に失敗しました。[\{url}]\n")

@@ -1,4 +1,0 @@
-func main()
-	var s: []char :: cui@input()
-	do cui@print("\{s.replace(",", " ")}\n")
-end func
