@@ -204,7 +204,7 @@ func main()
 		ret true
 	end func
 	
-	do @removeOldFiles()
+	;do @removeOldFiles()
 	
 	block
 		do @cpIdsForKuin :: #[0][]char
