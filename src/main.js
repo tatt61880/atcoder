@@ -54,7 +54,12 @@
     table.appendChild(tbody);
 
     const submissionsList = await getSubmissionsList(base);
-    p.innerText = `${submissionsList.length}件`;
+    const problemSet = new Set();
+    for (const submission of submissionsList) {
+      const problemId = submission.problem_id;
+      problemSet.add(problemId);
+    }
+    p.innerText = `${submissionsList.length}件 (重複を除くと${problemSet.size}件)`;
     p.setAttribute('id', 'total-num');
 
     const contestMap = new Map();
