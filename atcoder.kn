@@ -217,6 +217,10 @@ func main()
 		for i(0, ^@cpIdsForKuin - 1)
 			var cpId: []char :: @cpIdsForKuin[i]
 			var cpData: [][]char :: @cpDataMap.get(cpId, &)
+			if(cpData =& null)
+				do cui@print("\{cpId} failed\n")
+				skip i
+			end if
 			var contestId: []char :: cpData[0]
 			var problemId: []char :: cpData[1]
 			var problemIndex: []char :: cpData[2]
