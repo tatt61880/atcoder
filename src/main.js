@@ -161,7 +161,8 @@
 
       // 提出したソースコード
       {
-        const src = await getSrc(base, task);
+        const contestId = problemContestMap[task];
+        const src = await getSrc(base, contestId, task);
         if (src !== null) {
           const h2 = document.createElement('h3');
           h2.innerText = '提出したソースコード (言語: Kuin)';
@@ -227,8 +228,8 @@
     return `https://atcoder.jp/contests/${contestId}/tasks/${task}`;
   }
 
-  async function getSrc(base, task) {
-    return await fetchText(`${base}submissions/${task}/main.kn`);
+  async function getSrc(base, contestId, task) {
+    return await fetchText(`${base}submissions/${contestId}/${task}.kn`);
   }
 
   async function fetchText(url) {
