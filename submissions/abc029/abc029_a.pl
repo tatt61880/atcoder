@@ -1,0 +1,1 @@
+$W=<>;chomp $W;print$W."s\n";
