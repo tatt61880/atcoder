@@ -47,6 +47,8 @@ def save_submissions(user: str, from_second: int, output_path: str = "submission
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+    time.sleep(1)
+
 
 def get_days_ago_from_args() -> int:
     if len(sys.argv) == 1:
