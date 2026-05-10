@@ -1,5 +1,6 @@
 const contestJsonFilename: []char :: "contests.json"
 const problemsJsonFilename: []char :: "problems.json"
+const cpJsonFilename: []char :: "contest-problem.json"
 const dataJsonFilename: []char :: "data.json"
 const atcoderBase: []char :: "https://atcoder.jp/contests/"
 
@@ -13,6 +14,7 @@ var dictContestId: dict<[]char, []char>
 var dictProblemId: dict<[]char, []char>
 var dictLanguage: dict<[]char, []char>
 var contestTitleMap: dict<[]char, []char>
+var problemDataMap: dict<[]char, [][]char>
 var cpDataMap: dict<[]char, [][]char>
 
 const submissionDir: []char :: ".\\submissions\\"
@@ -44,7 +46,7 @@ func main()
 	
 	; 問題情報取得
 	block
-		do @cpDataMap :: #dict<[]char, [][]char>
+		do @problemDataMap :: #dict<[]char, [][]char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@problemsJsonFilename) $ \json@JsonArray).value
 		do jsonArray.head()
 		; "id": "1202Contest_a",
@@ -61,12 +63,31 @@ func main()
 			var problemIndex: []char :: json.find("problem_index").toStr()
 			var name: []char :: json.find("name").toStr()
 			
-			; 同じ問題が複数のコンテストで使用されることがあるため(例: "arc065_a" は "abc049", "abs", "arc065" の3つのコンテストに紐づいています )
-			var cpId: []char :: "\{contestId}/\{problemId}"
-			do @cpDataMap.add(cpId, [contestId, problemId, problemIndex, name])
+			; 同じ問題が複数のコンテストで使用されることがあるため (例: "arc065_a" は "abc049", "abs", "arc065" の3つのコンテストに紐づいています )
+			do @problemDataMap.add(problemId, [contestId, problemIndex, name])
 		end for
 	end block
 	
+	block
+		do @cpDataMap :: #dict<[]char, [][]char>
+		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@cpJsonFilename) $ \json@JsonArray).value
+		do jsonArray.head()
+		; "contest_id": "abc421",
+		; "problem_id": "abc421_c",
+		; "problem_index": "C"
+		for i(0, ^jsonArray - 1)
+			var json: \json@Json :: jsonArray.get()
+			do jsonArray.next()
+			
+			var contestId: []char :: json.find("contest_id").toStr()
+			var problemId: []char :: json.find("problem_id").toStr()
+			var problemIndex: []char :: json.find("problem_index").toStr()
+			var cpId: []char :: "\{contestId}/\{problemId}"
+			
+			do @cpDataMap.add(cpId, [contestId, problemId, problemIndex])
+		end for
+	end block
+
 	var dictSubmissionId: dict<[]char, int> :: #dict<[]char, int>
 	
 	; ユーザーの提出情報取得
@@ -185,7 +206,7 @@ func main()
 			end if
 			var result: [][]char :: @regexCode.find(&, data, -1)
 			if(result =& null)
-				do cui@print("ERROR: Failed to find source code. [\{contestId}#\{submissionId}]\n")
+				do cui@print("Error: Failed to find source code. [\{contestId}#\{submissionId}]\n")
 			else
 				var srcCode: []char :: result[1]
 				do srcCode :: srcCode.replace("&#34;", "\"")
@@ -217,14 +238,19 @@ func main()
 		for i(0, ^@cpIdsForKuin - 1)
 			var cpId: []char :: @cpIdsForKuin[i]
 			var cpData: [][]char :: @cpDataMap.get(cpId, &)
-			if(cpData =& null)
-				do cui@print("\{cpId} failed\n")
-				skip i
-			end if
-			var contestId: []char :: cpData[0]
 			var problemId: []char :: cpData[1]
 			var problemIndex: []char :: cpData[2]
-			var name: []char :: cpData[3]
+			if(problemId =& null)
+				do cui@print("Error: \{problemId} failed.\n")
+				skip i
+			end if
+			var problemData: [][]char :: @problemDataMap.get(problemId, &)
+			if(problemData =& null)
+				do cui@print("Error: \{cpId} failed.\n")
+				skip i
+			end if
+			var contestId: []char :: problemData[0]
+			var name: []char :: problemData[2]
 			var contestTitle: []char :: @contestTitleMap.get(contestId, &).replace("\"", "\\\"")
 			do jsonText :~ "  {\n"
 			|~"    \"problem_id\": \"\{problemId}\",\n"

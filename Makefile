@@ -4,6 +4,7 @@ all: atcoder.exe node_modules
 	npm run stylelint
 	python save_contests.py
 	python save_problems.py
+	python save_contest_problem.py
 	python save_submissions.py
 	atcoder.exe
 

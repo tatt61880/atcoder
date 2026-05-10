@@ -4165,6 +4165,20 @@
     "name": "Fibonacci Reversed"
   },
   {
+    "problem_id": "abc422_a",
+    "contest_id": "jsc2025advance-final",
+    "contest_title": "日本最強プログラマー学生選手権～Advance～",
+    "problem_index": "A",
+    "name": "Stage Clear"
+  },
+  {
+    "problem_id": "abc422_b",
+    "contest_id": "jsc2025advance-final",
+    "contest_title": "日本最強プログラマー学生選手権～Advance～",
+    "problem_index": "B",
+    "name": "Looped Rope"
+  },
+  {
     "problem_id": "abc423_a",
     "contest_id": "abc423",
     "contest_title": "AtCoder Beginner Contest 423",
@@ -4744,6 +4758,83 @@
     "contest_title": "AtCoder Beginner Contest 456（Promotion of AtCoder Career Design DAY）",
     "problem_index": "B",
     "name": "456"
+  },
+  {
+    "problem_id": "abc081_a",
+    "contest_id": "abc081",
+    "contest_title": "AtCoder Beginner Contest 081",
+    "problem_index": "ABC081A",
+    "name": "Placing Marbles"
+  },
+  {
+    "problem_id": "abc081_b",
+    "contest_id": "abc081",
+    "contest_title": "AtCoder Beginner Contest 081",
+    "problem_index": "ABC081B",
+    "name": "Shift only"
+  },
+  {
+    "problem_id": "abc083_b",
+    "contest_id": "abc083",
+    "contest_title": "AtCoder Beginner Contest 083",
+    "problem_index": "ABC083B",
+    "name": "Some Sums"
+  },
+  {
+    "problem_id": "abc085_b",
+    "contest_id": "abc085",
+    "contest_title": "AtCoder Beginner Contest 085",
+    "problem_index": "ABC085B",
+    "name": "Kagami Mochi"
+  },
+  {
+    "problem_id": "abc085_c",
+    "contest_id": "abc085",
+    "contest_title": "AtCoder Beginner Contest 085",
+    "problem_index": "ABC085C",
+    "name": "Otoshidama"
+  },
+  {
+    "problem_id": "abc086_a",
+    "contest_id": "abc086",
+    "contest_title": "AtCoder Beginner Contest 086",
+    "problem_index": "ABC086A",
+    "name": "Product"
+  },
+  {
+    "problem_id": "abc087_b",
+    "contest_id": "abc087",
+    "contest_title": "AtCoder Beginner Contest 087",
+    "problem_index": "ABC087B",
+    "name": "Coins"
+  },
+  {
+    "problem_id": "abc088_b",
+    "contest_id": "abc088",
+    "contest_title": "AtCoder Beginner Contest 088",
+    "problem_index": "ABC088B",
+    "name": "Card Game for Two"
+  },
+  {
+    "problem_id": "arc065_a",
+    "contest_id": "abc049",
+    "contest_title": "AtCoder Beginner Contest 049",
+    "problem_index": "ABC049C",
+    "name": "Daydream"
+  },
+  {
+    "problem_id": "arc089_a",
+    "contest_id": "abc086",
+    "contest_title": "AtCoder Beginner Contest 086",
+    "problem_index": "ABC086C",
+    "name": "Traveling"
+  },
+  {
+    "problem_id": "practice_1",
+    "contest_id": "practice",
+    "contest_title": "practice contest",
+    "problem_index": "PracticeA",
+    "name": "Welcome to AtCoder"
   },
   {
     "problem_id": "dp_g",

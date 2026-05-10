@@ -9,6 +9,7 @@ if "%DAYS%"=="" (
 
 python save_contests.py
 python save_problems.py
+python save_contest_problem.py
 
 atcoder.exe
 
