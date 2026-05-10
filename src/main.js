@@ -67,11 +67,12 @@
     const problemIndexMap = new Map();
 
     for (const submission of submissionsList) {
-      const problemId = submission.problem_id;
       const contestId = submission.contest_id;
+      const problemId = submission.problem_id;
+      const cpId = `${contestId}/${problemId}`;
       contestTitleMap[contestId] = submission.contest_title;
       const problemIndex = submission.problem_index;
-      problemIndexMap[problemId] = problemIndex;
+      problemIndexMap[cpId] = problemIndex;
 
       const m = /(?:.*)_(?<id>.*)/.exec(problemId);
       if (!m) continue;
@@ -106,7 +107,8 @@
         for (const { problemId } of problemsId) {
           const a = document.createElement('a');
           a.href = `?tasks=${problemId}`;
-          a.innerText = problemIndexMap[problemId];
+          const cpId = `${contestId}/${problemId}`;
+          a.innerText = problemIndexMap[cpId];
           a.classList.add('submit-link');
           td.appendChild(a);
         }
