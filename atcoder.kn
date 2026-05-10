@@ -19,6 +19,7 @@ const kuinSubmissionDir: []char :: @submissionDir ~ "kuinSubmissions.json"
 var problemsIdsForKuin: [][]char
 
 func main()
+	; コンテスト情報取得
 	block
 		do @contestTitleMap :: #dict<[]char, []char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@contestJsonFilename) $ \json@JsonArray).value
@@ -38,6 +39,7 @@ func main()
 		end for
 	end block
 
+	; 問題情報取得
 	block
 		do @problemDataMap :: #dict<[]char, [][]char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@problemsJsonFilename) $ \json@JsonArray).value
@@ -59,36 +61,40 @@ func main()
 		end for
 	end block
 	
-	var jsonArray: list<\json@Json> :: (\json@makeJsonF(@dataJsonFilename) $ \json@JsonArray).value
-	do jsonArray.head()
-	;"result":"AC"
-	;"problem_id":"abc023_c"
-	;"user_id":"tatt61880"
-	;"epoch_second":1457884898,
-	;"contest_id":"abc023"
-	;"id":660366
-	;"language":"C++ (GCC 4.9.2)"
 	var dictId: dict<[]char, int> :: #dict<[]char, int>
-	var dictEpochSecond: dict<[]char, int> :: #dict<[]char, int>
-	do @dictConstantId :: #dict<[]char, []char>
-	do @dictLanguage :: #dict<[]char, []char>
-	
-	for i(0, ^jsonArray - 1)
-		var json: \json@Json :: jsonArray.get()
-		do jsonArray.next()
-		if(json.find("result").toStr() = "AC")
-			var problemId: []char :: json.find("problem_id").toStr()
-			var epochSecond: int :: json.find("epoch_second").toi()
-			var epochSecondPrev: int :: dictEpochSecond.get(problemId, &)
-			if(epochSecondPrev > epochSecond)
-				skip i
+
+	; ユーザーの提出情報取得
+	block
+		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@dataJsonFilename) $ \json@JsonArray).value
+		do jsonArray.head()
+		;"result":"AC"
+		;"problem_id":"abc023_c"
+		;"user_id":"tatt61880"
+		;"epoch_second":1457884898,
+		;"contest_id":"abc023"
+		;"id":660366
+		;"language":"C++ (GCC 4.9.2)"
+		var dictEpochSecond: dict<[]char, int> :: #dict<[]char, int>
+		do @dictConstantId :: #dict<[]char, []char>
+		do @dictLanguage :: #dict<[]char, []char>
+		
+		for i(0, ^jsonArray - 1)
+			var json: \json@Json :: jsonArray.get()
+			do jsonArray.next()
+			if(json.find("result").toStr() = "AC")
+				var problemId: []char :: json.find("problem_id").toStr()
+				var epochSecond: int :: json.find("epoch_second").toi()
+				var epochSecondPrev: int :: dictEpochSecond.get(problemId, &)
+				if(epochSecondPrev > epochSecond)
+					skip i
+				end if
+				do dictEpochSecond.add(problemId, epochSecond)
+				do dictId.add(problemId, json.find("id").toi())
+				do @dictConstantId.add(problemId, json.find("contest_id").toStr())
+				do @dictLanguage.add(problemId, json.find("language").toStr())
 			end if
-			do dictEpochSecond.add(problemId, epochSecond)
-			do dictId.add(problemId, json.find("id").toi())
-			do @dictConstantId.add(problemId, json.find("contest_id").toStr())
-			do @dictLanguage.add(problemId, json.find("language").toStr())
-		end if
-	end for
+		end for
+	end block
 	
 	do @dirHtml :: "\{wnd@exeDir()}html/"
 	do @dictOldFilesFlag :: #dict<[]char, bool>
