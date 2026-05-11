@@ -69,13 +69,13 @@
       return;
     }
 
-    const problemSet = new Set();
-    for (const submission of submissionsList) {
-      const problemId = submission.problem_id;
-      problemSet.add(problemId);
-    }
-
     {
+      const problemSet = new Set();
+      for (const submission of submissionsList) {
+        const problemId = submission.problem_id;
+        problemSet.add(problemId);
+      }
+
       p.setAttribute('id', 'total-num');
 
       const totalNumSpan = document.createElement('span');
