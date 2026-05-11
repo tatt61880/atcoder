@@ -9,6 +9,7 @@ body {
 
 #contents {
   padding: 0;
+  overflow-x: auto;
   background-color: white;
 }
 
@@ -110,4 +111,10 @@ h2:not(:first-child) {
 
 #total-num {
   font-size: 2rem;
+}
+
+.profile-table,
+.profile-table tr,
+.profile-table td {
+  border: none;
 }

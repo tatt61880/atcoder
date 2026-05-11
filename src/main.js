@@ -27,7 +27,7 @@
   // ACコード一覧
   async function appendAcList(contentsElem, base) {
     const h1 = document.createElement('h1');
-    h1.innerText = 'tatt61880によるAtCoderの最新ACコード一覧';
+    h1.innerText = 'tatt61880によるAtCoderでの最新ACコード一覧';
     contentsElem.appendChild(h1);
 
     const p = document.createElement('p');
@@ -55,6 +55,11 @@
     table.appendChild(tbody);
 
     const submissionsList = await getSubmissionsList(base);
+    if (submissionsList === null) {
+      contentsElem.textContent = '提出データの読み込みに失敗しました。';
+      return;
+    }
+
     const problemSet = new Set();
     for (const submission of submissionsList) {
       const problemId = submission.problem_id;
@@ -71,11 +76,11 @@
       const contestId = submission.contest_id;
       const problemId = submission.problem_id;
 
-      contestTitleMap[contestId] = submission.contest_title;
+      contestTitleMap.set(contestId, submission.contest_title);
       const problemIndex = submission.problem_index;
 
       const cpId = `${contestId}/${problemId}`;
-      problemIndexMap[cpId] = problemIndex;
+      problemIndexMap.set(cpId, problemIndex);
 
       if (!contestMap.has(contestId)) {
         contestMap.set(contestId, []);
@@ -91,7 +96,7 @@
         const td = tr.insertCell();
         const a = document.createElement('a');
         a.href = `?contest=${contestId}`;
-        a.innerText = contestTitleMap[contestId];
+        a.innerText = contestTitleMap.get(contestId);
         td.appendChild(a);
       }
 
@@ -103,7 +108,7 @@
           const a = document.createElement('a');
           a.href = `?contest=${contestId}&task=${problemId}`;
           const cpId = `${contestId}/${problemId}`;
-          a.innerText = problemIndexMap[cpId];
+          a.innerText = problemIndexMap.get(cpId);
           a.classList.add('submit-link');
           td.appendChild(a);
         }
@@ -118,7 +123,17 @@
     contestIdTarget,
     problemIdTarget
   ) {
+    {
+      const h1 = document.createElement('h1');
+      h1.innerText = 'tatt61880によるAtCoderでのACコード';
+      contentsElem.appendChild(h1);
+    }
+
     const submissionsList = await getSubmissionsList(base);
+    if (submissionsList === null) {
+      contentsElem.textContent = '提出データの読み込みに失敗しました。';
+      return;
+    }
 
     for (const submission of submissionsList) {
       const contestId = submission.contest_id;
@@ -136,9 +151,9 @@
         const title = `${contestTitle}: ${problemIndex} - ${name}`;
         document.title = title;
 
-        const h1 = document.createElement('h2');
-        h1.innerText = title;
-        contentsElem.appendChild(h1);
+        const h2 = document.createElement('h2');
+        h2.innerText = title;
+        contentsElem.appendChild(h2);
       }
 
       // 問題URL
@@ -180,29 +195,13 @@
   }
 
   function analyzeUrl() {
-    const res = {
-      base: '',
-      contest: null,
-      task: null,
-    };
+    const params = new URLSearchParams(location.search);
 
-    res.base = location.href.split('?')[0];
-    const queryStrs = location.href.split('?')[1];
-    if (queryStrs === undefined) return res;
-    for (const queryStr of queryStrs.split('&')) {
-      const paramArray = queryStr.split('=');
-      const paramName = paramArray[0];
-      const paramVal = paramArray[1];
-      switch (paramName) {
-        case 'contest':
-          res.contest = paramVal;
-          break;
-        case 'task':
-          res.task = paramVal;
-          break;
-      }
-    }
-    return res;
+    return {
+      base: `${location.origin}${location.pathname}`,
+      contest: params.get('contest'),
+      task: params.get('task'),
+    };
   }
 
   function elemToKuinEditor(elem) {
@@ -234,12 +233,14 @@
   }
 
   async function fetchText(url) {
+    // ソースコードは更新頻度が高いため、常に再取得する。
     const response = await fetch(url, { cache: 'no-store' });
     if (response.ok) return response.text();
     return null;
   }
 
   async function fetchJson(url) {
+    // 提出一覧は更新頻度が高いため、常に再取得する。
     const response = await fetch(url, { cache: 'no-store' });
     if (response.ok) return response.json();
     return null;
