@@ -1,15 +1,17 @@
 (function () {
   'use strict';
 
+  const pageTitle = 'tatt61880によるAtCoderでのACコード';
+
   document.addEventListener('DOMContentLoaded', onloadApp);
   return;
   // ==========================================================================
 
   async function onloadApp() {
     const urlQueryParams = analyzeUrl();
-    const base = urlQueryParams.base;
-    const contestId = urlQueryParams.contest;
-    const problemId = urlQueryParams.task;
+    const baseUrl = urlQueryParams.baseUrl;
+    const targetContestId = urlQueryParams.contest;
+    const targetProblemId = urlQueryParams.task;
 
     const contentsElem = document.getElementById('contents-data');
     if (contentsElem === null) {
@@ -17,17 +19,22 @@
       return;
     }
 
-    if (contestId === null) {
-      await appendAcList(contentsElem, base);
+    if (targetContestId === null) {
+      await appendAcList(contentsElem, baseUrl);
     } else {
-      await appendTasks(contentsElem, base, contestId, problemId);
+      await appendTasks(
+        contentsElem,
+        baseUrl,
+        targetContestId,
+        targetProblemId
+      );
     }
   }
 
   // ACコード一覧
-  async function appendAcList(contentsElem, base) {
+  async function appendAcList(contentsElem, baseUrl) {
     const h1 = document.createElement('h1');
-    h1.innerText = 'tatt61880によるAtCoderでの最新ACコード一覧';
+    h1.innerText = pageTitle;
     contentsElem.appendChild(h1);
 
     const p = document.createElement('p');
@@ -54,7 +61,7 @@
     const tbody = document.createElement('tbody');
     table.appendChild(tbody);
 
-    const submissionsList = await getSubmissionsList(base);
+    const submissionsList = await getSubmissionsList(baseUrl);
     if (submissionsList === null) {
       const p = document.createElement('p');
       p.innerText = '提出データの読み込みに失敗しました。';
@@ -67,7 +74,7 @@
       const problemId = submission.problem_id;
       problemSet.add(problemId);
     }
-    p.innerText = `${submissionsList.length}件 (重複を除くと${problemSet.size}件)`;
+    p.innerText = `${submissionsList.length}件 (問題IDの重複分を除くと${problemSet.size}件)`;
     p.setAttribute('id', 'total-num');
 
     const contestMap = new Map();
@@ -123,17 +130,17 @@
   // 提出内容
   async function appendTasks(
     contentsElem,
-    base,
-    contestIdTarget,
-    problemIdTarget
+    baseUrl,
+    targetContestId,
+    targetProblemId
   ) {
     {
       const h1 = document.createElement('h1');
-      h1.innerText = 'tatt61880によるAtCoderでのACコード';
+      h1.innerText = pageTitle;
       contentsElem.appendChild(h1);
     }
 
-    const submissionsList = await getSubmissionsList(base);
+    const submissionsList = await getSubmissionsList(baseUrl);
     if (submissionsList === null) {
       const p = document.createElement('p');
       p.innerText = '提出データの読み込みに失敗しました。';
@@ -145,10 +152,10 @@
 
     for (const submission of submissionsList) {
       const contestId = submission.contest_id;
-      if (contestId !== contestIdTarget) continue;
+      if (contestId !== targetContestId) continue;
 
       const problemId = submission.problem_id;
-      if (problemIdTarget !== null && problemId !== problemIdTarget) continue;
+      if (targetProblemId !== null && problemId !== targetProblemId) continue;
 
       foundFlag = true;
 
@@ -159,11 +166,16 @@
       // ページタイトル
       {
         const title = `${contestTitle}: ${problemIndex} - ${name}`;
-        document.title = title;
 
         const h2 = document.createElement('h2');
         h2.innerText = title;
         contentsElem.appendChild(h2);
+
+        if (targetProblemId === null) {
+          document.title = `${contestTitle} - ${pageTitle}}`;
+        } else {
+          document.title = `${title} - ${pageTitle}}`;
+        }
       }
 
       // 問題URL
@@ -184,7 +196,7 @@
 
       // 提出したソースコード
       {
-        const src = await getSrc(base, contestId, problemId);
+        const src = await getSrc(baseUrl, contestId, problemId);
         if (src !== null) {
           const h2 = document.createElement('h3');
           h2.innerText = '提出したソースコード (言語: Kuin)';
@@ -214,7 +226,7 @@
     const params = new URLSearchParams(location.search);
 
     return {
-      base: `${location.origin}${location.pathname}`,
+      baseUrl: `${location.origin}${location.pathname}`,
       contest: params.get('contest'),
       task: params.get('task'),
     };
@@ -234,8 +246,8 @@
     return editor;
   }
 
-  async function getSubmissionsList(base) {
-    return await fetchJson(`${base}submissions/kuinSubmissions.json`);
+  async function getSubmissionsList(baseUrl) {
+    return await fetchJson(`${baseUrl}submissions/kuinSubmissions.json`);
   }
 
   function getProblemUrl(contestId, problemId) {
@@ -248,8 +260,12 @@
     );
   }
 
-  async function getSrc(base, contestId, task) {
-    return await fetchText(`${base}submissions/${contestId}/${task}.kn`);
+  async function getSrc(baseUrl, contestId, problemId) {
+    return await fetchText(
+      `${baseUrl}submissions/` +
+        `${encodeURIComponent(contestId)}/` +
+        `${encodeURIComponent(problemId)}.kn`
+    );
   }
 
   async function fetchText(url) {
