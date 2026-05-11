@@ -56,7 +56,9 @@
 
     const submissionsList = await getSubmissionsList(base);
     if (submissionsList === null) {
-      contentsElem.textContent = '提出データの読み込みに失敗しました。';
+      const p = document.createElement('p');
+      p.innerText = '提出データの読み込みに失敗しました。';
+      contentsElem.appendChild(p);
       return;
     }
 
@@ -95,7 +97,7 @@
       {
         const td = tr.insertCell();
         const a = document.createElement('a');
-        a.href = `?contest=${contestId}`;
+        a.href = `?contest=${encodeURIComponent(contestId)}`;
         a.innerText = contestTitleMap.get(contestId);
         td.appendChild(a);
       }
@@ -106,7 +108,9 @@
 
         for (const problemId of problemsId) {
           const a = document.createElement('a');
-          a.href = `?contest=${contestId}&task=${problemId}`;
+          a.href =
+            `?contest=${encodeURIComponent(contestId)}` +
+            `&task=${encodeURIComponent(problemId)}`;
           const cpId = `${contestId}/${problemId}`;
           a.innerText = problemIndexMap.get(cpId);
           a.classList.add('submit-link');
@@ -131,9 +135,13 @@
 
     const submissionsList = await getSubmissionsList(base);
     if (submissionsList === null) {
-      contentsElem.textContent = '提出データの読み込みに失敗しました。';
+      const p = document.createElement('p');
+      p.innerText = '提出データの読み込みに失敗しました。';
+      contentsElem.appendChild(p);
       return;
     }
+
+    const foundFlag = false;
 
     for (const submission of submissionsList) {
       const contestId = submission.contest_id;
@@ -192,6 +200,12 @@
         contentsElem.appendChild(document.createElement('hr'));
       }
     }
+
+    if (!foundFlag) {
+      const p = document.createElement('p');
+      p.innerText = '該当する提出データが見つかりませんでした。';
+      contentsElem.appendChild(p);
+    }
   }
 
   function analyzeUrl() {
@@ -233,16 +247,26 @@
   }
 
   async function fetchText(url) {
-    // ソースコードは更新頻度が高いため、常に再取得する。
-    const response = await fetch(url, { cache: 'no-store' });
-    if (response.ok) return response.text();
-    return null;
+    try {
+      // ソースコードは更新頻度が高いため、常に再取得する。
+      const response = await fetch(url, { cache: 'no-store' });
+      if (response.ok) return response.text();
+      return null;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
   }
 
   async function fetchJson(url) {
-    // 提出一覧は更新頻度が高いため、常に再取得する。
-    const response = await fetch(url, { cache: 'no-store' });
-    if (response.ok) return response.json();
-    return null;
+    try {
+      // 提出一覧は更新頻度が高いため、常に再取得する。
+      const response = await fetch(url, { cache: 'no-store' });
+      if (response.ok) return response.json();
+      return null;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
   }
 })();
