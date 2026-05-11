@@ -10,8 +10,8 @@
   async function onloadApp() {
     const urlQueryParams = analyzeUrl();
     const baseUrl = urlQueryParams.baseUrl;
-    const targetContestId = urlQueryParams.contest;
-    const targetProblemId = urlQueryParams.task;
+    const targetContestId = urlQueryParams.targetContestId;
+    const targetProblemId = urlQueryParams.targetProblemId;
 
     const contentsElem = document.getElementById('contents-data');
     if (contentsElem === null) {
@@ -74,8 +74,19 @@
       const problemId = submission.problem_id;
       problemSet.add(problemId);
     }
-    p.innerText = `${submissionsList.length}件 (問題IDの重複分を除くと${problemSet.size}件)`;
-    p.setAttribute('id', 'total-num');
+
+    {
+      p.setAttribute('id', 'total-num');
+
+      const totalNumSpan = document.createElement('span');
+      totalNumSpan.innerText = `${submissionsList.length}件`;
+      p.appendChild(totalNumSpan);
+
+      const totalNumNoteSpan = document.createElement('span');
+      totalNumNoteSpan.classList.add('total-num-note');
+      totalNumNoteSpan.innerText = ` (問題IDの重複分を除くと${problemSet.size}件)`;
+      p.appendChild(totalNumNoteSpan);
+    }
 
     const contestMap = new Map();
     const contestTitleMap = new Map();
@@ -148,7 +159,7 @@
       return;
     }
 
-    let foundFlag = false;
+    let found = false;
 
     for (const submission of submissionsList) {
       const contestId = submission.contest_id;
@@ -157,7 +168,7 @@
       const problemId = submission.problem_id;
       if (targetProblemId !== null && problemId !== targetProblemId) continue;
 
-      foundFlag = true;
+      found = true;
 
       const contestTitle = submission.contest_title;
       const problemIndex = submission.problem_index;
@@ -198,9 +209,9 @@
       {
         const src = await getSrc(baseUrl, contestId, problemId);
         if (src !== null) {
-          const h2 = document.createElement('h3');
-          h2.innerText = '提出したソースコード (言語: Kuin)';
-          contentsElem.appendChild(h2);
+          const h3 = document.createElement('h3');
+          h3.innerText = '提出したソースコード (言語: Kuin)';
+          contentsElem.appendChild(h3);
 
           const pre = document.createElement('pre');
           pre.classList.add('code');
@@ -215,7 +226,7 @@
       }
     }
 
-    if (!foundFlag) {
+    if (!found) {
       const p = document.createElement('p');
       p.innerText = '該当する提出データが見つかりませんでした。';
       contentsElem.appendChild(p);
@@ -227,8 +238,8 @@
 
     return {
       baseUrl: `${location.origin}${location.pathname}`,
-      contest: params.get('contest'),
-      task: params.get('task'),
+      targetContestId: params.get('contest'),
+      targetProblemId: params.get('task'),
     };
   }
 

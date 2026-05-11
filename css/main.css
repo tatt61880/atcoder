@@ -112,6 +112,11 @@ h2:not(:first-child) {
   font-size: 2rem;
 }
 
+.total-num-note {
+  font-size: 0.7em;
+  color: #555555;
+}
+
 .profile-table,
 .profile-table tr,
 .profile-table td {
