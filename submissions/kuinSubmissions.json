@@ -2877,6 +2877,13 @@
     "name": "ab"
   },
   {
+    "problem_id": "abc327_b",
+    "contest_id": "abc327",
+    "contest_title": "HHKBプログラミングコンテスト2023(AtCoder Beginner Contest 327)",
+    "problem_index": "B",
+    "name": "A^A"
+  },
+  {
     "problem_id": "abc328_a",
     "contest_id": "abc328",
     "contest_title": "トヨタ自動車プログラミングコンテスト2023#7(AtCoder Beginner Contest 328)",

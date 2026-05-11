@@ -1,0 +1,11 @@
+func main()
+	var b: int :: cui@inputInt()
+	for a(1, 15)
+		if(a ^ a = b)
+			do cui@print("\{a}\n")
+			ret
+		end if
+	end for
+	
+	do cui@print("\{-1}\n")
+end func
