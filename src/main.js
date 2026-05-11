@@ -253,11 +253,12 @@
   }
 
   async function fetchText(url) {
+    // 通信失敗やレスポンス本文の読み取り失敗時は null を返し、呼び出し側でエラー表示する。
     try {
       // ソースコードは更新頻度が高いため、常に再取得する。
       const response = await fetch(url, { cache: 'no-store' });
-      if (response.ok) return response.text();
-      return null;
+      if (!response.ok) return null;
+      return await response.text();
     } catch (error) {
       console.error(error);
       return null;
@@ -265,11 +266,12 @@
   }
 
   async function fetchJson(url) {
+    // 通信失敗やJSONの破損時は null を返し、呼び出し側でエラー表示する。
     try {
       // 提出一覧は更新頻度が高いため、常に再取得する。
       const response = await fetch(url, { cache: 'no-store' });
-      if (response.ok) return response.json();
-      return null;
+      if (!response.ok) return null;
+      return await response.json();
     } catch (error) {
       console.error(error);
       return null;
