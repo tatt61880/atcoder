@@ -172,9 +172,9 @@
         contentsElem.appendChild(h2);
 
         if (targetProblemId === null) {
-          document.title = `${contestTitle} - ${pageTitle}}`;
+          document.title = `${contestTitle} - ${pageTitle}`;
         } else {
-          document.title = `${title} - ${pageTitle}}`;
+          document.title = `${title} - ${pageTitle}`;
         }
       }
 
