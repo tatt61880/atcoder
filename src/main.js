@@ -238,10 +238,14 @@
     return await fetchJson(`${base}submissions/kuinSubmissions.json`);
   }
 
-  function getProblemUrl(contestId, task) {
+  function getProblemUrl(contestId, problemId) {
     if (contestId === null) return null;
-    if (task === null) return null;
-    return `https://atcoder.jp/contests/${contestId}/tasks/${task}`;
+    if (problemId === null) return null;
+    return (
+      'https://atcoder.jp/' +
+      `contests/${encodeURIComponent(contestId)}/` +
+      `tasks/${encodeURIComponent(problemId)}`
+    );
   }
 
   async function getSrc(base, contestId, task) {
