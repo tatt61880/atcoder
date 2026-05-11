@@ -84,7 +84,7 @@
 
       const totalNumNoteSpan = document.createElement('span');
       totalNumNoteSpan.classList.add('total-num-note');
-      totalNumNoteSpan.innerText = ` (問題IDの重複分を除くと${problemSet.size}件)`;
+      totalNumNoteSpan.innerText = `（問題IDの重複分を除くと${problemSet.size}件）`;
       p.appendChild(totalNumNoteSpan);
     }
 

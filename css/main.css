@@ -109,6 +109,9 @@ h2:not(:first-child) {
 }
 
 #total-num {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
   font-size: 2rem;
 }
 
