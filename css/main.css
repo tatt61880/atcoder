@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 body {
-  min-width: 600px;
   max-width: 1024px;
   margin: auto;
   background-color: #ccffff;
