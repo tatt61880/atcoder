@@ -141,7 +141,7 @@
       return;
     }
 
-    const foundFlag = false;
+    let foundFlag = false;
 
     for (const submission of submissionsList) {
       const contestId = submission.contest_id;
@@ -149,6 +149,8 @@
 
       const problemId = submission.problem_id;
       if (problemIdTarget !== null && problemId !== problemIdTarget) continue;
+
+      foundFlag = true;
 
       const contestTitle = submission.contest_title;
       const problemIndex = submission.problem_index;
