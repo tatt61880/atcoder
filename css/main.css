@@ -119,3 +119,8 @@ h2:not(:first-child) {
 .profile-table td {
   border: none;
 }
+
+.profile-icon {
+  width: 100px;
+  height: auto;
+}
