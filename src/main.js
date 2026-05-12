@@ -220,6 +220,10 @@
           const editor = elemToKuinEditor(pre);
           editor.setValue(src);
           editor.navigateTo(0, 0);
+        } else {
+          const p = document.createElement('p');
+          p.innerText = 'ソースコードの読み込みに失敗しました。';
+          contentsElem.appendChild(p);
         }
 
         contentsElem.appendChild(document.createElement('hr'));
@@ -237,7 +241,7 @@
     const params = new URLSearchParams(location.search);
 
     return {
-      baseUrl: `${location.origin}${location.pathname}`,
+      baseUrl: new URL('./', location.href),
       targetContestId: params.get('contest'),
       targetProblemId: params.get('task'),
     };
@@ -257,13 +261,10 @@
     return editor;
   }
 
-  async function getSubmissionsList(baseUrl) {
-    return await fetchJson(`${baseUrl}submissions/kuinSubmissions.json`);
-  }
-
   function getProblemUrl(contestId, problemId) {
     if (contestId === null) return null;
     if (problemId === null) return null;
+
     return (
       'https://atcoder.jp/' +
       `contests/${encodeURIComponent(contestId)}/` +
@@ -271,11 +272,20 @@
     );
   }
 
+  async function getSubmissionsList(baseUrl) {
+    return await fetchJson(
+      new URL('submissions/kuinSubmissions.json', baseUrl)
+    );
+  }
+
   async function getSrc(baseUrl, contestId, problemId) {
     return await fetchText(
-      `${baseUrl}submissions/` +
-        `${encodeURIComponent(contestId)}/` +
-        `${encodeURIComponent(problemId)}.kn`
+      new URL(
+        'submissions/' +
+          `${encodeURIComponent(contestId)}/` +
+          `${encodeURIComponent(problemId)}.kn`,
+        baseUrl
+      )
     );
   }
 
