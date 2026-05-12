@@ -308,12 +308,12 @@
   async function fetchResponse(url) {
     try {
       const response = await fetch(url, { cache: 'no-store' });
-      if (!response.ok) return null;
-      return response;
+      if (response.ok) return response;
     } catch (error) {
       console.error(error);
-      return null;
     }
+
+    return null;
   }
 
   async function fetchText(url) {
