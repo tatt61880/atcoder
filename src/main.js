@@ -34,11 +34,20 @@
   // ACコード一覧
   async function appendAcList(contentsElem, baseUrl) {
     const h1 = document.createElement('h1');
-    h1.innerText = pageTitle;
+    h1.textContent = pageTitle;
     contentsElem.appendChild(h1);
 
     const p = document.createElement('p');
     contentsElem.appendChild(p);
+
+    const submissionsList = await getSubmissionsList(baseUrl);
+
+    if (submissionsList === null) {
+      const p = document.createElement('p');
+      p.textContent = '提出データの読み込みに失敗しました。';
+      contentsElem.appendChild(p);
+      return;
+    }
 
     const table = document.createElement('table');
     const thead = document.createElement('thead');
@@ -48,26 +57,18 @@
 
     {
       const td = document.createElement('th');
-      td.innerText = 'コンテスト毎のまとめ';
+      td.textContent = 'コンテスト毎のまとめ';
       tr.appendChild(td);
     }
 
     {
       const td = document.createElement('th');
-      td.innerText = '個別のソースコード';
+      td.textContent = '個別のソースコード';
       tr.appendChild(td);
     }
 
     const tbody = document.createElement('tbody');
     table.appendChild(tbody);
-
-    const submissionsList = await getSubmissionsList(baseUrl);
-    if (submissionsList === null) {
-      const p = document.createElement('p');
-      p.innerText = '提出データの読み込みに失敗しました。';
-      contentsElem.appendChild(p);
-      return;
-    }
 
     {
       const problemSet = new Set();
@@ -79,12 +80,12 @@
       p.setAttribute('id', 'total-num');
 
       const totalNumSpan = document.createElement('span');
-      totalNumSpan.innerText = `${submissionsList.length}件`;
+      totalNumSpan.textContent = `${submissionsList.length}件`;
       p.appendChild(totalNumSpan);
 
       const totalNumNoteSpan = document.createElement('span');
       totalNumNoteSpan.classList.add('total-num-note');
-      totalNumNoteSpan.innerText = `（問題IDの重複分を除くと${problemSet.size}件）`;
+      totalNumNoteSpan.textContent = `（問題IDの重複分を除くと${problemSet.size}件）`;
       p.appendChild(totalNumNoteSpan);
     }
 
@@ -116,7 +117,7 @@
         const td = tr.insertCell();
         const a = document.createElement('a');
         a.href = `?contest=${encodeURIComponent(contestId)}`;
-        a.innerText = contestTitleMap.get(contestId);
+        a.textContent = contestTitleMap.get(contestId);
         td.appendChild(a);
       }
 
@@ -130,7 +131,7 @@
             `?contest=${encodeURIComponent(contestId)}` +
             `&task=${encodeURIComponent(problemId)}`;
           const cpId = `${contestId}/${problemId}`;
-          a.innerText = problemIndexMap.get(cpId);
+          a.textContent = problemIndexMap.get(cpId);
           a.classList.add('submit-link');
           td.appendChild(a);
         }
@@ -147,14 +148,14 @@
   ) {
     {
       const h1 = document.createElement('h1');
-      h1.innerText = pageTitle;
+      h1.textContent = pageTitle;
       contentsElem.appendChild(h1);
     }
 
     const submissionsList = await getSubmissionsList(baseUrl);
     if (submissionsList === null) {
       const p = document.createElement('p');
-      p.innerText = '提出データの読み込みに失敗しました。';
+      p.textContent = '提出データの読み込みに失敗しました。';
       contentsElem.appendChild(p);
       return;
     }
@@ -179,7 +180,7 @@
         const title = `${contestTitle}: ${problemIndex} - ${name}`;
 
         const h2 = document.createElement('h2');
-        h2.innerText = title;
+        h2.textContent = title;
         contentsElem.appendChild(h2);
 
         if (targetProblemId === null) {
@@ -194,13 +195,13 @@
         const problemUrl = getProblemUrl(contestId, problemId);
         const p = document.createElement('p');
         p.classList.add('narrow');
-        p.innerText = '問題URL: ';
+        p.textContent = '問題URL: ';
         contentsElem.appendChild(p);
 
         if (problemUrl !== null) {
           const a = document.createElement('a');
           a.href = problemUrl;
-          a.innerText = problemUrl;
+          a.textContent = problemUrl;
           p.appendChild(a);
         }
       }
@@ -210,7 +211,7 @@
         const src = await getSrc(baseUrl, contestId, problemId);
         if (src !== null) {
           const h3 = document.createElement('h3');
-          h3.innerText = '提出したソースコード (言語: Kuin)';
+          h3.textContent = '提出したソースコード (言語: Kuin)';
           contentsElem.appendChild(h3);
 
           const pre = document.createElement('pre');
@@ -222,7 +223,7 @@
           editor.navigateTo(0, 0);
         } else {
           const p = document.createElement('p');
-          p.innerText = 'ソースコードの読み込みに失敗しました。';
+          p.textContent = 'ソースコードの読み込みに失敗しました。';
           contentsElem.appendChild(p);
         }
 
@@ -232,7 +233,7 @@
 
     if (!found) {
       const p = document.createElement('p');
-      p.innerText = '該当する提出データが見つかりませんでした。';
+      p.textContent = '該当する提出データが見つかりませんでした。';
       contentsElem.appendChild(p);
     }
   }
