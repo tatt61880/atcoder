@@ -37,9 +37,6 @@
     h1.textContent = pageTitle;
     contentsElem.appendChild(h1);
 
-    const p = document.createElement('p');
-    contentsElem.appendChild(p);
-
     const submissionsList = await getSubmissionsList(baseUrl);
 
     if (submissionsList === null) {
@@ -49,10 +46,15 @@
       return;
     }
 
+    const p = document.createElement('p');
+    contentsElem.appendChild(p);
+
     const table = document.createElement('table');
-    const thead = document.createElement('thead');
     contentsElem.appendChild(table);
+
+    const thead = document.createElement('thead');
     table.appendChild(thead);
+
     const tr = thead.insertRow();
 
     {
