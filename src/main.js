@@ -218,9 +218,13 @@
           pre.classList.add('code');
           contentsElem.appendChild(pre);
 
-          const editor = elemToKuinEditor(pre);
-          editor.setValue(src);
-          editor.navigateTo(0, 0);
+          const editor = tryElemToKuinEditor(pre);
+          if (editor !== null) {
+            editor.setValue(src);
+            editor.navigateTo(0, 0);
+          } else {
+            pre.textContent = src;
+          }
         } else {
           const p = document.createElement('p');
           p.textContent = 'ソースコードの読み込みに失敗しました。';
@@ -255,7 +259,11 @@
     return `?${params.toString()}`;
   }
 
-  function elemToKuinEditor(elem) {
+  function tryElemToKuinEditor(elem) {
+    if (window.ace === undefined) {
+      return null;
+    }
+
     const editor = window.ace.edit(elem);
     editor.setTheme('ace/theme/kuin');
     editor.session.setMode('ace/mode/kuin');
