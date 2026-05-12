@@ -1,10 +1,16 @@
 # AtCoder で提出したコードのまとめ
 
+## Site
+
 https://tatt61880.github.io/atcoder/
 
-[tatt61880](https://x.com/tatt61880) が AtCoder に提出して AC したコードをまとめました。
+## Overview
+
+[tatt61880](https://x.com/tatt61880) が AtCoder に提出して AC したコードをまとめています。
 
 AtCoder のユーザーページ: [tatt61880 - AtCoder](https://atcoder.jp/users/tatt61880)
+
+## Contents
 
 submissions フォルダ内のサブフォルダ名が各コンテストの ID です。
 
