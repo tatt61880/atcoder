@@ -116,7 +116,7 @@
       {
         const td = tr.insertCell();
         const a = document.createElement('a');
-        a.href = `?contest=${encodeURIComponent(contestId)}`;
+        a.href = getTaskPageUrl(contestId);
         a.textContent = contestTitleMap.get(contestId);
         td.appendChild(a);
       }
@@ -127,9 +127,7 @@
 
         for (const problemId of problemsId) {
           const a = document.createElement('a');
-          a.href =
-            `?contest=${encodeURIComponent(contestId)}` +
-            `&task=${encodeURIComponent(problemId)}`;
+          a.href = getTaskPageUrl(contestId, problemId);
           const cpId = `${contestId}/${problemId}`;
           a.textContent = problemIndexMap.get(cpId);
           a.classList.add('submit-link');
@@ -246,6 +244,13 @@
       targetContestId: params.get('contest'),
       targetProblemId: params.get('task'),
     };
+  }
+
+  function getTaskPageUrl(contestId, problemId = null) {
+    const params = new URLSearchParams();
+    params.set('contest', contestId);
+    if (problemId !== null) params.set('task', problemId);
+    return `?${params.toString()}`;
   }
 
   function elemToKuinEditor(elem) {
