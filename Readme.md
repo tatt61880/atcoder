@@ -1,7 +1,11 @@
-# AtCoderで提出したコードのまとめ
+# AtCoder で提出したコードのまとめ
 
 https://tatt61880.github.io/atcoder/
 
-[tatt61880](https://x.com/tatt61880)がAtCoderに提出してACしたコードをまとめました。
+[tatt61880](https://x.com/tatt61880) が AtCoder に提出して AC したコードをまとめました。
 
-各問題の最新ACコードのみを収録しています。
+AtCoderのユーザーページ: [tatt61880 - AtCoder](https://atcoder.jp/users/tatt61880)
+
+submissions フォルダ内のサブフォルダ名が各コンテストの ID です。
+
+各問題の最新 AC コードのみを収録しています。
