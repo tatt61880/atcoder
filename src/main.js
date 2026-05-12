@@ -271,10 +271,10 @@
     if (contestId === null) return null;
     if (problemId === null) return null;
 
-    return (
-      'https://atcoder.jp/' +
+    return new URL(
       `contests/${encodeURIComponent(contestId)}/` +
-      `tasks/${encodeURIComponent(problemId)}`
+        `tasks/${encodeURIComponent(problemId)}`,
+      'https://atcoder.jp/'
     );
   }
 
