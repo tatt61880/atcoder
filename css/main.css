@@ -84,13 +84,6 @@ td {
   border: 1px solid black;
 }
 
-pre:has(.language-kuin) {
-  padding: 5px 10px;
-  margin: 15px;
-  background-color: #fff5f5;
-  border: 2px solid #ff8888;
-}
-
 a.submit-link {
   display: inline-block;
   padding: 0 15px;
