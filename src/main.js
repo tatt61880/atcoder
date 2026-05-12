@@ -310,11 +310,20 @@
 
   async function fetchText(url) {
     const response = await fetchResponse(url);
-    return response === null ? null : await response.text();
+    if (response === null) return null;
+
+    return await response.text();
   }
 
   async function fetchJson(url) {
     const response = await fetchResponse(url);
-    return response === null ? null : await response.json();
+    if (response === null) return null;
+
+    try {
+      return await response.json();
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
   }
 })();
