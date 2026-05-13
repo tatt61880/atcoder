@@ -1,0 +1,15 @@
+func main()
+	var n: int :: cui@inputInt()
+	for i(n, 999)
+		var x: int :: i
+		var c: int :: x % 10
+		do x :/ 10
+		var b: int :: x % 10
+		do x :/ 10
+		var a: int :: x
+		if(a * b = c)
+			do cui@print("\{i}\n")
+			ret
+		end if
+	end for
+end func

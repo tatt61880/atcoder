@@ -2870,6 +2870,13 @@
     "name": "2UP3DOWN"
   },
   {
+    "problem_id": "abc326_b",
+    "contest_id": "abc326",
+    "contest_title": "パナソニックグループ プログラミングコンテスト2023（AtCoder Beginner Contest 326）",
+    "problem_index": "B",
+    "name": "326-like Numbers"
+  },
+  {
     "problem_id": "abc327_a",
     "contest_id": "abc327",
     "contest_title": "HHKBプログラミングコンテスト2023(AtCoder Beginner Contest 327)",
@@ -4765,6 +4772,13 @@
     "contest_title": "AtCoder Beginner Contest 456（Promotion of AtCoder Career Design DAY）",
     "problem_index": "B",
     "name": "456"
+  },
+  {
+    "problem_id": "abc457_a",
+    "contest_id": "abc457",
+    "contest_title": "Polaris.AI プログラミングコンテスト 2026（AtCoder Beginner Contest 457）",
+    "problem_index": "A",
+    "name": "Array"
   },
   {
     "problem_id": "abc081_a",
