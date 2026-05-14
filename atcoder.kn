@@ -229,7 +229,7 @@ func main()
 	
 	block
 		do @cpIdsForKuin :: #[0][]char
-		do file@forEach(@submissionDir, true, callbackSubmissions2, null)
+		do file@forEach(@submissionDir, true, callbackFiles, null)
 		
 		do @cpIdsForKuin.sort()
 		var jsonText: []char :: ""
@@ -266,7 +266,7 @@ func main()
 		do writer.writeStr(jsonText)
 		do writer.fin()
 		
-		func callbackSubmissions2(path: []char, isDir: bool, data: kuin@Class): bool
+		func callbackFiles(path: []char, isDir: bool, data: kuin@Class): bool
 			if(isDir)
 				ret true
 			end if
