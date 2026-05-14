@@ -4921,6 +4921,13 @@
     "name": "Welcome to AtCoder"
   },
   {
+    "problem_id": "abc212_a",
+    "contest_id": "adt_all_20231025_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/10/25 16:00start",
+    "problem_index": "A",
+    "name": "Alloy"
+  },
+  {
     "problem_id": "arc065_a",
     "contest_id": "arc065",
     "contest_title": "AtCoder Regular Contest 065",
