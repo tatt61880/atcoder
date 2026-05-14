@@ -23,6 +23,9 @@ var cpIdsForKuin: [][]char
 var numSubmissions: int
 var numSubmissionsTotal: int
 
+var problemIdNum1: dict<[]char, int>
+var problemIdNum2: dict<[]char, int>
+
 func main()
 	; コンテスト情報取得
 	block
@@ -68,6 +71,9 @@ func main()
 		end for
 	end block
 	
+	do @problemIdNum1 :: #dict<[]char, int>
+
+	; contest_id/problem_id の組み合わせ情報
 	block
 		do @cpDataMap :: #dict<[]char, [][]char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@cpJsonFilename) $ \json@JsonArray).value
@@ -81,6 +87,7 @@ func main()
 			
 			var contestId: []char :: json.find("contest_id").toStr()
 			var problemId: []char :: json.find("problem_id").toStr()
+			do @problemIdNum1.add(problemId, @problemIdNum1.get(problemId, &) + 1)
 			var problemIndex: []char :: json.find("problem_index").toStr()
 			var cpId: []char :: "\{contestId}/\{problemId}"
 			
@@ -228,6 +235,8 @@ func main()
 	;do @removeOldFiles()
 	
 	block
+		do @problemIdNum2 :: #dict<[]char, int>
+		
 		do @cpIdsForKuin :: #[0][]char
 		do file@forEach(@submissionDir, true, callbackFiles, null)
 		
@@ -240,6 +249,7 @@ func main()
 			var cpData: [][]char :: @cpDataMap.get(cpId, &)
 			var contestId: []char :: cpData[0]
 			var problemId: []char :: cpData[1]
+			do @problemIdNum2.add(problemId, @problemIdNum2.get(problemId, &) + 1)
 			var problemIndex: []char :: cpData[2]
 			if(problemId =& null)
 				do cui@print("Error: \{problemId} failed.\n")
@@ -278,6 +288,17 @@ func main()
 					var cpId: []char :: "\{contestId}/\{problemId}"
 					do @cpIdsForKuin :~ [cpId]
 				end if
+			end if
+			ret true
+		end func
+	end block
+
+	block
+		do @problemIdNum2.forEach(f, null)
+		
+		func f(problemId: []char, num: int, data: kuin@Class): bool
+			if(num <> @problemIdNum1.get(problemId, &))
+				do cui@print("problem_id = \"\{problemId}\" のコンテストのうち、解いていないコンテストがあります。\n")
 			end if
 			ret true
 		end func
