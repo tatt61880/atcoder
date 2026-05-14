@@ -1,0 +1,9 @@
+func main()
+	var x: int :: cui@inputInt()
+	for i(1, 1000)
+		if(i ^ 4 = x)
+			do cui@print("\{i}\n")
+			ret
+		end if
+	end for
+end func

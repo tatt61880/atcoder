@@ -581,6 +581,13 @@
     "name": "お茶"
   },
   {
+    "problem_id": "abc038_b",
+    "contest_id": "abc038",
+    "contest_title": "AtCoder Beginner Contest 038",
+    "problem_index": "B",
+    "name": "ディスプレイ"
+  },
+  {
     "problem_id": "abc039_a",
     "contest_id": "abc039",
     "contest_title": "AtCoder Beginner Contest 039",
@@ -588,11 +595,25 @@
     "name": "高橋直体"
   },
   {
+    "problem_id": "abc039_b",
+    "contest_id": "abc039",
+    "contest_title": "AtCoder Beginner Contest 039",
+    "problem_index": "B",
+    "name": "エージェント高橋君"
+  },
+  {
     "problem_id": "abc040_a",
     "contest_id": "abc040",
     "contest_title": "AtCoder Beginner Contest 040",
     "problem_index": "A",
     "name": "赤赤赤赤青"
+  },
+  {
+    "problem_id": "abc040_b",
+    "contest_id": "abc040",
+    "contest_title": "AtCoder Beginner Contest 040",
+    "problem_index": "B",
+    "name": "□□□□□"
   },
   {
     "problem_id": "abc041_a",
@@ -861,11 +882,25 @@
     "name": "Rotation"
   },
   {
+    "problem_id": "abc077_b",
+    "contest_id": "abc077",
+    "contest_title": "AtCoder Beginner Contest 077",
+    "problem_index": "B",
+    "name": "Around Square"
+  },
+  {
     "problem_id": "abc078_a",
     "contest_id": "abc078",
     "contest_title": "AtCoder Beginner Contest 078",
     "problem_index": "A",
     "name": "HEX"
+  },
+  {
+    "problem_id": "abc078_b",
+    "contest_id": "abc078",
+    "contest_title": "AtCoder Beginner Contest 078",
+    "problem_index": "B",
+    "name": "ISU"
   },
   {
     "problem_id": "abc079_a",
@@ -875,11 +910,25 @@
     "name": "Good Integer"
   },
   {
+    "problem_id": "abc079_b",
+    "contest_id": "abc079",
+    "contest_title": "AtCoder Beginner Contest 079",
+    "problem_index": "B",
+    "name": "Lucas Number"
+  },
+  {
     "problem_id": "abc080_a",
     "contest_id": "abc080",
     "contest_title": "AtCoder Beginner Contest 080",
     "problem_index": "A",
     "name": "Parking"
+  },
+  {
+    "problem_id": "abc080_b",
+    "contest_id": "abc080",
+    "contest_title": "AtCoder Beginner Contest 080",
+    "problem_index": "B",
+    "name": "Harshad Number"
   },
   {
     "problem_id": "abc081_a",
@@ -4779,6 +4828,13 @@
     "contest_title": "Polaris.AI プログラミングコンテスト 2026（AtCoder Beginner Contest 457）",
     "problem_index": "A",
     "name": "Array"
+  },
+  {
+    "problem_id": "abc457_b",
+    "contest_id": "abc457",
+    "contest_title": "Polaris.AI プログラミングコンテスト 2026（AtCoder Beginner Contest 457）",
+    "problem_index": "B",
+    "name": "Arrays"
   },
   {
     "problem_id": "abc081_a",

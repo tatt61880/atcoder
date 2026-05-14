@@ -1,0 +1,11 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var ans: int :: lib@intMax
+	for a(1, n)
+		var b: int :: n / a
+		var v: int :: n - a * b + (a - b).abs()
+		do ans :: lib@min(ans, v)
+	end for
+	do cui@print("\{ans}\n")
+end func

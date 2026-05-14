@@ -1,0 +1,15 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var ans: bool :: n % f(n) = 0
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+	
+	func f(x: int): int
+		var res: int :: 0
+		while(x <> 0)
+			do res :+ x % 10
+			do x :/ 10
+		end while
+		ret res
+	end func
+end func
