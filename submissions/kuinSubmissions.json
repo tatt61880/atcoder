@@ -2912,6 +2912,13 @@
     "name": "Takahashi san"
   },
   {
+    "problem_id": "abc325_b",
+    "contest_id": "abc325",
+    "contest_title": "キーエンスプログラミングコンテスト2023秋（AtCoder Beginner Contest 325）",
+    "problem_index": "B",
+    "name": "World Meeting"
+  },
+  {
     "problem_id": "abc326_a",
     "contest_id": "abc326",
     "contest_title": "パナソニックグループ プログラミングコンテスト2023（AtCoder Beginner Contest 326）",

@@ -1,0 +1,20 @@
+func main()
+	var n: int :: cui@inputInt()
+	var w: []int :: #[n]int
+	var x: []int :: #[n]int
+	for i(0, n - 1)
+		do w[i] :: cui@inputInt()
+		do x[i] :: cui@inputInt()
+	end for
+	
+	var ans: int :: 0
+	for t(0, 23)
+		var v: int
+		for i(0, n - 1)
+			var tt: int :: (x[i] + t) % 24
+			do v :+ 9 <= tt & tt < 18 ?(w[i], 0)
+		end for
+		do ans :: lib@max(ans, v)
+	end for
+	do cui@print("\{ans}\n")
+end func
