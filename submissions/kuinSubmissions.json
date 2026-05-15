@@ -2940,6 +2940,13 @@
     "name": "Same"
   },
   {
+    "problem_id": "abc324_b",
+    "contest_id": "abc324",
+    "contest_title": "日本レジストリサービス（JPRS）プログラミングコンテスト2023（AtCoder Beginner Contest 324）",
+    "problem_index": "B",
+    "name": "3-smooth Numbers"
+  },
+  {
     "problem_id": "abc325_a",
     "contest_id": "abc325",
     "contest_title": "キーエンスプログラミングコンテスト2023秋（AtCoder Beginner Contest 325）",
@@ -4956,11 +4963,25 @@
     "name": "Welcome to AtCoder"
   },
   {
+    "problem_id": "abc308_a",
+    "contest_id": "adt_all_20231017_2",
+    "contest_title": "AtCoder Daily Training ALL 2023/10/17 17:30start",
+    "problem_index": "B",
+    "name": "New Scheme"
+  },
+  {
     "problem_id": "abc212_a",
     "contest_id": "adt_all_20231025_1",
     "contest_title": "AtCoder Daily Training ALL 2023/10/25 16:00start",
     "problem_index": "A",
     "name": "Alloy"
+  },
+  {
+    "problem_id": "abc308_a",
+    "contest_id": "adt_easy_20231017_2",
+    "contest_title": "AtCoder Daily Training EASY 2023/10/17 17:30start",
+    "problem_index": "B",
+    "name": "New Scheme"
   },
   {
     "problem_id": "arc065_a",
