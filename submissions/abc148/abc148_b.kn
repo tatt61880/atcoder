@@ -1,0 +1,13 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: cui@inputStr()
+	var t: []char :: cui@inputStr()
+	
+	var ans: []char :: #[2 * n]char
+	for i(0, n - 1)
+		do ans[2 * i] :: s[i]
+		do ans[2 * i + 1] :: t[i]
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

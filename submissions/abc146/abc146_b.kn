@@ -1,0 +1,12 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: cui@inputStr()
+	
+	for i(0, ^s - 1)
+		var x: int :: (s[i] $ int - 'A' $ int + n) % 26
+		var c: char :: 'A'.offset(x)
+		do s[i] :: c
+	end for
+	
+	do cui@print("\{s}\n")
+end func

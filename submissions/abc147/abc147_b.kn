@@ -1,0 +1,10 @@
+func main()
+	var s: []char :: cui@input()
+	
+	var ans: int
+	for i(0, ^s / 2 - 1)
+		do ans :+ s[i] <> s[^s - 1 - i] ?(1, 0)
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

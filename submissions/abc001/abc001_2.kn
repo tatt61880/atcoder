@@ -1,5 +1,9 @@
-func main()
-	var m: int :: cui@inputInt()
+func solveA(h1: int, h2: int)
+	var ans: int :: h1 - h2
+	do cui@print("\{ans}\n")
+end func
+
+func solveB(m: int)
 	var vv: int :: 0
 	if(m < 100)
 		do vv :: 0
@@ -13,4 +17,154 @@ func main()
 		do vv :: 89
 	end if
 	do cui@print("\{vv.toStrFmt("02d")}\n")
+end func
+
+func solveC(deg: int, dis: int)
+	var dir: [][]char :: ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
+	
+	var di: int :: 0
+	for i(0, 15)
+		if(1125 + 2250 * (di - 1) <= deg * 10 & deg * 10 < 3375 + 2250 * (di - 1))
+			break i
+		end if
+		do di :+ 1
+	end for
+	
+	var ws: []int :: [25, 155, 335, 545, 795, 1075, 1385, 1715, 2075, 2445, 2845, 3265]
+	
+	var w: int :: 0
+	for i(0, 11)
+		if(dis * 10 < ws[w] * 6)
+			break i
+		end if
+		do w :+ 1
+	end for
+	
+	do cui@print("\{w <> 0 ?(dir[di % 16], "C")} \{w}\n")
+end func
+
+func solveD(n: int, se: [][]char)
+	var imos: []int :: #[290]int
+	for i(0, n - 1)
+		var ss: [][]char :: se[i].split("-")
+		var s: int :: timeStrToInt(ss[0])
+		var e: int :: timeStrToInt(ss[1])
+		
+		do imos[s / 5 + 1] :+ 1
+		do imos[(e - 1) / 5 + 2] :- 1
+	end for
+	
+	var cnt: int :: 0
+	var exists: []bool :: #[290]bool
+	
+	for i(1, 288)
+		do cnt :+ imos[i]
+		if(cnt <> 0)
+			do exists[i] :: true
+		end if
+	end for
+	
+	for i(0, 288)
+		if(!exists[i] & exists[i + 1])
+			do cui@print("\{timeStr(i * 5)}")
+		end if
+		if(exists[i] & !exists[i + 1])
+			do cui@print("-\{timeStr(i * 5)}\n")
+		end if
+	end for
+	
+	func timeStrToInt(x: []char): int
+		var h: int :: x.sub(0, 2).toInt(&)
+		var m: int :: x.sub(2, 2).toInt(&)
+		ret h * 60 + m
+	end func
+	
+	func timeStr(x: int): []char
+		var h: int :: x / 60
+		var m: int :: x % 60
+		ret "\{h.toStrFmt("02d")}\{m.toStrFmt("02d")}"
+	end func
+end func
+
+func containsHyphen(s: []char): bool
+	for i(0, ^s - 1)
+		if(s[i] = '-')
+			ret true
+		end if
+	end for
+	ret false
+end func
+
+func main()
+	do cui@delimiter("")
+	var input: []char :: cui@inputStr()
+	var lines: [][]char :: input.split("\n")
+	
+	if(^lines >= 1 & lines[^lines - 1] = "")
+		do lines :: lines.sub(0, ^lines - 1)
+	end if
+	
+	var first: [][]char :: lines[0].split(" ")
+	
+	; 問題種別
+	; 1: A
+	; 2: B
+	; 3: C
+	; 4: D
+	var problem: int :: 0
+	
+	; A用
+	var h1: int :: 0
+	var h2: int :: 0
+	
+	; B用
+	var m: int :: 0
+	
+	; C用
+	var deg: int :: 0
+	var dis: int :: 0
+	
+	; D用
+	var n: int :: 0
+	var se: [][]char :: #[0][]char
+	
+	if(^first = 2)
+		; C: Deg Dis
+		do problem :: 3
+		do deg :: first[0].toInt(&)
+		do dis :: first[1].toInt(&)
+		
+	elif(^lines = 1)
+		; B: m
+		do problem :: 2
+		do m :: lines[0].toInt(&)
+		
+	elif(@containsHyphen(lines[1]))
+		; D: N, then S_i-E_i
+		do problem :: 4
+		do n :: lines[0].toInt(&)
+		do se :: #[n][]char
+		
+		for i(0, n - 1)
+			do se[i] :: lines[i + 1]
+		end for
+		
+	else
+		do problem :: 1
+		do h1 :: lines[0].toInt(&)
+		do h2 :: lines[1].toInt(&)
+	end if
+	
+	if(problem = 1)
+		do @solveA(h1, h2)
+		
+	elif(problem = 2)
+		do @solveB(m)
+		
+	elif(problem = 3)
+		do @solveC(deg, dis)
+		
+	elif(problem = 4)
+		do @solveD(n, se)
+	end if
 end func

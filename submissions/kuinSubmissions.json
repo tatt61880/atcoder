@@ -1449,11 +1449,25 @@
     "name": "9x9"
   },
   {
+    "problem_id": "abc144_b",
+    "contest_id": "abc144",
+    "contest_title": "AtCoder Beginner Contest 144",
+    "problem_index": "B",
+    "name": "81"
+  },
+  {
     "problem_id": "abc145_a",
     "contest_id": "abc145",
     "contest_title": "AtCoder Beginner Contest 145",
     "problem_index": "A",
     "name": "Circle"
+  },
+  {
+    "problem_id": "abc145_b",
+    "contest_id": "abc145",
+    "contest_title": "AtCoder Beginner Contest 145",
+    "problem_index": "B",
+    "name": "Echo"
   },
   {
     "problem_id": "abc146_a",
@@ -1463,6 +1477,13 @@
     "name": "Can't Wait for Holiday"
   },
   {
+    "problem_id": "abc146_b",
+    "contest_id": "abc146",
+    "contest_title": "AtCoder Beginner Contest 146",
+    "problem_index": "B",
+    "name": "ROT N"
+  },
+  {
     "problem_id": "abc147_a",
     "contest_id": "abc147",
     "contest_title": "AtCoder Beginner Contest 147",
@@ -1470,11 +1491,25 @@
     "name": "Blackjack"
   },
   {
+    "problem_id": "abc147_b",
+    "contest_id": "abc147",
+    "contest_title": "AtCoder Beginner Contest 147",
+    "problem_index": "B",
+    "name": "Palindrome-philia"
+  },
+  {
     "problem_id": "abc148_a",
     "contest_id": "abc148",
     "contest_title": "AtCoder Beginner Contest 148",
     "problem_index": "A",
     "name": "Round One"
+  },
+  {
+    "problem_id": "abc148_b",
+    "contest_id": "abc148",
+    "contest_title": "AtCoder Beginner Contest 148",
+    "problem_index": "B",
+    "name": "Strings with the Same Length"
   },
   {
     "problem_id": "abc149_a",
