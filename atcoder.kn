@@ -25,8 +25,12 @@ var numSubmissionsTotal: int
 
 var problemIdContestIds: dict<[]char, [][]char>
 var problemIdContestDict: dict<[]char, dict<[]char, bool>>
+var cpCheck: bool
 
 func main()
+	; 同一 problem_id の別コンテストでの未ACをチェックするか否か
+	do @cpCheck :: false
+	
 	; コンテスト情報取得
 	block
 		do @contestTitleMap :: #dict<[]char, []char>
@@ -76,7 +80,9 @@ func main()
 		end for
 	end block
 	
-	do @problemIdContestIds :: #dict<[]char, [][]char>
+	if(@cpCheck)
+		do @problemIdContestIds :: #dict<[]char, [][]char>
+	end if
 	
 	; contest_id/problem_id の組み合わせ情報
 	block
@@ -99,15 +105,17 @@ func main()
 			
 			do @cpDataMap.add(cpId, [contestId, problemId, problemIndex])
 			
-			var contestIds: [][]char :: @problemIdContestIds.get(problemId, &)
-			
-			if(contestIds =& null)
-				do contestIds :: #[0][]char
+			if(@cpCheck)
+				var contestIds: [][]char :: @problemIdContestIds.get(problemId, &)
+				
+				if(contestIds =& null)
+					do contestIds :: #[0][]char
+				end if
+				
+				do contestIds :~ [contestId]
+				
+				do @problemIdContestIds.add(problemId, contestIds)
 			end if
-			
-			do contestIds :~ [contestId]
-			
-			do @problemIdContestIds.add(problemId, contestIds)
 		end for
 	end block
 	
@@ -280,7 +288,9 @@ func main()
 	;do @removeOldFiles()
 	
 	block
-		do @problemIdContestDict :: #dict<[]char, dict<[]char, bool>>
+		if(@cpCheck)
+			do @problemIdContestDict :: #dict<[]char, dict<[]char, bool>>
+		end if
 		
 		do @cpIdsForKuin :: #[0][]char
 		do file@forEach(@submissionDir, true, callbackFiles, null)
@@ -295,14 +305,16 @@ func main()
 			var contestId: []char :: cpData[0]
 			var problemId: []char :: cpData[1]
 			
-			var d: dict<[]char, bool> :: @problemIdContestDict.get(problemId, &)
-			
-			if(d =& null)
-				do d :: #dict<[]char, bool>
+			if(@cpCheck)
+				var d: dict<[]char, bool> :: @problemIdContestDict.get(problemId, &)
+				
+				if(d =& null)
+					do d :: #dict<[]char, bool>
+				end if
+				
+				do d.add(contestId, true)
+				do @problemIdContestDict.add(problemId, d)
 			end if
-			
-			do d.add(contestId, true)
-			do @problemIdContestDict.add(problemId, d)
 			
 			var problemIndex: []char :: cpData[2]
 			
@@ -354,7 +366,7 @@ func main()
 		end func
 	end block
 	
-	block
+	if(@cpCheck)
 		do @problemIdContestDict.forEach(callbackFunc, null)
 		
 		func callbackFunc(problemId: []char, contestDict: dict<[]char, bool>, data: kuin@Class): bool
@@ -375,7 +387,7 @@ func main()
 			
 			ret true
 		end func
-	end block
+	end if
 end func
 
 func fetchData(url: []char): []char

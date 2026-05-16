@@ -6,4 +6,6 @@ contests.json
 problems.json
 contest-problem.json
 submissions.json
+
+atcoder.knprop
 *.exe
