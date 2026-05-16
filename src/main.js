@@ -189,9 +189,9 @@
 
       // 問題名
       {
-        const h2 = document.createElement('h2');
-        h2.textContent = `${problemIndex} - ${name}`;
-        contentsElem.appendChild(h2);
+        const h3 = document.createElement('h3');
+        h3.textContent = `${problemIndex} - ${name}`;
+        contentsElem.appendChild(h3);
       }
 
       // 問題URL
@@ -226,9 +226,9 @@
       {
         const src = await getSrc(baseUrl, contestId, problemId);
         if (src !== null) {
-          const h3 = document.createElement('h3');
-          h3.textContent = '提出したソースコード (言語: Kuin)';
-          contentsElem.appendChild(h3);
+          const h4 = document.createElement('h4');
+          h4.textContent = '提出したソースコード (言語: Kuin)';
+          contentsElem.appendChild(h4);
 
           const pre = document.createElement('pre');
           pre.classList.add('code');
