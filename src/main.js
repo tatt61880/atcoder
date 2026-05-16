@@ -33,10 +33,6 @@
 
   // ACコード一覧
   async function appendAcList(contentsElem, baseUrl) {
-    const h1 = document.createElement('h1');
-    h1.textContent = pageTitle;
-    contentsElem.appendChild(h1);
-
     const submissionsList = await getSubmissionsList(baseUrl);
 
     if (submissionsList === null) {
@@ -146,12 +142,6 @@
     targetContestId,
     targetProblemId
   ) {
-    {
-      const h1 = document.createElement('h1');
-      h1.textContent = pageTitle;
-      contentsElem.appendChild(h1);
-    }
-
     const submissionsList = await getSubmissionsList(baseUrl);
     if (submissionsList === null) {
       const p = document.createElement('p');
