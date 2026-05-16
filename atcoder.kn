@@ -32,13 +32,13 @@ func main()
 		do @contestTitleMap :: #dict<[]char, []char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@contestJsonFilename) $ \json@JsonArray).value
 		do jsonArray.head()
-
+		
 		; "id": "abc001",
 		; "start_epoch_second": 1381579200,
 		; "duration_second": 7200,
 		; "title": "AtCoder Beginner Contest 001",
 		; "rate_change": "
-
+		
 		for i(0, ^jsonArray - 1)
 			var json: \json@Json :: jsonArray.get()
 			do jsonArray.next()
@@ -54,13 +54,13 @@ func main()
 		do @problemDataMap :: #dict<[]char, [][]char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@problemsJsonFilename) $ \json@JsonArray).value
 		do jsonArray.head()
-
+		
 		; "id": "1202Contest_a",
 		; "contest_id": "DEGwer2023",
 		; "problem_index": "A",
 		; "name": "DEGwer's Doctoral Dissertation",
 		; "title": "A. DEGwer's Doctoral Dissertation"
-
+		
 		for i(0, ^jsonArray - 1)
 			var json: \json@Json :: jsonArray.get()
 			do jsonArray.next()
@@ -76,17 +76,17 @@ func main()
 	end block
 	
 	do @problemIdNum1 :: #dict<[]char, int>
-
+	
 	; contest_id/problem_id の組み合わせ情報
 	block
 		do @cpDataMap :: #dict<[]char, [][]char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@cpJsonFilename) $ \json@JsonArray).value
 		do jsonArray.head()
-
+		
 		; "contest_id": "abc421",
 		; "problem_id": "abc421_c",
 		; "problem_index": "C"
-
+		
 		for i(0, ^jsonArray - 1)
 			var json: \json@Json :: jsonArray.get()
 			do jsonArray.next()
@@ -100,7 +100,7 @@ func main()
 			do @cpDataMap.add(cpId, [contestId, problemId, problemIndex])
 		end for
 	end block
-
+	
 	var dictSubmissionId: dict<[]char, int> :: #dict<[]char, int>
 	
 	; ユーザーの提出情報取得
@@ -122,21 +122,21 @@ func main()
 		for i(0, ^jsonArray - 1)
 			var json: \json@Json :: jsonArray.get()
 			do jsonArray.next()
-
+			
 			if(json.find("result").toStr() = "AC")
 				var problemId: []char :: json.find("problem_id").toStr()
 				var contestId: []char :: json.find("contest_id").toStr()
 				var submissionId: int :: json.find("id").toi()
 				var language: []char :: json.find("language").toStr()
 				var cpId: []char :: "\{contestId}/\{problemId}"
-
+				
 				var epochSecond: int :: json.find("epoch_second").toi()
 				var epochSecondPrev: int :: dictEpochSecond.get(cpId, &)
-
+				
 				if(epochSecondPrev > epochSecond)
 					skip i
 				end if
-
+				
 				do dictEpochSecond.add(cpId, epochSecond)
 				do dictSubmissionId.add(cpId, submissionId)
 				do @dictContestId.add(cpId, contestId)
@@ -150,7 +150,7 @@ func main()
 	do @dictOldFilesFlag :: #dict<[]char, bool>
 	if(file@exist(@dirHtml))
 		do file@forEach(@dirHtml, false, callbackAddRemoveFlag, null)
-
+		
 		func callbackAddRemoveFlag(filepath: []char, isDir: bool, data: kuin@Class): bool
 			if(!isDir)
 				do @dictOldFilesFlag.add(filepath, true)
@@ -167,7 +167,7 @@ func main()
 		if(!file@makeDir(@dirSubmissions))
 			do lib@exitCode(1)
 			do cui@print("\{@dirSubmissions}を作成できません。\n")
-
+			
 			ret
 		end if
 	end if
@@ -175,7 +175,7 @@ func main()
 	if(!@initExtensions())
 		do lib@exitCode(1)
 		do cui@print("拡張子データの初期化に失敗しました。\n")
-
+		
 		ret
 	end if
 	
@@ -196,22 +196,24 @@ func main()
 		do @dictOldFilesFlag.add(filepath, false)
 		
 		var data: []char
+		
 		if(!file@exist(filepath))
-			do cui@print("\{@numSubmissions} / \{@numSubmissionsTotal}: ")
+			do cui@print("[\{@numSubmissions} / \{@numSubmissionsTotal}] ")
 			do data :: @fetchData(url)
-			var writer: file@Writer :: file@makeWriter(filepath, false)
 			do data :: data.replace("\u000D", "") { 取得してきたデータの改行が 0x0D 0x0D 0x0A となってしまうため、 0x0D 0x0A になるようにします。 }
+			
+			var writer: file@Writer :: file@makeWriter(filepath, false)
 			do writer.writeStr(data)
 			do writer.fin()
 		else
 			var reader: file@Reader :: file@makeReader(filepath)
 			do data :: ""
-
+			
 			while(!reader.term())
 				do data :~ reader.readLine() ~ "\n"
 			end while
 		end if
-
+		
 		block
 			var dirProblem: []char :: "\{@dirSubmissions}\{contestId}/"
 			
@@ -219,13 +221,13 @@ func main()
 				if(!file@makeDir(dirProblem))
 					do lib@exitCode(1)
 					do cui@print("\{dirProblem}を作成できません。\n")
-
+					
 					ret false
 				end if
 			end if
 			
 			var extension: []char :: @dictExtensions.get(language, &)
-
+			
 			if(extension =& null)
 				do @addExtension(language, &extension)
 			end if
@@ -250,7 +252,7 @@ func main()
 					do writer.writeStr(srcCode)
 					do writer.fin()
 				end block
-
+				
 				; *.url
 				block
 					var urlFilepath: []char :: "\{dirProblem}\{problemId}.url"
@@ -260,7 +262,7 @@ func main()
 				end block
 			end if
 		end block
-
+		
 		ret true
 	end func
 	
@@ -283,7 +285,7 @@ func main()
 			var problemId: []char :: cpData[1]
 			do @problemIdNum2.add(problemId, @problemIdNum2.get(problemId, &) + 1)
 			var problemIndex: []char :: cpData[2]
-
+			
 			if(problemId =& null)
 				do cui@print("Error: \{problemId} failed.\n")
 				skip i
@@ -305,7 +307,7 @@ func main()
 			|~"    \"name\": \"\{name}\"\n"
 			|~"  }\{i <> ^@cpIdsForKuin - 1 ?(",", "")}\n"
 		end for
-
+		
 		do jsonText :~ "]\n"
 		
 		var writer: file@Writer :: file@makeWriter("\{@kuinSubmissionDir}", false)
@@ -316,10 +318,10 @@ func main()
 			if(isDir)
 				ret true
 			end if
-
+			
 			if(file@ext(path) = "kn")
 				var ss: [][]char :: path.split("/")
-
+				
 				if(^ss >= 2)
 					var contestId: []char :: ss[^ss - 2]
 					var problemId: []char :: ss[^ss - 1].sub(0, ^ss[^ss - 1] - 3)
@@ -327,11 +329,11 @@ func main()
 					do @cpIdsForKuin :~ [cpId]
 				end if
 			end if
-
+			
 			ret true
 		end func
 	end block
-
+	
 	block
 		do @problemIdNum2.forEach(f, null)
 		
@@ -348,35 +350,35 @@ end func
 func fetchData(url: []char): []char
 	if(url =& null)
 		do cui@print("urlがnullです。\n")
-
+		
 		ret null
 	end if
-
+	
 	var http: net@Http :: net@makeHttp(url, false, "Kuin")
 	do cui@print("Fetching data: \{url}\n")
 	do lib@sleep(3000)
 	
 	if(http =& null)
 		do cui@print("接続に失敗しました。[\{url}]\n")
-
+		
 		ret null
 	else
 		var data: []char
-
+		
 		for i(1, 300)
 			do lib@sleep(10)
 			do data :: http.get()
-
+			
 			if(data <>& null)
 				ret data
 			end if
 		end for
-
+		
 		do http.fin()
 	end if
 	
 	do cui@print("データの取得に失敗しました。[\{url}]\n")
-
+	
 	ret null
 end func
 
@@ -387,7 +389,7 @@ func removeOldFiles()
 		if(oldFlag)
 			do file@delFile(filepath)
 		end if
-
+		
 		ret true
 	end func
 end func
@@ -398,14 +400,14 @@ var arrExtensions: [][]char
 func initExtensions(): bool
 	var extensionFilepath: []char :: "\{wnd@exeDir()}extensions.csv"
 	var reader: file@Reader :: file@makeReader(extensionFilepath)
-
+	
 	if(reader =& null)
 		do lib@exitCode(1)
 		do cui@print("\{extensionFilepath} can't be opened.\n")
-
+		
 		ret false
 	end if
-
+	
 	do reader.delimiter(",\n")
 	do @arrLanguages :: #[0][]char
 	do @arrExtensions :: #[0][]char
@@ -418,13 +420,13 @@ func initExtensions(): bool
 	end while
 	
 	do @dictExtensions :: #dict<[]char, []char>
-
+	
 	ret true
 end func
 
 func addExtension(language: []char, extension: &[]char)
 	do extension :: "unknown"
-
+	
 	for i(^@arrLanguages - 1, 0, -1)
 		if(language.findStr(@arrLanguages[i], -1) <> -1)
 			do extension :: @arrExtensions[i]
