@@ -121,3 +121,9 @@ a.submit-link {
   width: 100px;
   height: auto;
 }
+
+.link-load-error {
+  font-size: 0.95em;
+  font-style: italic;
+  color: #666666;
+}

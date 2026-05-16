@@ -217,13 +217,7 @@
         p.classList.add('narrow');
         p.textContent = '提出URL: ';
 
-        if (submissionUrl !== null) {
-          p.appendChild(createExternalLink(submissionUrl));
-        } else {
-          p.appendChild(
-            document.createTextNode('提出URLの読み込みに失敗しました。')
-          );
-        }
+        p.appendChild(createExternalLink(submissionUrl));
 
         contentsElem.appendChild(p);
       }
@@ -307,6 +301,8 @@
   }
 
   function createExternalLink(url, text = url) {
+    if (url === null) return createLinkLoadErrorText();
+
     const a = document.createElement('a');
 
     a.href = url;
@@ -315,6 +311,15 @@
     a.rel = 'noopener noreferrer';
 
     return a;
+
+    function createLinkLoadErrorText() {
+      const span = document.createElement('span');
+
+      span.textContent = 'URLの読み込みに失敗しました。';
+      span.className = 'link-load-error';
+
+      return span;
+    }
   }
 
   function getContestUrl(contestId) {
