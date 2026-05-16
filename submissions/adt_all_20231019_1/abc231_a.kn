@@ -1,0 +1,4 @@
+func main()
+	var d: int :: cui@inputInt()
+	do cui@print("\{d $ float * 0.01}\n")
+end func

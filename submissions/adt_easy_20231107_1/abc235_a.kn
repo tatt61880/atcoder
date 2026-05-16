@@ -1,0 +1,5 @@
+func main()
+	var s: []char :: cui@input()
+	var ans: int :: ([s[0]].toInt(&) + [s[1]].toInt(&) + [s[2]].toInt(&)) * 111
+	do cui@print("\{ans}\n")
+end func

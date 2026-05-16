@@ -1,10 +1,52 @@
+func main()
+	do cui@delimiter("")
+	
+	var input: []char :: cui@inputStr()
+	var lines: [][]char :: input.split("\n")
+	
+	if(^lines >= 1 & lines[^lines - 1] = "")
+		do lines :: lines.sub(0, ^lines - 1)
+	end if
+	
+	var line1: [][]char :: lines[0].split(" ")
+	
+	if(^line1 = 2)
+		; C: Deg Dis
+		var deg: int :: line1[0].toInt(&)
+		var dis: int :: line1[1].toInt(&)
+		
+		do @solveC(deg, dis)
+	elif(^lines = 1)
+		; B: m
+		var m: int :: lines[0].toInt(&)
+		
+		do @solveB(m)
+	elif(lines[1].find('-', 0) <> -1)
+		; D: N, S_i-E_i
+		var n: int :: lines[0].toInt(&)
+		var se: [][]char :: #[n][]char
+		
+		for i(0, n - 1)
+			do se[i] :: lines[i + 1]
+		end for
+		
+		do @solveD(n, se)
+	else
+		; A: H_1, H_2
+		var h1: int :: lines[0].toInt(&)
+		var h2: int :: lines[1].toInt(&)
+		
+		do @solveA(h1, h2)
+	end if
+end func
+
 func solveA(h1: int, h2: int)
-	var ans: int :: h1 - h2
-	do cui@print("\{ans}\n")
+	do cui@print("\{h1 - h2}\n")
 end func
 
 func solveB(m: int)
 	var vv: int :: 0
+	
 	if(m < 100)
 		do vv :: 0
 	elif(m <= 5000)
@@ -16,27 +58,30 @@ func solveB(m: int)
 	else
 		do vv :: 89
 	end if
+	
 	do cui@print("\{vv.toStrFmt("02d")}\n")
 end func
 
 func solveC(deg: int, dis: int)
 	var dir: [][]char :: ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
-	
 	var di: int :: 0
+	
 	for i(0, 15)
 		if(1125 + 2250 * (di - 1) <= deg * 10 & deg * 10 < 3375 + 2250 * (di - 1))
 			break i
 		end if
+		
 		do di :+ 1
 	end for
 	
 	var ws: []int :: [25, 155, 335, 545, 795, 1075, 1385, 1715, 2075, 2445, 2845, 3265]
-	
 	var w: int :: 0
+	
 	for i(0, 11)
 		if(dis * 10 < ws[w] * 6)
 			break i
 		end if
+		
 		do w :+ 1
 	end for
 	
@@ -45,6 +90,7 @@ end func
 
 func solveD(n: int, se: [][]char)
 	var imos: []int :: #[290]int
+	
 	for i(0, n - 1)
 		var ss: [][]char :: se[i].split("-")
 		var s: int :: timeStrToInt(ss[0])
@@ -59,6 +105,7 @@ func solveD(n: int, se: [][]char)
 	
 	for i(1, 288)
 		do cnt :+ imos[i]
+		
 		if(cnt <> 0)
 			do exists[i] :: true
 		end if
@@ -67,8 +114,7 @@ func solveD(n: int, se: [][]char)
 	for i(0, 288)
 		if(!exists[i] & exists[i + 1])
 			do cui@print("\{timeStr(i * 5)}")
-		end if
-		if(exists[i] & !exists[i + 1])
+		elif(exists[i] & !exists[i + 1])
 			do cui@print("-\{timeStr(i * 5)}\n")
 		end if
 	end for
@@ -76,65 +122,14 @@ func solveD(n: int, se: [][]char)
 	func timeStrToInt(x: []char): int
 		var h: int :: x.sub(0, 2).toInt(&)
 		var m: int :: x.sub(2, 2).toInt(&)
+		
 		ret h * 60 + m
 	end func
 	
 	func timeStr(x: int): []char
 		var h: int :: x / 60
 		var m: int :: x % 60
+		
 		ret "\{h.toStrFmt("02d")}\{m.toStrFmt("02d")}"
 	end func
-end func
-
-func containsHyphen(s: []char): bool
-	for i(0, ^s - 1)
-		if(s[i] = '-')
-			ret true
-		end if
-	end for
-	ret false
-end func
-
-func main()
-	do cui@delimiter("")
-	var input: []char :: cui@inputStr()
-	var lines: [][]char :: input.split("\n")
-	
-	if(^lines >= 1 & lines[^lines - 1] = "")
-		do lines :: lines.sub(0, ^lines - 1)
-	end if
-	
-	var first: [][]char :: lines[0].split(" ")
-	
-	if(^first = 2)
-		; C: Deg Dis
-		var deg: int :: first[0].toInt(&)
-		var dis: int :: first[1].toInt(&)
-		
-		do @solveC(deg, dis)
-		
-	elif(^lines = 1)
-		; B: m
-		var m: int :: lines[0].toInt(&)
-		
-		do @solveB(m)
-		
-	elif(@containsHyphen(lines[1]))
-		; D: N, S_i-E_i
-		var n: int :: lines[0].toInt(&)
-		var se: [][]char :: #[n][]char
-		
-		for i(0, n - 1)
-			do se[i] :: lines[i + 1]
-		end for
-		
-		do @solveD(n, se)
-		
-	else
-		; A: H_1, H_2
-		var h1: int :: lines[0].toInt(&)
-		var h2: int :: lines[1].toInt(&)
-		
-		do @solveA(h1, h2)
-	end if
 end func

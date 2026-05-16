@@ -1,0 +1,14 @@
+func main()
+	var x: int :: cui@inputInt()
+  
+	switch(x)
+	case 0 to 39
+		do cui@print("\{40 - x}\n")
+	case 40 to 69
+		do cui@print("\{70 - x}\n")
+	case 70 to 89
+		do cui@print("\{90 - x}\n")
+	default
+		do cui@print("expert\n")
+	end switch
+end func

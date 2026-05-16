@@ -4963,11 +4963,39 @@
     "name": "Welcome to AtCoder"
   },
   {
+    "problem_id": "abc215_a",
+    "contest_id": "adt_all_20231017_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/10/17 15:30start",
+    "problem_index": "A",
+    "name": "Your First Judge"
+  },
+  {
     "problem_id": "abc308_a",
     "contest_id": "adt_all_20231017_2",
     "contest_title": "AtCoder Daily Training ALL 2023/10/17 17:30start",
     "problem_index": "B",
     "name": "New Scheme"
+  },
+  {
+    "problem_id": "abc231_a",
+    "contest_id": "adt_all_20231019_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/10/19 16:30start",
+    "problem_index": "A",
+    "name": "Water Pressure"
+  },
+  {
+    "problem_id": "abc224_a",
+    "contest_id": "adt_all_20231019_2",
+    "contest_title": "AtCoder Daily Training ALL 2023/10/19 18:30start",
+    "problem_index": "A",
+    "name": "Tires"
+  },
+  {
+    "problem_id": "abc222_a",
+    "contest_id": "adt_all_20231024_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/10/24 15:30start",
+    "problem_index": "A",
+    "name": "Four Digits"
   },
   {
     "problem_id": "abc212_a",
@@ -4984,11 +5012,242 @@
     "name": "New Generation ABC"
   },
   {
+    "problem_id": "abc237_a",
+    "contest_id": "adt_all_20231025_2",
+    "contest_title": "AtCoder Daily Training ALL 2023/10/25 18:00start",
+    "problem_index": "B",
+    "name": "Not Overflow"
+  },
+  {
+    "problem_id": "abc223_a",
+    "contest_id": "adt_all_20231026_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/10/26 16:30start",
+    "problem_index": "A",
+    "name": "Exact Price"
+  },
+  {
+    "problem_id": "abc264_a",
+    "contest_id": "adt_all_20231031_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/10/31 15:30start",
+    "problem_index": "B",
+    "name": "\"atcoder\".substr()"
+  },
+  {
+    "problem_id": "abc220_a",
+    "contest_id": "adt_all_20231101_2",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/1 18:00start",
+    "problem_index": "B",
+    "name": "Find Multiple"
+  },
+  {
+    "problem_id": "abc225_a",
+    "contest_id": "adt_all_20231102_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/2 16:30start",
+    "problem_index": "A",
+    "name": "Distinct Strings"
+  },
+  {
+    "problem_id": "abc250_a",
+    "contest_id": "adt_all_20231102_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/2 16:30start",
+    "problem_index": "B",
+    "name": "Adjacent Squares"
+  },
+  {
+    "problem_id": "abc236_a",
+    "contest_id": "adt_all_20231102_2",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/2 18:30start",
+    "problem_index": "A",
+    "name": "chukodai"
+  },
+  {
+    "problem_id": "abc242_a",
+    "contest_id": "adt_all_20231102_2",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/2 18:30start",
+    "problem_index": "B",
+    "name": "T-shirt"
+  },
+  {
+    "problem_id": "abc235_a",
+    "contest_id": "adt_all_20231107_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/7 15:30start",
+    "problem_index": "A",
+    "name": "Rotate"
+  },
+  {
+    "problem_id": "abc233_a",
+    "contest_id": "adt_all_20231108_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/8 16:00start",
+    "problem_index": "A",
+    "name": "10yen Stamp"
+  },
+  {
+    "problem_id": "abc216_a",
+    "contest_id": "adt_all_20231109_2",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/9 18:30start",
+    "problem_index": "B",
+    "name": "Signed Difficulty"
+  },
+  {
+    "problem_id": "abc251_a",
+    "contest_id": "adt_all_20231109_2",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/9 18:30start",
+    "problem_index": "A",
+    "name": "Six Characters"
+  },
+  {
+    "problem_id": "abc221_a",
+    "contest_id": "adt_all_20231114_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/14 15:30start",
+    "problem_index": "A",
+    "name": "Seismic magnitude scales"
+  },
+  {
+    "problem_id": "abc228_a",
+    "contest_id": "adt_all_20231114_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/14 15:30start",
+    "problem_index": "B",
+    "name": "On and Off"
+  },
+  {
+    "problem_id": "abc219_a",
+    "contest_id": "adt_all_20231115_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/15 16:00start",
+    "problem_index": "A",
+    "name": "AtCoder Quiz 2"
+  },
+  {
+    "problem_id": "abc238_a",
+    "contest_id": "adt_all_20231116_1",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/16 16:30start",
+    "problem_index": "B",
+    "name": "Exponential or Quadratic"
+  },
+  {
+    "problem_id": "abc226_a",
+    "contest_id": "adt_all_20231116_2",
+    "contest_title": "AtCoder Daily Training ALL 2023/11/16 18:30start",
+    "problem_index": "A",
+    "name": "Round decimals"
+  },
+  {
+    "problem_id": "abc215_a",
+    "contest_id": "adt_easy_20231017_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/10/17 15:30start",
+    "problem_index": "A",
+    "name": "Your First Judge"
+  },
+  {
+    "problem_id": "abc248_a",
+    "contest_id": "adt_easy_20231017_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/10/17 15:30start",
+    "problem_index": "B",
+    "name": "Lacked Number"
+  },
+  {
     "problem_id": "abc308_a",
     "contest_id": "adt_easy_20231017_2",
     "contest_title": "AtCoder Daily Training EASY 2023/10/17 17:30start",
     "problem_index": "B",
     "name": "New Scheme"
+  },
+  {
+    "problem_id": "abc224_a",
+    "contest_id": "adt_easy_20231019_2",
+    "contest_title": "AtCoder Daily Training EASY 2023/10/19 18:30start",
+    "problem_index": "A",
+    "name": "Tires"
+  },
+  {
+    "problem_id": "abc222_a",
+    "contest_id": "adt_easy_20231024_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/10/24 15:30start",
+    "problem_index": "A",
+    "name": "Four Digits"
+  },
+  {
+    "problem_id": "abc212_a",
+    "contest_id": "adt_easy_20231025_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/10/2516:00start",
+    "problem_index": "A",
+    "name": "Alloy"
+  },
+  {
+    "problem_id": "abc214_a",
+    "contest_id": "adt_easy_20231025_2",
+    "contest_title": "AtCoder Daily Training EASY 2023/10/25 18:00start",
+    "problem_index": "A",
+    "name": "New Generation ABC"
+  },
+  {
+    "problem_id": "abc223_a",
+    "contest_id": "adt_easy_20231026_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/10/26 16:30start",
+    "problem_index": "A",
+    "name": "Exact Price"
+  },
+  {
+    "problem_id": "abc264_a",
+    "contest_id": "adt_easy_20231031_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/10/31 15:30start",
+    "problem_index": "B",
+    "name": "\"atcoder\".substr()"
+  },
+  {
+    "problem_id": "abc225_a",
+    "contest_id": "adt_easy_20231102_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/2 16:30start",
+    "problem_index": "A",
+    "name": "Distinct Strings"
+  },
+  {
+    "problem_id": "abc250_a",
+    "contest_id": "adt_easy_20231102_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/2 16:30start",
+    "problem_index": "B",
+    "name": "Adjacent Squares"
+  },
+  {
+    "problem_id": "abc236_a",
+    "contest_id": "adt_easy_20231102_2",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/2 18:30start",
+    "problem_index": "A",
+    "name": "chukodai"
+  },
+  {
+    "problem_id": "abc242_a",
+    "contest_id": "adt_easy_20231102_2",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/2 18:30start",
+    "problem_index": "B",
+    "name": "T-shirt"
+  },
+  {
+    "problem_id": "abc235_a",
+    "contest_id": "adt_easy_20231107_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/7 15:30start",
+    "problem_index": "A",
+    "name": "Rotate"
+  },
+  {
+    "problem_id": "abc233_a",
+    "contest_id": "adt_easy_20231108_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/8 16:00start",
+    "problem_index": "A",
+    "name": "10yen Stamp"
+  },
+  {
+    "problem_id": "abc217_a",
+    "contest_id": "adt_easy_20231108_2",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/8 18:00start",
+    "problem_index": "B",
+    "name": "Lexicographic Order"
+  },
+  {
+    "problem_id": "abc246_a",
+    "contest_id": "adt_easy_20231108_2",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/8 18:00start",
+    "problem_index": "A",
+    "name": "Four Points"
   },
   {
     "problem_id": "abc216_a",
@@ -4998,11 +5257,67 @@
     "name": "Signed Difficulty"
   },
   {
+    "problem_id": "abc221_a",
+    "contest_id": "adt_easy_20231114_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/14 15:30start",
+    "problem_index": "A",
+    "name": "Seismic magnitude scales"
+  },
+  {
+    "problem_id": "abc228_a",
+    "contest_id": "adt_easy_20231114_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/14 15:30start",
+    "problem_index": "B",
+    "name": "On and Off"
+  },
+  {
+    "problem_id": "abc213_a",
+    "contest_id": "adt_easy_20231114_2",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/14 17:30start",
+    "problem_index": "A",
+    "name": "Bitwise Exclusive Or"
+  },
+  {
+    "problem_id": "abc219_a",
+    "contest_id": "adt_easy_20231115_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/15 16:00start",
+    "problem_index": "A",
+    "name": "AtCoder Quiz 2"
+  },
+  {
+    "problem_id": "abc245_a",
+    "contest_id": "adt_easy_20231115_2",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/15 18:00start",
+    "problem_index": "A",
+    "name": "Good morning"
+  },
+  {
+    "problem_id": "abc238_a",
+    "contest_id": "adt_easy_20231116_1",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/16 16:30start",
+    "problem_index": "B",
+    "name": "Exponential or Quadratic"
+  },
+  {
+    "problem_id": "abc226_a",
+    "contest_id": "adt_easy_20231116_2",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/16 18:30start",
+    "problem_index": "A",
+    "name": "Round decimals"
+  },
+  {
     "problem_id": "arc065_a",
     "contest_id": "arc065",
     "contest_title": "AtCoder Regular Contest 065",
     "problem_index": "C",
     "name": "Daydream"
+  },
+  {
+    "problem_id": "arc089_a",
+    "contest_id": "arc089",
+    "contest_title": "AtCoder Regular Contest 089",
+    "problem_index": "C",
+    "name": "Traveling"
   },
   {
     "problem_id": "dp_g",
@@ -5027,6 +5342,13 @@
   },
   {
     "problem_id": "future_contest_2019_final_a",
+    "contest_id": "future-contest-2019-final-open",
+    "contest_title": "HACK TO THE FUTURE 2019 本選オープン",
+    "problem_index": "A",
+    "name": "モンスターテイマー"
+  },
+  {
+    "problem_id": "future_contest_2019_final_a",
     "contest_id": "future-contest-2019-final",
     "contest_title": "HACK TO THE FUTURE 2019 本選",
     "problem_index": "A",
@@ -5038,6 +5360,34 @@
     "contest_title": "HHKB プログラミングコンテスト 2020",
     "problem_index": "A",
     "name": "Keyboard"
+  },
+  {
+    "problem_id": "abc422_a",
+    "contest_id": "jsc2025advance-final",
+    "contest_title": "日本最強プログラマー学生選手権～Advance～",
+    "problem_index": "A",
+    "name": "Stage Clear"
+  },
+  {
+    "problem_id": "abc422_b",
+    "contest_id": "jsc2025advance-final",
+    "contest_title": "日本最強プログラマー学生選手権～Advance～",
+    "problem_index": "B",
+    "name": "Looped Rope"
+  },
+  {
+    "problem_id": "abc244_c",
+    "contest_id": "newjudge-2308-algorithm",
+    "contest_title": "新ジャッジテストコンテスト -Algorithm-",
+    "problem_index": "C",
+    "name": "Yamanote Line Game"
+  },
+  {
+    "problem_id": "abc264_a",
+    "contest_id": "newjudge-2308-algorithm",
+    "contest_title": "新ジャッジテストコンテスト -Algorithm-",
+    "problem_index": "A",
+    "name": "\"atcoder\".substr()"
   },
   {
     "problem_id": "nomura2020_a",

@@ -1,0 +1,6 @@
+func main()
+	var s: []char :: cui@input()
+	
+	var ans: bool :: s[^s - 1] = 'r'
+	do cui@print((ans ?("er", "ist")) ~ "\n")
+end func
