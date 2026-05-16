@@ -258,8 +258,6 @@
           p.textContent = 'ソースコードの読み込みに失敗しました。';
           contentsElem.appendChild(p);
         }
-
-        contentsElem.appendChild(document.createElement('hr'));
       }
     }
 
