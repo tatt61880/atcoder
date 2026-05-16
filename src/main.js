@@ -150,7 +150,7 @@
       return;
     }
 
-    let found = false;
+    let foundCount = 0;
 
     for (const submission of submissionsList) {
       const contestId = submission.contest_id;
@@ -159,25 +159,43 @@
       const problemId = submission.problem_id;
       if (targetProblemId !== null && problemId !== targetProblemId) continue;
 
-      found = true;
+      foundCount++;
 
       const contestTitle = submission.contest_title;
       const problemIndex = submission.problem_index;
       const name = submission.name;
 
-      // ページタイトル
-      {
-        const title = `${contestTitle}: ${problemIndex} - ${name}`;
-
-        const h2 = document.createElement('h2');
-        h2.textContent = title;
-        contentsElem.appendChild(h2);
-
+      // コンテスト情報
+      if (foundCount === 1) {
         if (targetProblemId === null) {
           document.title = `${contestTitle} - ${pageTitle}`;
         } else {
-          document.title = `${title} - ${pageTitle}`;
+          document.title = `${problemIndex} - ${name} - ${pageTitle}`;
         }
+
+        const h2 = document.createElement('h2');
+        h2.textContent = `${contestTitle}`;
+        contentsElem.appendChild(h2);
+
+        const p = document.createElement('p');
+        p.classList.add('narrow');
+        p.textContent = 'コンテストURL: ';
+        contentsElem.appendChild(p);
+
+        {
+          const contestUrl = getContestUrl(contestId);
+          const a = document.createElement('a');
+          a.href = contestUrl;
+          a.textContent = contestUrl;
+          p.appendChild(a);
+        }
+      }
+
+      // 問題名
+      {
+        const h2 = document.createElement('h2');
+        h2.textContent = `${problemIndex} - ${name}`;
+        contentsElem.appendChild(h2);
       }
 
       // 問題URL
@@ -251,7 +269,7 @@
       }
     }
 
-    if (!found) {
+    if (foundCount === 0) {
       const p = document.createElement('p');
       p.textContent = '該当する提出データが見つかりませんでした。';
       contentsElem.appendChild(p);
@@ -291,6 +309,15 @@
     });
     editor.resize();
     return editor;
+  }
+
+  function getContestUrl(contestId) {
+    if (contestId === null) return null;
+
+    return new URL(
+      `contests/${encodeURIComponent(contestId)}/`,
+      'https://atcoder.jp/'
+    );
   }
 
   function getProblemUrl(contestId, problemId) {
