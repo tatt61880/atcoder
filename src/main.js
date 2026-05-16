@@ -112,11 +112,11 @@
 
       // コンテスト毎のまとめ
       {
+        const url = getTaskPageUrl(contestId);
+        const text = contestTitleMap.get(contestId);
+
         const td = tr.insertCell();
-        const a = document.createElement('a');
-        a.href = getTaskPageUrl(contestId);
-        a.textContent = contestTitleMap.get(contestId);
-        td.appendChild(a);
+        td.appendChild(createInternalLink(url, text));
       }
 
       // 個別のソースコード
@@ -124,10 +124,11 @@
         const td = tr.insertCell();
 
         for (const problemId of problemsId) {
-          const a = document.createElement('a');
-          a.href = getTaskPageUrl(contestId, problemId);
+          const url = getTaskPageUrl(contestId, problemId);
           const cpId = `${contestId}/${problemId}`;
-          a.textContent = problemIndexMap.get(cpId);
+          const text = problemIndexMap.get(cpId);
+
+          const a = createInternalLink(url, text);
           a.classList.add('submit-link');
           td.appendChild(a);
         }
@@ -182,13 +183,8 @@
         p.textContent = 'コンテストURL: ';
         contentsElem.appendChild(p);
 
-        {
-          const contestUrl = getContestUrl(contestId);
-          const a = document.createElement('a');
-          a.href = contestUrl;
-          a.textContent = contestUrl;
-          p.appendChild(a);
-        }
+        const contestUrl = getContestUrl(contestId);
+        p.appendChild(createExternalLink(contestUrl));
       }
 
       // 問題名
@@ -200,18 +196,13 @@
 
       // 問題URL
       {
-        const problemUrl = getProblemUrl(contestId, problemId);
         const p = document.createElement('p');
         p.classList.add('narrow');
         p.textContent = '問題URL: ';
         contentsElem.appendChild(p);
 
-        if (problemUrl !== null) {
-          const a = document.createElement('a');
-          a.href = problemUrl;
-          a.textContent = problemUrl;
-          p.appendChild(a);
-        }
+        const problemUrl = getProblemUrl(contestId, problemId);
+        p.appendChild(createExternalLink(problemUrl));
       }
 
       // 提出URL
@@ -227,12 +218,7 @@
         p.textContent = '提出URL: ';
 
         if (submissionUrl !== null) {
-          const a = document.createElement('a');
-          a.href = submissionUrl;
-          a.textContent = submissionUrl;
-          a.target = '_blank';
-          a.rel = 'noopener';
-          p.appendChild(a);
+          p.appendChild(createExternalLink(submissionUrl));
         } else {
           p.appendChild(
             document.createTextNode('提出URLの読み込みに失敗しました。')
@@ -309,6 +295,26 @@
     });
     editor.resize();
     return editor;
+  }
+
+  function createInternalLink(url, text = url) {
+    const a = document.createElement('a');
+
+    a.href = url;
+    a.textContent = text;
+
+    return a;
+  }
+
+  function createExternalLink(url, text = url) {
+    const a = document.createElement('a');
+
+    a.href = url;
+    a.textContent = text;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+
+    return a;
   }
 
   function getContestUrl(contestId) {
