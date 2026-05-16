@@ -206,6 +206,34 @@
         }
       }
 
+      // 提出URL
+      {
+        const submissionUrl = await getSubmissionUrl(
+          baseUrl,
+          contestId,
+          problemId
+        );
+
+        const p = document.createElement('p');
+        p.classList.add('narrow');
+        p.textContent = '提出URL: ';
+
+        if (submissionUrl !== null) {
+          const a = document.createElement('a');
+          a.href = submissionUrl;
+          a.textContent = submissionUrl;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          p.appendChild(a);
+        } else {
+          p.appendChild(
+            document.createTextNode('提出URLの読み込みに失敗しました。')
+          );
+        }
+
+        contentsElem.appendChild(p);
+      }
+
       // 提出したソースコード
       {
         const src = await getSrc(baseUrl, contestId, problemId);
@@ -286,6 +314,21 @@
         `tasks/${encodeURIComponent(problemId)}`,
       'https://atcoder.jp/'
     );
+  }
+
+  async function getSubmissionUrl(baseUrl, contestId, problemId) {
+    const res = await fetchText(
+      new URL(
+        'submissions/' +
+          `${encodeURIComponent(contestId)}/` +
+          `${encodeURIComponent(problemId)}.url`,
+        baseUrl
+      )
+    );
+    if (res !== null) {
+      return res.split('=')[1];
+    }
+    return null;
   }
 
   async function getSubmissionsList(baseUrl) {
