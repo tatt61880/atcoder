@@ -32,11 +32,13 @@ func main()
 		do @contestTitleMap :: #dict<[]char, []char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@contestJsonFilename) $ \json@JsonArray).value
 		do jsonArray.head()
+
 		; "id": "abc001",
 		; "start_epoch_second": 1381579200,
 		; "duration_second": 7200,
 		; "title": "AtCoder Beginner Contest 001",
 		; "rate_change": "
+
 		for i(0, ^jsonArray - 1)
 			var json: \json@Json :: jsonArray.get()
 			do jsonArray.next()
@@ -52,11 +54,13 @@ func main()
 		do @problemDataMap :: #dict<[]char, [][]char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@problemsJsonFilename) $ \json@JsonArray).value
 		do jsonArray.head()
+
 		; "id": "1202Contest_a",
 		; "contest_id": "DEGwer2023",
 		; "problem_index": "A",
 		; "name": "DEGwer's Doctoral Dissertation",
 		; "title": "A. DEGwer's Doctoral Dissertation"
+
 		for i(0, ^jsonArray - 1)
 			var json: \json@Json :: jsonArray.get()
 			do jsonArray.next()
@@ -78,9 +82,11 @@ func main()
 		do @cpDataMap :: #dict<[]char, [][]char>
 		var jsonArray: list<\json@Json> :: (\json@makeJsonF(@cpJsonFilename) $ \json@JsonArray).value
 		do jsonArray.head()
+
 		; "contest_id": "abc421",
 		; "problem_id": "abc421_c",
 		; "problem_index": "C"
+
 		for i(0, ^jsonArray - 1)
 			var json: \json@Json :: jsonArray.get()
 			do jsonArray.next()
@@ -116,6 +122,7 @@ func main()
 		for i(0, ^jsonArray - 1)
 			var json: \json@Json :: jsonArray.get()
 			do jsonArray.next()
+
 			if(json.find("result").toStr() = "AC")
 				var problemId: []char :: json.find("problem_id").toStr()
 				var contestId: []char :: json.find("contest_id").toStr()
@@ -125,9 +132,11 @@ func main()
 
 				var epochSecond: int :: json.find("epoch_second").toi()
 				var epochSecondPrev: int :: dictEpochSecond.get(cpId, &)
+
 				if(epochSecondPrev > epochSecond)
 					skip i
 				end if
+
 				do dictEpochSecond.add(cpId, epochSecond)
 				do dictSubmissionId.add(cpId, submissionId)
 				do @dictContestId.add(cpId, contestId)
@@ -141,10 +150,12 @@ func main()
 	do @dictOldFilesFlag :: #dict<[]char, bool>
 	if(file@exist(@dirHtml))
 		do file@forEach(@dirHtml, false, callbackAddRemoveFlag, null)
+
 		func callbackAddRemoveFlag(filepath: []char, isDir: bool, data: kuin@Class): bool
 			if(!isDir)
 				do @dictOldFilesFlag.add(filepath, true)
 			end if
+			
 			ret true
 		end func
 	else
@@ -156,6 +167,7 @@ func main()
 		if(!file@makeDir(@dirSubmissions))
 			do lib@exitCode(1)
 			do cui@print("\{@dirSubmissions}を作成できません。\n")
+
 			ret
 		end if
 	end if
@@ -163,6 +175,7 @@ func main()
 	if(!@initExtensions())
 		do lib@exitCode(1)
 		do cui@print("拡張子データの初期化に失敗しました。\n")
+
 		ret
 	end if
 	
@@ -193,42 +206,61 @@ func main()
 		else
 			var reader: file@Reader :: file@makeReader(filepath)
 			do data :: ""
+
 			while(!reader.term())
 				do data :~ reader.readLine() ~ "\n"
 			end while
 		end if
+
 		block
 			var dirProblem: []char :: "\{@dirSubmissions}\{contestId}/"
+			
 			if(!file@exist(dirProblem))
 				if(!file@makeDir(dirProblem))
 					do lib@exitCode(1)
 					do cui@print("\{dirProblem}を作成できません。\n")
+
 					ret false
 				end if
 			end if
 			
 			var extension: []char :: @dictExtensions.get(language, &)
+
 			if(extension =& null)
 				do @addExtension(language, &extension)
 			end if
+			
 			var result: [][]char :: @regexCode.find(&, data, -1)
+			
 			if(result =& null)
 				do cui@print("Error: Failed to find source code. [\{contestId}#\{submissionId}]\n")
 			else
-				var srcCode: []char :: result[1]
-				do srcCode :: srcCode.replace("&#34;", "\"")
-				do srcCode :: srcCode.replace("&amp;", "&")
-				do srcCode :: srcCode.replace("&lt;", "<")
-				do srcCode :: srcCode.replace("&gt;", ">")
-				do srcCode :: srcCode.replace("&#39;", "'")
-				do srcCode :: srcCode.replace("&#43;", "+")
-				
-				var srcFilepath: []char :: "\{dirProblem}\{problemId}.\{extension}"
-				var writer: file@Writer :: file@makeWriter(srcFilepath, false)
-				do writer.writeStr(srcCode)
-				do writer.fin()
+				; 提出ファイル
+				block
+					var srcCode: []char :: result[1]
+					do srcCode :: srcCode.replace("&#34;", "\"")
+					do srcCode :: srcCode.replace("&amp;", "&")
+					do srcCode :: srcCode.replace("&lt;", "<")
+					do srcCode :: srcCode.replace("&gt;", ">")
+					do srcCode :: srcCode.replace("&#39;", "'")
+					do srcCode :: srcCode.replace("&#43;", "+")
+					
+					var srcFilepath: []char :: "\{dirProblem}\{problemId}.\{extension}"
+					var writer: file@Writer :: file@makeWriter(srcFilepath, false)
+					do writer.writeStr(srcCode)
+					do writer.fin()
+				end block
+
+				; *.url
+				block
+					var urlFilepath: []char :: "\{dirProblem}\{problemId}.url"
+					var writer: file@Writer :: file@makeWriter(urlFilepath, false)
+					do writer.writeStr("[InternetShortcut]\nURL=\{@atcoderBase}\{contestId}/submissions/\{submissionId}")
+					do writer.fin()
+				end block
 			end if
 		end block
+
 		ret true
 	end func
 	
@@ -251,15 +283,18 @@ func main()
 			var problemId: []char :: cpData[1]
 			do @problemIdNum2.add(problemId, @problemIdNum2.get(problemId, &) + 1)
 			var problemIndex: []char :: cpData[2]
+
 			if(problemId =& null)
 				do cui@print("Error: \{problemId} failed.\n")
 				skip i
 			end if
+			
 			var problemData: [][]char :: @problemDataMap.get(problemId, &)
 			if(problemData =& null)
 				do cui@print("Error: \{cpId} failed.\n")
 				skip i
 			end if
+			
 			var name: []char :: problemData[2]
 			var contestTitle: []char :: @contestTitleMap.get(contestId, &).replace("\"", "\\\"")
 			do jsonText :~ "  {\n"
@@ -270,6 +305,7 @@ func main()
 			|~"    \"name\": \"\{name}\"\n"
 			|~"  }\{i <> ^@cpIdsForKuin - 1 ?(",", "")}\n"
 		end for
+
 		do jsonText :~ "]\n"
 		
 		var writer: file@Writer :: file@makeWriter("\{@kuinSubmissionDir}", false)
@@ -280,8 +316,10 @@ func main()
 			if(isDir)
 				ret true
 			end if
+
 			if(file@ext(path) = "kn")
 				var ss: [][]char :: path.split("/")
+
 				if(^ss >= 2)
 					var contestId: []char :: ss[^ss - 2]
 					var problemId: []char :: ss[^ss - 1].sub(0, ^ss[^ss - 1] - 3)
@@ -289,6 +327,7 @@ func main()
 					do @cpIdsForKuin :~ [cpId]
 				end if
 			end if
+
 			ret true
 		end func
 	end block
@@ -300,6 +339,7 @@ func main()
 			if(num <> @problemIdNum1.get(problemId, &))
 				do cui@print("problem_id = \"\{problemId}\" のコンテストのうち、解いていないコンテストがあります。\n")
 			end if
+			
 			ret true
 		end func
 	end block
@@ -308,36 +348,46 @@ end func
 func fetchData(url: []char): []char
 	if(url =& null)
 		do cui@print("urlがnullです。\n")
+
 		ret null
 	end if
+
 	var http: net@Http :: net@makeHttp(url, false, "Kuin")
 	do cui@print("Fetching data: \{url}\n")
 	do lib@sleep(3000)
 	
 	if(http =& null)
 		do cui@print("接続に失敗しました。[\{url}]\n")
+
 		ret null
 	else
 		var data: []char
+
 		for i(1, 300)
 			do lib@sleep(10)
 			do data :: http.get()
+
 			if(data <>& null)
 				ret data
 			end if
 		end for
+
 		do http.fin()
 	end if
+	
 	do cui@print("データの取得に失敗しました。[\{url}]\n")
+
 	ret null
 end func
 
 func removeOldFiles()
 	do @dictOldFilesFlag.forEach(callbackRemoveFile, null)
+	
 	func callbackRemoveFile(filepath: []char, oldFlag: bool, data: kuin@Class): bool
 		if(oldFlag)
 			do file@delFile(filepath)
 		end if
+
 		ret true
 	end func
 end func
@@ -348,31 +398,39 @@ var arrExtensions: [][]char
 func initExtensions(): bool
 	var extensionFilepath: []char :: "\{wnd@exeDir()}extensions.csv"
 	var reader: file@Reader :: file@makeReader(extensionFilepath)
+
 	if(reader =& null)
 		do lib@exitCode(1)
 		do cui@print("\{extensionFilepath} can't be opened.\n")
+
 		ret false
 	end if
+
 	do reader.delimiter(",\n")
 	do @arrLanguages :: #[0][]char
 	do @arrExtensions :: #[0][]char
+	
 	while(!reader.term())
 		var language: []char :: reader.readStr()
 		var extension: []char :: reader.readStr()
 		do @arrLanguages :~ [language]
 		do @arrExtensions :~ [extension]
 	end while
+	
 	do @dictExtensions :: #dict<[]char, []char>
+
 	ret true
 end func
 
 func addExtension(language: []char, extension: &[]char)
 	do extension :: "unknown"
+
 	for i(^@arrLanguages - 1, 0, -1)
 		if(language.findStr(@arrLanguages[i], -1) <> -1)
 			do extension :: @arrExtensions[i]
 			break i
 		end if
 	end for
+	
 	do @dictExtensions.add(language, extension)
 end func
