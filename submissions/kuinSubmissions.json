@@ -4977,11 +4977,25 @@
     "name": "Alloy"
   },
   {
+    "problem_id": "abc214_a",
+    "contest_id": "adt_all_20231025_2",
+    "contest_title": "AtCoder Daily Training ALL 2023/10/25 18:00start",
+    "problem_index": "A",
+    "name": "New Generation ABC"
+  },
+  {
     "problem_id": "abc308_a",
     "contest_id": "adt_easy_20231017_2",
     "contest_title": "AtCoder Daily Training EASY 2023/10/17 17:30start",
     "problem_index": "B",
     "name": "New Scheme"
+  },
+  {
+    "problem_id": "abc216_a",
+    "contest_id": "adt_easy_20231109_2",
+    "contest_title": "AtCoder Daily Training EASY 2023/11/9 18:30start",
+    "problem_index": "B",
+    "name": "Signed Difficulty"
   },
   {
     "problem_id": "arc065_a",
