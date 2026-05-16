@@ -257,7 +257,7 @@ func main()
 				block
 					var urlFilepath: []char :: "\{dirProblem}\{problemId}.url"
 					var writer: file@Writer :: file@makeWriter(urlFilepath, false)
-					do writer.writeStr("[InternetShortcut]\nURL=\{@atcoderBase}\{contestId}/submissions/\{submissionId}")
+					do writer.writeStr("[InternetShortcut]\nURL=\{@atcoderBase}\{contestId}/submissions/\{submissionId}\n")
 					do writer.fin()
 				end block
 			end if
