@@ -23,8 +23,8 @@ var cpIdsForKuin: [][]char
 var numSubmissions: int
 var numSubmissionsTotal: int
 
-var problemIdNum1: dict<[]char, int>
-var problemIdNum2: dict<[]char, int>
+var problemIdContestIds: dict<[]char, [][]char>
+var problemIdContestDict: dict<[]char, dict<[]char, bool>>
 
 func main()
 	; コンテスト情報取得
@@ -45,6 +45,7 @@ func main()
 			
 			var contestId: []char :: json.find("id").toStr()
 			var title: []char :: json.find("title").toStr()
+			
 			do @contestTitleMap.add(contestId, title)
 		end for
 	end block
@@ -75,7 +76,7 @@ func main()
 		end for
 	end block
 	
-	do @problemIdNum1 :: #dict<[]char, int>
+	do @problemIdContestIds :: #dict<[]char, [][]char>
 	
 	; contest_id/problem_id の組み合わせ情報
 	block
@@ -93,11 +94,20 @@ func main()
 			
 			var contestId: []char :: json.find("contest_id").toStr()
 			var problemId: []char :: json.find("problem_id").toStr()
-			do @problemIdNum1.add(problemId, @problemIdNum1.get(problemId, &) + 1)
 			var problemIndex: []char :: json.find("problem_index").toStr()
 			var cpId: []char :: "\{contestId}/\{problemId}"
 			
 			do @cpDataMap.add(cpId, [contestId, problemId, problemIndex])
+			
+			var contestIds: [][]char :: @problemIdContestIds.get(problemId, &)
+			
+			if(contestIds =& null)
+				do contestIds :: #[0][]char
+			end if
+			
+			do contestIds :~ [contestId]
+			
+			do @problemIdContestIds.add(problemId, contestIds)
 		end for
 	end block
 	
@@ -187,6 +197,7 @@ func main()
 	do dictSubmissionId.forEach(callbackSubmissions, null)
 	
 	func callbackSubmissions(cpId: []char, submissionId: int, d: kuin@Class): bool
+		;do cui@print("\{cpId} \{submissionId}\n")
 		do @numSubmissions :+ 1
 		var contestId: []char :: @dictContestId.get(cpId, &)
 		var problemId: []char :: @dictProblemId.get(cpId, &)
@@ -269,7 +280,7 @@ func main()
 	;do @removeOldFiles()
 	
 	block
-		do @problemIdNum2 :: #dict<[]char, int>
+		do @problemIdContestDict :: #dict<[]char, dict<[]char, bool>>
 		
 		do @cpIdsForKuin :: #[0][]char
 		do file@forEach(@submissionDir, true, callbackFiles, null)
@@ -283,7 +294,16 @@ func main()
 			var cpData: [][]char :: @cpDataMap.get(cpId, &)
 			var contestId: []char :: cpData[0]
 			var problemId: []char :: cpData[1]
-			do @problemIdNum2.add(problemId, @problemIdNum2.get(problemId, &) + 1)
+			
+			var d: dict<[]char, bool> :: @problemIdContestDict.get(problemId, &)
+			
+			if(d =& null)
+				do d :: #dict<[]char, bool>
+			end if
+			
+			do d.add(contestId, true)
+			do @problemIdContestDict.add(problemId, d)
+			
 			var problemIndex: []char :: cpData[2]
 			
 			if(problemId =& null)
@@ -335,11 +355,22 @@ func main()
 	end block
 	
 	block
-		do @problemIdNum2.forEach(f, null)
+		do @problemIdContestDict.forEach(callbackFunc, null)
 		
-		func f(problemId: []char, num: int, data: kuin@Class): bool
-			if(num <> @problemIdNum1.get(problemId, &))
+		func callbackFunc(problemId: []char, contestDict: dict<[]char, bool>, data: kuin@Class): bool
+			var contestIds: [][]char :: @problemIdContestIds.get(problemId, &)
+			if(^contestDict <> ^contestIds)
 				do cui@print("problem_id = \"\{problemId}\" のコンテストのうち、解いていないコンテストがあります。\n")
+				
+				for i(0, ^contestIds - 1)
+					var contestId: []char :: contestIds[i]
+					
+					if(contestDict.get(contestId, &))
+						do cui@print("AC済み: \{@atcoderBase}\{contestId}/tasks/\{problemId}\n")
+					else
+						do cui@print("未AC: \{@atcoderBase}\{contestId}/tasks/\{problemId}\n")
+					end if
+				end for
 			end if
 			
 			ret true
