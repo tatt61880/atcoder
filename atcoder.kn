@@ -366,9 +366,9 @@ func main()
 					var contestId: []char :: contestIds[i]
 					
 					if(contestDict.get(contestId, &))
-						do cui@print("AC済み: \{@atcoderBase}\{contestId}/tasks/\{problemId}\n")
+						do cui@print(" AC済み: \{@atcoderBase}\{contestId}/tasks/\{problemId}\n")
 					else
-						do cui@print("未AC: \{@atcoderBase}\{contestId}/tasks/\{problemId}\n")
+						do cui@print(" 未AC: \{@atcoderBase}\{contestId}/tasks/\{problemId}\n")
 					end if
 				end for
 			end if
