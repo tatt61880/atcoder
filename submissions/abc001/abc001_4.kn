@@ -106,65 +106,35 @@ func main()
 	
 	var first: [][]char :: lines[0].split(" ")
 	
-	; 問題種別
-	; 1: A
-	; 2: B
-	; 3: C
-	; 4: D
-	var problem: int :: 0
-	
-	; A用
-	var h1: int :: 0
-	var h2: int :: 0
-	
-	; B用
-	var m: int :: 0
-	
-	; C用
-	var deg: int :: 0
-	var dis: int :: 0
-	
-	; D用
-	var n: int :: 0
-	var se: [][]char :: #[0][]char
-	
 	if(^first = 2)
 		; C: Deg Dis
-		do problem :: 3
-		do deg :: first[0].toInt(&)
-		do dis :: first[1].toInt(&)
+		var deg: int :: first[0].toInt(&)
+		var dis: int :: first[1].toInt(&)
+		
+		do @solveC(deg, dis)
 		
 	elif(^lines = 1)
 		; B: m
-		do problem :: 2
-		do m :: lines[0].toInt(&)
+		var m: int :: lines[0].toInt(&)
+		
+		do @solveB(m)
 		
 	elif(@containsHyphen(lines[1]))
-		; D: N, then S_i-E_i
-		do problem :: 4
-		do n :: lines[0].toInt(&)
-		do se :: #[n][]char
+		; D: N, S_i-E_i
+		var n: int :: lines[0].toInt(&)
+		var se: [][]char :: #[n][]char
 		
 		for i(0, n - 1)
 			do se[i] :: lines[i + 1]
 		end for
 		
-	else
-		do problem :: 1
-		do h1 :: lines[0].toInt(&)
-		do h2 :: lines[1].toInt(&)
-	end if
-	
-	if(problem = 1)
-		do @solveA(h1, h2)
-		
-	elif(problem = 2)
-		do @solveB(m)
-		
-	elif(problem = 3)
-		do @solveC(deg, dis)
-		
-	elif(problem = 4)
 		do @solveD(n, se)
+		
+	else
+		; A: H_1, H_2
+		var h1: int :: lines[0].toInt(&)
+		var h2: int :: lines[1].toInt(&)
+		
+		do @solveA(h1, h2)
 	end if
 end func
