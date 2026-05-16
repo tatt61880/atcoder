@@ -325,9 +325,11 @@
         baseUrl
       )
     );
+
     if (res !== null) {
-      return res.split('=')[1];
+      return res.split('=')[1].replace('\n', '');
     }
+
     return null;
   }
 
