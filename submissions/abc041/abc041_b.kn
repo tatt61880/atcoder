@@ -1,0 +1,10 @@
+func main()
+	const md: int :: 1000000007
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	var ans: int :: a
+	do ans :: ans * b % md
+	do ans :: ans * c % md
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,25 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: [][]char :: #[n][]char
+	for i(0, n - 1)
+		do s[i] :: cui@input()
+	end for
+	
+	var num: []int :: #[n]int
+	for i(0, n - 1)
+		for j(0, n - 1)
+			do num[i] :+ s[i][j] = 'o' ?(1, 0)
+		end for
+	end for
+	
+	var ans: []int :: #[0]int
+	for i(n - 1, 0, -1)
+		for j(0, n - 1)
+			if(num[j] = i)
+				do ans :~ [j + 1]
+			end if
+		end for
+	end for
+	
+	do cui@print("\{ans.join(" ")}\n")
+end func

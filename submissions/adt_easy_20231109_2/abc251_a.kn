@@ -1,0 +1,4 @@
+func main()
+  var s: []char :: cui@input()
+	do cui@print("\{s.repeat(6).sub(0, 6)}\n")
+end func
