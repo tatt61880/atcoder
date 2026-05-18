@@ -19,11 +19,23 @@
       return;
     }
 
+    const submissionsList = await getSubmissionsList(baseUrl);
+
+    if (submissionsList === null) {
+      const p = document.createElement('p');
+      p.textContent = '提出データの読み込みに失敗しました。';
+      contentsElem.replaceChildren(p);
+      return;
+    }
+
+    contentsElem.replaceChildren();
+
     if (targetContestId === null) {
-      await appendAcList(contentsElem, baseUrl);
+      await appendAcList(contentsElem, submissionsList);
     } else {
       await appendTasks(
         contentsElem,
+        submissionsList,
         baseUrl,
         targetContestId,
         targetProblemId
@@ -32,16 +44,7 @@
   }
 
   // ACコード一覧
-  async function appendAcList(contentsElem, baseUrl) {
-    const submissionsList = await getSubmissionsList(baseUrl);
-
-    if (submissionsList === null) {
-      const p = document.createElement('p');
-      p.textContent = '提出データの読み込みに失敗しました。';
-      contentsElem.appendChild(p);
-      return;
-    }
-
+  async function appendAcList(contentsElem, submissionsList) {
     const p = document.createElement('p');
     contentsElem.appendChild(p);
 
@@ -139,18 +142,11 @@
   // 提出内容
   async function appendTasks(
     contentsElem,
+    submissionsList,
     baseUrl,
     targetContestId,
     targetProblemId
   ) {
-    const submissionsList = await getSubmissionsList(baseUrl);
-    if (submissionsList === null) {
-      const p = document.createElement('p');
-      p.textContent = '提出データの読み込みに失敗しました。';
-      contentsElem.appendChild(p);
-      return;
-    }
-
     let foundCount = 0;
 
     for (const submission of submissionsList) {
@@ -342,6 +338,13 @@
     );
   }
 
+  function parseUrlFile(text) {
+    const match = text.match(/^URL=(.+)$/m);
+    if (match === null) return null;
+
+    return match[1].trim();
+  }
+
   async function getSubmissionUrl(baseUrl, contestId, problemId) {
     const res = await fetchText(
       new URL(
@@ -353,7 +356,7 @@
     );
 
     if (res !== null) {
-      return res.split('=')[1].replace('\n', '');
+      return parseUrlFile(res);
     }
 
     return null;
