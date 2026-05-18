@@ -1,0 +1,18 @@
+func main()
+	var s: []char :: cui@inputStr()
+	
+	var ans: []char :: ""
+	
+	for i(0, ^s - 1)
+		switch(s[i])
+		case '0' to '1'
+			do ans :~ [s[i]]
+		default
+			if(^ans <> 0)
+				do ans :: ans.sub(0, ^ans - 1)
+			end if
+		end switch
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

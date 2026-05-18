@@ -1,0 +1,12 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var s: []char :: cui@inputStr()
+	var t: []char :: cui@inputStr()
+	
+	var isPrefix: bool :: t.findStr(s, 0) = 0
+	var isPostfix: bool :: t.findStrLast(s, -1) = ^t - ^s
+	
+	var ans: int :: (isPrefix ?(0, 2)) + (isPostfix ?(0, 1))
+	do cui@print("\{ans}\n")
+end func
