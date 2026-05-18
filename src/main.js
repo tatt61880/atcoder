@@ -45,8 +45,28 @@
 
   // ACコード一覧
   async function appendAcList(contentsElem, submissionsList) {
-    const p = document.createElement('p');
-    contentsElem.appendChild(p);
+    // 件数
+    {
+      const p = document.createElement('p');
+      contentsElem.appendChild(p);
+
+      const problemSet = new Set();
+      for (const submission of submissionsList) {
+        const problemId = submission.problem_id;
+        problemSet.add(problemId);
+      }
+
+      p.setAttribute('id', 'total-num');
+
+      const totalNumSpan = document.createElement('span');
+      totalNumSpan.textContent = `${submissionsList.length}件`;
+      p.appendChild(totalNumSpan);
+
+      const totalNumNoteSpan = document.createElement('span');
+      totalNumNoteSpan.classList.add('total-num-note');
+      totalNumNoteSpan.textContent = `（問題IDの重複分を除くと${problemSet.size}件）`;
+      p.appendChild(totalNumNoteSpan);
+    }
 
     const table = document.createElement('table');
     contentsElem.appendChild(table);
@@ -70,25 +90,6 @@
 
     const tbody = document.createElement('tbody');
     table.appendChild(tbody);
-
-    {
-      const problemSet = new Set();
-      for (const submission of submissionsList) {
-        const problemId = submission.problem_id;
-        problemSet.add(problemId);
-      }
-
-      p.setAttribute('id', 'total-num');
-
-      const totalNumSpan = document.createElement('span');
-      totalNumSpan.textContent = `${submissionsList.length}件`;
-      p.appendChild(totalNumSpan);
-
-      const totalNumNoteSpan = document.createElement('span');
-      totalNumNoteSpan.classList.add('total-num-note');
-      totalNumNoteSpan.textContent = `（問題IDの重複分を除くと${problemSet.size}件）`;
-      p.appendChild(totalNumNoteSpan);
-    }
 
     const contestMap = new Map();
     const contestTitleMap = new Map();
