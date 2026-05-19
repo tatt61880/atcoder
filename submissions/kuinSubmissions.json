@@ -4928,6 +4928,13 @@
     "name": "Arrays"
   },
   {
+    "problem_id": "abc458_a",
+    "contest_id": "abc458",
+    "contest_title": "SMBCプログラミングコンテスト #1（AtCoder Beginner Contest 458）",
+    "problem_index": "A",
+    "name": "Chompers"
+  },
+  {
     "problem_id": "abc081_a",
     "contest_id": "abs",
     "contest_title": "AtCoder Beginners Selection",
