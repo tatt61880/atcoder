@@ -52,22 +52,16 @@
     input.type = 'checkbox';
 
     label.appendChild(input);
-    label.append(' 問題名を表示する');
+    label.append('問題名を表示する');
 
     contentsElem.appendChild(label);
 
-    const showProblemNameCheckbox = document.getElementById(
-      'show-problem-name-checkbox'
-    );
-    showProblemNameCheckbox.addEventListener(
-      'change',
-      updateProblemNameVisibility
-    );
+    input.addEventListener('change', updateProblemNameVisibility);
 
     return input;
 
     function updateProblemNameVisibility() {
-      const checked = showProblemNameCheckbox.checked;
+      const checked = input.checked;
 
       for (const a of document.querySelectorAll('a.submit-link')) {
         const problemIndex = a.dataset.problemIndex;
