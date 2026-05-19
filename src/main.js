@@ -33,7 +33,7 @@
     if (targetContestId === null) {
       await appendAcList(contentsElem, submissionsList);
     } else {
-      await appendTasks(
+      await appendSubmissionInfo(
         contentsElem,
         submissionsList,
         baseUrl,
@@ -44,36 +44,32 @@
   }
 
   function appendProblemNameOption(contentsElem) {
+    const storageKey = 'showProblemName';
+
     const label = document.createElement('label');
     label.className = 'option-label';
 
     const input = document.createElement('input');
     input.id = 'show-problem-name-checkbox';
     input.type = 'checkbox';
+    input.checked = localStorage.getItem(storageKey) === 'true';
 
     label.appendChild(input);
     label.append('問題名を表示する');
-
     contentsElem.appendChild(label);
-
-    const storageKey = 'showProblemName';
-    input.checked = localStorage.getItem(storageKey) === 'true';
-    updateProblemNameVisibility();
 
     input.addEventListener('change', () => {
       localStorage.setItem(storageKey, input.checked ? 'true' : 'false');
       updateProblemNameVisibility();
     });
 
-    return input;
+    return updateProblemNameVisibility;
 
     function updateProblemNameVisibility() {
       const checked = input.checked;
-
       for (const a of document.querySelectorAll('a.submit-link')) {
         const problemIndex = a.dataset.problemIndex;
         const problemName = a.dataset.problemName;
-
         a.textContent = checked
           ? `${problemIndex}: ${problemName}`
           : problemIndex;
@@ -83,7 +79,7 @@
 
   // ACコード一覧
   async function appendAcList(contentsElem, submissionsList) {
-    appendProblemNameOption(contentsElem);
+    const updateProblemNameVisibility = appendProblemNameOption(contentsElem);
 
     // 件数
     {
@@ -185,10 +181,12 @@
         }
       }
     }
+
+    updateProblemNameVisibility();
   }
 
   // 提出内容
-  async function appendTasks(
+  async function appendSubmissionInfo(
     contentsElem,
     submissionsList,
     baseUrl,
