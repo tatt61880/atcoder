@@ -43,8 +43,47 @@
     }
   }
 
+  function appendProblemNameOption(contentsElem) {
+    const label = document.createElement('label');
+    label.className = 'option-label';
+
+    const input = document.createElement('input');
+    input.id = 'show-problem-name-checkbox';
+    input.type = 'checkbox';
+
+    label.appendChild(input);
+    label.append(' 問題名を表示する');
+
+    contentsElem.appendChild(label);
+
+    const showProblemNameCheckbox = document.getElementById(
+      'show-problem-name-checkbox'
+    );
+    showProblemNameCheckbox.addEventListener(
+      'change',
+      updateProblemNameVisibility
+    );
+
+    return input;
+
+    function updateProblemNameVisibility() {
+      const checked = showProblemNameCheckbox.checked;
+
+      for (const a of document.querySelectorAll('a.submit-link')) {
+        const problemIndex = a.dataset.problemIndex;
+        const problemName = a.dataset.problemName;
+
+        a.textContent = checked
+          ? `${problemIndex}: ${problemName}`
+          : problemIndex;
+      }
+    }
+  }
+
   // ACコード一覧
   async function appendAcList(contentsElem, submissionsList) {
+    appendProblemNameOption(contentsElem);
+
     // 件数
     {
       const p = document.createElement('p');
@@ -108,10 +147,11 @@
       if (!contestMap.has(contestId)) {
         contestMap.set(contestId, []);
       }
-      contestMap.get(contestId).push(problemId);
+
+      contestMap.get(contestId).push(submission);
     }
 
-    for (const [contestId, problemsId] of contestMap) {
+    for (const [contestId, submissions] of contestMap) {
       const tr = tbody.insertRow();
 
       // コンテスト毎のまとめ
@@ -127,13 +167,19 @@
       {
         const td = tr.insertCell();
 
-        for (const problemId of problemsId) {
+        for (const submission of submissions) {
+          const problemId = submission.problem_id;
+          const problemIndex = submission.problem_index;
           const url = getTaskPageUrl(contestId, problemId);
           const cpId = `${contestId}/${problemId}`;
           const text = problemIndexMap.get(cpId);
 
           const a = createInternalLink(url, text);
           a.classList.add('submit-link');
+          a.textContent = problemIndex;
+          a.title = submission.name;
+          a.dataset.problemIndex = problemIndex;
+          a.dataset.problemName = submission.name;
           td.appendChild(a);
         }
       }
