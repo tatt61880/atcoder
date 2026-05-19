@@ -56,7 +56,14 @@
 
     contentsElem.appendChild(label);
 
-    input.addEventListener('change', updateProblemNameVisibility);
+    const storageKey = 'showProblemName';
+    input.checked = localStorage.getItem(storageKey) === 'true';
+    updateProblemNameVisibility();
+
+    input.addEventListener('change', () => {
+      localStorage.setItem(storageKey, input.checked ? 'true' : 'false');
+      updateProblemNameVisibility();
+    });
 
     return input;
 
@@ -242,14 +249,13 @@
         p.appendChild(createExternalLink(problemUrl));
       }
 
+      const [submissionUrl, src] = await Promise.all([
+        getSubmissionUrl(baseUrl, contestId, problemId),
+        getSrc(baseUrl, contestId, problemId),
+      ]);
+
       // 提出URL
       {
-        const submissionUrl = await getSubmissionUrl(
-          baseUrl,
-          contestId,
-          problemId
-        );
-
         const p = document.createElement('p');
         p.classList.add('narrow');
         p.textContent = '提出URL: ';
@@ -261,7 +267,6 @@
 
       // 提出したソースコード
       {
-        const src = await getSrc(baseUrl, contestId, problemId);
         if (src !== null) {
           const h4 = document.createElement('h4');
           h4.textContent = '提出したソースコード (言語: Kuin)';
