@@ -1,0 +1,16 @@
+func main()
+	var n: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	
+	var ans: int :: 1
+	
+	for(1, n)
+		if(ans * 2 < ans + k)
+			do ans :* 2
+		else
+			do ans :+ k
+		end if
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

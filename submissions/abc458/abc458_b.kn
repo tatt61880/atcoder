@@ -1,0 +1,24 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	
+	for i(1, h)
+		var ans: []int :: #[w]int
+		for j(1, w)
+			if(j <> 1)
+				do ans[j - 1] :+ 1
+			end if
+			if(j <> w)
+				do ans[j - 1] :+ 1
+			end if
+			if(i <> 1)
+				do ans[j - 1] :+ 1
+			end if
+			if(i <> h)
+				do ans[j - 1] :+ 1
+			end if
+		end for
+		
+		do cui@print("\{ans.join(" ")}\n")
+	end for
+end func

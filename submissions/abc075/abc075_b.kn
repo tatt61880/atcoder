@@ -1,0 +1,33 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	
+	var s: [][]char :: #[h][]char
+	for i(0, h - 1)
+		do s[i] :: cui@input()
+	end for
+	
+	var dx: []int :: [0, 1, 1, 1, 0, -1, -1, -1]
+	var dy: []int :: [-1, -1, 0, 1, 1, 1, 0, -1]
+	
+	for i(0, h - 1)
+		for j(0, w - 1)
+			if(s[i][j] = '#')
+				skip j
+			end if
+			
+			var v: int
+			for d(0, 7)
+				var x: int :: j + dx[d]
+				var y: int :: i + dy[d]
+				if(x <> -1 & x <> w & y <> -1 & y <> h & s[y][x] = '#')
+					do v :+ 1
+				end if
+			end for
+			
+			do s[i][j] :: '0'.offset(v)
+		end for
+	end for
+	
+	do cui@print("\{s.join("\n")}\n")
+end func

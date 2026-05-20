@@ -896,11 +896,25 @@
     "name": "One out of Three"
   },
   {
+    "problem_id": "abc075_b",
+    "contest_id": "abc075",
+    "contest_title": "AtCoder Beginner Contest 075",
+    "problem_index": "B",
+    "name": "Minesweeper"
+  },
+  {
     "problem_id": "abc076_a",
     "contest_id": "abc076",
     "contest_title": "AtCoder Beginner Contest 076",
     "problem_index": "A",
     "name": "Rating Goal"
+  },
+  {
+    "problem_id": "abc076_b",
+    "contest_id": "abc076",
+    "contest_title": "AtCoder Beginner Contest 076",
+    "problem_index": "B",
+    "name": "Addition and Multiplication"
   },
   {
     "problem_id": "abc077_a",
@@ -4933,6 +4947,13 @@
     "contest_title": "SMBCプログラミングコンテスト #1（AtCoder Beginner Contest 458）",
     "problem_index": "A",
     "name": "Chompers"
+  },
+  {
+    "problem_id": "abc458_b",
+    "contest_id": "abc458",
+    "contest_title": "SMBCプログラミングコンテスト #1（AtCoder Beginner Contest 458）",
+    "problem_index": "B",
+    "name": "Count Adjacent Cells"
   },
   {
     "problem_id": "abc081_a",
