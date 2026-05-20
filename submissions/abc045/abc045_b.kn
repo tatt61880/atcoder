@@ -1,0 +1,19 @@
+func main()
+	var ss: [][]char :: #[3][]char
+	do ss[0] :: cui@input()
+	do ss[1] :: cui@input()
+	do ss[2] :: cui@input()
+	
+	var c: char :: 'a'
+	var idxs: []int :: #[3]int
+	
+	while(true)
+		var idx: int :: c $ int - 'a' $ int
+		if(^ss[idx] = idxs[idx])
+			do cui@print("\{'A'.offset(idx)}\n")
+			ret
+		end if
+		do c :: ss[idx][idxs[idx]]
+		do idxs[idx] :+ 1
+	end while
+end func

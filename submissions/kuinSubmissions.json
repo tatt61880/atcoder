@@ -679,6 +679,13 @@
     "name": "Trapezoids"
   },
   {
+    "problem_id": "abc045_b",
+    "contest_id": "abc045",
+    "contest_title": "AtCoder Beginner Contest 045",
+    "problem_index": "B",
+    "name": "Card Game for Three (ABC Edit)"
+  },
+  {
     "problem_id": "abc046_a",
     "contest_id": "abc046",
     "contest_title": "AtCoder Beginner Contest 046",
@@ -2959,6 +2966,13 @@
     "contest_title": "サントリープログラミングコンテスト2023（AtCoder Beginner Contest 321）",
     "problem_index": "A",
     "name": "321-like Checker"
+  },
+  {
+    "problem_id": "abc321_b",
+    "contest_id": "abc321",
+    "contest_title": "サントリープログラミングコンテスト2023（AtCoder Beginner Contest 321）",
+    "problem_index": "B",
+    "name": "Cutoff"
   },
   {
     "problem_id": "abc322_a",
