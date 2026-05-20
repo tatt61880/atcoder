@@ -1,7 +1,7 @@
-const contestJsonFilename: []char :: "contests.json"
-const problemsJsonFilename: []char :: "problems.json"
-const cpJsonFilename: []char :: "contest-problem.json"
-const submissionsJsonFilename: []char :: "submissions.json"
+const contestJsonFilename: []char :: "tmp/contests.json"
+const problemsJsonFilename: []char :: "tmp/problems.json"
+const cpJsonFilename: []char :: "tmp/contest-problem.json"
+const submissionsJsonFilename: []char :: "tmp/submissions.json"
 const atcoderBase: []char :: "https://atcoder.jp/contests/"
 
 var dirHtml: []char
