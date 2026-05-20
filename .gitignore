@@ -1,10 +1,10 @@
-/data/
+node_modules/
+
+__pycache__/
+
+/tmp/
 /html/
-/node_modules/
 
-__pycache__
-
-tmp
-
+/data/
 atcoder.knprop
 *.exe
