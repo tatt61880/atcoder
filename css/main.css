@@ -189,6 +189,7 @@ a:focus-visible {
   gap: 10px;
   align-items: center;
   margin: 5px 20px;
+  font-size: 1rem;
 }
 
 .table-pager-label {
@@ -199,7 +200,9 @@ a:focus-visible {
   margin-left: 0;
 }
 
+.table-pager select,
 .table-pager button {
+  font: inherit;
   cursor: pointer;
 }
 

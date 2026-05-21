@@ -27,6 +27,9 @@
     container.appendChild(label);
 
     const select = document.createElement('select');
+    select.id = 'table-page-size';
+    select.name = 'table-page-size';
+    label.htmlFor = select.id;
     container.appendChild(select);
 
     for (const pageSizeOption of pageSizeOptions) {
