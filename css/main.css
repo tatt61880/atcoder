@@ -243,3 +243,9 @@ a:focus-visible {
 .table-pager button:enabled:active {
   background-color: #d0d9ff;
 }
+
+.table-pager-size select {
+  min-width: 80px;
+  min-height: 40px;
+  font-size: 1.1rem;
+}
