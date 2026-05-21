@@ -221,6 +221,7 @@ a:focus-visible {
 .table-pager button {
   padding: 2px 8px;
   color: #000055;
+  touch-action: manipulation;
   background-color: #f0f3ff;
   border: 1px solid #8a96c8;
   border-radius: 4px;
