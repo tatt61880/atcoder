@@ -84,7 +84,7 @@ table {
   border-collapse: collapse;
 }
 
-#contents table {
+#contents-data table {
   width: calc(100% - 30px);
   table-layout: fixed;
 }
