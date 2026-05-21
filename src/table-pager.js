@@ -5,6 +5,8 @@
     create,
   };
 
+  let nextId = 0;
+
   return;
 
   // ==========================================================================
@@ -21,16 +23,22 @@
     container.className = 'table-pager';
     parentElem.appendChild(container);
 
-    const label = document.createElement('span');
+    const sizeElem = document.createElement('span');
+    sizeElem.className = 'table-pager-size';
+    container.appendChild(sizeElem);
+
+    const label = document.createElement('label');
     label.className = 'table-pager-label';
     label.textContent = '表示件数: ';
-    container.appendChild(label);
+    sizeElem.appendChild(label);
 
     const select = document.createElement('select');
-    select.id = 'table-page-size';
-    select.name = 'table-page-size';
-    label.htmlFor = select.id;
-    container.appendChild(select);
+    const selectId = `table-page-size-${nextId}`;
+    nextId++;
+    select.id = selectId;
+    select.name = selectId;
+    label.htmlFor = selectId;
+    sizeElem.appendChild(select);
 
     for (const pageSizeOption of pageSizeOptions) {
       const selectOption = document.createElement('option');
@@ -47,10 +55,6 @@
       ? storedValue
       : pageSizeOptions[0].value;
 
-    const status = document.createElement('span');
-    status.className = 'table-pager-status';
-    container.appendChild(status);
-
     const prevButton = document.createElement('button');
     prevButton.type = 'button';
     prevButton.textContent = '前へ';
@@ -60,6 +64,10 @@
     nextButton.type = 'button';
     nextButton.textContent = '次へ';
     container.appendChild(nextButton);
+
+    const status = document.createElement('span');
+    status.className = 'table-pager-status';
+    container.appendChild(status);
 
     select.addEventListener('change', () => {
       localStorage.setItem(storageKey, select.value);
@@ -111,8 +119,8 @@
           status.textContent = `全${itemCount}${itemName}`;
         } else {
           status.textContent =
-            `${beginIndex + 1}〜${endIndex} / ${itemCount}${itemName} ` +
-            `(${currentPage} / ${pageCount}ページ)`;
+            `${currentPage} / ${pageCount}ページ ` +
+            `(${beginIndex + 1}〜${endIndex} / ${itemCount}${itemName})`;
         }
 
         prevButton.disabled = currentPage <= 1 || pageSize === Infinity;

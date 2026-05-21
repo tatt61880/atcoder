@@ -196,16 +196,32 @@ a:focus-visible {
   white-space: nowrap;
 }
 
-.table-pager-status {
-  margin-left: 0;
-}
-
 .table-pager select,
 .table-pager button {
   font: inherit;
   cursor: pointer;
 }
 
+.table-pager button {
+  padding: 2px 8px;
+  color: #000055;
+  background-color: #f0f3ff;
+  border: 1px solid #8a96c8;
+  border-radius: 4px;
+}
+
 .table-pager button:disabled {
+  color: #999999;
   cursor: default;
+  background-color: #eeeeee;
+  border-color: #cccccc;
+}
+
+.table-pager button:enabled:hover {
+  background-color: #e0e7ff;
+  border-color: #666666;
+}
+
+.table-pager button:enabled:active {
+  background-color: #d0d9ff;
 }
