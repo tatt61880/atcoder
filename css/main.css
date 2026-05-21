@@ -201,6 +201,7 @@ a:focus-visible {
   display: inline-flex;
   flex-basis: 100%;
   gap: 0.5rem;
+  align-items: center;
   margin-top: 0.4rem;
 }
 
@@ -219,6 +220,8 @@ a:focus-visible {
 }
 
 .table-pager button {
+  min-width: 60px;
+  min-height: 30px;
   padding: 2px 8px;
   color: #000055;
   touch-action: manipulation;
