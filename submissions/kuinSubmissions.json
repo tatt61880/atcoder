@@ -2961,6 +2961,13 @@
     "name": "Leyland Number"
   },
   {
+    "problem_id": "abc320_b",
+    "contest_id": "abc320",
+    "contest_title": "トヨタ自動車プログラミングコンテスト2023#5(AtCoder Beginner Contest 320)",
+    "problem_index": "B",
+    "name": "Longest Palindrome"
+  },
+  {
     "problem_id": "abc321_a",
     "contest_id": "abc321",
     "contest_title": "サントリープログラミングコンテスト2023（AtCoder Beginner Contest 321）",
