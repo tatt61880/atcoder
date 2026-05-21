@@ -55,19 +55,24 @@
       ? storedValue
       : pageSizeOptions[0].value;
 
+    const nav = document.createElement('span');
+    nav.className = 'table-pager-nav';
+    container.appendChild(nav);
+
     const prevButton = document.createElement('button');
     prevButton.type = 'button';
     prevButton.textContent = '前へ';
-    container.appendChild(prevButton);
+    nav.appendChild(prevButton);
 
     const nextButton = document.createElement('button');
     nextButton.type = 'button';
     nextButton.textContent = '次へ';
-    container.appendChild(nextButton);
+    nav.appendChild(nextButton);
 
     const status = document.createElement('span');
     status.className = 'table-pager-status';
-    container.appendChild(status);
+    status.setAttribute('aria-live', 'polite');
+    nav.appendChild(status);
 
     select.addEventListener('change', () => {
       localStorage.setItem(storageKey, select.value);

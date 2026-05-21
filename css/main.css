@@ -84,6 +84,11 @@ table {
   border-collapse: collapse;
 }
 
+#contents table {
+  width: calc(100% - 30px);
+  table-layout: fixed;
+}
+
 th {
   font-weight: bold;
   color: #000055;
@@ -190,6 +195,17 @@ a:focus-visible {
   align-items: center;
   margin: 5px 20px;
   font-size: 1rem;
+}
+
+.table-pager-nav {
+  display: inline-flex;
+  flex-basis: 100%;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.table-pager-status {
+  margin-left: 0.5rem;
 }
 
 .table-pager-label {
