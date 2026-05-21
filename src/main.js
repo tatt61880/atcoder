@@ -85,6 +85,8 @@
       storageKey: 'contestPageSize',
       itemName: 'コンテスト',
       pageSizeOptions: [
+        { value: '5', text: '5コンテスト' },
+        { value: '10', text: '10コンテスト' },
         { value: '20', text: '20コンテスト' },
         { value: '50', text: '50コンテスト' },
         { value: 'all', text: '全件' },
