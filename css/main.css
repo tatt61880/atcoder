@@ -223,6 +223,15 @@ a:focus-visible {
   border-radius: 4px;
 }
 
+.table-pager-pages {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.table-pager-pages button {
+  min-width: 50px;
+}
+
 .table-pager button:disabled {
   color: #999999;
   cursor: default;
