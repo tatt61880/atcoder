@@ -105,12 +105,12 @@
       p.setAttribute('id', 'total-num');
 
       const totalNumSpan = document.createElement('span');
-      totalNumSpan.textContent = `${submissionsList.length}件`;
+      totalNumSpan.textContent = `${submissionsList.length}問`;
       p.appendChild(totalNumSpan);
 
       const totalNumNoteSpan = document.createElement('span');
       totalNumNoteSpan.classList.add('total-num-note');
-      totalNumNoteSpan.textContent = `（問題IDの重複分を除くと${problemSet.size}件）`;
+      totalNumNoteSpan.textContent = `（問題IDの重複分を除くと${problemSet.size}問）`;
       p.appendChild(totalNumNoteSpan);
     }
 
