@@ -81,6 +81,16 @@
   async function appendAcList(contentsElem, submissionsList) {
     const updateProblemNameVisibility = appendProblemNameOption(contentsElem);
 
+    const tablePager = window.TablePager.create(contentsElem, {
+      storageKey: 'contestPageSize',
+      itemName: 'コンテスト',
+      pageSizeOptions: [
+        { value: '20', text: '20コンテスト' },
+        { value: '50', text: '50コンテスト' },
+        { value: 'all', text: '全件' },
+      ],
+    });
+
     // 件数
     {
       const p = document.createElement('p');
@@ -148,41 +158,57 @@
       contestMap.get(contestId).push(submission);
     }
 
-    for (const [contestId, submissions] of contestMap) {
-      const tr = tbody.insertRow();
+    const contestEntries = Array.from(contestMap.entries());
 
-      // コンテスト毎のまとめ
-      {
-        const url = getTaskPageUrl(contestId);
-        const text = contestTitleMap.get(contestId);
+    tablePager.setOnChange(renderContestTable);
+    renderContestTable();
 
-        const td = tr.insertCell();
-        td.appendChild(createInternalLink(url, text));
-      }
+    function renderContestTable() {
+      tbody.replaceChildren();
 
-      // 個別のソースコード
-      {
-        const td = tr.insertCell();
+      tablePager.update(contestEntries.length);
 
-        for (const submission of submissions) {
-          const problemId = submission.problem_id;
-          const problemIndex = submission.problem_index;
-          const url = getTaskPageUrl(contestId, problemId);
-          const cpId = `${contestId}/${problemId}`;
-          const text = problemIndexMap.get(cpId);
+      const beginIndex = tablePager.getBeginIndex();
+      const endIndex = tablePager.getEndIndex(contestEntries.length);
 
-          const a = createInternalLink(url, text);
-          a.classList.add('submit-link');
-          a.textContent = problemIndex;
-          a.title = submission.name;
-          a.dataset.problemIndex = problemIndex;
-          a.dataset.problemName = submission.name;
-          td.appendChild(a);
+      for (const [contestId, submissions] of contestEntries.slice(
+        beginIndex,
+        endIndex
+      )) {
+        const tr = tbody.insertRow();
+
+        // コンテスト毎のまとめ
+        {
+          const url = getTaskPageUrl(contestId);
+          const text = contestTitleMap.get(contestId);
+          const td = tr.insertCell();
+          td.appendChild(createInternalLink(url, text));
+        }
+
+        // 個別のソースコード
+        {
+          const td = tr.insertCell();
+
+          for (const submission of submissions) {
+            const problemId = submission.problem_id;
+            const problemIndex = submission.problem_index;
+            const url = getTaskPageUrl(contestId, problemId);
+            const cpId = `${contestId}/${problemId}`;
+            const text = problemIndexMap.get(cpId);
+            const a = createInternalLink(url, text);
+
+            a.classList.add('submit-link');
+            a.textContent = problemIndex;
+            a.title = submission.name;
+            a.dataset.problemIndex = problemIndex;
+            a.dataset.problemName = submission.name;
+            td.appendChild(a);
+          }
         }
       }
-    }
 
-    updateProblemNameVisibility();
+      updateProblemNameVisibility();
+    }
   }
 
   // 提出内容

@@ -182,3 +182,27 @@ a:focus-visible {
   margin: 0;
   cursor: pointer;
 }
+
+.table-pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 5px 20px;
+}
+
+.table-pager-label {
+  white-space: nowrap;
+}
+
+.table-pager-status {
+  margin-left: 0;
+}
+
+.table-pager button {
+  cursor: pointer;
+}
+
+.table-pager button:disabled {
+  cursor: default;
+}
