@@ -195,6 +195,7 @@ a:focus-visible {
   align-items: center;
   margin: 5px 20px;
   font-size: 1rem;
+  touch-action: manipulation;
 }
 
 .table-pager-nav {
