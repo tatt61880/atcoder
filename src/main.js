@@ -89,6 +89,7 @@
         { value: '10', text: '10コンテスト' },
         { value: '20', text: '20コンテスト' },
         { value: '50', text: '50コンテスト' },
+        { value: '100', text: '100コンテスト' },
         { value: 'all', text: '全件' },
       ],
     });
