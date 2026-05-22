@@ -69,14 +69,14 @@
     nextButton.textContent = '次へ';
     nav.appendChild(nextButton);
 
-    const pageButtons = document.createElement('span');
-    pageButtons.className = 'table-pager-pages';
-    nav.appendChild(pageButtons);
-
     const status = document.createElement('span');
     status.className = 'table-pager-status';
     status.setAttribute('aria-live', 'polite');
     nav.appendChild(status);
+
+    const pageButtons = document.createElement('span');
+    pageButtons.className = 'table-pager-pages';
+    nav.appendChild(pageButtons);
 
     select.addEventListener('change', () => {
       localStorage.setItem(storageKey, select.value);
