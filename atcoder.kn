@@ -203,12 +203,23 @@ func main()
 	assert @regexCode <>& null
 	
 	do @numSubmissions :: 0
-	do @numSubmissionsTotal :: ^dictSubmissionId
+	do @numSubmissionsTotal :: 0
+	do dictSubmissionId.forEach(callbackUpdateNumSubmissionsTotal, null)
 	do dictSubmissionId.forEach(callbackSubmissions, null)
+
+	func callbackUpdateNumSubmissionsTotal(cpId: []char, submissionId: int, d: kuin@Class): bool
+		var contestId: []char :: @dictContestId.get(cpId, &)
+		var filepath: []char :: "\{@dirHtml}\{contestId}#\{submissionId}.html"
+
+		if(!file@exist(filepath))
+			do @numSubmissionsTotal :+ 1
+		end if
+		
+		ret true
+	end func
 	
 	func callbackSubmissions(cpId: []char, submissionId: int, d: kuin@Class): bool
 		;do cui@print("\{cpId} \{submissionId}\n")
-		do @numSubmissions :+ 1
 		var contestId: []char :: @dictContestId.get(cpId, &)
 		var problemId: []char :: @dictProblemId.get(cpId, &)
 		var language: []char :: @dictLanguage.get(cpId, &)
@@ -219,6 +230,7 @@ func main()
 		var data: []char
 		
 		if(!file@exist(filepath))
+			do @numSubmissions :+ 1
 			do cui@print("[\{@numSubmissions} / \{@numSubmissionsTotal}] ")
 			do data :: @fetchData(url)
 			do data :: data.replace("\u000D", "") { 取得してきたデータの改行が 0x0D 0x0D 0x0A となってしまうため、 0x0D 0x0A になるようにします。 }
