@@ -334,8 +334,8 @@
       a.rel = 'noopener noreferrer';
 
       const urlText = String(url).replace(
-        /^https:\/\/atcoder\.jp\/contests/,
-        ''
+        new RegExp('^https://atcoder.jp/contests/[^/]+(/.+)'),
+        '$1'
       );
       appendUrlTextWithBreaks(a, urlText);
       p.appendChild(a);
