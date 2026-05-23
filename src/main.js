@@ -250,11 +250,7 @@
         contentsElem.appendChild(h2);
 
         const contestUrl = getContestUrl(contestId);
-        appendExternalUrlLink(
-          contentsElem,
-          'コンテストリンク (AtCoder): ',
-          contestUrl
-        );
+        appendExternalUrlLink(contentsElem, 'コンテストリンク: ', contestUrl);
       }
 
       // 問題名
@@ -267,11 +263,7 @@
       // 問題URL
       {
         const problemUrl = getProblemUrl(contestId, problemId);
-        appendExternalUrlLink(
-          contentsElem,
-          '問題リンク (AtCoder): ',
-          problemUrl
-        );
+        appendExternalUrlLink(contentsElem, '問題リンク: ', problemUrl);
       }
 
       const [submissionUrl, src] = await Promise.all([
@@ -281,11 +273,7 @@
 
       // 提出URL
       {
-        appendExternalUrlLink(
-          contentsElem,
-          '提出リンク (AtCoder): ',
-          submissionUrl
-        );
+        appendExternalUrlLink(contentsElem, '提出リンク: ', submissionUrl);
       }
 
       // 提出したソースコード
