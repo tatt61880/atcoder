@@ -1,0 +1,25 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var cells: [][]int :: #[100, 100]int
+	for(1, n)
+		var a: int :: cui@inputInt()
+		var b: int :: cui@inputInt() - 1
+		var c: int :: cui@inputInt()
+		var d: int :: cui@inputInt() - 1
+		for y(c, d)
+			for x(a, b)
+				do cells[y][x] :: 1
+			end for
+		end for
+	end for
+	
+	var ans: int :: 0
+	for y(0, 99)
+		for x(0, 99)
+			do ans :+ cells[y][x]
+		end for
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

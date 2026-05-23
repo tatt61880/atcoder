@@ -721,6 +721,13 @@
     "name": "AtCoder *** Contest"
   },
   {
+    "problem_id": "abc048_b",
+    "contest_id": "abc048",
+    "contest_title": "AtCoder Beginner Contest 048",
+    "problem_index": "B",
+    "name": "Between a and b ..."
+  },
+  {
     "problem_id": "abc049_a",
     "contest_id": "abc049",
     "contest_title": "AtCoder Beginner Contest 049",
@@ -2959,6 +2966,13 @@
     "contest_title": "THIRD プログラミングコンテスト 2023 アルゴ（AtCoder Beginner Contest 318）",
     "problem_index": "A",
     "name": "Full Moon"
+  },
+  {
+    "problem_id": "abc318_b",
+    "contest_id": "abc318",
+    "contest_title": "THIRD プログラミングコンテスト 2023 アルゴ（AtCoder Beginner Contest 318）",
+    "problem_index": "B",
+    "name": "Overlapping sheets"
   },
   {
     "problem_id": "abc319_a",
