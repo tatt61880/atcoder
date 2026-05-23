@@ -250,7 +250,11 @@
         contentsElem.appendChild(h2);
 
         const contestUrl = getContestUrl(contestId);
-        appendExternalUrlLink(contentsElem, 'コンテストURL: ', contestUrl);
+        appendExternalUrlLink(
+          contentsElem,
+          'コンテストリンク (AtCoder): ',
+          contestUrl
+        );
       }
 
       // 問題名
@@ -263,7 +267,11 @@
       // 問題URL
       {
         const problemUrl = getProblemUrl(contestId, problemId);
-        appendExternalUrlLink(contentsElem, '問題URL: ', problemUrl);
+        appendExternalUrlLink(
+          contentsElem,
+          '問題リンク (AtCoder): ',
+          problemUrl
+        );
       }
 
       const [submissionUrl, src] = await Promise.all([
@@ -273,7 +281,11 @@
 
       // 提出URL
       {
-        appendExternalUrlLink(contentsElem, '提出URL: ', submissionUrl);
+        appendExternalUrlLink(
+          contentsElem,
+          '提出リンク (AtCoder): ',
+          submissionUrl
+        );
       }
 
       // 提出したソースコード
@@ -323,19 +335,21 @@
 
     if (url === null) {
       const span = document.createElement('span');
-
       span.textContent = 'URLの読み込みに失敗しました。';
       span.className = 'link-load-error';
 
       p.appendChild(span);
     } else {
       const a = document.createElement('a');
-
       a.href = url;
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
 
-      appendUrlTextWithBreaks(a, url);
+      const urlText = String(url).replace(
+        /^https:\/\/atcoder\.jp\/contests/,
+        ''
+      );
+      appendUrlTextWithBreaks(a, urlText);
       p.appendChild(a);
     }
   }
