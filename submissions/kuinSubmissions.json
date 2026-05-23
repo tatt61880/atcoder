@@ -693,11 +693,25 @@
     "name": "AtCoDeer and Paint Cans"
   },
   {
+    "problem_id": "abc046_b",
+    "contest_id": "abc046",
+    "contest_title": "AtCoder Beginner Contest 046",
+    "problem_index": "B",
+    "name": "Painting Balls with AtCoDeer"
+  },
+  {
     "problem_id": "abc047_a",
     "contest_id": "abc047",
     "contest_title": "AtCoder Beginner Contest 047",
     "problem_index": "A",
     "name": "Fighting over Candies"
+  },
+  {
+    "problem_id": "abc047_b",
+    "contest_id": "abc047",
+    "contest_title": "AtCoder Beginner Contest 047",
+    "problem_index": "B",
+    "name": "Snuke's Coloring 2 (ABC Edit)"
   },
   {
     "problem_id": "abc048_a",
@@ -2952,6 +2966,13 @@
     "contest_title": "AtCoder Beginner Contest 319",
     "problem_index": "A",
     "name": "Legendary Players"
+  },
+  {
+    "problem_id": "abc319_b",
+    "contest_id": "abc319",
+    "contest_title": "AtCoder Beginner Contest 319",
+    "problem_index": "B",
+    "name": "Measure"
   },
   {
     "problem_id": "abc320_a",

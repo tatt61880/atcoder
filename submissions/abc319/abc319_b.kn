@@ -1,0 +1,17 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: []char :: #[n + 1]char
+	
+	for i(0, n)
+		var c: char :: '-'
+		for j(1, 9)
+			if(n % j = 0 & i % (n / j) = 0)
+				do c :: '0'.offset(j)
+				break j
+			end if
+		end for
+		do ans[i] :: c
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

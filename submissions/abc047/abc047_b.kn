@@ -1,0 +1,30 @@
+func main()
+	var w: int :: cui@inputInt()
+	var h: int :: cui@inputInt()
+	var n: int :: cui@inputInt()
+	
+	var minH: int :: 0
+	var maxH: int :: h
+	var minW: int :: 0
+	var maxW: int :: w
+	
+	for(1, n)
+		var x: int :: cui@inputInt()
+		var y: int :: cui@inputInt()
+		var a: int :: cui@inputInt()
+		switch(a)
+		case 1
+			do minW :: lib@max(minW, x)
+		case 2
+			do maxW :: lib@min(maxW, x)
+		case 3
+			do minH :: lib@max(minH, y)
+		case 4
+			do maxH :: lib@min(maxH, y)
+		end switch
+	end for
+	
+	var ans: int :: lib@max(0, maxW - minW) * lib@max(0, maxH - minH)
+	
+	do cui@print("\{ans}\n")
+end func
