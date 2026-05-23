@@ -249,13 +249,8 @@
         h2.textContent = `${contestTitle}`;
         contentsElem.appendChild(h2);
 
-        const p = document.createElement('p');
-        p.classList.add('narrow');
-        p.textContent = 'コンテストURL: ';
-        contentsElem.appendChild(p);
-
         const contestUrl = getContestUrl(contestId);
-        p.appendChild(createExternalLink(contestUrl));
+        appendExternalUrlLink(contentsElem, 'コンテストURL: ', contestUrl);
       }
 
       // 問題名
@@ -267,13 +262,8 @@
 
       // 問題URL
       {
-        const p = document.createElement('p');
-        p.classList.add('narrow');
-        p.textContent = '問題URL: ';
-        contentsElem.appendChild(p);
-
         const problemUrl = getProblemUrl(contestId, problemId);
-        p.appendChild(createExternalLink(problemUrl));
+        appendExternalUrlLink(contentsElem, '問題URL: ', problemUrl);
       }
 
       const [submissionUrl, src] = await Promise.all([
@@ -283,13 +273,7 @@
 
       // 提出URL
       {
-        const p = document.createElement('p');
-        p.classList.add('narrow');
-        p.textContent = '提出URL: ';
-
-        p.appendChild(createExternalLink(submissionUrl));
-
-        contentsElem.appendChild(p);
+        appendExternalUrlLink(contentsElem, '提出URL: ', submissionUrl);
       }
 
       // 提出したソースコード
@@ -323,6 +307,52 @@
       p.textContent = '該当する提出データが見つかりませんでした。';
       contentsElem.appendChild(p);
     }
+  }
+
+  function appendExternalUrlLink(parentElem, labelText, url) {
+    const p = document.createElement('p');
+    p.classList.add('external-url');
+    parentElem.append(p);
+
+    {
+      const span = document.createElement('span');
+      span.classList.add('url-label');
+      span.textContent = labelText;
+      p.append(span);
+    }
+
+    if (url === null) {
+      const span = document.createElement('span');
+
+      span.textContent = 'URLの読み込みに失敗しました。';
+      span.className = 'link-load-error';
+
+      p.appendChild(span);
+    } else {
+      const a = document.createElement('a');
+
+      a.href = url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+
+      appendUrlTextWithBreaks(a, url);
+      p.appendChild(a);
+    }
+  }
+
+  function appendUrlTextWithBreaks(parentElem, url) {
+    const urlText = String(url);
+    const parts = urlText.split('/');
+
+    parentElem.textContent = '';
+
+    parts.forEach((part, i) => {
+      if (i !== 0) {
+        parentElem.append('/');
+        parentElem.append(document.createElement('wbr'));
+      }
+      parentElem.append(part);
+    });
   }
 
   function analyzeUrl() {
@@ -367,28 +397,6 @@
     a.textContent = text;
 
     return a;
-  }
-
-  function createExternalLink(url, text = url) {
-    if (url === null) return createLinkLoadErrorText();
-
-    const a = document.createElement('a');
-
-    a.href = url;
-    a.textContent = text;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-
-    return a;
-
-    function createLinkLoadErrorText() {
-      const span = document.createElement('span');
-
-      span.textContent = 'URLの読み込みに失敗しました。';
-      span.className = 'link-load-error';
-
-      return span;
-    }
   }
 
   function getContestUrl(contestId) {
