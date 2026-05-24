@@ -246,14 +246,13 @@
         );
         appendExternalLink(contentsElem, '問題リンク: ', problemUrl, urlText);
       }
-
       const [submissionUrl, src] = await Promise.all([
         getSubmissionUrl(baseUrl, contestId, problemId),
         getSrc(baseUrl, contestId, problemId),
       ]);
 
       // 提出URL
-      {
+      if (submissionUrl !== null) {
         const urlText = String(submissionUrl).replace(
           new RegExp('^https://atcoder.jp/contests/[^/]+(/.+)'),
           '$1'
@@ -267,57 +266,55 @@
       }
 
       // 提出したソースコード
-      {
-        if (src !== null) {
-          const h4 = document.createElement('h4');
-          h4.textContent = '提出したソースコード (言語: Kuin)';
-          contentsElem.appendChild(h4);
+      if (src !== null) {
+        const h4 = document.createElement('h4');
+        h4.textContent = '提出したソースコード (言語: Kuin)';
+        contentsElem.appendChild(h4);
 
-          const codeContainer = document.createElement('div');
-          codeContainer.classList.add('code-container');
-          contentsElem.appendChild(codeContainer);
+        const codeContainer = document.createElement('div');
+        codeContainer.classList.add('code-container');
+        contentsElem.appendChild(codeContainer);
 
-          const copyButton = document.createElement('button');
-          copyButton.type = 'button';
-          copyButton.classList.add('code-copy-button');
-          copyButton.textContent = 'Copy';
-          codeContainer.appendChild(copyButton);
+        const copyButton = document.createElement('button');
+        copyButton.type = 'button';
+        copyButton.classList.add('code-copy-button');
+        copyButton.textContent = 'Copy';
+        codeContainer.appendChild(copyButton);
 
-          copyButton.addEventListener('click', async () => {
-            try {
-              await navigator.clipboard.writeText(src);
-              copyButton.textContent = 'Copied!';
+        copyButton.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(src);
+            copyButton.textContent = 'Copied!';
 
-              setTimeout(() => {
-                copyButton.textContent = 'Copy';
-              }, 1000);
-            } catch (error) {
-              console.error(error);
-              copyButton.textContent = 'Failed';
+            setTimeout(() => {
+              copyButton.textContent = 'Copy';
+            }, 1000);
+          } catch (error) {
+            console.error(error);
+            copyButton.textContent = 'Failed';
 
-              setTimeout(() => {
-                copyButton.textContent = 'Copy';
-              }, 1000);
-            }
-          });
-
-          const pre = document.createElement('pre');
-          pre.classList.add('code');
-          codeContainer.appendChild(pre);
-
-          const editor = tryElemToKuinEditor(pre);
-          if (editor !== null) {
-            editor.setValue(src);
-            editor.navigateTo(0, 0);
-          } else {
-            pre.textContent = src;
+            setTimeout(() => {
+              copyButton.textContent = 'Copy';
+            }, 1000);
           }
+        });
+
+        const pre = document.createElement('pre');
+        pre.classList.add('code');
+        codeContainer.appendChild(pre);
+
+        const editor = tryElemToKuinEditor(pre);
+        if (editor !== null) {
+          editor.setValue(src);
+          editor.navigateTo(0, 0);
         } else {
-          const p = document.createElement('p');
-          p.className = 'link-load-error';
-          p.textContent = 'ソースコードの読み込みに失敗しました。';
-          contentsElem.appendChild(p);
+          pre.textContent = src;
         }
+      } else {
+        const p = document.createElement('p');
+        p.className = 'link-load-error';
+        p.textContent = 'ソースコードの読み込みに失敗しました。';
+        contentsElem.appendChild(p);
       }
     }
 
@@ -481,7 +478,15 @@
   async function fetchResponse(url) {
     try {
       const response = await fetch(url, { cache: 'no-store' });
-      if (response.ok) return response;
+
+      if (response.ok) {
+        return response;
+      }
+
+      console.error(
+        `Fetch failed: ${response.status} ${response.statusText}`,
+        String(url)
+      );
     } catch (error) {
       console.error(error);
     }
