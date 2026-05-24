@@ -251,7 +251,7 @@
         contentsElem.appendChild(h2);
 
         const contestUrl = getContestUrl(contestId);
-        appendExternalUrlLink(contentsElem, 'コンテストリンク: ', contestUrl);
+        appendExternalLink(contentsElem, 'コンテストリンク: ', contestUrl);
       }
 
       // 問題名
@@ -264,7 +264,7 @@
       // 問題URL
       {
         const problemUrl = getProblemUrl(contestId, problemId);
-        appendExternalUrlLink(contentsElem, '問題リンク: ', problemUrl);
+        appendExternalLink(contentsElem, '問題リンク: ', problemUrl);
       }
 
       const [submissionUrl, src] = await Promise.all([
@@ -274,7 +274,7 @@
 
       // 提出URL
       {
-        appendExternalUrlLink(contentsElem, '提出リンク: ', submissionUrl);
+        appendExternalLink(contentsElem, '提出リンク: ', submissionUrl);
       }
 
       // 提出したソースコード
@@ -310,7 +310,7 @@
     }
   }
 
-  function appendExternalUrlLink(parentElem, labelText, url) {
+  function appendExternalLink(parentElem, labelText, url) {
     const p = document.createElement('p');
     p.classList.add('external-url');
     parentElem.append(p);
@@ -343,9 +343,8 @@
     }
   }
 
-  function appendUrlTextWithBreaks(parentElem, url) {
-    const urlText = String(url);
-    const parts = urlText.split('/');
+  function appendUrlTextWithBreaks(parentElem, urlText) {
+    const parts = String(urlText).split('/');
 
     parentElem.textContent = '';
 
