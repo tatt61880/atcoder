@@ -264,7 +264,11 @@
       // 問題URL
       {
         const problemUrl = getProblemUrl(contestId, problemId);
-        appendExternalLink(contentsElem, '問題リンク: ', problemUrl);
+        const urlText = String(problemUrl).replace(
+          new RegExp('^https://atcoder.jp/contests/[^/]+(/.+)'),
+          '$1'
+        );
+        appendExternalLink(contentsElem, '問題リンク: ', problemUrl, urlText);
       }
 
       const [submissionUrl, src] = await Promise.all([
@@ -274,7 +278,16 @@
 
       // 提出URL
       {
-        appendExternalLink(contentsElem, '提出リンク: ', submissionUrl);
+        const urlText = String(submissionUrl).replace(
+          new RegExp('^https://atcoder.jp/contests/[^/]+(/.+)'),
+          '$1'
+        );
+        appendExternalLink(
+          contentsElem,
+          '提出リンク: ',
+          submissionUrl,
+          urlText
+        );
       }
 
       // 提出したソースコード
@@ -325,6 +338,7 @@
           }
         } else {
           const p = document.createElement('p');
+          p.className = 'link-load-error';
           p.textContent = 'ソースコードの読み込みに失敗しました。';
           contentsElem.appendChild(p);
         }
@@ -338,16 +352,24 @@
     }
   }
 
-  function appendExternalLink(parentElem, labelText, url) {
-    const p = document.createElement('p');
-    p.classList.add('external-url');
-    parentElem.append(p);
+  function appendExternalLink(
+    parentElem,
+    labelText,
+    url,
+    urlText = String(url)
+  ) {
+    let elem = parentElem;
 
-    {
+    if (labelText !== null) {
+      const p = document.createElement('p');
+      p.classList.add('external-url');
+      parentElem.append(p);
+
       const span = document.createElement('span');
       span.classList.add('url-label');
       span.textContent = labelText;
       p.append(span);
+      elem = p;
     }
 
     if (url === null) {
@@ -355,19 +377,15 @@
       span.textContent = 'URLの読み込みに失敗しました。';
       span.className = 'link-load-error';
 
-      p.appendChild(span);
+      elem.appendChild(span);
     } else {
       const a = document.createElement('a');
       a.href = url;
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
 
-      const urlText = String(url).replace(
-        new RegExp('^https://atcoder.jp/contests/[^/]+(/.+)'),
-        '$1'
-      );
       appendUrlTextWithBreaks(a, urlText);
-      p.appendChild(a);
+      elem.appendChild(a);
     }
   }
 
@@ -397,8 +415,13 @@
 
   function getTaskPageUrl(contestId, problemId = null) {
     const params = new URLSearchParams();
+
     params.set('contest', contestId);
-    if (problemId !== null) params.set('task', problemId);
+
+    if (problemId !== null) {
+      params.set('task', problemId);
+    }
+
     return `?${params.toString()}`;
   }
 
@@ -438,6 +461,7 @@
     );
   }
 
+  // 問題URLを取得
   function getProblemUrl(contestId, problemId) {
     if (contestId === null) return null;
     if (problemId === null) return null;
