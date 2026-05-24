@@ -43,6 +43,38 @@
     }
   }
 
+  function appendContestNameOption(contentsElem) {
+    const storageKey = 'showShortContestName';
+
+    const label = document.createElement('label');
+    label.className = 'option-label';
+
+    const input = document.createElement('input');
+    input.id = 'show-contest-name-checkbox';
+    input.type = 'checkbox';
+    input.checked = localStorage.getItem(storageKey) === 'true';
+
+    label.appendChild(input);
+    label.append('コンテスト名を省略');
+    contentsElem.appendChild(label);
+
+    input.addEventListener('change', () => {
+      localStorage.setItem(storageKey, input.checked ? 'true' : 'false');
+      updateContestNameVisibility();
+    });
+
+    return updateContestNameVisibility;
+
+    function updateContestNameVisibility() {
+      const checked = input.checked;
+      for (const a of document.querySelectorAll('a.contest-link')) {
+        const contestNameLong = a.dataset.contestNameLong;
+        const contestNameShort = a.dataset.contestNameShort;
+        a.textContent = checked ? contestNameShort : contestNameLong;
+      }
+    }
+  }
+
   function appendProblemNameOption(contentsElem) {
     const storageKey = 'showProblemName';
 
@@ -55,7 +87,7 @@
     input.checked = localStorage.getItem(storageKey) === 'true';
 
     label.appendChild(input);
-    label.append('問題名を表示する');
+    label.append('問題名を表示');
     contentsElem.appendChild(label);
 
     input.addEventListener('change', () => {
@@ -79,6 +111,7 @@
 
   // ACコード一覧
   async function appendAcList(contentsElem, submissionsList) {
+    const updateContestNameVisibility = appendContestNameOption(contentsElem);
     const updateProblemNameVisibility = appendProblemNameOption(contentsElem);
 
     const tablePager = window.TablePager.create(contentsElem, {
@@ -184,9 +217,17 @@
         // コンテスト毎のまとめ
         {
           const url = getTaskPageUrl(contestId);
-          const text = contestTitleMap.get(contestId);
+          const contestName = contestTitleMap.get(contestId);
           const td = tr.insertCell();
-          td.appendChild(createInternalLink(url, text));
+          const a = createInternalLink(url, contestName);
+          a.classList.add('contest-link');
+
+          a.dataset.contestNameLong = contestName;
+          a.dataset.contestNameShort = getContestNameShort(
+            contestId,
+            contestName
+          );
+          td.appendChild(a);
         }
 
         // 個別のソースコード
@@ -211,6 +252,7 @@
         }
       }
 
+      updateContestNameVisibility();
       updateProblemNameVisibility();
     }
   }
@@ -411,6 +453,22 @@
       targetContestId: params.get('contest'),
       targetProblemId: params.get('task'),
     };
+  }
+
+  function getContestNameShort(contestId, contestName) {
+    {
+      const m = contestId.match(/^(abc|arc|agc|awc)(\d+)$/);
+      if (m) {
+        return `${m[1].toUpperCase()}${m[2]}`;
+      }
+    }
+    {
+      const m = contestName.match(/^AtCoder Daily Training (.+)$/);
+      if (m) {
+        return `ADT ${m[1]}`;
+      }
+    }
+    return contestName;
   }
 
   function getTaskPageUrl(contestId, problemId = null) {
