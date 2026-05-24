@@ -1,0 +1,32 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var a: [][]char :: #[n][]char
+	for i(0, n - 1)
+		do a[i] :: cui@input()
+	end for
+	
+	var b: [][]char :: #[m][]char
+	for i(0, m - 1)
+		do b[i] :: cui@input()
+	end for
+	
+	var ans: bool :: false
+	
+	for y(0, n - m)
+		for x(0, n - m)
+			for i(0, m - 1)
+				for j(0, m - 1)
+					if(a[y + i][x + j] <> b[i][j])
+						skip x
+					end if
+				end for
+			end for
+			do ans :: true
+			break y
+		end for
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

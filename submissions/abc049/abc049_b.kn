@@ -1,0 +1,10 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	
+	for(1, h)
+		var s: []char :: cui@inputStr()
+		do cui@print("\{s}\n")
+		do cui@print("\{s}\n")
+	end for
+end func

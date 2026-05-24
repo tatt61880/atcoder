@@ -1,0 +1,18 @@
+func main()
+	var k: int :: cui@inputInt()
+	var s: int :: cui@inputInt()
+	
+	var ans: int :: 0
+	
+	for x(0, k)
+		var rest: int :: s - x
+		if(rest < 0)
+		elif(rest <= k)
+			do ans :+ rest + 1
+		elif(rest <= 2 * k)
+			do ans :+ 2 * k - rest + 1
+		end if
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

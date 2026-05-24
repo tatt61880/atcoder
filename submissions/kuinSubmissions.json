@@ -735,6 +735,13 @@
     "name": "UOIAUAI"
   },
   {
+    "problem_id": "abc049_b",
+    "contest_id": "abc049",
+    "contest_title": "AtCoder Beginner Contest 049",
+    "problem_index": "B",
+    "name": "Thin"
+  },
+  {
     "problem_id": "arc065_a",
     "contest_id": "abc049",
     "contest_title": "AtCoder Beginner Contest 049",
@@ -749,11 +756,25 @@
     "name": "Addition and Subtraction Easy"
   },
   {
+    "problem_id": "abc050_b",
+    "contest_id": "abc050",
+    "contest_title": "AtCoder Beginner Contest 050",
+    "problem_index": "B",
+    "name": "Contest with Drinks Easy"
+  },
+  {
     "problem_id": "abc051_a",
     "contest_id": "abc051",
     "contest_title": "AtCoder Beginner Contest 051",
     "problem_index": "A",
     "name": "Haiku"
+  },
+  {
+    "problem_id": "abc051_b",
+    "contest_id": "abc051",
+    "contest_title": "AtCoder Beginner Contest 051",
+    "problem_index": "B",
+    "name": "Sum of Three Integers"
   },
   {
     "problem_id": "abc052_a",
@@ -763,6 +784,13 @@
     "name": "Two Rectangles"
   },
   {
+    "problem_id": "abc052_b",
+    "contest_id": "abc052",
+    "contest_title": "AtCoder Beginner Contest 052",
+    "problem_index": "B",
+    "name": "Increment Decrement"
+  },
+  {
     "problem_id": "abc053_a",
     "contest_id": "abc053",
     "contest_title": "AtCoder Beginner Contest 053",
@@ -770,11 +798,25 @@
     "name": "ABC/ARC"
   },
   {
+    "problem_id": "abc053_b",
+    "contest_id": "abc053",
+    "contest_title": "AtCoder Beginner Contest 053",
+    "problem_index": "B",
+    "name": "A to Z String"
+  },
+  {
     "problem_id": "abc054_a",
     "contest_id": "abc054",
     "contest_title": "AtCoder Beginner Contest 054",
     "problem_index": "A",
     "name": "One Card Poker"
+  },
+  {
+    "problem_id": "abc054_b",
+    "contest_id": "abc054",
+    "contest_title": "AtCoder Beginner Contest 054",
+    "problem_index": "B",
+    "name": "Template Matching"
   },
   {
     "problem_id": "abc055_a",
@@ -5010,6 +5052,13 @@
     "contest_title": "SMBCプログラミングコンテスト #1（AtCoder Beginner Contest 458）",
     "problem_index": "B",
     "name": "Count Adjacent Cells"
+  },
+  {
+    "problem_id": "abc459_a",
+    "contest_id": "abc459",
+    "contest_title": "東京海上日動プログラミングコンテスト2026（AtCoder Beginner Contest 459）",
+    "problem_index": "A",
+    "name": "Hell, World!"
   },
   {
     "problem_id": "abc081_a",

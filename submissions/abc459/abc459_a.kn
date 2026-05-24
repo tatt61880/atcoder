@@ -1,0 +1,6 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: "HelloWorld"
+	var ans: []char :: s.sub(0, n - 1) ~ s.sub(n, -1)
+	do cui@print("\{ans}\n")
+end func
