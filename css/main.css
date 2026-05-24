@@ -18,13 +18,15 @@ blockquote {
   border-left: 0.25em solid #dfe2e5;
 }
 
+p {
+  margin: 5px 10px;
+}
+
 p.external-url {
   display: flex;
   flex-wrap: nowrap;
   gap: 5px;
   align-items: center;
-  margin: 5px;
-  margin-left: 10px;
 }
 
 span.url-label {
@@ -152,33 +154,6 @@ a:focus-visible {
   font-size: 0.95em;
   font-style: italic;
   color: #666666;
-}
-
-.option-label {
-  display: inline-flex;
-  gap: 6px;
-  align-items: center;
-  padding: 4px 10px;
-  margin: 10px 10px 5px;
-  cursor: pointer;
-  user-select: none;
-  border: 1px solid #999999;
-  border-radius: 5px;
-}
-
-.option-label:hover {
-  background-color: #e8edff;
-  border-color: #6f7fc8;
-}
-
-.option-label:focus-within {
-  outline: 2px solid #6f7fc8;
-  outline-offset: 1px;
-}
-
-.option-label input {
-  margin: 0;
-  cursor: pointer;
 }
 
 .table-pager {
@@ -316,4 +291,31 @@ a:focus-visible {
 
 .code-copy-button:active {
   background-color: #e8e8e8;
+}
+
+.option-label {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  padding: 4px 10px;
+  margin: 10px 10px 5px;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid #999999;
+  border-radius: 5px;
+}
+
+.option-label:hover {
+  background-color: #e8edff;
+  border-color: #6f7fc8;
+}
+
+.option-label:focus-within {
+  outline: 2px solid #6f7fc8;
+  outline-offset: 1px;
+}
+
+.option-label input {
+  margin: 0;
+  cursor: pointer;
 }
