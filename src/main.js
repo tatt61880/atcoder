@@ -118,6 +118,7 @@
     }
 
     const table = document.createElement('table');
+    table.className = 'main-table';
     contentsElem.appendChild(table);
 
     const thead = document.createElement('thead');
