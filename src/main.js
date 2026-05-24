@@ -389,34 +389,6 @@
     };
   }
 
-  function getContestNameShort(contestId, contestName) {
-    {
-      const m = contestId.match(/^(abc|arc|agc|awc)(\d+)$/);
-      if (m) {
-        return `${m[1].toUpperCase()}${m[2]}`;
-      }
-    }
-    {
-      const m = contestName.match(/^AtCoder Daily Training (.+)$/);
-      if (m) {
-        return `ADT ${m[1]}`;
-      }
-    }
-    return contestName;
-  }
-
-  function getTaskPageUrl(contestId, problemId = null) {
-    const params = new URLSearchParams();
-
-    params.set('contest', contestId);
-
-    if (problemId !== null) {
-      params.set('task', problemId);
-    }
-
-    return `?${params.toString()}`;
-  }
-
   function tryElemToKuinEditor(elem) {
     if (window.ace === undefined) {
       return null;
@@ -600,5 +572,33 @@
           : problemIndex;
       }
     }
+  }
+
+  function getContestNameShort(contestId, contestName) {
+    {
+      const m = contestId.match(/^(abc|arc|agc|awc)(\d+)$/);
+      if (m) {
+        return `${m[1].toUpperCase()}${m[2]}`;
+      }
+    }
+    {
+      const m = contestName.match(/^AtCoder Daily Training (.+)$/);
+      if (m) {
+        return `ADT ${m[1]}`;
+      }
+    }
+    return contestName;
+  }
+
+  function getTaskPageUrl(contestId, problemId = null) {
+    const params = new URLSearchParams();
+
+    params.set('contest', contestId);
+
+    if (problemId !== null) {
+      params.set('task', problemId);
+    }
+
+    return `?${params.toString()}`;
   }
 })();
