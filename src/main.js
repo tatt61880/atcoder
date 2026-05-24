@@ -21,15 +21,15 @@
 
     const submissionsList = await getSubmissionsList(baseUrl);
 
-    contentsElem.replaceChildren();
-
     if (submissionsList === null) {
       const p = document.createElement('p');
       p.className = 'data-load-error';
       p.textContent = '提出データの読み込みに失敗しました。';
-      contentsElem.appendChild(p);
+      contentsElem.replaceChildren(p);
       return;
     }
+
+    contentsElem.replaceChildren();
 
     if (targetContestId === null) {
       await appendAcList(contentsElem, submissionsList);
