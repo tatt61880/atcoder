@@ -301,13 +301,14 @@ a:focus-visible {
   margin: 10px 10px 5px;
   cursor: pointer;
   user-select: none;
-  border: 1px solid #999999;
+  background-color: #f0f3ff;
+  border: 1px solid #8a96c8;
   border-radius: 5px;
 }
 
 .option-label:hover {
-  background-color: #e8edff;
-  border-color: #6f7fc8;
+  background-color: #e0e7ff;
+  border-color: #666666;
 }
 
 .option-label:focus-within {
