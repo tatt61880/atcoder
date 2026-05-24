@@ -43,72 +43,6 @@
     }
   }
 
-  function appendContestNameOption(contentsElem) {
-    const storageKey = 'showShortContestName';
-
-    const label = document.createElement('label');
-    label.className = 'option-label';
-
-    const input = document.createElement('input');
-    input.id = 'show-contest-name-checkbox';
-    input.type = 'checkbox';
-    input.checked = localStorage.getItem(storageKey) === 'true';
-
-    label.appendChild(input);
-    label.append('コンテスト名を省略');
-    contentsElem.appendChild(label);
-
-    input.addEventListener('change', () => {
-      localStorage.setItem(storageKey, input.checked ? 'true' : 'false');
-      updateContestNameVisibility();
-    });
-
-    return updateContestNameVisibility;
-
-    function updateContestNameVisibility() {
-      const checked = input.checked;
-      for (const a of document.querySelectorAll('a.contest-link')) {
-        const contestNameLong = a.dataset.contestNameLong;
-        const contestNameShort = a.dataset.contestNameShort;
-        a.textContent = checked ? contestNameShort : contestNameLong;
-      }
-    }
-  }
-
-  function appendProblemNameOption(contentsElem) {
-    const storageKey = 'showProblemName';
-
-    const label = document.createElement('label');
-    label.className = 'option-label';
-
-    const input = document.createElement('input');
-    input.id = 'show-problem-name-checkbox';
-    input.type = 'checkbox';
-    input.checked = localStorage.getItem(storageKey) === 'true';
-
-    label.appendChild(input);
-    label.append('問題名を表示');
-    contentsElem.appendChild(label);
-
-    input.addEventListener('change', () => {
-      localStorage.setItem(storageKey, input.checked ? 'true' : 'false');
-      updateProblemNameVisibility();
-    });
-
-    return updateProblemNameVisibility;
-
-    function updateProblemNameVisibility() {
-      const checked = input.checked;
-      for (const a of document.querySelectorAll('a.submit-link')) {
-        const problemIndex = a.dataset.problemIndex;
-        const problemName = a.dataset.problemName;
-        a.textContent = checked
-          ? `${problemIndex}: ${problemName}`
-          : problemIndex;
-      }
-    }
-  }
-
   // ACコード一覧
   async function appendAcList(contentsElem, submissionsList) {
     const updateContestNameVisibility = appendContestNameOption(contentsElem);
@@ -160,15 +94,15 @@
     const tr = thead.insertRow();
 
     {
-      const td = document.createElement('th');
-      td.textContent = 'コンテスト毎のまとめ';
-      tr.appendChild(td);
+      const th = document.createElement('th');
+      th.textContent = 'コンテスト毎のまとめ';
+      tr.appendChild(th);
     }
 
     {
-      const td = document.createElement('th');
-      td.textContent = '個別のソースコード';
-      tr.appendChild(td);
+      const th = document.createElement('th');
+      th.textContent = '個別のソースコード';
+      tr.appendChild(th);
     }
 
     const tbody = document.createElement('tbody');
@@ -599,6 +533,72 @@
     } catch (error) {
       console.error(error);
       return null;
+    }
+  }
+
+  function appendContestNameOption(contentsElem) {
+    const storageKey = 'showShortContestName';
+
+    const label = document.createElement('label');
+    label.className = 'option-label';
+
+    const input = document.createElement('input');
+    input.id = 'show-contest-name-checkbox';
+    input.type = 'checkbox';
+    input.checked = localStorage.getItem(storageKey) === 'true';
+
+    label.appendChild(input);
+    label.append('コンテスト名を省略');
+    contentsElem.appendChild(label);
+
+    input.addEventListener('change', () => {
+      localStorage.setItem(storageKey, input.checked ? 'true' : 'false');
+      updateContestNameVisibility();
+    });
+
+    return updateContestNameVisibility;
+
+    function updateContestNameVisibility() {
+      const checked = input.checked;
+      for (const a of document.querySelectorAll('a.contest-link')) {
+        const contestNameLong = a.dataset.contestNameLong;
+        const contestNameShort = a.dataset.contestNameShort;
+        a.textContent = checked ? contestNameShort : contestNameLong;
+      }
+    }
+  }
+
+  function appendProblemNameOption(contentsElem) {
+    const storageKey = 'showProblemName';
+
+    const label = document.createElement('label');
+    label.className = 'option-label';
+
+    const input = document.createElement('input');
+    input.id = 'show-problem-name-checkbox';
+    input.type = 'checkbox';
+    input.checked = localStorage.getItem(storageKey) === 'true';
+
+    label.appendChild(input);
+    label.append('問題名を表示');
+    contentsElem.appendChild(label);
+
+    input.addEventListener('change', () => {
+      localStorage.setItem(storageKey, input.checked ? 'true' : 'false');
+      updateProblemNameVisibility();
+    });
+
+    return updateProblemNameVisibility;
+
+    function updateProblemNameVisibility() {
+      const checked = input.checked;
+      for (const a of document.querySelectorAll('a.submit-link')) {
+        const problemIndex = a.dataset.problemIndex;
+        const problemName = a.dataset.problemName;
+        a.textContent = checked
+          ? `${problemIndex}: ${problemName}`
+          : problemIndex;
+      }
     }
   }
 })();
