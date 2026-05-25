@@ -1,0 +1,15 @@
+func main()
+	var o: []char :: cui@inputStr()
+	var e: []char :: cui@inputStr()
+	
+	var ans: []char :: ""
+	for i(0, ^o + ^e - 1)
+		if(i % 2 = 0)
+			do ans :~ [o[i / 2]]
+		else
+			do ans :~ [e[i / 2]]
+		end if
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

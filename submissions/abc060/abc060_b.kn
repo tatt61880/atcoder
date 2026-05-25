@@ -1,0 +1,15 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	
+	var ans: bool :: false
+	for i(0, b)
+		if(i * a % b = c)
+			do ans :: true
+			break i
+		end if
+	end for
+	
+	do cui@print((ans ?("YES", "NO")) ~ "\n")
+end func

@@ -826,6 +826,13 @@
     "name": "Restaurant"
   },
   {
+    "problem_id": "abc055_b",
+    "contest_id": "abc055",
+    "contest_title": "AtCoder Beginner Contest 055",
+    "problem_index": "B",
+    "name": "Training Camp"
+  },
+  {
     "problem_id": "abc056_a",
     "contest_id": "abc056",
     "contest_title": "AtCoder Beginner Contest 056",
@@ -847,6 +854,13 @@
     "name": "ι⊥l"
   },
   {
+    "problem_id": "abc058_b",
+    "contest_id": "abc058",
+    "contest_title": "AtCoder Beginner Contest 058",
+    "problem_index": "B",
+    "name": "∵∴∵"
+  },
+  {
     "problem_id": "abc059_a",
     "contest_id": "abc059",
     "contest_title": "AtCoder Beginner Contest 059",
@@ -854,11 +868,25 @@
     "name": "Three-letter acronym"
   },
   {
+    "problem_id": "abc059_b",
+    "contest_id": "abc059",
+    "contest_title": "AtCoder Beginner Contest 059",
+    "problem_index": "B",
+    "name": "Comparison"
+  },
+  {
     "problem_id": "abc060_a",
     "contest_id": "abc060",
     "contest_title": "AtCoder Beginner Contest 060",
     "problem_index": "A",
     "name": "Shiritori"
+  },
+  {
+    "problem_id": "abc060_b",
+    "contest_id": "abc060",
+    "contest_title": "AtCoder Beginner Contest 060",
+    "problem_index": "B",
+    "name": "Choose Integers"
   },
   {
     "problem_id": "abc061_a",
@@ -5059,6 +5087,13 @@
     "contest_title": "東京海上日動プログラミングコンテスト2026（AtCoder Beginner Contest 459）",
     "problem_index": "A",
     "name": "Hell, World!"
+  },
+  {
+    "problem_id": "abc459_b",
+    "contest_id": "abc459",
+    "contest_title": "東京海上日動プログラミングコンテスト2026（AtCoder Beginner Contest 459）",
+    "problem_index": "B",
+    "name": "459"
   },
   {
     "problem_id": "abc081_a",

@@ -1,0 +1,36 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: []char :: #[n]char
+	
+	for i(0, n - 1)
+		var s: []char :: cui@inputStr()
+		var c: char :: s[0]
+		var v: int :: 2
+		
+		if(c > 'c')
+			do v :+ 1
+		end if
+		if(c > 'f')
+			do v :+ 1
+		end if
+		if(c > 'i')
+			do v :+ 1
+		end if
+		if(c > 'l')
+			do v :+ 1
+		end if
+		if(c > 'o')
+			do v :+ 1
+		end if
+		if(c > 's')
+			do v :+ 1
+		end if
+		if(c > 'v')
+			do v :+ 1
+		end if
+		
+		do ans[i] :: '0'.offset(v)
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

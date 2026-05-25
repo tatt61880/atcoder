@@ -1,0 +1,12 @@
+func main()
+	var a: []char :: cui@input()
+	var b: []char :: cui@input()
+	
+	if(a = b)
+		do cui@print("EQUAL\n")
+	elif(^a < ^b | ^a = ^b & a < b)
+		do cui@print("LESS\n")
+	else
+		do cui@print("GREATER\n")
+	end if
+end func
