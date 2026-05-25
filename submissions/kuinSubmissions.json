@@ -938,6 +938,13 @@
     "name": "ringring"
   },
   {
+    "problem_id": "abc066_b",
+    "contest_id": "abc066",
+    "contest_title": "AtCoder Beginner Contest 066",
+    "problem_index": "B",
+    "name": "ss"
+  },
+  {
     "problem_id": "abc067_a",
     "contest_id": "abc067",
     "contest_title": "AtCoder Beginner Contest 067",
@@ -1006,6 +1013,13 @@
     "contest_title": "AtCoder Beginner Contest 074",
     "problem_index": "A",
     "name": "Bichrome Cells"
+  },
+  {
+    "problem_id": "abc074_b",
+    "contest_id": "abc074",
+    "contest_title": "AtCoder Beginner Contest 074",
+    "problem_index": "B",
+    "name": "Collecting Balls (Easy Version)"
   },
   {
     "problem_id": "abc075_a",
@@ -1223,6 +1237,13 @@
     "contest_title": "AtCoder Beginner Contest 089",
     "problem_index": "A",
     "name": "Grouping 2"
+  },
+  {
+    "problem_id": "abc089_b",
+    "contest_id": "abc089",
+    "contest_title": "AtCoder Beginner Contest 089",
+    "problem_index": "B",
+    "name": "Hina Arare"
   },
   {
     "problem_id": "abc090_a",

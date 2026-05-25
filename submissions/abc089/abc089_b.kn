@@ -1,0 +1,5 @@
+func main()
+	do cui@input()
+	var ans: bool :: cui@input().find('Y', 0) <> -1
+	do cui@print((ans ?("Four", "Three")) ~ "\n")
+end func

@@ -1,0 +1,19 @@
+func main()
+	var s: []char :: cui@input()
+	var n: int :: ^s - 1
+	
+	var ans: int :: 0
+	
+	for i(n / 2, 1, -1)
+		for j(0, i - 1)
+			if(s[j] <> s[j + i])
+				skip i
+			end if
+		end for
+		
+		do ans :: i * 2
+		break i
+	end for
+	
+	do cui@print("\{ans}\n")
+end func
