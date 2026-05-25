@@ -847,6 +847,13 @@
     "name": "Remaining Time"
   },
   {
+    "problem_id": "abc057_b",
+    "contest_id": "abc057",
+    "contest_title": "AtCoder Beginner Contest 057",
+    "problem_index": "B",
+    "name": "Checkpoints"
+  },
+  {
     "problem_id": "abc058_a",
     "contest_id": "abc058",
     "contest_title": "AtCoder Beginner Contest 058",
@@ -938,6 +945,13 @@
     "name": "Sharing Cookies"
   },
   {
+    "problem_id": "abc067_b",
+    "contest_id": "abc067",
+    "contest_title": "AtCoder Beginner Contest 067",
+    "problem_index": "B",
+    "name": "Snake Toy"
+  },
+  {
     "problem_id": "abc068_a",
     "contest_id": "abc068",
     "contest_title": "AtCoder Beginner Contest 068",
@@ -964,6 +978,13 @@
     "contest_title": "AtCoder Beginner Contest 071",
     "problem_index": "A",
     "name": "Meal Delivery"
+  },
+  {
+    "problem_id": "abc071_b",
+    "contest_id": "abc071",
+    "contest_title": "AtCoder Beginner Contest 071",
+    "problem_index": "B",
+    "name": "Not Found"
   },
   {
     "problem_id": "abc072_a",

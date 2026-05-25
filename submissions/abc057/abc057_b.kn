@@ -1,0 +1,33 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var a: []int :: #[n]int
+	var b: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+		do b[i] :: cui@inputInt()
+	end for
+	
+	var c: []int :: #[m]int
+	var d: []int :: #[m]int
+	for i(0, m - 1)
+		do c[i] :: cui@inputInt()
+		do d[i] :: cui@inputInt()
+	end for
+	
+	for i(0, n - 1)
+		var minDist: int :: lib@intMax
+		var minJ: int :: 0
+		for j(0, m - 1)
+			var dist: int :: (a[i] - c[j]).abs() + (b[i] - d[j]).abs()
+			if(dist < minDist)
+				do minDist :: dist
+				do minJ :: j
+			end if
+		end for
+		
+		var ans: int :: minJ + 1
+		do cui@print("\{ans}\n")
+	end for
+end func
