@@ -247,6 +247,7 @@
         );
         appendExternalLink(contentsElem, '問題リンク: ', problemUrl, urlText);
       }
+
       const [submissionUrl, src] = await Promise.all([
         getSubmissionUrl(baseUrl, contestId, problemId),
         getSrc(baseUrl, contestId, problemId),
