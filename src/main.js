@@ -254,7 +254,7 @@
 
       // 提出URL
       {
-        const urlText = String(submissionUrl).replace(
+        const submissionUrlText = String(submissionUrl).replace(
           new RegExp('^https://atcoder.jp/contests/[^/]+(/.+)'),
           '$1'
         );
@@ -262,7 +262,7 @@
           contentsElem,
           '提出リンク: ',
           submissionUrl,
-          urlText
+          submissionUrlText
         );
       }
 
