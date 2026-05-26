@@ -129,7 +129,7 @@
         } else {
           status.textContent = `${
             beginIndex + 1
-          }〜～${endIndex} / 全${itemCount}${itemName}`;
+          }〜${endIndex} / 全${itemCount}${itemName}`;
         }
 
         pageButtons.textContent = '';
