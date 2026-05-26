@@ -76,7 +76,7 @@
       p.setAttribute('id', 'total-num');
 
       const totalNumSpan = document.createElement('span');
-      totalNumSpan.textContent = `計${submissionsList.length}問`;
+      totalNumSpan.textContent = `全${submissionsList.length}問`;
       p.appendChild(totalNumSpan);
 
       const totalNumNoteSpan = document.createElement('span');
