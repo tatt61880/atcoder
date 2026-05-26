@@ -840,6 +840,13 @@
     "name": "HonestOrDishonest"
   },
   {
+    "problem_id": "abc056_b",
+    "contest_id": "abc056",
+    "contest_title": "AtCoder Beginner Contest 056",
+    "problem_index": "B",
+    "name": "NarrowRectanglesEasy"
+  },
+  {
     "problem_id": "abc057_a",
     "contest_id": "abc057",
     "contest_title": "AtCoder Beginner Contest 057",
@@ -903,11 +910,25 @@
     "name": "Between Two Integers"
   },
   {
+    "problem_id": "abc061_b",
+    "contest_id": "abc061",
+    "contest_title": "AtCoder Beginner Contest 061",
+    "problem_index": "B",
+    "name": "Counting Roads"
+  },
+  {
     "problem_id": "abc062_a",
     "contest_id": "abc062",
     "contest_title": "AtCoder Beginner Contest 062",
     "problem_index": "A",
     "name": "Grouping"
+  },
+  {
+    "problem_id": "abc062_b",
+    "contest_id": "abc062",
+    "contest_title": "AtCoder Beginner Contest 062",
+    "problem_index": "B",
+    "name": "Picture Frame"
   },
   {
     "problem_id": "abc063_a",
@@ -917,6 +938,13 @@
     "name": "Restricted"
   },
   {
+    "problem_id": "abc063_b",
+    "contest_id": "abc063",
+    "contest_title": "AtCoder Beginner Contest 063",
+    "problem_index": "B",
+    "name": "Varied"
+  },
+  {
     "problem_id": "abc064_a",
     "contest_id": "abc064",
     "contest_title": "AtCoder Beginner Contest 064",
@@ -924,11 +952,25 @@
     "name": "RGB Cards"
   },
   {
+    "problem_id": "abc064_b",
+    "contest_id": "abc064",
+    "contest_title": "AtCoder Beginner Contest 064",
+    "problem_index": "B",
+    "name": "Traveling AtCoDeer Problem"
+  },
+  {
     "problem_id": "abc065_a",
     "contest_id": "abc065",
     "contest_title": "AtCoder Beginner Contest 065",
     "problem_index": "A",
     "name": "Expired?"
+  },
+  {
+    "problem_id": "abc065_b",
+    "contest_id": "abc065",
+    "contest_title": "AtCoder Beginner Contest 065",
+    "problem_index": "B",
+    "name": "Trained?"
   },
   {
     "problem_id": "abc066_a",
@@ -966,6 +1008,13 @@
     "name": "ABCxxx"
   },
   {
+    "problem_id": "abc068_b",
+    "contest_id": "abc068",
+    "contest_title": "AtCoder Beginner Contest 068",
+    "problem_index": "B",
+    "name": "Break Number"
+  },
+  {
     "problem_id": "abc069_a",
     "contest_id": "abc069",
     "contest_title": "AtCoder Beginner Contest 069",
@@ -973,11 +1022,25 @@
     "name": "K-City"
   },
   {
+    "problem_id": "abc069_b",
+    "contest_id": "abc069",
+    "contest_title": "AtCoder Beginner Contest 069",
+    "problem_index": "B",
+    "name": "i18n"
+  },
+  {
     "problem_id": "abc070_a",
     "contest_id": "abc070",
     "contest_title": "AtCoder Beginner Contest 070",
     "problem_index": "A",
     "name": "Palindromic Number"
+  },
+  {
+    "problem_id": "abc070_b",
+    "contest_id": "abc070",
+    "contest_title": "AtCoder Beginner Contest 070",
+    "problem_index": "B",
+    "name": "Two Switches"
   },
   {
     "problem_id": "abc071_a",
@@ -1001,11 +1064,25 @@
     "name": "Sandglass2"
   },
   {
+    "problem_id": "abc072_b",
+    "contest_id": "abc072",
+    "contest_title": "AtCoder Beginner Contest 072",
+    "problem_index": "B",
+    "name": "OddString"
+  },
+  {
     "problem_id": "abc073_a",
     "contest_id": "abc073",
     "contest_title": "AtCoder Beginner Contest 073",
     "problem_index": "A",
     "name": "September 9"
+  },
+  {
+    "problem_id": "abc073_b",
+    "contest_id": "abc073",
+    "contest_title": "AtCoder Beginner Contest 073",
+    "problem_index": "B",
+    "name": "Theater"
   },
   {
     "problem_id": "abc074_a",

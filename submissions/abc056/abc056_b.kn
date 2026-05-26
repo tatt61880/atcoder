@@ -1,0 +1,14 @@
+func main()
+	var w: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	if(a > b)
+		var t: int :: a
+		do a :: b
+		do b :: t
+	end if
+	
+	var ans: int :: lib@max(0, b - (a + w))
+	
+	do cui@print("\{ans}\n")
+end func

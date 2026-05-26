@@ -1,0 +1,12 @@
+func main()
+	var s: []char :: cui@input()
+	
+	var dic: dict<char, bool> :: #dict<char, bool>
+	
+	for i(0, ^s - 1)
+		do dic.add(s[i], true)
+	end for
+	
+	var ans: bool :: ^dic = ^s
+	do cui@print((ans ?("yes", "no")) ~ "\n")
+end func

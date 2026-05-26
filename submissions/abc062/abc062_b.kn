@@ -1,0 +1,13 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	
+	do cui@print("\{"#".repeat(w + 2)}\n")
+	
+	for i(0, h - 1)
+		var s: []char :: cui@inputStr()
+		do cui@print("#\{s}#\n")
+	end for
+	
+	do cui@print("\{"#".repeat(w + 2)}\n")
+end func
