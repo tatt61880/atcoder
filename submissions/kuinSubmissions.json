@@ -3150,6 +3150,13 @@
     "name": "Potions"
   },
   {
+    "problem_id": "abc317_b",
+    "contest_id": "abc317",
+    "contest_title": "ゲームフリーク Programming Contest 2023（AtCoder Beginner Contest 317）",
+    "problem_index": "B",
+    "name": "MissingNo."
+  },
+  {
     "problem_id": "abc318_a",
     "contest_id": "abc318",
     "contest_title": "THIRD プログラミングコンテスト 2023 アルゴ（AtCoder Beginner Contest 318）",
