@@ -1358,6 +1358,13 @@
     "name": "Traveling Budget"
   },
   {
+    "problem_id": "abc092_b",
+    "contest_id": "abc092",
+    "contest_title": "AtCoder Beginner Contest 092",
+    "problem_index": "B",
+    "name": "Chocolate"
+  },
+  {
     "problem_id": "abc093_a",
     "contest_id": "abc093",
     "contest_title": "AtCoder Beginner Contest 093",
@@ -1377,6 +1384,13 @@
     "contest_title": "AtCoder Beginner Contest 094",
     "problem_index": "A",
     "name": "Cats and Dogs"
+  },
+  {
+    "problem_id": "abc094_b",
+    "contest_id": "abc094",
+    "contest_title": "AtCoder Beginner Contest 094",
+    "problem_index": "B",
+    "name": "Toll Gates"
   },
   {
     "problem_id": "abc095_a",
@@ -3162,6 +3176,13 @@
     "contest_title": "キーエンスプログラミングコンテスト2023夏（AtCoder Beginner Contest 315）",
     "problem_index": "A",
     "name": "tcdr"
+  },
+  {
+    "problem_id": "abc315_b",
+    "contest_id": "abc315",
+    "contest_title": "キーエンスプログラミングコンテスト2023夏（AtCoder Beginner Contest 315）",
+    "problem_index": "B",
+    "name": "The Middle Day"
   },
   {
     "problem_id": "abc317_a",

@@ -3,9 +3,16 @@ func main()
 	var b: int :: cui@inputInt()
 	var k: int :: cui@inputInt()
 	
-	for i(a, b)
-		if(i < a + k | b - k < i)
+	if(b - a + 1 > 2 * k)
+		for i(a, a + k - 1)
 			do cui@print("\{i}\n")
-		end if
-	end for
+		end for
+		for i(b - k + 1, b)
+			do cui@print("\{i}\n")
+		end for
+	else
+		for i(a, b)
+			do cui@print("\{i}\n")
+		end for
+	end if
 end func

@@ -1,0 +1,19 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	
+	var ans1: int
+	var ans2: int
+	for(1, m)
+		var a: int :: cui@inputInt()
+		if(a < x)
+			do ans1 :+ 1
+		else
+			do ans2 :+ 1
+		end if
+	end for
+	
+	var ans: int :: lib@min(ans1, ans2)
+	do cui@print("\{ans}\n")
+end func

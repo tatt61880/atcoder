@@ -1,0 +1,23 @@
+func main()
+	var m: int :: cui@inputInt()
+	var d: []int :: #[m + 1]int
+	
+	var sum: int
+	for i(1, m)
+		do d[i] :: cui@inputInt()
+		do sum :+ d[i]
+	end for
+	
+	var md: int :: (sum + 1) / 2
+	var cnt: int
+	for i(1, m)
+		for j(1, d[i])
+			do cnt :+ 1
+			if(cnt = md)
+				var ans: int :: 0
+				do cui@print("\{i} \{j}\n")
+				ret
+			end if
+		end for
+	end for
+end func
