@@ -7,6 +7,16 @@ module.exports = [
   },
   js.configs.recommended,
   {
+    files: ['eslint.config.js'],
+    languageOptions: {
+      ecmaVersion: 2021,
+      sourceType: 'commonjs',
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
+  {
     files: ['src/*.js'],
     languageOptions: {
       ecmaVersion: 2021,
