@@ -420,10 +420,7 @@
   function getContestUrl(contestId) {
     if (contestId === null) return null;
 
-    return new URL(
-      `contests/${encodeURIComponent(contestId)}/`,
-      'https://atcoder.jp/'
-    );
+    return new URL(`contests/${contestId}/`, 'https://atcoder.jp/');
   }
 
   // 問題URLを取得
@@ -432,8 +429,7 @@
     if (problemId === null) return null;
 
     return new URL(
-      `contests/${encodeURIComponent(contestId)}/` +
-        `tasks/${encodeURIComponent(problemId)}`,
+      `contests/${contestId}/tasks/${problemId}`,
       'https://atcoder.jp/'
     );
   }
@@ -447,12 +443,7 @@
 
   async function getSubmissionUrl(baseUrl, contestId, problemId) {
     const res = await fetchText(
-      new URL(
-        'submissions/' +
-          `${encodeURIComponent(contestId)}/` +
-          `${encodeURIComponent(problemId)}.url`,
-        baseUrl
-      )
+      new URL(`submissions/${contestId}/${problemId}.url`, baseUrl)
     );
 
     if (res !== null) {
@@ -470,12 +461,7 @@
 
   async function getSrc(baseUrl, contestId, problemId) {
     return await fetchText(
-      new URL(
-        'submissions/' +
-          `${encodeURIComponent(contestId)}/` +
-          `${encodeURIComponent(problemId)}.kn`,
-        baseUrl
-      )
+      new URL(`submissions/${contestId}/${problemId}.kn`, baseUrl)
     );
   }
 
