@@ -20,7 +20,6 @@
     "stylelint": "stylelint ./css/*.css --fix"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
     "@eslint/js": "^10.0.1",
     "eslint": "^10.4.0",
     "globals": "^17.6.0",
