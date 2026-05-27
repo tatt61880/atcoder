@@ -1,12 +1,19 @@
 func main()
 	var s: []char :: cui@inputStr()
 	
-	var ans: bool :: isPalindrome(s) & isPalindrome(s.sub(0, (^s - 1) / 2))
+	var ans: bool :: @isPalindrome(s, 0, ^s - 1) & @isPalindrome(s, 0, (^s - 1) / 2 - 1)
 	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func
+
+func isPalindrome(s: []char, l: int, r: int): bool
+	while(l < r)
+		if(s[l] <> s[r])
+			ret false
+		end if
+		
+		do l :+ 1
+		do r :- 1
+	end while
 	
-	func isPalindrome(s: []char): bool
-		var t: []char :: ##s
-		do t.reverse()
-		ret s = t
-	end func
+	ret true
 end func
