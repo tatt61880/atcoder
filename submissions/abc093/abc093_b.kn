@@ -1,0 +1,11 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	
+	for i(a, b)
+		if(i < a + k | b - k < i)
+			do cui@print("\{i}\n")
+		end if
+	end for
+end func

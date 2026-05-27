@@ -1365,6 +1365,13 @@
     "name": "abc of ABC"
   },
   {
+    "problem_id": "abc093_b",
+    "contest_id": "abc093",
+    "contest_title": "AtCoder Beginner Contest 093",
+    "problem_index": "B",
+    "name": "Small and Large Integers"
+  },
+  {
     "problem_id": "abc094_a",
     "contest_id": "abc094",
     "contest_title": "AtCoder Beginner Contest 094",
