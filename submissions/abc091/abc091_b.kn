@@ -1,0 +1,28 @@
+func main()
+	var d: dict<[]char, int> :: #dict<[]char, int>
+	
+	var n: int :: cui@inputInt()
+	for(1, n)
+		var s: []char :: cui@input()
+		do d.add(s, d.get(s, &) + 1)
+	end for
+	
+	var m: int :: cui@inputInt()
+	for(1, m)
+		var t: []char :: cui@input()
+		do d.add(t, d.get(t, &) - 1)
+	end for
+	
+	var ans: lib@Int :: #lib@Int
+	
+	do d.forEach(f, ans)
+	
+	do cui@print("\{ans}\n")
+	
+	func f(key: []char, value: int, ans: kuin@Class): bool
+		if(value > (ans $ lib@Int).value)
+			do (ans $ lib@Int).value :: value
+		end if
+		ret true
+	end func
+end func

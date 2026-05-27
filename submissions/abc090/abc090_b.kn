@@ -1,0 +1,28 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var ans: int :: 0
+	
+	for i(a, b)
+		if(@isPalindrome(i.toStr()))
+			do ans :+ 1
+		end if
+	end for
+	
+	do cui@print("\{ans}\n")
+end func
+
+func isPalindrome(s: []char): bool
+	var l: int :: 0
+	var r: int :: ^s - 1
+	while(l < r)
+		if(s[l] <> s[r])
+			ret false
+		end if
+		
+		do l :+ 1
+		do r :- 1
+	end while
+	
+	ret true
+end func

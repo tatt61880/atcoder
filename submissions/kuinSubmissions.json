@@ -1330,11 +1330,25 @@
     "name": "Diagonal String"
   },
   {
+    "problem_id": "abc090_b",
+    "contest_id": "abc090",
+    "contest_title": "AtCoder Beginner Contest 090",
+    "problem_index": "B",
+    "name": "Palindromic Numbers"
+  },
+  {
     "problem_id": "abc091_a",
     "contest_id": "abc091",
     "contest_title": "AtCoder Beginner Contest 091",
     "problem_index": "A",
     "name": "Two Coins"
+  },
+  {
+    "problem_id": "abc091_b",
+    "contest_id": "abc091",
+    "contest_title": "AtCoder Beginner Contest 091",
+    "problem_index": "B",
+    "name": "Two Colors Card Game"
   },
   {
     "problem_id": "abc092_a",
