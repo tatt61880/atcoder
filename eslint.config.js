@@ -17,7 +17,7 @@ module.exports = [
     },
   },
   {
-    files: ['src/*.js'],
+    files: ['src/*.js', 'lib/*.js'],
     languageOptions: {
       ecmaVersion: 2021,
       sourceType: 'script',
