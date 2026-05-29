@@ -3136,6 +3136,13 @@
     "name": "Nine"
   },
   {
+    "problem_id": "abc309_b",
+    "contest_id": "abc309",
+    "contest_title": "デンソークリエイトプログラミングコンテスト2023（AtCoder Beginner Contest 309）",
+    "problem_index": "B",
+    "name": "Rotate"
+  },
+  {
     "problem_id": "abc310_a",
     "contest_id": "abc310",
     "contest_title": "freee プログラミングコンテスト2023（AtCoder Beginner Contest 310）",
