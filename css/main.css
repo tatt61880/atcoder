@@ -167,6 +167,10 @@ a:focus-visible {
   margin: 2px 0;
 }
 
+.profile-links a {
+  margin-left: 0.2em;
+}
+
 .data-load-error {
   font-size: 0.95em;
   font-style: italic;
