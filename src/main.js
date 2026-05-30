@@ -53,6 +53,7 @@
 
     contentsElem.append(loadingMessage);
   }
+
   // ACコード一覧
   async function appendAcList(contentsElem, submissionsList) {
     const updateContestNameVisibility = appendContestNameOption(contentsElem);
