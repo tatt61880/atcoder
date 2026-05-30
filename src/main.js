@@ -19,11 +19,7 @@
       return;
     }
 
-    const loadingMessage = document.createElement('p');
-    loadingMessage.id = 'loading-message';
-    loadingMessage.textContent = '提出データを読み込み中です。';
-
-    contentsElem.append(loadingMessage);
+    appendLoadingMessage(contentsElem);
 
     const submissionsList = await getSubmissionsList(baseUrl);
 
@@ -50,6 +46,13 @@
     }
   }
 
+  function appendLoadingMessage(contentsElem) {
+    const loadingMessage = document.createElement('p');
+    loadingMessage.id = 'loading-message';
+    loadingMessage.textContent = '提出データを読み込み中です。';
+
+    contentsElem.append(loadingMessage);
+  }
   // ACコード一覧
   async function appendAcList(contentsElem, submissionsList) {
     const updateContestNameVisibility = appendContestNameOption(contentsElem);
