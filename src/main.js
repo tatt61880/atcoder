@@ -19,6 +19,12 @@
       return;
     }
 
+    const loadingMessage = document.createElement('p');
+    loadingMessage.id = 'loading-message';
+    loadingMessage.textContent = '提出データを読み込み中です。';
+
+    contentsElem.append(loadingMessage);
+
     const submissionsList = await getSubmissionsList(baseUrl);
 
     if (submissionsList === null) {
