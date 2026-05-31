@@ -1,0 +1,13 @@
+func main()
+	var n: int :: 3
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	do a.sort()
+	
+	var k: int :: cui@inputInt()
+	
+	var ans: int :: a[0] + a[1] + a[2] * 2 ^ k
+	do cui@print("\{ans}\n")
+end func

@@ -1400,11 +1400,25 @@
     "name": "Something on It"
   },
   {
+    "problem_id": "abc095_b",
+    "contest_id": "abc095",
+    "contest_title": "AtCoder Beginner Contest 095",
+    "problem_index": "B",
+    "name": "Bitter Alchemy"
+  },
+  {
     "problem_id": "abc096_a",
     "contest_id": "abc096",
     "contest_title": "AtCoder Beginner Contest 096",
     "problem_index": "A",
     "name": "Day of Takahashi"
+  },
+  {
+    "problem_id": "abc096_b",
+    "contest_id": "abc096",
+    "contest_title": "AtCoder Beginner Contest 096",
+    "problem_index": "B",
+    "name": "Maximum Sum"
   },
   {
     "problem_id": "abc097_a",
@@ -3129,6 +3143,13 @@
     "name": "Weekly Records"
   },
   {
+    "problem_id": "abc307_b",
+    "contest_id": "abc307",
+    "contest_title": "東京海上日動プログラミングコンテスト2023（AtCoder Beginner Contest 307）",
+    "problem_index": "B",
+    "name": "racecar"
+  },
+  {
     "problem_id": "abc309_a",
     "contest_id": "abc309",
     "contest_title": "デンソークリエイトプログラミングコンテスト2023（AtCoder Beginner Contest 309）",
@@ -3176,6 +3197,13 @@
     "contest_title": "AtCoder Beginner Contest 314",
     "problem_index": "A",
     "name": "3.14"
+  },
+  {
+    "problem_id": "abc314_b",
+    "contest_id": "abc314",
+    "contest_title": "AtCoder Beginner Contest 314",
+    "problem_index": "B",
+    "name": "Roulette"
   },
   {
     "problem_id": "abc315_a",

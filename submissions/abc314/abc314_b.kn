@@ -1,0 +1,32 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var d: []dict<int, bool> :: #[n]dict<int, bool>
+	for i(0, n - 1)
+		var c: int :: cui@inputInt()
+		do d[i] :: #dict<int, bool>
+		for(1, c)
+			var a: int :: cui@inputInt()
+			do d[i].add(a, true)
+		end for
+	end for
+	
+	var x: int :: cui@inputInt()
+	
+	var minNum: int :: lib@intMax
+	for i(0, n - 1)
+		if(d[i].exist(x))
+			do minNum :: lib@min(minNum, ^d[i])
+		end if
+	end for
+	
+	var ans: []int :: #[0]int
+	for i(0, n - 1)
+		if(d[i].exist(x) & ^d[i] = minNum)
+			do ans :~ [i + 1]
+		end if
+	end for
+	
+	do cui@print("\{^ans}\n")
+	do cui@print("\{ans.join(" ")}\n")
+end func
