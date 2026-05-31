@@ -246,3 +246,7 @@ a:focus-visible {
   margin: 0;
   cursor: pointer;
 }
+
+.site-footer {
+  margin-top: 1em;
+}
