@@ -1,0 +1,13 @@
+func main()
+	var t: int :: cui@inputInt()
+	for(1, t)
+		var x1: int :: cui@inputInt()
+		var y1: int :: cui@inputInt()
+		var r1: int :: cui@inputInt()
+		var x2: int :: cui@inputInt()
+		var y2: int :: cui@inputInt()
+		var r2: int :: cui@inputInt()
+		var ans: bool :: (x1 - x2) ^ 2 + (y1 - y2) ^ 2 <= (r1 + r2) ^ 2 & (x1 - x2) ^ 2 + (y1 - y2) ^ 2 >= (r1 - r2) ^ 2
+		do cui@print((ans ?("Yes", "No")) ~ "\n")
+	end for
+end func
