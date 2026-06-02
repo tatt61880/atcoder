@@ -3192,6 +3192,13 @@
     "name": "To Be Saikyo"
   },
   {
+    "problem_id": "abc313_b",
+    "contest_id": "abc313",
+    "contest_title": "第四回日本最強プログラマー学生選手権-予選-（AtCoder Beginner Contest 313）",
+    "problem_index": "B",
+    "name": "Who is Saikyo?"
+  },
+  {
     "problem_id": "abc314_a",
     "contest_id": "abc314",
     "contest_title": "AtCoder Beginner Contest 314",
