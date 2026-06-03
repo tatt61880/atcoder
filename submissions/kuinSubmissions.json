@@ -3185,6 +3185,13 @@
     "name": "Chord"
   },
   {
+    "problem_id": "abc312_b",
+    "contest_id": "abc312",
+    "contest_title": "ユニークビジョンプログラミングコンテスト2023 夏 (AtCoder Beginner Contest 312)",
+    "problem_index": "B",
+    "name": "TaK Code"
+  },
+  {
     "problem_id": "abc313_a",
     "contest_id": "abc313",
     "contest_title": "第四回日本最強プログラマー学生選手権-予選-（AtCoder Beginner Contest 313）",

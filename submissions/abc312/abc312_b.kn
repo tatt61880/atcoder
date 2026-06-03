@@ -1,0 +1,45 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var s: [][]char :: #[n][]char
+	for i(0, n - 1)
+		do s[i] :: cui@input()
+	end for
+	
+	for i(0, n - 9)
+		for j(0, m - 9)
+			for y(i, i + 2)
+				for x(j, j + 2)
+					if(s[y][x] <> '#')
+						skip j
+					end if
+				end for
+				if(s[y][j + 3] <> '.')
+					skip j
+				end if
+			end for
+			for x(j, j + 3)
+				if(s[i + 3][x] <> '.')
+					skip j
+				end if
+			end for
+			for y(i + 6, i + 8)
+				for x(j + 6, j + 8)
+					if(s[y][x] <> '#')
+						skip j
+					end if
+				end for
+				if(s[y][j + 5] <> '.')
+					skip j
+				end if
+			end for
+			for x(j + 5, j + 8)
+				if(s[i + 5][x] <> '.')
+					skip j
+				end if
+			end for
+			
+			do cui@print("\{i + 1} \{j + 1}\n")
+		end for
+	end for
+end func
