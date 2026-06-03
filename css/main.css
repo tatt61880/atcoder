@@ -97,6 +97,7 @@ h4 {
 .main-table th,
 .main-table td {
   padding: 0 0.5em;
+  border: 1px solid #9aa6cf;
 }
 
 .main-table,
