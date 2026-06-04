@@ -219,6 +219,10 @@ a:focus-visible {
   background-color: #666666;
 }
 
+.site-footer {
+  margin-top: 1em;
+}
+
 .option-label {
   display: inline-flex;
   gap: 6px;
@@ -245,8 +249,4 @@ a:focus-visible {
 .option-label input {
   margin: 0;
   cursor: pointer;
-}
-
-.site-footer {
-  margin-top: 1em;
 }
