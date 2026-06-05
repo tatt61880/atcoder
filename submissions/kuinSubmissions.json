@@ -1729,11 +1729,25 @@
     "name": "Password"
   },
   {
+    "problem_id": "abc140_b",
+    "contest_id": "abc140",
+    "contest_title": "AtCoder Beginner Contest 140",
+    "problem_index": "B",
+    "name": "Buffet"
+  },
+  {
     "problem_id": "abc141_a",
     "contest_id": "abc141",
     "contest_title": "AtCoder Beginner Contest 141",
     "problem_index": "A",
     "name": "Weather Prediction "
+  },
+  {
+    "problem_id": "abc141_b",
+    "contest_id": "abc141",
+    "contest_title": "AtCoder Beginner Contest 141",
+    "problem_index": "B",
+    "name": "Tap Dance"
   },
   {
     "problem_id": "abc142_a",
@@ -1743,11 +1757,25 @@
     "name": "Odds of Oddness"
   },
   {
+    "problem_id": "abc142_b",
+    "contest_id": "abc142",
+    "contest_title": "AtCoder Beginner Contest 142",
+    "problem_index": "B",
+    "name": "Roller Coaster"
+  },
+  {
     "problem_id": "abc143_a",
     "contest_id": "abc143",
     "contest_title": "AtCoder Beginner Contest 143",
     "problem_index": "A",
     "name": "Curtain"
+  },
+  {
+    "problem_id": "abc143_b",
+    "contest_id": "abc143",
+    "contest_title": "AtCoder Beginner Contest 143",
+    "problem_index": "B",
+    "name": "TAKOYAKI FESTIVAL 2019"
   },
   {
     "problem_id": "abc144_a",
@@ -3171,11 +3199,25 @@
     "name": "Order Something Else"
   },
   {
+    "problem_id": "abc310_b",
+    "contest_id": "abc310",
+    "contest_title": "freee プログラミングコンテスト2023（AtCoder Beginner Contest 310）",
+    "problem_index": "B",
+    "name": "Strictly Superior"
+  },
+  {
     "problem_id": "abc311_a",
     "contest_id": "abc311",
     "contest_title": "トヨタ自動車プログラミングコンテスト2023#4(AtCoder Beginner Contest 311)",
     "problem_index": "A",
     "name": "First ABC"
+  },
+  {
+    "problem_id": "abc311_b",
+    "contest_id": "abc311",
+    "contest_title": "トヨタ自動車プログラミングコンテスト2023#4(AtCoder Beginner Contest 311)",
+    "problem_index": "B",
+    "name": "Vacation Together"
   },
   {
     "problem_id": "abc312_a",

@@ -1,0 +1,38 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	var p: []int :: #[n]int
+	var f: [][]int :: #[n][]int
+	for i(0, n - 1)
+		do p[i] :: cui@inputInt()
+		var c: int :: cui@inputInt()
+		do f[i] :: #[c]int
+		for j(0, c - 1)
+			do f[i][j] :: cui@inputInt()
+		end for
+	end for
+	
+	for i(0, n - 1)
+		for j(0, n - 1)
+			if(i = j | p[i] < p[j] | ^f[i] > ^f[j])
+				skip j
+			end if
+			
+			for x(0, ^f[i] - 1)
+				for y(0, ^f[j] - 1)
+					if(f[i][x] = f[j][y])
+						skip x
+					end if
+				end for
+				skip j
+			end for
+			
+			if(p[i] > p[j] | ^f[i] < ^f[j])
+				do cui@print("Yes\n")
+				ret
+			end if
+		end for
+	end for
+	
+	do cui@print("No\n")
+end func

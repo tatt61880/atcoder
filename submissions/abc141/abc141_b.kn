@@ -1,0 +1,14 @@
+func main()
+	var s: []char :: cui@input()
+	
+	var ans: bool :: true
+	
+	for i(0, ^s - 1)
+		if(s[i] = (i % 2 = 0 ?('L', 'R')))
+			do ans :: false
+			break i
+		end if
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func
