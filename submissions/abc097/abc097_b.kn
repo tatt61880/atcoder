@@ -1,0 +1,16 @@
+func main()
+	var x: int :: cui@inputInt()
+	
+	var ans: int :: 1
+	
+	for b(2, x)
+		for p(2, 10)
+			if(b ^ p > x)
+				skip b
+			end if
+			do ans :: lib@max(ans, b ^ p)
+		end for
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,9 @@
+func main()
+	var p: char :: cui@inputChar()
+	var q: char :: cui@inputChar()
+	var a: []int :: [0, 3, 4, 8, 9, 14, 23]
+	
+	var ans: int :: (a[p $ int - 'A' $ int] - a[q $ int - 'A' $ int]).abs()
+	
+	do cui@print("\{ans}\n")
+end func

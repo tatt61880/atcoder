@@ -1428,11 +1428,25 @@
     "name": "Colorful Transceivers"
   },
   {
+    "problem_id": "abc097_b",
+    "contest_id": "abc097",
+    "contest_title": "AtCoder Beginner Contest 097",
+    "problem_index": "B",
+    "name": "Exponential"
+  },
+  {
     "problem_id": "abc098_a",
     "contest_id": "abc098",
     "contest_title": "AtCoder Beginner Contest 098",
     "problem_index": "A",
     "name": "Add Sub Mul"
+  },
+  {
+    "problem_id": "abc098_b",
+    "contest_id": "abc098",
+    "contest_title": "AtCoder Beginner Contest 098",
+    "problem_index": "B",
+    "name": "Cut and Count"
   },
   {
     "problem_id": "abc099_a",
@@ -3155,6 +3169,13 @@
     "contest_title": "京セラプログラミングコンテスト2023(AtCoder Beginner Contest 305)",
     "problem_index": "A",
     "name": "Water Station"
+  },
+  {
+    "problem_id": "abc305_b",
+    "contest_id": "abc305",
+    "contest_title": "京セラプログラミングコンテスト2023(AtCoder Beginner Contest 305)",
+    "problem_index": "B",
+    "name": "ABCDEFG"
   },
   {
     "problem_id": "abc306_a",
