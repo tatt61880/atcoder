@@ -1,4 +1,7 @@
 @echo off
+
+pushd %~dp0
+
 set /p DAYS=何日前から取得しますか？ 未入力なら10日前: 
 
 if "%DAYS%"=="" (
@@ -16,3 +19,6 @@ if not "%1" == "skip" (
 atcoder.exe
 
 pause
+
+popd
+exit /b
