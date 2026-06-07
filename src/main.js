@@ -1,7 +1,8 @@
 (function () {
   'use strict';
 
-  const pageTitle = 'tatt61880によるAtCoderでのACコード';
+  const myId = 'tatt61880';
+  const pageTitle = myId + 'によるAtCoderでのACコード';
 
   document.addEventListener('DOMContentLoaded', onloadApp);
   return;
@@ -239,6 +240,18 @@
 
         const contestUrl = getContestUrl(contestId);
         appendExternalLink(contentsElem, 'コンテストリンク: ', contestUrl);
+
+        const mySubmissionUrl = contestUrl + 'submissions?f.User=' + myId;
+        const mySubmissionUrlText = String(mySubmissionUrl).replace(
+          new RegExp('^https://atcoder.jp/contests/[^/]+(/.+)'),
+          '$1'
+        );
+        appendExternalLink(
+          contentsElem,
+          myId + ' 提出リンク: ',
+          mySubmissionUrl,
+          mySubmissionUrlText
+        );
       }
 
       // 問題名
