@@ -1,0 +1,20 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var x: []int :: #[n + 1]int
+	var y: []int :: #[m + 1]int
+	
+	do x[0] :: cui@inputInt()
+	do y[0] :: cui@inputInt()
+	
+	for i(1, n)
+		do x[i] :: cui@inputInt()
+	end for
+	
+	for i(1, m)
+		do y[i] :: cui@inputInt()
+	end for
+	
+	do cui@print((x.max() < y.min() ?("No War", "War")) ~ "\n")
+end func

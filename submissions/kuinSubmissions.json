@@ -1456,6 +1456,13 @@
     "name": "ABD"
   },
   {
+    "problem_id": "abc099_b",
+    "contest_id": "abc099",
+    "contest_title": "AtCoder Beginner Contest 099",
+    "problem_index": "B",
+    "name": "Stone Monument"
+  },
+  {
     "problem_id": "abc100_a",
     "contest_id": "abc100",
     "contest_title": "AtCoder Beginner Contest 100",
@@ -1475,6 +1482,13 @@
     "contest_title": "AtCoder Beginner Contest 101",
     "problem_index": "A",
     "name": "Eating Symbols Easy"
+  },
+  {
+    "problem_id": "abc101_b",
+    "contest_id": "abc101",
+    "contest_title": "AtCoder Beginner Contest 101",
+    "problem_index": "B",
+    "name": "Digit Sums"
   },
   {
     "problem_id": "abc102_a",
@@ -1512,11 +1526,25 @@
     "name": "Rated for Me"
   },
   {
+    "problem_id": "abc104_b",
+    "contest_id": "abc104",
+    "contest_title": "AtCoder Beginner Contest 104",
+    "problem_index": "B",
+    "name": "AcCepted"
+  },
+  {
     "problem_id": "abc105_a",
     "contest_id": "abc105",
     "contest_title": "AtCoder Beginner Contest 105",
     "problem_index": "A",
     "name": "AtCoder Crackers"
+  },
+  {
+    "problem_id": "abc105_b",
+    "contest_id": "abc105",
+    "contest_title": "AtCoder Beginner Contest 105",
+    "problem_index": "B",
+    "name": "Cakes and Donuts"
   },
   {
     "problem_id": "abc106_a",
@@ -1568,6 +1596,13 @@
     "name": "Maximize the Formula"
   },
   {
+    "problem_id": "abc110_b",
+    "contest_id": "abc110",
+    "contest_title": "AtCoder Beginner Contest 110",
+    "problem_index": "B",
+    "name": "1 Dimensional World's Tale"
+  },
+  {
     "problem_id": "abc111_a",
     "contest_id": "abc111",
     "contest_title": "AtCoder Beginner Contest 111",
@@ -1575,11 +1610,25 @@
     "name": "AtCoder Beginner Contest 999"
   },
   {
+    "problem_id": "abc111_b",
+    "contest_id": "abc111",
+    "contest_title": "AtCoder Beginner Contest 111",
+    "problem_index": "B",
+    "name": "AtCoder Beginner Contest 111"
+  },
+  {
     "problem_id": "abc112_a",
     "contest_id": "abc112",
     "contest_title": "AtCoder Beginner Contest 112",
     "problem_index": "A",
     "name": "Programming Education"
+  },
+  {
+    "problem_id": "abc112_b",
+    "contest_id": "abc112",
+    "contest_title": "AtCoder Beginner Contest 112",
+    "problem_index": "B",
+    "name": "Time Limit Exceeded"
   },
   {
     "problem_id": "abc113_a",

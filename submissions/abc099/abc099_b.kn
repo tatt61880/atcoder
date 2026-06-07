@@ -1,0 +1,9 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var diff: int :: b - a
+	var left: int :: diff * (diff - 1) / 2
+	
+	var ans: int :: left - a
+	do cui@print("\{ans}\n")
+end func

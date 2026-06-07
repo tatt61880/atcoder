@@ -1,0 +1,12 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: bool :: false
+	for i(0, n)
+		for j(0, n)
+			if(i * 4 + j * 7 = n)
+				do ans :: true
+			end if
+		end for
+	end for
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

@@ -1,0 +1,10 @@
+func main()
+	var n: int :: cui@inputInt()
+	for i(n, 999)
+		if(i % 111 = 0)
+			var ans: int :: i
+			do cui@print("\{ans}\n")
+			ret
+		end if
+	end for
+end func
