@@ -1,0 +1,9 @@
+func main()
+	var n: []char :: cui@input()
+	
+	for i(3, ^n - 1)
+		do n[i] :: '0'
+	end for
+	
+	do cui@print("\{n}\n")
+end func

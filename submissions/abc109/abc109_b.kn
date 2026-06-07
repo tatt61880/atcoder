@@ -1,0 +1,19 @@
+func main()
+	var n: int :: cui@inputInt()
+	var dic: dict<[]char, bool> :: #dict<[]char, bool>
+	
+	var w: [][]char :: #[n][]char
+	for i(0, n - 1)
+		do w[i] :: cui@input()
+		do dic.add(w[i], true)
+	end for
+	
+	var ans: bool :: ^dic = n
+	for i(0, n - 2)
+		if(w[i][^w[i] - 1] <> w[i + 1][0])
+			do ans :: false
+		end if
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

@@ -1,0 +1,21 @@
+func main()
+	var x: []int :: #[4]int
+	var y: []int :: #[4]int
+	do x[0] :: cui@inputInt()
+	do y[0] :: cui@inputInt()
+	do x[1] :: cui@inputInt()
+	do y[1] :: cui@inputInt()
+	
+	for i(2, 3)
+		var dx: int :: x[i - 1] - x[i - 2]
+		var dy: int :: y[i - 1] - y[i - 2]
+		
+		do x[i] :: x[i - 1] + -dy
+		do y[i] :: y[i - 1] + dx
+	end for
+	
+	do cui@print("\{x[2]} ")
+	do cui@print("\{y[2]} ")
+	do cui@print("\{x[3]} ")
+	do cui@print("\{y[3]}\n")
+end func

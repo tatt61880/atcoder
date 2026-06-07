@@ -1463,6 +1463,13 @@
     "name": "Happy Birthday!"
   },
   {
+    "problem_id": "abc100_b",
+    "contest_id": "abc100",
+    "contest_title": "AtCoder Beginner Contest 100",
+    "problem_index": "B",
+    "name": "Ringo's Favorite Numbers"
+  },
+  {
     "problem_id": "abc101_a",
     "contest_id": "abc101",
     "contest_title": "AtCoder Beginner Contest 101",
@@ -1477,11 +1484,25 @@
     "name": "Multiple of 2 and N"
   },
   {
+    "problem_id": "abc102_b",
+    "contest_id": "abc102",
+    "contest_title": "AtCoder Beginner Contest 102",
+    "problem_index": "B",
+    "name": "Maximum Difference"
+  },
+  {
     "problem_id": "abc103_a",
     "contest_id": "abc103",
     "contest_title": "AtCoder Beginner Contest 103",
     "problem_index": "A",
     "name": "Task Scheduling Problem"
+  },
+  {
+    "problem_id": "abc103_b",
+    "contest_id": "abc103",
+    "contest_title": "AtCoder Beginner Contest 103",
+    "problem_index": "B",
+    "name": "String Rotation"
   },
   {
     "problem_id": "abc104_a",
@@ -1519,11 +1540,25 @@
     "name": "Pair"
   },
   {
+    "problem_id": "abc108_b",
+    "contest_id": "abc108",
+    "contest_title": "AtCoder Beginner Contest 108",
+    "problem_index": "B",
+    "name": "Ruined Square"
+  },
+  {
     "problem_id": "abc109_a",
     "contest_id": "abc109",
     "contest_title": "AtCoder Beginner Contest 109",
     "problem_index": "A",
     "name": "ABC333"
+  },
+  {
+    "problem_id": "abc109_b",
+    "contest_id": "abc109",
+    "contest_title": "AtCoder Beginner Contest 109",
+    "problem_index": "B",
+    "name": "Shiritori"
   },
   {
     "problem_id": "abc110_a",
@@ -3162,6 +3197,13 @@
     "contest_title": "東京海上日動プログラミングコンテスト2023（AtCoder Beginner Contest 304）",
     "problem_index": "A",
     "name": "First Player"
+  },
+  {
+    "problem_id": "abc304_b",
+    "contest_id": "abc304",
+    "contest_title": "東京海上日動プログラミングコンテスト2023（AtCoder Beginner Contest 304）",
+    "problem_index": "B",
+    "name": "Subscribers"
   },
   {
     "problem_id": "abc305_a",
