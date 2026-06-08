@@ -1554,11 +1554,25 @@
     "name": "Garden"
   },
   {
+    "problem_id": "abc106_b",
+    "contest_id": "abc106",
+    "contest_title": "AtCoder Beginner Contest 106",
+    "problem_index": "B",
+    "name": "105"
+  },
+  {
     "problem_id": "abc107_a",
     "contest_id": "abc107",
     "contest_title": "AtCoder Beginner Contest 107",
     "problem_index": "A",
     "name": "Train"
+  },
+  {
+    "problem_id": "abc107_b",
+    "contest_id": "abc107",
+    "contest_title": "AtCoder Beginner Contest 107",
+    "problem_index": "B",
+    "name": "Grid Compression"
   },
   {
     "problem_id": "abc108_a",
@@ -5479,6 +5493,20 @@
     "contest_title": "AtCoder Beginner Contest 460",
     "problem_index": "B",
     "name": "Two Rings"
+  },
+  {
+    "problem_id": "abc461_a",
+    "contest_id": "abc461",
+    "contest_title": "AtCoder Beginner Contest 461",
+    "problem_index": "A",
+    "name": "Armor"
+  },
+  {
+    "problem_id": "abc461_b",
+    "contest_id": "abc461",
+    "contest_title": "AtCoder Beginner Contest 461",
+    "problem_index": "B",
+    "name": "The Honest Woodcutters"
   },
   {
     "problem_id": "abc081_a",

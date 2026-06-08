@@ -1,0 +1,21 @@
+func main()
+	var n: int :: cui@inputInt()
+	var ans: int :: 0
+	for i(1, n, 2)
+		if(f(i) = 8)
+			do ans :+ 1
+		end if
+	end for
+	
+	do cui@print("\{ans}\n")
+	
+	func f(n: int): int
+		var res: int
+		for i(1, n)
+			if(n % i = 0)
+				do res :+ 1
+			end if
+		end for
+		ret res
+	end func
+end func

@@ -1,0 +1,27 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	
+	var ss: [][]char :: #[0][]char
+	for(1, h)
+		var s: []char :: cui@input()
+		if(s <> ".".repeat(w))
+			do ss :~ [s]
+		end if
+	end for
+	
+	for i(0, ^ss - 1)
+		for j(0, w - 1)
+			var cnt: int :: 0
+			for k(0, ^ss - 1)
+				if(ss[k][j] = '#')
+					do cnt :+ 1
+				end if
+			end for
+			if(cnt <> 0)
+				do cui@print("\{ss[i][j]}")
+			end if
+		end for
+		do cui@print("\n")
+	end for
+end func
