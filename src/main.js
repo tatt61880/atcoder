@@ -248,7 +248,7 @@
         );
         appendExternalLink(
           contentsElem,
-          myId + ' 提出リンク: ',
+          '提出一覧リンク: ',
           mySubmissionUrl,
           mySubmissionUrlText
         );
