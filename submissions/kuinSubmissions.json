@@ -1652,6 +1652,13 @@
     "name": "Discount Fare"
   },
   {
+    "problem_id": "abc113_b",
+    "contest_id": "abc113",
+    "contest_title": "AtCoder Beginner Contest 113",
+    "problem_index": "B",
+    "name": "Palace"
+  },
+  {
     "problem_id": "abc114_a",
     "contest_id": "abc114",
     "contest_title": "AtCoder Beginner Contest 114",
@@ -3246,6 +3253,13 @@
     "contest_title": "トヨタ自動車プログラミングコンテスト2023#2(AtCoder Beginner Contest 302)",
     "problem_index": "A",
     "name": "Attack"
+  },
+  {
+    "problem_id": "abc302_b",
+    "contest_id": "abc302",
+    "contest_title": "トヨタ自動車プログラミングコンテスト2023#2(AtCoder Beginner Contest 302)",
+    "problem_index": "B",
+    "name": "Find snuke"
   },
   {
     "problem_id": "abc303_a",

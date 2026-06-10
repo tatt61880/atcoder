@@ -1,0 +1,19 @@
+func main()
+	var n: int :: cui@inputInt()
+	var t: int :: cui@inputInt() * 1000
+	var a: int :: cui@inputInt() * 1000
+	
+	var ans: int :: 0
+	var min: int :: lib@intMax
+	
+	for i(1, n)
+		var h: int :: cui@inputInt()
+		var diff: int :: (t - h * 6 - a).abs()
+		if(diff < min)
+			do min :: diff
+			do ans :: i
+		end if
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

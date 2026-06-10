@@ -1,0 +1,39 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	
+	var s: [][]char :: #[h][]char
+	for i(0, h - 1)
+		do s[i] :: cui@input()
+	end for
+	
+	var dx: []int :: [0, 1, 1, 1, 0, -1, -1, -1]
+	var dy: []int :: [-1, -1, 0, 1, 1, 1, 0, -1]
+	
+	for y0(0, h - 1)
+		for x0(0, w - 1)
+			for i(0, 7)
+				for j(0, 4)
+					var x: int :: x0 + j * dx[i]
+					var y: int :: y0 + j * dy[i]
+					if(x < 0 | x >= w)
+						skip i
+					end if
+					if(y < 0 | y >= h)
+						skip i
+					end if
+					if(s[y][x] <> "snuke"[j])
+						skip i
+					end if
+				end for
+				
+				for j(0, 4)
+					var x: int :: x0 + j * dx[i]
+					var y: int :: y0 + j * dy[i]
+					do cui@print("\{y + 1} \{x + 1}\n")
+				end for
+				ret
+			end for
+		end for
+	end for
+end func
