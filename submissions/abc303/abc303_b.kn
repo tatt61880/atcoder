@@ -1,0 +1,22 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var d: dict<int, bool> :: #dict<int, bool>
+	
+	for(1, m)
+		var a: []int :: #[n]int
+		for i(0, n - 1)
+			do a[i] :: cui@inputInt()
+		end for
+		
+		for i(0, n - 2)
+			var x: int :: lib@min(a[i], a[i + 1])
+			var y: int :: lib@max(a[i], a[i + 1])
+			do d.add(x * n + y, true)
+		end for
+	end for
+	
+	var ans: int :: n * (n - 1) / 2 - ^d
+	do cui@print("\{ans}\n")
+end func

@@ -3255,6 +3255,13 @@
     "name": "Similar String"
   },
   {
+    "problem_id": "abc303_b",
+    "contest_id": "abc303",
+    "contest_title": "日鉄ソリューションズプログラミングコンテスト2023（AtCoder Beginner Contest 303）",
+    "problem_index": "B",
+    "name": "Discord"
+  },
+  {
     "problem_id": "abc304_a",
     "contest_id": "abc304",
     "contest_title": "東京海上日動プログラミングコンテスト2023（AtCoder Beginner Contest 304）",
