@@ -3,9 +3,7 @@ all: atcoder.exe node_modules
 	npm run htmlhint
 	npm run stylelint
 	python download_submissions.py
-	python download_contests.py
-	python download_problems.py
-	python download_contest_problem.py
+	python update_resources_if_needed.py
 	atcoder.exe
 
 node_modules:

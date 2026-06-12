@@ -11,11 +11,7 @@ if "%DAYS%"=="" (
   python download_submissions.py %DAYS%
 )
 
-if not "%1" == "skip" (
-  python download_contests.py
-  python download_problems.py
-  python download_contest_problem.py
-)
+python update_resources_if_needed.py
 
 atcoder.exe
 
