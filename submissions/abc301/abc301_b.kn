@@ -1,0 +1,23 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	for i(0, n - 2)
+		var x: int :: a[i]
+		var y: int :: a[i + 1]
+		if(x < y)
+			for j(x, y - 1)
+				do cui@print("\{j} ")
+			end for
+		else
+			for j(x, y + 1, -1)
+				do cui@print("\{j} ")
+			end for
+		end if
+	end for
+	
+	do cui@print("\{a[n - 1]}\n")
+end func

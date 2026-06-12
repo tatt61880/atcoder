@@ -3248,6 +3248,13 @@
     "name": "Overall Winner"
   },
   {
+    "problem_id": "abc301_b",
+    "contest_id": "abc301",
+    "contest_title": "パナソニックグループプログラミングコンテスト2023（AtCoder Beginner Contest 301）",
+    "problem_index": "B",
+    "name": " Fill the Gaps"
+  },
+  {
     "problem_id": "abc302_a",
     "contest_id": "abc302",
     "contest_title": "トヨタ自動車プログラミングコンテスト2023#2(AtCoder Beginner Contest 302)",
