@@ -207,9 +207,9 @@ func main()
 	do dictSubmissionId.forEach(callbackUpdateNumSubmissionsTotal, null)
 
 	if(@numSubmissionsTotal = 0)
-		do cui@print("新規の提出データはありません。")
+		do cui@print("新規の提出データはありません。\n")
 	else
-		do cui@print("\{@numSubmissionsTotal}件の新規の提出データを取得します。")
+		do cui@print("\{@numSubmissionsTotal}件の新規の提出データを取得します。\n")
 	end if
 
 	do dictSubmissionId.forEach(callbackSubmissions, null)
