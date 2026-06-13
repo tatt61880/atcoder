@@ -3234,6 +3234,13 @@
     "name": "Treasure Chest"
   },
   {
+    "problem_id": "abc299_b",
+    "contest_id": "abc299",
+    "contest_title": "東京海上日動プログラミングコンテスト2023（AtCoder Beginner Contest 299）",
+    "problem_index": "B",
+    "name": "Trick Taking"
+  },
+  {
     "problem_id": "abc300_a",
     "contest_id": "abc300",
     "contest_title": "ユニークビジョンプログラミングコンテスト2023 春 (AtCoder Beginner Contest 300)",
