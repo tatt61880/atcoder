@@ -205,6 +205,13 @@ func main()
 	do @numSubmissions :: 0
 	do @numSubmissionsTotal :: 0
 	do dictSubmissionId.forEach(callbackUpdateNumSubmissionsTotal, null)
+
+	if(@numSubmissionsTotal = 0)
+		do cui@print("新規の提出データはありません。")
+	else
+		do cui@print("\{@numSubmissionsTotal}件の新規の提出データを取得します。")
+	end if
+
 	do dictSubmissionId.forEach(callbackSubmissions, null)
 
 	func callbackUpdateNumSubmissionsTotal(cpId: []char, submissionId: int, d: kuin@Class): bool
@@ -231,7 +238,7 @@ func main()
 		
 		if(!file@exist(filepath))
 			do @numSubmissions :+ 1
-			do cui@print("[\{@numSubmissions} / \{@numSubmissionsTotal}] ")
+			do cui@print("[\{@numSubmissions}/\{@numSubmissionsTotal}] ")
 			do data :: @fetchData(url)
 			do data :: data.replace("\u000D", "") { 取得してきたデータの改行が 0x0D 0x0D 0x0A となってしまうため、 0x0D 0x0A になるようにします。 }
 			
