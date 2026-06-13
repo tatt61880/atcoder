@@ -1,0 +1,28 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	var a: [][]char :: #[h][]char
+	for i(0, h - 1)
+		do a[i] :: cui@input()
+	end for
+	var b: [][]char :: #[h][]char
+	for i(0, h - 1)
+		do b[i] :: cui@input()
+	end for
+	
+	var ans: bool :: false
+	for y0(0, h - 1)
+		for x0(0, w - 1)
+			for y(0, h - 1)
+				for x(0, w - 1)
+					if(a[(y + y0) % h][(x + x0) % w] <> b[y][x])
+						skip x0
+					end if
+				end for
+			end for
+			do ans :: true
+			break y0
+		end for
+	end for
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func
