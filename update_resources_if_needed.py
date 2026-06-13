@@ -63,10 +63,10 @@ def needs_update():
         for item in contest_problems
     }
 
-    return (
-        not required_contests <= existing_contests
-        or not required_problems <= existing_problems
-        or not required_pairs <= existing_pairs
+    return not (
+        required_contests <= existing_contests
+        and required_problems <= existing_problems
+        and required_pairs <= existing_pairs
     )
 
 
