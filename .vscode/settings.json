@@ -11,6 +11,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[bat]": {
+    "files.encoding": "shiftjis"
+  },
   "editor.formatOnSave": true,
   "files.autoGuessEncoding": false,
   "files.encoding": "utf8",
