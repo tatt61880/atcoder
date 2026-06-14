@@ -4057,7 +4057,7 @@
     "contest_id": "abc361",
     "contest_title": "デンソークリエイトプログラミングコンテスト2024（AtCoder Beginner Contest 361）",
     "problem_index": "B",
-    "name": "Intesection of Cuboids"
+    "name": "Intersection of Cuboids"
   },
   {
     "problem_id": "abc362_a",
@@ -5549,6 +5549,13 @@
     "contest_title": "AtCoder Beginner Contest 461",
     "problem_index": "B",
     "name": "The Honest Woodcutters"
+  },
+  {
+    "problem_id": "abc462_a",
+    "contest_id": "abc462",
+    "contest_title": "CodeQUEEN 2026 予選 (AtCoder Beginner Contest 462)",
+    "problem_index": "A",
+    "name": "Secret Numbers"
   },
   {
     "problem_id": "abc081_a",
