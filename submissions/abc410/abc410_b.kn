@@ -1,0 +1,25 @@
+func main()
+	var n: int :: cui@inputInt()
+	var q: int :: cui@inputInt()
+	
+	var b: []int :: #[q]int
+	var nums: []int :: #[n]int
+	for i(0, q - 1)
+		var x: int :: cui@inputInt()
+		if(x <> 0)
+			do b[i] :: x
+			do nums[x - 1] :+ 1
+		else
+			var min: int :: nums.min()
+			for j(0, n - 1)
+				if(nums[j] = min)
+					do b[i] :: j + 1
+					do nums[j] :+ 1
+					break j
+				end if
+			end for
+		end if
+	end for
+	
+	do cui@print("\{b.join(" ")}\n")
+end func

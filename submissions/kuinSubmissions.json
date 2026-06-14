@@ -4753,6 +4753,13 @@
     "name": "G1"
   },
   {
+    "problem_id": "abc410_b",
+    "contest_id": "abc410",
+    "contest_title": "CodeQUEEN 2025 予選 (AtCoder Beginner Contest 410)",
+    "problem_index": "B",
+    "name": "Reverse Proxy"
+  },
+  {
     "problem_id": "abc411_a",
     "contest_id": "abc411",
     "contest_title": "ユニークビジョンプログラミングコンテスト2025 夏（AtCoder Beginner Contest 411）",
