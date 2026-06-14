@@ -5586,6 +5586,13 @@
     "name": "Secret Numbers"
   },
   {
+    "problem_id": "abc462_b",
+    "contest_id": "abc462",
+    "contest_title": "CodeQUEEN 2026 予選 (AtCoder Beginner Contest 462)",
+    "problem_index": "B",
+    "name": "Gift"
+  },
+  {
     "problem_id": "abc081_a",
     "contest_id": "abs",
     "contest_title": "AtCoder Beginners Selection",
