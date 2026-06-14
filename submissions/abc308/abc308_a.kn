@@ -1,0 +1,17 @@
+func main()
+	var s: []int :: #[8]int
+	for i(0, 7)
+		do s[i] :: cui@inputInt()
+	end for
+	
+	var ans: bool :: true
+	
+	for i(0, 7)
+		if((i <> 0 & s[i] < s[i - 1]) | s[i] < 100 | 675 < s[i] | s[i] % 25 <> 0)
+			do ans :: false
+			break i
+		end if
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

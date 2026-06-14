@@ -3346,6 +3346,13 @@
     "name": "racecar"
   },
   {
+    "problem_id": "abc308_a",
+    "contest_id": "abc308",
+    "contest_title": "CodeQUEEN 2023 予選 (AtCoder Beginner Contest 308)",
+    "problem_index": "A",
+    "name": "New Scheme"
+  },
+  {
     "problem_id": "abc309_a",
     "contest_id": "abc309",
     "contest_title": "デンソークリエイトプログラミングコンテスト2023（AtCoder Beginner Contest 309）",
@@ -4016,6 +4023,13 @@
     "contest_title": "サントリープログラミングコンテスト2024（AtCoder Beginner Contest 357）",
     "problem_index": "B",
     "name": "Uppercase and Lowercase"
+  },
+  {
+    "problem_id": "abc358_a",
+    "contest_id": "abc358",
+    "contest_title": "CodeQUEEN 2024 予選 (AtCoder Beginner Contest 358)",
+    "problem_index": "A",
+    "name": "Welcome to AtCoder Land"
   },
   {
     "problem_id": "abc359_a",
