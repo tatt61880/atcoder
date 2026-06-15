@@ -1,0 +1,12 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var n: int :: ^s
+	
+	var ans: int :: lib@intMax
+	
+	for i(0, n - 3)
+		do ans :: lib@min(ans, (753 - s.sub(i, 3).toInt(&)).abs())
+	end for
+	
+	do cui@print("\{ans}\n")
+end func
