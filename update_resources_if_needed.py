@@ -2,6 +2,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 
 TMP_DIR = "tmp"
 
@@ -9,6 +10,8 @@ SUBMISSIONS_JSON = os.path.join(TMP_DIR, "submissions.json")
 CONTESTS_JSON = os.path.join(TMP_DIR, "contests.json")
 PROBLEMS_JSON = os.path.join(TMP_DIR, "problems.json")
 CONTEST_PROBLEM_JSON = os.path.join(TMP_DIR, "contest-problem.json")
+
+WAIT_SECONDS = 1.5
 
 
 def load_json(path):
@@ -76,8 +79,11 @@ if not os.path.exists(SUBMISSIONS_JSON):
 
 if needs_update():
     print("補助JSONを更新します。")
+    time.sleep(WAIT_SECONDS)
     run_python("download_contests.py")
+    time.sleep(WAIT_SECONDS)
     run_python("download_problems.py")
+    time.sleep(WAIT_SECONDS)
     run_python("download_contest_problem.py")
 else:
     print("既存の補助JSONで足りています。")
