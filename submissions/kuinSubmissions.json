@@ -1680,11 +1680,25 @@
     "name": "Christmas Eve Eve Eve"
   },
   {
+    "problem_id": "abc115_b",
+    "contest_id": "abc115",
+    "contest_title": "AtCoder Beginner Contest 115",
+    "problem_index": "B",
+    "name": "Christmas Eve Eve"
+  },
+  {
     "problem_id": "abc116_a",
     "contest_id": "abc116",
     "contest_title": "AtCoder Beginner Contest 116",
     "problem_index": "A",
     "name": "Right Triangle"
+  },
+  {
+    "problem_id": "abc116_b",
+    "contest_id": "abc116",
+    "contest_title": "AtCoder Beginner Contest 116",
+    "problem_index": "B",
+    "name": "Collatz Problem"
   },
   {
     "problem_id": "abc117_a",
@@ -1694,11 +1708,25 @@
     "name": "Entrance Examination"
   },
   {
+    "problem_id": "abc117_b",
+    "contest_id": "abc117",
+    "contest_title": "AtCoder Beginner Contest 117",
+    "problem_index": "B",
+    "name": "Polygon"
+  },
+  {
     "problem_id": "abc118_a",
     "contest_id": "abc118",
     "contest_title": "AtCoder Beginner Contest 118",
     "problem_index": "A",
     "name": "B +/- A"
+  },
+  {
+    "problem_id": "abc118_b",
+    "contest_id": "abc118",
+    "contest_title": "AtCoder Beginner Contest 118",
+    "problem_index": "B",
+    "name": "Foods Loved by Everyone"
   },
   {
     "problem_id": "abc119_a",
@@ -1708,6 +1736,13 @@
     "name": "Still TBD"
   },
   {
+    "problem_id": "abc119_b",
+    "contest_id": "abc119",
+    "contest_title": "AtCoder Beginner Contest 119",
+    "problem_index": "B",
+    "name": "Digital Gifts"
+  },
+  {
     "problem_id": "abc120_a",
     "contest_id": "abc120",
     "contest_title": "AtCoder Beginner Contest 120",
@@ -1715,11 +1750,25 @@
     "name": "Favorite Sound"
   },
   {
+    "problem_id": "abc120_b",
+    "contest_id": "abc120",
+    "contest_title": "AtCoder Beginner Contest 120",
+    "problem_index": "B",
+    "name": "K-th Common Divisor"
+  },
+  {
     "problem_id": "abc121_a",
     "contest_id": "abc121",
     "contest_title": "AtCoder Beginner Contest 121",
     "problem_index": "A",
     "name": "White Cells"
+  },
+  {
+    "problem_id": "abc121_b",
+    "contest_id": "abc121",
+    "contest_title": "AtCoder Beginner Contest 121",
+    "problem_index": "B",
+    "name": "Can you solve this?"
   },
   {
     "problem_id": "abc122_a",
@@ -4037,6 +4086,13 @@
     "contest_title": "CodeQUEEN 2024 予選 (AtCoder Beginner Contest 358)",
     "problem_index": "A",
     "name": "Welcome to AtCoder Land"
+  },
+  {
+    "problem_id": "abc358_b",
+    "contest_id": "abc358",
+    "contest_title": "CodeQUEEN 2024 予選 (AtCoder Beginner Contest 358)",
+    "problem_index": "B",
+    "name": "Ticket Counter"
   },
   {
     "problem_id": "abc359_a",

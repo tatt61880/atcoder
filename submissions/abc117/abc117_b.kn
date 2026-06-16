@@ -1,0 +1,14 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var sum: int :: 0
+	
+	var l: []int :: #[n]int
+	for i(0, n - 1)
+		do l[i] :: cui@inputInt()
+		do sum :+ l[i]
+	end for
+	
+	var ans: bool :: 2 * l.max() < sum
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

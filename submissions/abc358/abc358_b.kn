@@ -1,0 +1,12 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	
+	var e: int :: 0
+	
+	for(1, n)
+		var t: int :: cui@inputInt()
+		do e :: lib@max(t, e) + a
+		do cui@print("\{e}\n")
+	end for
+end func

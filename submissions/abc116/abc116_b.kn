@@ -1,0 +1,25 @@
+func main()
+	var x: int :: cui@inputInt()
+	
+	var dic: dict<int, bool> :: #dict<int, bool>
+	
+	var ans: int :: 1
+	
+	while loop(true)
+		if(dic.exist(x))
+			break loop
+		end if
+		
+		do dic.add(x, true)
+		
+		if(x % 2 = 0)
+			do x :/ 2
+		else
+			do x :: 3 * x + 1
+		end if
+		
+		do ans :+ 1
+	end while
+	
+	do cui@print("\{ans}\n")
+end func
