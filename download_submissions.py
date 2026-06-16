@@ -11,6 +11,7 @@ USER = "tatt61880"
 OUTPUT_PATH = "tmp/submissions.json"
 LATEST_AC_OUTPUT_PATH = "tmp/latest_ac_submissions.json"
 WAIT_SECONDS = 1.5
+LOOKBACK_SECONDS = 7 * 24 * 60 * 60
 
 
 def get_days_ago_from_args() -> int:
@@ -181,22 +182,28 @@ def main() -> None:
         print(f"新規取得: {days_ago}日前から")
         from_second = int(time.time()) - days_ago * 24 * 60 * 60
     else:
-        from_second = latest_epoch_second + 1
+        from_second = max(0, latest_epoch_second - LOOKBACK_SECONDS)
 
     new_submissions = download_new_submissions(from_second)
 
     if len(new_submissions) == 0:
-        if not Path(LATEST_AC_OUTPUT_PATH).exists():
-            save_latest_ac_submissions(existing_submissions)
-
-        print("新しい提出はありません。")
+        save_latest_ac_submissions(existing_submissions)
+        print("取得できる提出はありません。")
         return
 
+    old_count = len(existing_submissions)
     merged_submissions = merge_submissions(existing_submissions, new_submissions)
+    new_count = len(merged_submissions) - old_count
+
     save_json(merged_submissions, OUTPUT_PATH)
     save_latest_ac_submissions(merged_submissions)
 
-    print(f"新規取得: {len(new_submissions)}件")
+    if new_count == 0:
+        print("新しい提出はありません。")
+    else:
+        print(f"新規追加: {new_count}件")
+
+    print(f"取得: {len(new_submissions)}件")
     print(f"保存後合計: {len(merged_submissions)}件")
 
 

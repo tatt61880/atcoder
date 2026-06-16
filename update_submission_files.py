@@ -24,7 +24,7 @@ CONTEST_PROBLEM_JSON = TMP_DIR / "contest-problem.json"
 EXTENSIONS_CSV = Path("extensions.csv")
 KUIN_SUBMISSIONS_JSON = SUBMISSIONS_DIR / "kuinSubmissions.json"
 
-WAIT_SECONDS = 3.0
+WAIT_SECONDS = 1.5
 
 HEADERS = {
     "User-Agent": (
