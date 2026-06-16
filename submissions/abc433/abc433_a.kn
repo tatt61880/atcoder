@@ -3,15 +3,16 @@ func main()
 	var y: int :: cui@inputInt()
 	var z: int :: cui@inputInt()
 	
-	while(x >= y * z)
+	var ans: bool :: false
+	
+	while loop(x >= y * z)
 		if(x = y * z)
-			do cui@print("Yes\n")
-			ret
+			do ans :: true
+			break loop
 		end if
 		do x :+ 1
 		do y :+ 1
 	end while
 	
-	var ans: int :: 0
-	do cui@print("No\n")
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
 end func
