@@ -1,0 +1,12 @@
+func main()
+	var r: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	var x: []int :: #[11]int
+	do x[0] :: cui@inputInt()
+	
+	for i(1, 10)
+		do x[i] :: r * x[i - 1] - d
+		var ans: int :: x[i]
+		do cui@print("\{ans}\n")
+	end for
+end func
