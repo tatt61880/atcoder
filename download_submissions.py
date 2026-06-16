@@ -120,12 +120,12 @@ def merge_submissions(
 
 
 def main() -> None:
-    days_ago = get_days_ago_from_args()
-
     existing_submissions = load_existing_submissions(OUTPUT_PATH)
     latest_epoch_second = get_latest_epoch_second(existing_submissions)
 
     if latest_epoch_second is None:
+        days_ago = get_days_ago_from_args()
+        print(f"新規取得: {days_ago}日前から")
         from_second = int(time.time()) - days_ago * 24 * 60 * 60
     else:
         from_second = latest_epoch_second + 1

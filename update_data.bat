@@ -1,15 +1,17 @@
 @echo off
-setlocal
+setlocal EnableExtensions EnableDelayedExpansion
 pushd "%~dp0"
 
 if exist "tmp\submissions.json" (
     python download_submissions.py || goto :error
 ) else (
-    set /p DAYS=初回取得は何日前から取得しますか？ 未入力なら10日前: 
-    if "%DAYS%"=="" (
+    set "DAYS="
+    set /p "DAYS=初回取得は何日前から取得しますか？ 未入力なら10日前: "
+
+    if "!DAYS!"=="" (
         python download_submissions.py || goto :error
     ) else (
-        python download_submissions.py %DAYS% || goto :error
+        python download_submissions.py "!DAYS!" || goto :error
     )
 )
 
