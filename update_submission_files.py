@@ -379,10 +379,10 @@ def update_submission_files(
             targets.append((submission, url, extension, source_path, url_path))
 
     if len(targets) == 0:
-        print("新規の提出データはありません。")
+        print("更新対象の提出ファイルはありません。")
         return
 
-    print(f"{len(targets)}件の新規の提出データを取得します。")
+    print(f"{len(targets)}件の提出ファイルを取得・更新します。")
 
     failed_count = 0
 
