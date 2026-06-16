@@ -1806,6 +1806,13 @@
     "name": "Buttons"
   },
   {
+    "problem_id": "abc124_b",
+    "contest_id": "abc124",
+    "contest_title": "AtCoder Beginner Contest 124",
+    "problem_index": "B",
+    "name": "Great Ocean View"
+  },
+  {
     "problem_id": "abc125_a",
     "contest_id": "abc125",
     "contest_title": "AtCoder Beginner Contest 125",
