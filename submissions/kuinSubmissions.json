@@ -3444,6 +3444,13 @@
     "name": "New Scheme"
   },
   {
+    "problem_id": "abc308_b",
+    "contest_id": "abc308",
+    "contest_title": "CodeQUEEN 2023 予選 (AtCoder Beginner Contest 308)",
+    "problem_index": "B",
+    "name": "Default Price"
+  },
+  {
     "problem_id": "abc309_a",
     "contest_id": "abc309",
     "contest_title": "デンソークリエイトプログラミングコンテスト2023（AtCoder Beginner Contest 309）",
