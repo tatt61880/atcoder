@@ -9,7 +9,8 @@ from download_json import download_json, save_json
 
 USER = "tatt61880"
 OUTPUT_PATH = "tmp/submissions.json"
-WAIT_SECONDS = 1.1
+LATEST_AC_OUTPUT_PATH = "tmp/latest_ac_submissions.json"
+WAIT_SECONDS = 1.5
 
 
 def get_days_ago_from_args() -> int:
@@ -119,6 +120,58 @@ def merge_submissions(
     )
 
 
+def make_latest_ac_submissions(
+    submissions: List[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    latest_by_cp_id: Dict[str, Dict[str, Any]] = {}
+
+    for submission in submissions:
+        if submission.get("result") != "AC":
+            continue
+
+        contest_id = submission.get("contest_id")
+        problem_id = submission.get("problem_id")
+        epoch_second = submission.get("epoch_second")
+        submission_id = submission.get("id")
+
+        if (
+            not isinstance(contest_id, str)
+            or not isinstance(problem_id, str)
+            or not isinstance(epoch_second, int)
+            or not isinstance(submission_id, int)
+        ):
+            continue
+
+        cp_id = f"{contest_id}/{problem_id}"
+        previous = latest_by_cp_id.get(cp_id)
+
+        if previous is None:
+            latest_by_cp_id[cp_id] = submission
+            continue
+
+        previous_epoch_second = previous.get("epoch_second", 0)
+        previous_id = previous.get("id", 0)
+
+        if (epoch_second, submission_id) > (previous_epoch_second, previous_id):
+            latest_by_cp_id[cp_id] = submission
+
+    return sorted(
+        latest_by_cp_id.values(),
+        key=lambda submission: (
+            submission.get("contest_id", ""),
+            submission.get("problem_id", ""),
+            submission.get("epoch_second", 0),
+            submission.get("id", 0),
+        ),
+    )
+
+
+def save_latest_ac_submissions(submissions: List[Dict[str, Any]]) -> None:
+    latest_ac_submissions = make_latest_ac_submissions(submissions)
+    save_json(latest_ac_submissions, LATEST_AC_OUTPUT_PATH)
+    print(f"最新AC: {len(latest_ac_submissions)}件")
+
+
 def main() -> None:
     existing_submissions = load_existing_submissions(OUTPUT_PATH)
     latest_epoch_second = get_latest_epoch_second(existing_submissions)
@@ -133,11 +186,15 @@ def main() -> None:
     new_submissions = download_new_submissions(from_second)
 
     if len(new_submissions) == 0:
+        if not Path(LATEST_AC_OUTPUT_PATH).exists():
+            save_latest_ac_submissions(existing_submissions)
+
         print("新しい提出はありません。")
         return
 
     merged_submissions = merge_submissions(existing_submissions, new_submissions)
     save_json(merged_submissions, OUTPUT_PATH)
+    save_latest_ac_submissions(merged_submissions)
 
     print(f"新規取得: {len(new_submissions)}件")
     print(f"保存後合計: {len(merged_submissions)}件")

@@ -6196,15 +6196,15 @@
   },
   {
     "problem_id": "future_contest_2019_final_a",
-    "contest_id": "future-contest-2019-final-open",
-    "contest_title": "HACK TO THE FUTURE 2019 本選オープン",
+    "contest_id": "future-contest-2019-final",
+    "contest_title": "HACK TO THE FUTURE 2019 本選",
     "problem_index": "A",
     "name": "モンスターテイマー"
   },
   {
     "problem_id": "future_contest_2019_final_a",
-    "contest_id": "future-contest-2019-final",
-    "contest_title": "HACK TO THE FUTURE 2019 本選",
+    "contest_id": "future-contest-2019-final-open",
+    "contest_title": "HACK TO THE FUTURE 2019 本選オープン",
     "problem_index": "A",
     "name": "モンスターテイマー"
   },

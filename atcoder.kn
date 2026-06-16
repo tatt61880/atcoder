@@ -2,7 +2,7 @@ const jsonDir: []char :: "tmp/"
 const contestJsonFilename: []char :: @jsonDir ~ "contests.json"
 const problemsJsonFilename: []char :: @jsonDir ~ "problems.json"
 const cpJsonFilename: []char :: @jsonDir ~ "contest-problem.json"
-const submissionsJsonFilename: []char :: @jsonDir ~ "submissions.json"
+const submissionsJsonFilename: []char :: @jsonDir ~ "latest_ac_submissions.json"
 
 const atcoderBase: []char :: "https://atcoder.jp/contests/"
 

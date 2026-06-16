@@ -19,7 +19,7 @@ if /i not "%~1"=="skip" (
     python update_resources_if_needed.py || goto :error
 )
 
-atcoder.exe || goto :error
+python update_submission_files.py || goto :error
 
 pause
 popd
