@@ -49,7 +49,7 @@ def load_json(path: Path) -> Any:
 def save_json(data: Any, path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
 
-    with path.open("w", encoding="utf-8", newline="\n") as file:
+    with path.open("w", encoding="utf-8") as file:
         json.dump(data, file, ensure_ascii=False, indent=2)
         file.write("\n")
 
@@ -174,7 +174,7 @@ def read_text_if_exists(path: Path) -> Optional[str]:
 def write_text(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
 
-    with path.open("w", encoding="utf-8", newline="\n") as file:
+    with path.open("w", encoding="utf-8") as file:
         file.write(text)
 
 
