@@ -1827,6 +1827,13 @@
     "name": "Changing a Character"
   },
   {
+    "problem_id": "abc126_b",
+    "contest_id": "abc126",
+    "contest_title": "AtCoder Beginner Contest 126",
+    "problem_index": "B",
+    "name": "YYMM or MMYY"
+  },
+  {
     "problem_id": "abc127_a",
     "contest_id": "abc127",
     "contest_title": "AtCoder Beginner Contest 127",
