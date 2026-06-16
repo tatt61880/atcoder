@@ -313,6 +313,7 @@ def update_kuin_submissions_json(
     cp_problem_index_map: Dict[Tuple[str, str], str],
 ) -> None:
     records: List[Dict[str, str]] = []
+    unique_problem_ids = set()
 
     for contest_id, problem_id in collect_kuin_cp_ids():
         problem_index = cp_problem_index_map.get((contest_id, problem_id))
@@ -340,9 +341,11 @@ def update_kuin_submissions_json(
                 "name": problem_name,
             }
         )
+        unique_problem_ids.add(problem_id)
 
     save_json(records, KUIN_SUBMISSIONS_JSON)
-    print(f"{KUIN_SUBMISSIONS_JSON}: {len(records)}件")
+
+    print(f"{KUIN_SUBMISSIONS_JSON}: {len(records)}問（問題IDの重複分を除くと{len(unique_problem_ids)}問）")
 
 
 def update_submission_files(
