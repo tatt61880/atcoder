@@ -1785,6 +1785,13 @@
     "name": "Five Antennas"
   },
   {
+    "problem_id": "abc123_b",
+    "contest_id": "abc123",
+    "contest_title": "AtCoder Beginner Contest 123",
+    "problem_index": "B",
+    "name": "Five Dishes"
+  },
+  {
     "problem_id": "abc124_a",
     "contest_id": "abc124",
     "contest_title": "AtCoder Beginner Contest 124",
