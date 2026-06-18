@@ -1820,6 +1820,13 @@
     "name": "Biscuit Generator"
   },
   {
+    "problem_id": "abc125_b",
+    "contest_id": "abc125",
+    "contest_title": "AtCoder Beginner Contest 125",
+    "problem_index": "B",
+    "name": "Resale"
+  },
+  {
     "problem_id": "abc126_a",
     "contest_id": "abc126",
     "contest_title": "AtCoder Beginner Contest 126",
@@ -2441,6 +2448,13 @@
     "contest_title": "AtCoder Beginner Contest 175",
     "problem_index": "A",
     "name": "Rainy Season"
+  },
+  {
+    "problem_id": "abc175_b",
+    "contest_id": "abc175",
+    "contest_title": "AtCoder Beginner Contest 175",
+    "problem_index": "B",
+    "name": "Making Triangle"
   },
   {
     "problem_id": "abc176_a",
