@@ -1,0 +1,41 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var restaurants: []Restaurant :: #[n]Restaurant
+	
+	for i(0, n - 1)
+		var s: []char :: cui@inputStr()
+		var p: int :: cui@inputInt()
+		
+		do restaurants[i] :: (#Restaurant).init(s, p, i + 1)
+	end for
+	
+	do restaurants.sort()
+	
+	for i(0, n - 1)
+		var ans: int :: restaurants[i].idx
+		do cui@print("\{ans}\n")
+	end for
+	
+	class Restaurant()
+		+var s: []char
+		+var p: int
+		+var idx: int
+		
+		+func init(s_: []char, p_: int, idx_: int): Restaurant
+			do me.s :: s_
+			do me.p :: p_
+			do me.idx :: idx_
+			ret me
+		end func
+		
+		+*func cmp(t: kuin@Class): int
+			var other: Restaurant :: t $ Restaurant
+			if(me.s = other.s)
+				ret other.p - me.p
+			end if
+			
+			ret me.s < other.s ?(-1, 1)
+		end func
+	end class
+end func

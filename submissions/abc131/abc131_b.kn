@@ -1,0 +1,14 @@
+func main()
+	var n: int :: cui@inputInt()
+	var l: int :: cui@inputInt()
+	
+	var ans: int :: n * (2 * l + n - 1) / 2
+	
+	if(l > 0)
+		do ans :- l
+	elif(l + n - 1 < 0)
+		do ans :- (l + n - 1)
+	end if
+	
+	do cui@print("\{ans}\n")
+end func

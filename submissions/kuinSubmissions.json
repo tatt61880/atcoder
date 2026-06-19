@@ -1862,11 +1862,25 @@
     "name": "Apple Pie"
   },
   {
+    "problem_id": "abc128_b",
+    "contest_id": "abc128",
+    "contest_title": "AtCoder Beginner Contest 128",
+    "problem_index": "B",
+    "name": "Guidebook"
+  },
+  {
     "problem_id": "abc129_a",
     "contest_id": "abc129",
     "contest_title": "AtCoder Beginner Contest 129",
     "problem_index": "A",
     "name": "Airplane"
+  },
+  {
+    "problem_id": "abc129_b",
+    "contest_id": "abc129",
+    "contest_title": "AtCoder Beginner Contest 129",
+    "problem_index": "B",
+    "name": "Balance"
   },
   {
     "problem_id": "abc130_a",
@@ -1876,6 +1890,13 @@
     "name": "Rounding"
   },
   {
+    "problem_id": "abc130_b",
+    "contest_id": "abc130",
+    "contest_title": "AtCoder Beginner Contest 130",
+    "problem_index": "B",
+    "name": "Bounding"
+  },
+  {
     "problem_id": "abc131_a",
     "contest_id": "abc131",
     "contest_title": "AtCoder Beginner Contest 131",
@@ -1883,11 +1904,25 @@
     "name": "Security"
   },
   {
+    "problem_id": "abc131_b",
+    "contest_id": "abc131",
+    "contest_title": "AtCoder Beginner Contest 131",
+    "problem_index": "B",
+    "name": "Bite Eating"
+  },
+  {
     "problem_id": "abc132_a",
     "contest_id": "abc132",
     "contest_title": "AtCoder Beginner Contest 132",
     "problem_index": "A",
     "name": "Fifty-Fifty"
+  },
+  {
+    "problem_id": "abc132_b",
+    "contest_id": "abc132",
+    "contest_title": "AtCoder Beginner Contest 132",
+    "problem_index": "B",
+    "name": "Ordinary Number"
   },
   {
     "problem_id": "abc133_a",
@@ -3330,6 +3365,13 @@
     "contest_title": "トヨタ自動車プログラミングコンテスト2023#1(AtCoder Beginner Contest 298)",
     "problem_index": "A",
     "name": "Job Interview"
+  },
+  {
+    "problem_id": "abc298_b",
+    "contest_id": "abc298",
+    "contest_title": "トヨタ自動車プログラミングコンテスト2023#1(AtCoder Beginner Contest 298)",
+    "problem_index": "B",
+    "name": "Coloring Matrix"
   },
   {
     "problem_id": "abc299_a",
