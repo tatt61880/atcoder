@@ -72,8 +72,8 @@ def make_url(from_second: int) -> str:
     return f"{base_url}?{query}"
 
 
-def download_new_submissions(from_second: int) -> List[Dict[str, Any]]:
-    new_submissions: List[Dict[str, Any]] = []
+def download_submissions(from_second: int) -> List[Dict[str, Any]]:
+    fetched_submissions: List[Dict[str, Any]] = []
 
     while True:
         data = download_json(make_url(from_second))
@@ -84,7 +84,7 @@ def download_new_submissions(from_second: int) -> List[Dict[str, Any]]:
         if len(data) == 0:
             break
 
-        new_submissions.extend(data)
+        fetched_submissions.extend(data)
 
         latest_epoch_second = get_latest_epoch_second(data)
         if latest_epoch_second is None:
@@ -93,12 +93,12 @@ def download_new_submissions(from_second: int) -> List[Dict[str, Any]]:
         from_second = latest_epoch_second + 1
         time.sleep(WAIT_SECONDS)
 
-    return new_submissions
+    return fetched_submissions
 
 
 def merge_submissions(
     existing_submissions: List[Dict[str, Any]],
-    new_submissions: List[Dict[str, Any]],
+    fetched_submissions: List[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
     submissions_by_id: Dict[int, Dict[str, Any]] = {}
 
@@ -107,7 +107,7 @@ def merge_submissions(
         if isinstance(submission_id, int):
             submissions_by_id[submission_id] = submission
 
-    for submission in new_submissions:
+    for submission in fetched_submissions:
         submission_id = submission.get("id")
         if isinstance(submission_id, int):
             submissions_by_id[submission_id] = submission
@@ -184,26 +184,21 @@ def main() -> None:
     else:
         from_second = max(0, latest_epoch_second - LOOKBACK_SECONDS)
 
-    new_submissions = download_new_submissions(from_second)
+    fetched_submissions = download_submissions(from_second)
 
-    if len(new_submissions) == 0:
+    if len(fetched_submissions) == 0:
         save_latest_ac_submissions(existing_submissions)
         print("取得できる提出はありません。")
         return
 
     old_count = len(existing_submissions)
-    merged_submissions = merge_submissions(existing_submissions, new_submissions)
+    merged_submissions = merge_submissions(existing_submissions, fetched_submissions)
     new_count = len(merged_submissions) - old_count
 
     save_json(merged_submissions, OUTPUT_PATH)
     save_latest_ac_submissions(merged_submissions)
 
-    if new_count == 0:
-        print("新しい提出はありません。")
-    else:
-        print(f"新規追加: {new_count}件")
-
-    print(f"取得: {len(new_submissions)}件")
+    print(f"提出取得: {len(fetched_submissions)}件（うち新規 {new_count}件）")
     print(f"保存後合計: {len(merged_submissions)}件")
 
 
