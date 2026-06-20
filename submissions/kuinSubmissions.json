@@ -1932,6 +1932,13 @@
     "name": "T or T"
   },
   {
+    "problem_id": "abc133_b",
+    "contest_id": "abc133",
+    "contest_title": "AtCoder Beginner Contest 133",
+    "problem_index": "B",
+    "name": "Good Distance"
+  },
+  {
     "problem_id": "abc134_a",
     "contest_id": "abc134",
     "contest_title": "AtCoder Beginner Contest 134",
@@ -1958,6 +1965,13 @@
     "contest_title": "AtCoder Beginner Contest 137",
     "problem_index": "A",
     "name": "+-x"
+  },
+  {
+    "problem_id": "abc137_b",
+    "contest_id": "abc137",
+    "contest_title": "AtCoder Beginner Contest 137",
+    "problem_index": "B",
+    "name": "One Clue"
   },
   {
     "problem_id": "abc138_a",
@@ -3358,6 +3372,13 @@
     "contest_title": "AtCoder Beginner Contest 297",
     "problem_index": "A",
     "name": "Double Click"
+  },
+  {
+    "problem_id": "abc297_b",
+    "contest_id": "abc297",
+    "contest_title": "AtCoder Beginner Contest 297",
+    "problem_index": "B",
+    "name": "chess960"
   },
   {
     "problem_id": "abc298_a",

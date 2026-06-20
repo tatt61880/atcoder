@@ -1,0 +1,5 @@
+func main()
+	var s: []char :: cui@input()
+	var ans: bool :: (s.find('B', 0) + s.findLast('B', -1)) % 2 = 1 & s.replace("Q", "").replace("B", "").replace("N", "") = "RKR"
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

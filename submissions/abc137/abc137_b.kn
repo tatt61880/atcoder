@@ -1,0 +1,10 @@
+func main()
+	var k: int :: cui@inputInt()
+	var x: int :: cui@inputInt()
+	
+	var ans: []int :: #[2 * k - 1]int
+	for i(0, 2 * k - 2)
+		do ans[i] :: i + x - k + 1
+	end for
+	do cui@print("\{ans.join(" ")}\n")
+end func
