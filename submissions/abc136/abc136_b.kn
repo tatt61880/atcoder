@@ -1,0 +1,21 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var ans: int :: 0
+	
+	if(n < 10)
+		do ans :: n
+	elif(n < 100)
+		do ans :: 9
+	elif(n < 1000)
+		do ans :: 9 + n - 99
+	elif(n < 10000)
+		do ans :: 9 + 900
+	elif(n < 100000)
+		do ans :: 9 + 900 + n - 9999
+	else
+		do ans :: 9 + 900 + 90000
+	end if
+	
+	do cui@print("\{ans}\n")
+end func
