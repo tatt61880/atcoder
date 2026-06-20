@@ -126,6 +126,13 @@
     "name": "おいしいたこ焼きの食べ方"
   },
   {
+    "problem_id": "abc005_3",
+    "contest_id": "abc005",
+    "contest_title": "AtCoder Beginner Contest 005",
+    "problem_index": "C",
+    "name": "おいしいたこ焼きの売り方"
+  },
+  {
     "problem_id": "abc006_1",
     "contest_id": "abc006",
     "contest_title": "AtCoder Beginner Contest 006",

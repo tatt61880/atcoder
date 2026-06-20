@@ -1,0 +1,29 @@
+func main()
+	var t: int :: cui@inputInt()
+	var n: int :: cui@inputInt()
+	
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	var ans: bool :: true
+	var idx: int :: -1
+	
+	var m: int :: cui@inputInt()
+	
+	for loop(1, m)
+		var b: int :: cui@inputInt()
+		
+		while(b < a[idx] | b > a[idx] + t, skip)
+			do idx :+ 1
+			
+			if(idx = n)
+				do ans :: false
+				break loop
+			end if
+		end while
+	end for
+	
+	do cui@print((ans ?("yes", "no")) ~ "\n")
+end func
