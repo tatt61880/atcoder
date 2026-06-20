@@ -1,0 +1,14 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	
+	var n: int :: 1
+	var ans: int :: 0
+	
+	while(n < b)
+		do ans :+ 1
+		do n :+ a - 1
+	end while
+	
+	do cui@print("\{ans}\n")
+end func

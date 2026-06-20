@@ -1,0 +1,14 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var ans: float :: 0.0
+	
+	for(1, n)
+		var a: float :: cui@inputFloat()
+		do ans :+ 1.0 / a
+	end for
+	
+	do ans :: 1.0 / ans
+	
+	do cui@print("\{ans}\n")
+end func
