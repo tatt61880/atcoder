@@ -3409,6 +3409,13 @@
     "name": "Alternately"
   },
   {
+    "problem_id": "abc296_b",
+    "contest_id": "abc296",
+    "contest_title": "AtCoder Beginner Contest 296",
+    "problem_index": "B",
+    "name": "Chessboard"
+  },
+  {
     "problem_id": "abc297_a",
     "contest_id": "abc297",
     "contest_title": "AtCoder Beginner Contest 297",
@@ -5815,6 +5822,13 @@
     "contest_title": "CodeQUEEN 2026 予選 (AtCoder Beginner Contest 462)",
     "problem_index": "B",
     "name": "Gift"
+  },
+  {
+    "problem_id": "abc463_a",
+    "contest_id": "abc463",
+    "contest_title": "AtCoder Beginner Contest 463",
+    "problem_index": "A",
+    "name": "16:9"
   },
   {
     "problem_id": "abc081_a",
