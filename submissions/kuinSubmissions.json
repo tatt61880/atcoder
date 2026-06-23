@@ -3829,6 +3829,13 @@
     "name": "A^A"
   },
   {
+    "problem_id": "abc327_c",
+    "contest_id": "abc327",
+    "contest_title": "HHKBプログラミングコンテスト2023(AtCoder Beginner Contest 327)",
+    "problem_index": "C",
+    "name": "Number Place"
+  },
+  {
     "problem_id": "abc328_a",
     "contest_id": "abc328",
     "contest_title": "トヨタ自動車プログラミングコンテスト2023#7(AtCoder Beginner Contest 328)",
@@ -6368,6 +6375,13 @@
     "contest_title": "AtCoder Daily Training EASY 2026/06/17 16:00start",
     "problem_index": "E",
     "name": "Number Place"
+  },
+  {
+    "problem_id": "abc360_c",
+    "contest_id": "adt_hard_20240821_2",
+    "contest_title": "AtCoder Daily Training HARD 2024/08/21 18:00start",
+    "problem_index": "E",
+    "name": "Move It"
   },
   {
     "problem_id": "abc373_c",
