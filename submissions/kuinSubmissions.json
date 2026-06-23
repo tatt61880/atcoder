@@ -6349,6 +6349,27 @@
     "name": "Spoiler"
   },
   {
+    "problem_id": "abc343_c",
+    "contest_id": "adt_easy_20260616_2",
+    "contest_title": "AtCoder Daily Training EASY 2026/06/16 18:00start",
+    "problem_index": "E",
+    "name": "343"
+  },
+  {
+    "problem_id": "abc327_c",
+    "contest_id": "adt_easy_20260617_1",
+    "contest_title": "AtCoder Daily Training EASY 2026/06/17 16:00start",
+    "problem_index": "E",
+    "name": "Number Place"
+  },
+  {
+    "problem_id": "abc373_c",
+    "contest_id": "adt_medium_20241112_3",
+    "contest_title": "AtCoder Daily Training MEDIUM 2024/11/12 19:30start",
+    "problem_index": "F",
+    "name": "Max Ai+Bj"
+  },
+  {
     "problem_id": "aising2020_a",
     "contest_id": "aising2020",
     "contest_title": "エイシング プログラミング コンテスト 2020",
