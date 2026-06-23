@@ -4305,6 +4305,13 @@
     "name": "Intersection of Cuboids"
   },
   {
+    "problem_id": "abc361_c",
+    "contest_id": "abc361",
+    "contest_title": "デンソークリエイトプログラミングコンテスト2024（AtCoder Beginner Contest 361）",
+    "problem_index": "C",
+    "name": "Make Them Narrow"
+  },
+  {
     "problem_id": "abc362_a",
     "contest_id": "abc362",
     "contest_title": "トヨタ自動車プログラミングコンテスト2024#7（AtCoder Beginner Contest 362）",
