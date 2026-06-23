@@ -1,0 +1,6 @@
+func main()
+	var x: int :: cui@inputInt()
+	
+	var ans: int :: 10 - x / 200
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,8 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var x: int :: (a + b) / 2
+	var y: int :: (a - b) / 2
+	
+	do cui@print("\{x} \{y}\n")
+end func

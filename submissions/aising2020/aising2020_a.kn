@@ -1,0 +1,12 @@
+func main()
+	var l: int :: cui@inputInt()
+	var r: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	
+	var ans: int :: f(r, d) - f(l - 1, d)
+	do cui@print("\{ans}\n")
+	
+	func f(a: int, d: int): int
+		ret a / d
+	end func
+end func

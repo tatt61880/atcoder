@@ -1,0 +1,10 @@
+func main()
+	var x: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	var z: int :: cui@inputInt()
+	
+	; y / x > ans / z
+	
+	var ans: int :: y * z / x + (y * z % x = 0 ?(-1, 0))
+	do cui@print("\{ans}\n")
+end func
