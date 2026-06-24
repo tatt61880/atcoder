@@ -1,0 +1,40 @@
+func main()
+	var r: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	
+	var s: [][]char :: #[r][]char
+	for i(0, r - 1)
+		do s[i] :: cui@input()
+	end for
+	
+	for i(0, r - 1)
+		for j(0, c - 1)
+			switch(s[i][j])
+			case '.', '#'
+			default
+				var n: int :: s[i][j] $ int - '0' $ int
+				for y(0, r - 1)
+					for x(0, c - 1)
+						if(s[y][x] = '#' & (i - y).abs() + (j - x).abs() <= n)
+							do s[y][x] :: '.'
+						end if
+					end for
+				end for
+			end switch
+		end for
+	end for
+	
+	for i(0, r - 1)
+		for j(0, c - 1)
+			switch(s[i][j])
+			case '.', '#'
+			default
+				do s[i][j] :: '.'
+			end switch
+		end for
+	end for
+	
+	for i(0, r - 1)
+		do cui@print(s[i] ~ "\n")
+	end for
+end func

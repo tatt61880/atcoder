@@ -1,0 +1,29 @@
+func main()
+	var n: int :: cui@inputInt()
+	var y: int :: ((n $ float + 1.0) ^ (1.01 / 3.0)) $ int
+	for x(y, 1, -1)
+		var k: int :: x ^ 3
+		if(k > n)
+			skip x
+		end if
+		if(@isPalindrome(k.toStr()))
+			do cui@print("\{k}\n")
+			ret
+		end if
+	end for
+end func
+
+func isPalindrome(s: []char): bool
+	var l: int :: 0
+	var r: int :: ^s - 1
+	while(l < r)
+		if(s[l] <> s[r])
+			ret false
+		end if
+		
+		do l :+ 1
+		do r :- 1
+	end while
+	
+	ret true
+end func

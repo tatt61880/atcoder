@@ -3402,6 +3402,13 @@
     "name": "Probably English"
   },
   {
+    "problem_id": "abc295_b",
+    "contest_id": "abc295",
+    "contest_title": "AtCoder Beginner Contest 295",
+    "problem_index": "B",
+    "name": "Bombs"
+  },
+  {
     "problem_id": "abc296_a",
     "contest_id": "abc296",
     "contest_title": "AtCoder Beginner Contest 296",
@@ -3498,6 +3505,13 @@
     "contest_title": "トヨタ自動車プログラミングコンテスト2023#2(AtCoder Beginner Contest 302)",
     "problem_index": "B",
     "name": "Find snuke"
+  },
+  {
+    "problem_id": "abc302_c",
+    "contest_id": "abc302",
+    "contest_title": "トヨタ自動車プログラミングコンテスト2023#2(AtCoder Beginner Contest 302)",
+    "problem_index": "C",
+    "name": "Almost Equal"
   },
   {
     "problem_id": "abc303_a",
@@ -4060,6 +4074,13 @@
     "name": "Adjacency Matrix"
   },
   {
+    "problem_id": "abc343_c",
+    "contest_id": "abc343",
+    "contest_title": "AtCoder Beginner Contest 343",
+    "problem_index": "C",
+    "name": "343"
+  },
+  {
     "problem_id": "abc344_a",
     "contest_id": "abc344",
     "contest_title": "トヨタ自動車プログラミングコンテスト2024#3（AtCoder Beginner Contest 344）",
@@ -4298,6 +4319,13 @@
     "name": "Vertical Reading"
   },
   {
+    "problem_id": "abc360_c",
+    "contest_id": "abc360",
+    "contest_title": "AtCoder Beginner Contest 360",
+    "problem_index": "C",
+    "name": "Move It"
+  },
+  {
     "problem_id": "abc361_a",
     "contest_id": "abc361",
     "contest_title": "デンソークリエイトプログラミングコンテスト2024（AtCoder Beginner Contest 361）",
@@ -4359,6 +4387,13 @@
     "contest_title": "日本レジストリサービス（JPRS）プログラミングコンテスト2024#2（AtCoder Beginner Contest 364）",
     "problem_index": "B",
     "name": "Grid Walk"
+  },
+  {
+    "problem_id": "abc364_c",
+    "contest_id": "abc364",
+    "contest_title": "日本レジストリサービス（JPRS）プログラミングコンテスト2024#2（AtCoder Beginner Contest 364）",
+    "problem_index": "C",
+    "name": "Minimum Glutton"
   },
   {
     "problem_id": "abc365_a",
@@ -4485,6 +4520,13 @@
     "contest_title": "AtCoder Beginner Contest 373",
     "problem_index": "B",
     "name": "1D Keyboard"
+  },
+  {
+    "problem_id": "abc373_c",
+    "contest_id": "abc373",
+    "contest_title": "AtCoder Beginner Contest 373",
+    "problem_index": "C",
+    "name": "Max Ai+Bj"
   },
   {
     "problem_id": "abc374_a",
@@ -6139,6 +6181,13 @@
     "name": "Round decimals"
   },
   {
+    "problem_id": "abc302_c",
+    "contest_id": "adt_all_20260616_1",
+    "contest_title": "AtCoder Daily Training ALL 2026/06/16 16:00start",
+    "problem_index": "F",
+    "name": "Almost Equal"
+  },
+  {
     "problem_id": "abc215_a",
     "contest_id": "adt_easy_20231017_1",
     "contest_title": "AtCoder Daily Training EASY 2023/10/17 15:30start",
@@ -6342,6 +6391,13 @@
     "name": "Round decimals"
   },
   {
+    "problem_id": "abc364_c",
+    "contest_id": "adt_easy_20241212_1",
+    "contest_title": "AtCoder Daily Training EASY 2024/12/12 16:30start",
+    "problem_index": "E",
+    "name": "Minimum Glutton"
+  },
+  {
     "problem_id": "abc391_a",
     "contest_id": "adt_easy_20251111_1",
     "contest_title": "AtCoder Daily Training EASY 2025/11/11 15:30start",
@@ -6382,6 +6438,13 @@
     "contest_title": "AtCoder Daily Training HARD 2024/08/21 18:00start",
     "problem_index": "E",
     "name": "Move It"
+  },
+  {
+    "problem_id": "abc361_c",
+    "contest_id": "adt_medium_20240903_3",
+    "contest_title": "AtCoder Daily Training MEDIUM 2024/09/03 19:30start",
+    "problem_index": "E",
+    "name": "Make Them Narrow"
   },
   {
     "problem_id": "abc373_c",
