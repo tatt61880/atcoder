@@ -3381,6 +3381,13 @@
     "name": "CAPS LOCK"
   },
   {
+    "problem_id": "abc292_b",
+    "contest_id": "abc292",
+    "contest_title": "AtCoder Beginner Contest 292",
+    "problem_index": "B",
+    "name": "Yellow and Red Card"
+  },
+  {
     "problem_id": "abc293_a",
     "contest_id": "abc293",
     "contest_title": "AtCoder Beginner Contest 293",
@@ -6494,6 +6501,111 @@
     "contest_title": "AtCoder Regular Contest 104",
     "problem_index": "A",
     "name": "Plus Minus"
+  },
+  {
+    "problem_id": "awc0100_a",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "A",
+    "name": "Calculating Part-Time Job Pay"
+  },
+  {
+    "problem_id": "awc0100_b",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "B",
+    "name": "Cooking Contest"
+  },
+  {
+    "problem_id": "awc0100_c",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "C",
+    "name": "Permission Management System"
+  },
+  {
+    "problem_id": "awc0100_d",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "D",
+    "name": "Team Division"
+  },
+  {
+    "problem_id": "awc0100_e",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "E",
+    "name": "Mountain View"
+  },
+  {
+    "problem_id": "awc0100_f",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "F",
+    "name": "Sales Target for Consecutive Intervals"
+  },
+  {
+    "problem_id": "awc0100_g",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "G",
+    "name": "Circle of Friends"
+  },
+  {
+    "problem_id": "awc0100_h",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "H",
+    "name": "City Tour Survey"
+  },
+  {
+    "problem_id": "awc0100_i",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "I",
+    "name": "Circle Pass Game"
+  },
+  {
+    "problem_id": "awc0100_j",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "J",
+    "name": "Road Network Development"
+  },
+  {
+    "problem_id": "awc0100_k",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "K",
+    "name": "Choosing Blocks in a Shopping Street"
+  },
+  {
+    "problem_id": "awc0100_l",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "L",
+    "name": "Schedule Adjustment"
+  },
+  {
+    "problem_id": "awc0100_m",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "M",
+    "name": "Secret Sequence and Branching Notes"
+  },
+  {
+    "problem_id": "awc0100_n",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "N",
+    "name": "Stock Price Correction"
+  },
+  {
+    "problem_id": "awc0100_o",
+    "contest_id": "awc0100",
+    "contest_title": "AtCoder Weekday Contest 0100 Beta",
+    "problem_index": "O",
+    "name": "Joining of Circular Tablets"
   },
   {
     "problem_id": "dp_g",

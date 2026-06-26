@@ -1,0 +1,17 @@
+func main()
+	var n: int :: cui@inputInt()
+	var q: int :: cui@inputInt()
+	var nums: []int :: #[n]int
+	
+	for(1, q)
+		switch(cui@inputChar())
+		case '1'
+			do nums[cui@inputInt() - 1] :+ 1
+		case '2'
+			do nums[cui@inputInt() - 1] :+ 2
+		case '3'
+			var ans: bool :: nums[cui@inputInt() - 1] >= 2
+			do cui@print((ans ?("Yes", "No")) ~ "\n")
+		end switch
+	end for
+end func

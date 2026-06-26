@@ -8,3 +8,5 @@ __pycache__/
 /data/
 atcoder.knprop
 *.exe
+
+submissions/awc0100/*
