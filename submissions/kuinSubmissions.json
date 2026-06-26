@@ -3388,11 +3388,25 @@
     "name": "Swap Odd and Even"
   },
   {
+    "problem_id": "abc293_b",
+    "contest_id": "abc293",
+    "contest_title": "AtCoder Beginner Contest 293",
+    "problem_index": "B",
+    "name": "Call the ID Number"
+  },
+  {
     "problem_id": "abc294_a",
     "contest_id": "abc294",
     "contest_title": "AtCoder Beginner Contest 294",
     "problem_index": "A",
     "name": "Filter"
+  },
+  {
+    "problem_id": "abc294_b",
+    "contest_id": "abc294",
+    "contest_title": "AtCoder Beginner Contest 294",
+    "problem_index": "B",
+    "name": "ASCII Art"
   },
   {
     "problem_id": "abc295_a",

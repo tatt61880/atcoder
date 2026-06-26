@@ -1,0 +1,11 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	for i(0, h - 1)
+		for j(0, w - 1)
+			var a: int :: cui@inputInt()
+			do cui@print(a = 0 ?(".", "\{'A'.offset(a - 1)}"))
+		end for
+		do cui@print("\n")
+	end for
+end func
