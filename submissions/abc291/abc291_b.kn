@@ -1,0 +1,20 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var a: []int :: #[5 * n]int
+	for i(0, 5 * n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	do a.sort()
+	
+	var ans: float :: 0.0
+	
+	for i(n, 4 * n - 1)
+		do ans :+ a[i] $ float
+	end for
+	
+	do ans :/ (3 * n) $ float
+	
+	do cui@print("\{ans}\n")
+end func

@@ -1,0 +1,19 @@
+func main()
+	var n: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	
+	var s: []char :: cui@inputStr()
+	
+	var cnt: int :: 0
+	
+	for i(0, n - 1)
+		if(s[i] = 'o')
+			do cnt :+ 1
+			if(cnt > k)
+				do s[i] :: 'x'
+			end if
+		end if
+	end for
+	
+	do cui@print("\{s}\n")
+end func

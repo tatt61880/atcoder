@@ -3367,11 +3367,25 @@
     "name": "Contest Result"
   },
   {
+    "problem_id": "abc290_b",
+    "contest_id": "abc290",
+    "contest_title": "Toyota Programming Contest 2023 Spring Qual B（AtCoder Beginner Contest 290）",
+    "problem_index": "B",
+    "name": "Qual B"
+  },
+  {
     "problem_id": "abc291_a",
     "contest_id": "abc291",
     "contest_title": "AtCoder Beginner Contest 291（Sponsored by TOYOTA SYSTEMS）",
     "problem_index": "A",
     "name": "camel Case"
+  },
+  {
+    "problem_id": "abc291_b",
+    "contest_id": "abc291",
+    "contest_title": "AtCoder Beginner Contest 291（Sponsored by TOYOTA SYSTEMS）",
+    "problem_index": "B",
+    "name": "Trimmed Mean"
   },
   {
     "problem_id": "abc292_a",
