@@ -2555,6 +2555,13 @@
     "name": "Takoyaki"
   },
   {
+    "problem_id": "abc176_b",
+    "contest_id": "abc176",
+    "contest_title": "AtCoder Beginner Contest 176",
+    "problem_index": "B",
+    "name": "Multiple of 9"
+  },
+  {
     "problem_id": "abc177_a",
     "contest_id": "abc177",
     "contest_title": "AtCoder Beginner Contest 177",
@@ -3358,6 +3365,13 @@
     "contest_title": "Ｓｋｙ株式会社プログラミングコンテスト2023（AtCoder Beginner Contest 289）",
     "problem_index": "A",
     "name": "flip"
+  },
+  {
+    "problem_id": "abc289_b",
+    "contest_id": "abc289",
+    "contest_title": "Ｓｋｙ株式会社プログラミングコンテスト2023（AtCoder Beginner Contest 289）",
+    "problem_index": "B",
+    "name": "V"
   },
   {
     "problem_id": "abc290_a",
