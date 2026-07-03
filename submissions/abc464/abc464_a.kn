@@ -1,0 +1,7 @@
+func main()
+	var s: []char :: cui@inputStr()
+	do s.sort()
+	
+	var ans: bool :: s[^s / 2] = 'E'
+	do cui@print((ans ?("East", "West")) ~ "\n")
+end func

@@ -1,0 +1,54 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	var c: [][]char :: #[h][]char
+	for i(0, h - 1)
+		do c[i] :: cui@input()
+	end for
+	
+	var minY: int :: 0
+	var maxY: int :: h - 1
+	var minX: int :: 0
+	var maxX: int :: w - 1
+	
+	for i(0, h - 1)
+		for j(0, w - 1)
+			if(c[i][j] = '#')
+				break i
+			end if
+		end for
+		do minY :+ 1
+	end for
+	for i(h - 1, 0, -1)
+		for j(0, w - 1)
+			if(c[i][j] = '#')
+				break i
+			end if
+		end for
+		do maxY :- 1
+	end for
+	
+	for i(0, w - 1)
+		for j(0, h - 1)
+			if(c[j][i] = '#')
+				break i
+			end if
+		end for
+		do minX :+ 1
+	end for
+	for i(w - 1, 0, -1)
+		for j(0, h - 1)
+			if(c[j][i] = '#')
+				break i
+			end if
+		end for
+		do maxX :- 1
+	end for
+	
+	for i(minY, maxY)
+		for j(minX, maxX)
+			do cui@print("\{c[i][j]}")
+		end for
+		do cui@print("\n")
+	end for
+end func
