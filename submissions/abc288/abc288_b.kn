@@ -1,0 +1,13 @@
+func main()
+	var n: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	var s: [][]char :: #[n][]char
+	for i(0, n - 1)
+		do s[i] :: cui@input()
+	end for
+	
+	do s :: s.sub(0, k)
+	do s.sort()
+	
+	do cui@print("\{s.join("\n")}\n")
+end func

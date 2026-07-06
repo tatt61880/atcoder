@@ -3353,11 +3353,25 @@
     "name": "Majority"
   },
   {
+    "problem_id": "abc287_b",
+    "contest_id": "abc287",
+    "contest_title": "ユニークビジョンプログラミングコンテスト2023 新春 (AtCoder Beginner Contest 287)",
+    "problem_index": "B",
+    "name": "Postal Card"
+  },
+  {
     "problem_id": "abc288_a",
     "contest_id": "abc288",
     "contest_title": "Toyota Programming Contest 2023 Spring Qual A（AtCoder Beginner Contest 288）",
     "problem_index": "A",
     "name": "Many A+B Problems"
+  },
+  {
+    "problem_id": "abc288_b",
+    "contest_id": "abc288",
+    "contest_title": "Toyota Programming Contest 2023 Spring Qual A（AtCoder Beginner Contest 288）",
+    "problem_index": "B",
+    "name": "Qualification Contest"
   },
   {
     "problem_id": "abc289_a",
@@ -5955,6 +5969,13 @@
     "contest_title": "第七回日本最強プログラマー学生選手権～Advance～ -予選- （AtCoder Beginner Contest 464）",
     "problem_index": "B",
     "name": "Crop"
+  },
+  {
+    "problem_id": "abc465_a",
+    "contest_id": "abc465",
+    "contest_title": "AtCoder Beginner Contest 465",
+    "problem_index": "A",
+    "name": "Supermajority"
   },
   {
     "problem_id": "abl_a",
