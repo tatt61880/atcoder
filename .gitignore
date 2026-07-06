@@ -10,3 +10,5 @@ atcoder.knprop
 *.exe
 
 submissions/awc0100/*
+!submissions/awc0100/awc0100_a.*
+!submissions/awc0100/awc0100_b.*
