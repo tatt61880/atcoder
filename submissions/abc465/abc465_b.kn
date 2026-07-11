@@ -1,0 +1,16 @@
+func main()
+	var x: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	var l: int :: cui@inputInt()
+	var r: int :: cui@inputInt()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	
+	var ans: int :: 0
+	
+	for i(a, b - 1)
+		do ans :+ (l <= i & i < r) ?(x, y)
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

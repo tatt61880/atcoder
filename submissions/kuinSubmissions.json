@@ -3325,11 +3325,25 @@
     "name": "Power"
   },
   {
+    "problem_id": "abc283_b",
+    "contest_id": "abc283",
+    "contest_title": "ユニークビジョンプログラミングコンテスト2022 冬(AtCoder Beginner Contest 283)",
+    "problem_index": "B",
+    "name": "First Query Problem"
+  },
+  {
     "problem_id": "abc284_a",
     "contest_id": "abc284",
     "contest_title": "AtCoder Beginner Contest 284",
     "problem_index": "A",
     "name": "Sequence of Strings"
+  },
+  {
+    "problem_id": "abc284_b",
+    "contest_id": "abc284",
+    "contest_title": "AtCoder Beginner Contest 284",
+    "problem_index": "B",
+    "name": "Multi Test Cases"
   },
   {
     "problem_id": "abc285_a",
@@ -3339,11 +3353,25 @@
     "name": "Edge Checker 2"
   },
   {
+    "problem_id": "abc285_b",
+    "contest_id": "abc285",
+    "contest_title": "AtCoder Beginner Contest 285",
+    "problem_index": "B",
+    "name": "Longest Uncommon Prefix"
+  },
+  {
     "problem_id": "abc286_a",
     "contest_id": "abc286",
     "contest_title": "ウルシステムズプログラミングコンテスト2023(AtCoder Beginner Contest 286)",
     "problem_index": "A",
     "name": "Range Swap"
+  },
+  {
+    "problem_id": "abc286_b",
+    "contest_id": "abc286",
+    "contest_title": "ウルシステムズプログラミングコンテスト2023(AtCoder Beginner Contest 286)",
+    "problem_index": "B",
+    "name": "Cat"
   },
   {
     "problem_id": "abc287_a",
@@ -5976,6 +6004,13 @@
     "contest_title": "AtCoder Beginner Contest 465",
     "problem_index": "A",
     "name": "Supermajority"
+  },
+  {
+    "problem_id": "abc465_b",
+    "contest_id": "abc465",
+    "contest_title": "AtCoder Beginner Contest 465",
+    "problem_index": "B",
+    "name": "Parking 2"
   },
   {
     "problem_id": "abl_a",

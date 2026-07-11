@@ -1,0 +1,4 @@
+func main()
+	do cui@input()
+	do cui@print("\{cui@input().replace("na", "nya")}\n")
+end func
