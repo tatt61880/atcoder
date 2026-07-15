@@ -1904,6 +1904,13 @@
     "name": "Bounding"
   },
   {
+    "problem_id": "abc130_d",
+    "contest_id": "abc130",
+    "contest_title": "AtCoder Beginner Contest 130",
+    "problem_index": "D",
+    "name": "Enough Array"
+  },
+  {
     "problem_id": "abc131_a",
     "contest_id": "abc131",
     "contest_title": "AtCoder Beginner Contest 131",
@@ -3309,6 +3316,13 @@
     "contest_title": "AtCoder Beginner Contest 281",
     "problem_index": "A",
     "name": "Count Down"
+  },
+  {
+    "problem_id": "abc281_b",
+    "contest_id": "abc281",
+    "contest_title": "AtCoder Beginner Contest 281",
+    "problem_index": "B",
+    "name": "Sandwich Number"
   },
   {
     "problem_id": "abc282_a",
@@ -6025,6 +6039,13 @@
     "contest_title": "AtCoder Beginner Contest 466",
     "problem_index": "A",
     "name": "Compromise "
+  },
+  {
+    "problem_id": "abc466_b",
+    "contest_id": "abc466",
+    "contest_title": "AtCoder Beginner Contest 466",
+    "problem_index": "B",
+    "name": "Representative Balls"
   },
   {
     "problem_id": "abl_a",

@@ -1,0 +1,30 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+	end for
+	
+	var aSorted: []int :: ##a
+	do aSorted.sort()
+	do aSorted.reverse()
+	
+	var b: []int :: #[n]int
+	for i(0, n - 1)
+		var ok: int :: -1
+		var ng: int :: n
+		while((ok - ng).abs() > 1)
+			var mid: int :: (ok + ng) / 2
+			if(aSorted[mid] > a[i])
+				do ok :: mid
+			else
+				do ng :: mid
+			end if
+		end while
+		
+		do b[i] :: ok + 1
+	end for
+	
+	do cui@print("\{b.join(" ")}\n")
+end func

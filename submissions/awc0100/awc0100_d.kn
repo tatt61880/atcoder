@@ -1,0 +1,22 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var sum: int :: 0
+	
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+		do sum :+ a[i]
+	end for
+	
+	var ans: int :: lib@intMax
+	
+	var sum1: int :: 0
+	for k(0, n - 1)
+		do sum1 :+ a[k]
+		var sum2: int :: sum - sum1
+		do ans :: lib@min(ans, (sum1 - sum2).abs())
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

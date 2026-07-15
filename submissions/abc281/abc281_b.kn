@@ -1,0 +1,5 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var ans: bool :: ^s = 8 & 'A' <= s[0] & s[0] <= 'Z' & 'A' <= s[7] & s[7] <= 'Z' & s.sub(1, 6).toInt(&) >= 100000
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

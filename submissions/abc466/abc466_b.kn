@@ -1,0 +1,17 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var ans: []int :: #[m]int
+	for i(0, m - 1)
+		do ans[i] :: -1
+	end for
+	
+	for(1, n)
+		var c: int :: cui@inputInt()
+		var s: int :: cui@inputInt()
+		do ans[c - 1] :: lib@max(ans[c - 1], s)
+	end for
+	
+	do cui@print("\{ans.join(" ")}\n")
+end func
