@@ -3311,6 +3311,13 @@
     "name": "Pawn on a Grid"
   },
   {
+    "problem_id": "abc280_b",
+    "contest_id": "abc280",
+    "contest_title": "デンソークリエイトプログラミングコンテスト2022 Winter(AtCoder Beginner Contest 280)",
+    "problem_index": "B",
+    "name": "Inverse Prefix Sum"
+  },
+  {
     "problem_id": "abc281_a",
     "contest_id": "abc281",
     "contest_title": "AtCoder Beginner Contest 281",
