@@ -1,0 +1,6 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	var ans: bool :: w * 10000 >= 25 * h ^ 2
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

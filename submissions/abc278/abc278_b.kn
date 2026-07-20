@@ -1,0 +1,25 @@
+func main()
+	var h: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	while(true)
+		if(f(h, m))
+			do cui@print("\{h} \{m}\n")
+			ret
+		end if
+		
+		do m :+ 1
+		
+		if(m = 60)
+			do m :: 0
+			do h :: (h + 1) % 24
+		end if
+	end while
+	
+	func f(h: int, m: int): bool
+		var h2: int :: (h / 10) * 10 + m / 10
+		var m2: int :: (h % 10) * 10 + m % 10
+		
+		ret h2 < 24 & m2 < 60
+	end func
+end func

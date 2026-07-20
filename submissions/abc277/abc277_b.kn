@@ -1,0 +1,17 @@
+func main()
+	var n: int :: cui@inputInt()
+	var seen: dict<[]char, bool> :: #dict<[]char, bool>
+	
+	for(1, n)
+		var s: []char :: cui@input()
+		
+		if(seen.exist(s) | "HDCS".find(s[0], 0) = -1 | "A23456789TJQK".find(s[1], 0) = -1)
+			do cui@print("No\n")
+			ret
+		end if
+		
+		do seen.add(s, true)
+	end for
+	
+	do cui@print("Yes\n")
+end func

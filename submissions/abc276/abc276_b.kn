@@ -1,0 +1,35 @@
+func main()
+	var n: int :: cui@inputInt()
+	var m: int :: cui@inputInt()
+	
+	var a: []int :: #[m]int
+	var b: []int :: #[m]int
+	var nums: []int :: #[n]int
+	for i(0, m - 1)
+		do a[i] :: cui@inputInt() - 1
+		do b[i] :: cui@inputInt() - 1
+		do nums[a[i]] :+ 1
+		do nums[b[i]] :+ 1
+	end for
+	
+	var idxs: []int :: #[n]int
+	var ans: [][]int :: #[n][]int
+	for i(0, n - 1)
+		do ans[i] :: #[nums[i]]int
+	end for
+	
+	for i(0, m - 1)
+		do ans[a[i]][idxs[a[i]]] :: b[i] + 1
+		do ans[b[i]][idxs[b[i]]] :: a[i] + 1
+		do idxs[a[i]] :+ 1
+		do idxs[b[i]] :+ 1
+	end for
+	
+	for i(0, n - 1)
+		do ans[i].sort()
+	end for
+	
+	for i(0, n - 1)
+		do cui@print("\{^ans[i] = 0 ?("0", "\{^ans[i]} ")}\{ans[i].join(" ")}\n")
+	end for
+end func

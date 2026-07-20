@@ -3283,11 +3283,25 @@
     "name": "Rightmost"
   },
   {
+    "problem_id": "abc276_b",
+    "contest_id": "abc276",
+    "contest_title": "AtCoder Beginner Contest 276",
+    "problem_index": "B",
+    "name": "Adjacency List"
+  },
+  {
     "problem_id": "abc277_a",
     "contest_id": "abc277",
     "contest_title": "大和証券プログラミングコンテスト2022 Autumn (AtCoder Beginner Contest 277)",
     "problem_index": "A",
     "name": "^{-1}"
+  },
+  {
+    "problem_id": "abc277_b",
+    "contest_id": "abc277",
+    "contest_title": "大和証券プログラミングコンテスト2022 Autumn (AtCoder Beginner Contest 277)",
+    "problem_index": "B",
+    "name": "Playing Cards Validation"
   },
   {
     "problem_id": "abc278_a",
@@ -3297,11 +3311,25 @@
     "name": "Shift"
   },
   {
+    "problem_id": "abc278_b",
+    "contest_id": "abc278",
+    "contest_title": "AtCoder Beginner Contest 278",
+    "problem_index": "B",
+    "name": "Misjudge the Time"
+  },
+  {
     "problem_id": "abc279_a",
     "contest_id": "abc279",
     "contest_title": "トヨタシステムズプログラミングコンテスト2022(AtCoder Beginner Contest 279)",
     "problem_index": "A",
     "name": "wwwvvvvvv"
+  },
+  {
+    "problem_id": "abc279_b",
+    "contest_id": "abc279",
+    "contest_title": "トヨタシステムズプログラミングコンテスト2022(AtCoder Beginner Contest 279)",
+    "problem_index": "B",
+    "name": "LOOKUP"
   },
   {
     "problem_id": "abc280_a",
@@ -6053,6 +6081,20 @@
     "contest_title": "AtCoder Beginner Contest 466",
     "problem_index": "B",
     "name": "Representative Balls"
+  },
+  {
+    "problem_id": "abc467_a",
+    "contest_id": "abc467",
+    "contest_title": "AtCoder Beginner Contest 467",
+    "problem_index": "A",
+    "name": "Obesity"
+  },
+  {
+    "problem_id": "abc467_b",
+    "contest_id": "abc467",
+    "contest_title": "AtCoder Beginner Contest 467",
+    "problem_index": "B",
+    "name": "Keep the Change"
   },
   {
     "problem_id": "abl_a",
