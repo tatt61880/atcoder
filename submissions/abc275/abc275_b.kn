@@ -1,0 +1,16 @@
+func main()
+	var a: int :: cui@inputInt() % mod
+	var b: int :: cui@inputInt() % mod
+	var c: int :: cui@inputInt() % mod
+	var d: int :: cui@inputInt() % mod
+	var e: int :: cui@inputInt() % mod
+	var f: int :: cui@inputInt() % mod
+	
+	const mod: int :: 998244353
+	
+	var x: int :: a % mod * b % mod * c % mod
+	var y: int :: d % mod * e % mod * f % mod
+	var ans: int :: (mod + x - y) % mod
+	
+	do cui@print("\{ans}\n")
+end func

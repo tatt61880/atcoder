@@ -3276,6 +3276,13 @@
     "name": "Find Takahashi"
   },
   {
+    "problem_id": "abc275_b",
+    "contest_id": "abc275",
+    "contest_title": "AtCoder Beginner Contest 275",
+    "problem_index": "B",
+    "name": "ABC-DEF"
+  },
+  {
     "problem_id": "abc276_a",
     "contest_id": "abc276",
     "contest_title": "AtCoder Beginner Contest 276",
