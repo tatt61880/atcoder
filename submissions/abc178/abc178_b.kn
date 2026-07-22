@@ -1,0 +1,14 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var c: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	
+	var ans: int :: lib@intMin
+	do ans :: lib@max(ans, a * c)
+	do ans :: lib@max(ans, a * d)
+	do ans :: lib@max(ans, b * c)
+	do ans :: lib@max(ans, b * d)
+	
+	do cui@print("\{ans}\n")
+end func

@@ -2576,6 +2576,13 @@
     "name": "Don't be late"
   },
   {
+    "problem_id": "abc177_b",
+    "contest_id": "abc177",
+    "contest_title": "AtCoder Beginner Contest 177",
+    "problem_index": "B",
+    "name": "Substring"
+  },
+  {
     "problem_id": "abc178_a",
     "contest_id": "abc178",
     "contest_title": "AtCoder Beginner Contest 178",
@@ -2583,11 +2590,25 @@
     "name": "Not"
   },
   {
+    "problem_id": "abc178_b",
+    "contest_id": "abc178",
+    "contest_title": "AtCoder Beginner Contest 178",
+    "problem_index": "B",
+    "name": "Product Max"
+  },
+  {
     "problem_id": "abc179_a",
     "contest_id": "abc179",
     "contest_title": "AtCoder Beginner Contest 179",
     "problem_index": "A",
     "name": "Plural Form"
+  },
+  {
+    "problem_id": "abc179_b",
+    "contest_id": "abc179",
+    "contest_title": "AtCoder Beginner Contest 179",
+    "problem_index": "B",
+    "name": "Go to Jail"
   },
   {
     "problem_id": "abc180_a",

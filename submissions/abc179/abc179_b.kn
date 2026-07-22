@@ -1,0 +1,18 @@
+func main()
+	var n: int :: cui@inputInt()
+	var cnt: int :: 0
+	
+	for(1, n)
+		var d1: int :: cui@inputInt()
+		var d2: int :: cui@inputInt()
+		
+		do cnt :: d1 = d2 ?(cnt + 1, 0)
+		
+		if(cnt = 3)
+			do cui@print("Yes\n")
+			ret
+		end if
+	end for
+	
+	do cui@print("No\n")
+end func

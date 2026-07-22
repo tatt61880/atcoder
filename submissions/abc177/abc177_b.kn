@@ -1,0 +1,18 @@
+func main()
+	var s: []char :: cui@input()
+	var t: []char :: cui@input()
+	
+	var ans: int :: lib@intMax
+	
+	for i(0, ^s - ^t)
+		var cnt: int :: 0
+		
+		for j(0, ^t - 1)
+			do cnt :+ s[i + j] <> t[j] ?(1, 0)
+		end for
+		
+		do ans :: lib@min(ans, cnt)
+	end for
+	
+	do cui@print("\{ans}\n")
+end func
