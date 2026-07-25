@@ -1,0 +1,9 @@
+func main()
+	var sx: float :: cui@inputFloat()
+	var sy: float :: cui@inputFloat()
+	var gx: float :: cui@inputFloat()
+	var gy: float :: cui@inputFloat()
+	
+	var ans: float :: sx + (gx - sx) * sy / (sy + gy)
+	do cui@print("\{ans}\n")
+end func

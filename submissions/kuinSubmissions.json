@@ -2660,6 +2660,13 @@
     "name": "ReLU"
   },
   {
+    "problem_id": "abc183_b",
+    "contest_id": "abc183",
+    "contest_title": "AtCoder Beginner Contest 183",
+    "problem_index": "B",
+    "name": "Billiards"
+  },
+  {
     "problem_id": "abc184_a",
     "contest_id": "abc184",
     "contest_title": "AtCoder Beginner Contest 184",
