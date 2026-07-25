@@ -2618,6 +2618,13 @@
     "name": "box"
   },
   {
+    "problem_id": "abc180_b",
+    "contest_id": "abc180",
+    "contest_title": "AtCoder Beginner Contest 180",
+    "problem_index": "B",
+    "name": "Various distances"
+  },
+  {
     "problem_id": "abc181_a",
     "contest_id": "abc181",
     "contest_title": "AtCoder Beginner Contest 181",
@@ -2625,11 +2632,25 @@
     "name": "Heavy Rotation"
   },
   {
+    "problem_id": "abc181_b",
+    "contest_id": "abc181",
+    "contest_title": "AtCoder Beginner Contest 181",
+    "problem_index": "B",
+    "name": "Trapezoid Sum"
+  },
+  {
     "problem_id": "abc182_a",
     "contest_id": "abc182",
     "contest_title": "AtCoder Beginner Contest 182",
     "problem_index": "A",
     "name": "twiblr"
+  },
+  {
+    "problem_id": "abc182_b",
+    "contest_id": "abc182",
+    "contest_title": "AtCoder Beginner Contest 182",
+    "problem_index": "B",
+    "name": "Almost GCD"
   },
   {
     "problem_id": "abc183_a",

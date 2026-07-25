@@ -1,0 +1,16 @@
+func main()
+	var n: int :: cui@inputInt()
+	var dm: int :: 0
+	var de2: int :: 0
+	var dc: int :: 0
+	for(1, n)
+		var x: int :: cui@inputInt()
+		do dm :+ x.abs()
+		do de2 :+ x ^ 2
+		do dc :: lib@max(dc, x.abs())
+	end for
+	
+	do cui@print("\{dm}\n")
+	do cui@print("\{(de2 $ float) ^ 0.5}\n")
+	do cui@print("\{dc}\n")
+end func
