@@ -6153,6 +6153,13 @@
     "name": "Keep the Change"
   },
   {
+    "problem_id": "abc468_a",
+    "contest_id": "abc468",
+    "contest_title": "AtCoder Beginner Contest 468",
+    "problem_index": "A",
+    "name": "Maximal Value"
+  },
+  {
     "problem_id": "abl_a",
     "contest_id": "abl",
     "contest_title": "ACL Beginner Contest",
