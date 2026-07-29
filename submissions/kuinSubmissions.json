@@ -2674,6 +2674,13 @@
     "name": "Determinant"
   },
   {
+    "problem_id": "abc184_b",
+    "contest_id": "abc184",
+    "contest_title": "AtCoder Beginner Contest 184",
+    "problem_index": "B",
+    "name": "Quizzes"
+  },
+  {
     "problem_id": "abc185_a",
     "contest_id": "abc185",
     "contest_title": "AtCoder Beginner Contest 185",
@@ -2681,11 +2688,25 @@
     "name": "ABC Preparation"
   },
   {
+    "problem_id": "abc185_b",
+    "contest_id": "abc185",
+    "contest_title": "AtCoder Beginner Contest 185",
+    "problem_index": "B",
+    "name": "Smartphone Addiction"
+  },
+  {
     "problem_id": "abc186_a",
     "contest_id": "abc186",
     "contest_title": "パナソニックプログラミングコンテスト（AtCoder Beginner Contest 186）",
     "problem_index": "A",
     "name": "Brick"
+  },
+  {
+    "problem_id": "abc186_b",
+    "contest_id": "abc186",
+    "contest_title": "パナソニックプログラミングコンテスト（AtCoder Beginner Contest 186）",
+    "problem_index": "B",
+    "name": "Blocks on Grid"
   },
   {
     "problem_id": "abc187_a",
@@ -6158,6 +6179,13 @@
     "contest_title": "AtCoder Beginner Contest 468",
     "problem_index": "A",
     "name": "Maximal Value"
+  },
+  {
+    "problem_id": "abc468_b",
+    "contest_id": "abc468",
+    "contest_title": "AtCoder Beginner Contest 468",
+    "problem_index": "B",
+    "name": "Corridor Watch"
   },
   {
     "problem_id": "abl_a",

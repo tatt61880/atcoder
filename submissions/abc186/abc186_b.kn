@@ -1,0 +1,16 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	
+	var min: int :: lib@intMax
+	var sum: int :: 0
+	
+	for i(0, h * w - 1)
+		var a: int :: cui@inputInt()
+		do sum :+ a
+		do min :: lib@min(min, a)
+	end for
+	
+	var ans: int :: sum - min * h * w
+	do cui@print("\{ans}\n")
+end func

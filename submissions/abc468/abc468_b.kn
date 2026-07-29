@@ -1,0 +1,36 @@
+func main()
+	var m: int :: cui@inputInt()
+	var d: int :: cui@inputInt()
+	var s: []char :: cui@input()
+	
+	var a: []int :: [1].repeat(m)
+	var cnt: int
+	
+	do cnt :: 0
+	for i(0, m - 1)
+		if(s[i] = 'G')
+			do cnt :: d + 1
+		end if
+		if(cnt > 0)
+			do a[i] :: 0
+		end if
+		do cnt :- 1
+	end for
+	
+	do cnt :: 0
+	for i(m - 1, 0, -1)
+		if(s[i] = 'G')
+			do cnt :: d + 1
+		end if
+		if(cnt > 0)
+			do a[i] :: 0
+		end if
+		do cnt :- 1
+	end for
+	
+	var ans: int :: 0
+	for i(0, m - 1)
+		do ans :+ a[i]
+	end for
+	do cui@print("\{ans}\n")
+end func
