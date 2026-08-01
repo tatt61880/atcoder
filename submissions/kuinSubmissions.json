@@ -2716,11 +2716,25 @@
     "name": "Large Digits"
   },
   {
+    "problem_id": "abc187_b",
+    "contest_id": "abc187",
+    "contest_title": "AtCoder Beginner Contest 187",
+    "problem_index": "B",
+    "name": "Gentle Pairs"
+  },
+  {
     "problem_id": "abc188_a",
     "contest_id": "abc188",
     "contest_title": "AtCoder Beginner Contest 188",
     "problem_index": "A",
     "name": "Three-Point Shot"
+  },
+  {
+    "problem_id": "abc188_b",
+    "contest_id": "abc188",
+    "contest_title": "AtCoder Beginner Contest 188",
+    "problem_index": "B",
+    "name": "Orthogonality"
   },
   {
     "problem_id": "abc189_a",
@@ -6186,6 +6200,20 @@
     "contest_title": "AtCoder Beginner Contest 468",
     "problem_index": "B",
     "name": "Corridor Watch"
+  },
+  {
+    "problem_id": "abc469_a",
+    "contest_id": "abc469",
+    "contest_title": "AtCoder Beginner Contest 469",
+    "problem_index": "A",
+    "name": "Train Car"
+  },
+  {
+    "problem_id": "abc469_b",
+    "contest_id": "abc469",
+    "contest_title": "AtCoder Beginner Contest 469",
+    "problem_index": "B",
+    "name": "Isolated Seats"
   },
   {
     "problem_id": "abl_a",

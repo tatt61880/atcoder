@@ -1,0 +1,12 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: "x" ~ cui@input() ~ "x"
+	
+	var ans: int :: 0
+	for i(1, n)
+		if(s.sub(i - 1, 3) = "xxx")
+			do ans :+ 1
+		end if
+	end for
+	do cui@print("\{ans}\n")
+end func
