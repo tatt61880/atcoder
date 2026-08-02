@@ -1,0 +1,19 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: cui@input()
+	
+	var ans: []int :: #[n]int
+	var cnt: int :: 0
+	for i(0, n - 1)
+		do ans[cnt] :: i + 1
+		if(s[i] = 'x')
+			do cnt :: lib@min(cnt + 1, n - 1)
+		end if
+	end for
+	
+	for i(cnt, n - 1)
+		do ans[i] :: n
+	end for
+	
+	do cui@print(ans.join("\n") ~ "\n")
+end func

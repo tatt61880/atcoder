@@ -2744,11 +2744,25 @@
     "name": "Slot"
   },
   {
+    "problem_id": "abc189_b",
+    "contest_id": "abc189",
+    "contest_title": "AtCoder Beginner Contest 189",
+    "problem_index": "B",
+    "name": "Alcoholic"
+  },
+  {
     "problem_id": "abc190_a",
     "contest_id": "abc190",
     "contest_title": "AtCoder Beginner Contest 190",
     "problem_index": "A",
     "name": "Very Very Primitive Game"
+  },
+  {
+    "problem_id": "abc190_b",
+    "contest_id": "abc190",
+    "contest_title": "AtCoder Beginner Contest 190",
+    "problem_index": "B",
+    "name": "Magic 3"
   },
   {
     "problem_id": "abc191_a",
@@ -6214,6 +6228,13 @@
     "contest_title": "AtCoder Beginner Contest 469",
     "problem_index": "B",
     "name": "Isolated Seats"
+  },
+  {
+    "problem_id": "abc469_c",
+    "contest_id": "abc469",
+    "contest_title": "AtCoder Beginner Contest 469",
+    "problem_index": "C",
+    "name": "Cantrip"
   },
   {
     "problem_id": "abl_a",
