@@ -1,0 +1,5 @@
+func main()
+ var s:[]char::cui@input()
+ var t:[]char::cui@input()
+ do cui@print((s=t.sub(0,lib@min(^s,^t)))?("Yes\n","No\n"))
+end func

@@ -1,0 +1,39 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	var y: int :: cui@inputInt() - 1
+	var x: int :: cui@inputInt() - 1
+	var s: [][]char :: #[h][]char
+	for i(0, h - 1)
+		do s[i] :: cui@input()
+	end for
+	
+	var ans: int :: 1
+	for i(x + 1, w - 1)
+		if(s[y][i] = '#')
+			break i
+		end if
+		do ans :+ 1
+	end for
+	for i(x - 1, 0, -1)
+		if(s[y][i] = '#')
+			break i
+		end if
+		do ans :+ 1
+	end for
+	
+	for i(y + 1, h - 1)
+		if(s[i][x] = '#')
+			break i
+		end if
+		do ans :+ 1
+	end for
+	for i(y - 1, 0, -1)
+		if(s[i][x] = '#')
+			break i
+		end if
+		do ans :+ 1
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

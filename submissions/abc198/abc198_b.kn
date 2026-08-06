@@ -1,0 +1,13 @@
+func main()
+	var n: int :: cui@inputInt()
+	while(n <> 0 & n % 10 = 0)
+		do n :/ 10
+	end while
+	
+	var x: []char :: "\{n}"
+	var y: []char :: ##x
+	do y.reverse()
+	
+	var ans: bool :: x = y
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

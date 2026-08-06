@@ -1,0 +1,20 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var ans: int :: lib@intMax
+	
+	for(1, n)
+		var a: int :: cui@inputInt()
+		var p: int :: cui@inputInt()
+		var x: int :: cui@inputInt()
+		if(a < x)
+			do ans :: lib@min(ans, p)
+		end if
+	end for
+	
+	if(ans = lib@intMax)
+		do ans :: -1
+	end if
+	
+	do cui@print("\{ans}\n")
+end func

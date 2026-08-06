@@ -1,0 +1,15 @@
+func main()
+	var a: int :: cui@inputInt()
+	var b: int :: cui@inputInt()
+	var w: int :: cui@inputInt() * 1000
+	
+	var min: int :: (w + b - 1) / b
+	var max: int :: w / a
+	
+	
+	if(min <= max)
+		do cui@print("\{min} \{max}\n")
+	else
+		do cui@print("UNSATISFIABLE\n")
+	end if
+end func

@@ -2772,11 +2772,25 @@
     "name": "Vanishing Pitch"
   },
   {
+    "problem_id": "abc191_b",
+    "contest_id": "abc191",
+    "contest_title": "AtCoder Beginner Contest 191",
+    "problem_index": "B",
+    "name": "Remove It"
+  },
+  {
     "problem_id": "abc192_a",
     "contest_id": "abc192",
     "contest_title": "SOMPO HD プログラミングコンテスト2021(AtCoder Beginner Contest 192)",
     "problem_index": "A",
     "name": "Star"
+  },
+  {
+    "problem_id": "abc192_b",
+    "contest_id": "abc192",
+    "contest_title": "SOMPO HD プログラミングコンテスト2021(AtCoder Beginner Contest 192)",
+    "problem_index": "B",
+    "name": "uNrEaDaBlE sTrInG"
   },
   {
     "problem_id": "abc193_a",
@@ -2786,11 +2800,25 @@
     "name": "Discount"
   },
   {
+    "problem_id": "abc193_b",
+    "contest_id": "abc193",
+    "contest_title": "キャディプログラミングコンテスト2021(AtCoder Beginner Contest 193)",
+    "problem_index": "B",
+    "name": "Play Snuke"
+  },
+  {
     "problem_id": "abc194_a",
     "contest_id": "abc194",
     "contest_title": "AtCoder Beginner Contest 194",
     "problem_index": "A",
     "name": "I Scream"
+  },
+  {
+    "problem_id": "abc194_b",
+    "contest_id": "abc194",
+    "contest_title": "AtCoder Beginner Contest 194",
+    "problem_index": "B",
+    "name": "Job Assignment"
   },
   {
     "problem_id": "abc195_a",
@@ -2800,11 +2828,25 @@
     "name": "Health M Death"
   },
   {
+    "problem_id": "abc195_b",
+    "contest_id": "abc195",
+    "contest_title": "パナソニックプログラミングコンテスト（AtCoder Beginner Contest 195）",
+    "problem_index": "B",
+    "name": "Many Oranges"
+  },
+  {
     "problem_id": "abc196_a",
     "contest_id": "abc196",
     "contest_title": "AtCoder Beginner Contest 196",
     "problem_index": "A",
     "name": "Difference Max"
+  },
+  {
+    "problem_id": "abc196_b",
+    "contest_id": "abc196",
+    "contest_title": "AtCoder Beginner Contest 196",
+    "problem_index": "B",
+    "name": "Round Down"
   },
   {
     "problem_id": "abc197_a",
@@ -2814,11 +2856,25 @@
     "name": "Rotate"
   },
   {
+    "problem_id": "abc197_b",
+    "contest_id": "abc197",
+    "contest_title": "AtCoder Beginner Contest 197（Sponsored by Panasonic）",
+    "problem_index": "B",
+    "name": "Visibility"
+  },
+  {
     "problem_id": "abc198_a",
     "contest_id": "abc198",
     "contest_title": "AtCoder Beginner Contest 198",
     "problem_index": "A",
     "name": "Div"
+  },
+  {
+    "problem_id": "abc198_b",
+    "contest_id": "abc198",
+    "contest_title": "AtCoder Beginner Contest 198",
+    "problem_index": "B",
+    "name": "Palindrome with leading zeros"
   },
   {
     "problem_id": "abc199_a",
@@ -3323,6 +3379,13 @@
     "contest_title": "ユニークビジョンプログラミングコンテスト2022 夏(AtCoder Beginner Contest 268)",
     "problem_index": "A",
     "name": "Five Integers"
+  },
+  {
+    "problem_id": "abc268_b",
+    "contest_id": "abc268",
+    "contest_title": "ユニークビジョンプログラミングコンテスト2022 夏(AtCoder Beginner Contest 268)",
+    "problem_index": "B",
+    "name": "Prefix?"
   },
   {
     "problem_id": "abc269_a",

@@ -1,0 +1,23 @@
+func main()
+	var n: int :: cui@inputInt()
+	var a: []int :: #[n]int
+	var b: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt()
+		do b[i] :: cui@inputInt()
+	end for
+	
+	var ans: int :: lib@intMax
+	
+	for i(0, n - 1)
+		for j(0, n - 1)
+			if(i = j)
+				do ans :: lib@min(ans, a[i] + b[j])
+			else
+				do ans :: lib@min(ans, lib@max(a[i], b[j]))
+			end if
+		end for
+	end for
+	
+	do cui@print("\{ans}\n")
+end func
