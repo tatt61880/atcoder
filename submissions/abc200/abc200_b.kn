@@ -1,0 +1,16 @@
+func main()
+	var n: int :: cui@inputInt()
+	var k: int :: cui@inputInt()
+	
+	
+	for(1, k)
+		if(n % 200 = 0)
+			do n :/ 200
+		else
+			do n :: n * 1000 + 200
+		end if
+	end for
+	
+	var ans: int :: n
+	do cui@print("\{ans}\n")
+end func

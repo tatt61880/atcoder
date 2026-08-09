@@ -1,0 +1,16 @@
+func main()
+	var s: []char :: cui@input()
+	
+	for i(0, ^s - 1)
+		switch(s[i])
+		case '6'
+			do s[i] :: '9'
+		case '9'
+			do s[i] :: '6'
+		end switch
+	end for
+	
+	do s.reverse()
+	
+	do cui@print("\{s}\n")
+end func
