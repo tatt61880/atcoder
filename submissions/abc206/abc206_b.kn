@@ -1,0 +1,12 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	for i(1, 100000)
+		var x: int :: i * (i + 1) / 2
+		if(x >= n)
+			var ans: int :: i
+			do cui@print("\{ans}\n")
+			ret
+		end if
+	end for
+end func

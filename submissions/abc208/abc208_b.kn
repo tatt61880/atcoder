@@ -1,0 +1,23 @@
+func main()
+	var p: int :: cui@inputInt()
+	
+	var f: []int :: #[11]int
+	do f[1] :: 1
+	for i(2, 10)
+		do f[i] :: f[i - 1] * i
+	end for
+	
+	var ans: int :: 0
+	
+	while(p <> 0)
+		for i(10, 1, -1)
+			if(f[i] <= p)
+				do p :- f[i]
+				break i
+			end if
+		end for
+		do ans :+ 1
+	end while
+	
+	do cui@print("\{ans}\n")
+end func

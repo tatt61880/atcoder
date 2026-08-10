@@ -2940,11 +2940,25 @@
     "name": "Chinchirorin"
   },
   {
+    "problem_id": "abc203_b",
+    "contest_id": "abc203",
+    "contest_title": "AtCoder Beginner Contest 203（Sponsored by Panasonic）",
+    "problem_index": "B",
+    "name": "AtCoder Condominium"
+  },
+  {
     "problem_id": "abc204_a",
     "contest_id": "abc204",
     "contest_title": "AtCoder Beginner Contest 204",
     "problem_index": "A",
     "name": "Rock-paper-scissors"
+  },
+  {
+    "problem_id": "abc204_b",
+    "contest_id": "abc204",
+    "contest_title": "AtCoder Beginner Contest 204",
+    "problem_index": "B",
+    "name": "Nuts"
   },
   {
     "problem_id": "abc205_a",
@@ -2954,11 +2968,25 @@
     "name": "kcal"
   },
   {
+    "problem_id": "abc205_b",
+    "contest_id": "abc205",
+    "contest_title": "AtCoder Beginner Contest 205",
+    "problem_index": "B",
+    "name": "Permutation Check"
+  },
+  {
     "problem_id": "abc206_a",
     "contest_id": "abc206",
     "contest_title": "AtCoder Beginner Contest 206（Sponsored by Panasonic）",
     "problem_index": "A",
     "name": "Maxi-Buying"
+  },
+  {
+    "problem_id": "abc206_b",
+    "contest_id": "abc206",
+    "contest_title": "AtCoder Beginner Contest 206（Sponsored by Panasonic）",
+    "problem_index": "B",
+    "name": "Savings"
   },
   {
     "problem_id": "abc207_a",
@@ -2968,6 +2996,13 @@
     "name": "Repression"
   },
   {
+    "problem_id": "abc207_b",
+    "contest_id": "abc207",
+    "contest_title": "AtCoder Beginner Contest 207",
+    "problem_index": "B",
+    "name": "Hydrate"
+  },
+  {
     "problem_id": "abc208_a",
     "contest_id": "abc208",
     "contest_title": "AtCoder Beginner Contest 208",
@@ -2975,11 +3010,25 @@
     "name": "Rolling Dice"
   },
   {
+    "problem_id": "abc208_b",
+    "contest_id": "abc208",
+    "contest_title": "AtCoder Beginner Contest 208",
+    "problem_index": "B",
+    "name": "Factorial Yen Coin"
+  },
+  {
     "problem_id": "abc209_a",
     "contest_id": "abc209",
     "contest_title": "AtCoder Beginner Contest 209",
     "problem_index": "A",
     "name": "Counting"
+  },
+  {
+    "problem_id": "abc209_b",
+    "contest_id": "abc209",
+    "contest_title": "AtCoder Beginner Contest 209",
+    "problem_index": "B",
+    "name": "Can you buy them all?"
   },
   {
     "problem_id": "abc210_a",
@@ -2994,6 +3043,13 @@
     "contest_title": "AtCoder Beginner Contest 211",
     "problem_index": "A",
     "name": "Blood Pressure"
+  },
+  {
+    "problem_id": "abc211_b",
+    "contest_id": "abc211",
+    "contest_title": "AtCoder Beginner Contest 211",
+    "problem_index": "B",
+    "name": "Cycle Hit"
   },
   {
     "problem_id": "abc212_a",
