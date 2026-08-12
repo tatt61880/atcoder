@@ -3080,6 +3080,13 @@
     "name": "Bitwise Exclusive Or"
   },
   {
+    "problem_id": "abc213_b",
+    "contest_id": "abc213",
+    "contest_title": "AtCoder Beginner Contest 213",
+    "problem_index": "B",
+    "name": "Booby Prize"
+  },
+  {
     "problem_id": "abc214_a",
     "contest_id": "abc214",
     "contest_title": "AtCoder Beginner Contest 214",
@@ -3101,11 +3108,25 @@
     "name": "Your First Judge"
   },
   {
+    "problem_id": "abc215_b",
+    "contest_id": "abc215",
+    "contest_title": "AtCoder Beginner Contest 215",
+    "problem_index": "B",
+    "name": "log2(N)"
+  },
+  {
     "problem_id": "abc216_a",
     "contest_id": "abc216",
     "contest_title": "AtCoder Beginner Contest 216",
     "problem_index": "A",
     "name": "Signed Difficulty"
+  },
+  {
+    "problem_id": "abc216_b",
+    "contest_id": "abc216",
+    "contest_title": "AtCoder Beginner Contest 216",
+    "problem_index": "B",
+    "name": "Same Name"
   },
   {
     "problem_id": "abc217_a",
@@ -3115,11 +3136,25 @@
     "name": "Lexicographic Order"
   },
   {
+    "problem_id": "abc217_b",
+    "contest_id": "abc217",
+    "contest_title": "AtCoder Beginner Contest 217",
+    "problem_index": "B",
+    "name": "AtCoder Quiz"
+  },
+  {
     "problem_id": "abc218_a",
     "contest_id": "abc218",
     "contest_title": "AtCoder Beginner Contest 218",
     "problem_index": "A",
     "name": "Weather Forecast"
+  },
+  {
+    "problem_id": "abc218_b",
+    "contest_id": "abc218",
+    "contest_title": "AtCoder Beginner Contest 218",
+    "problem_index": "B",
+    "name": "qwerty"
   },
   {
     "problem_id": "abc219_a",
@@ -3129,6 +3164,13 @@
     "name": "AtCoder Quiz 2"
   },
   {
+    "problem_id": "abc219_b",
+    "contest_id": "abc219",
+    "contest_title": "サイシードプログラミングコンテスト2021（AtCoder Beginner Contest 219）",
+    "problem_index": "B",
+    "name": "Maritozzo"
+  },
+  {
     "problem_id": "abc220_a",
     "contest_id": "abc220",
     "contest_title": "AtCoder Beginner Contest 220",
@@ -3136,11 +3178,25 @@
     "name": "Find Multiple"
   },
   {
+    "problem_id": "abc220_b",
+    "contest_id": "abc220",
+    "contest_title": "AtCoder Beginner Contest 220",
+    "problem_index": "B",
+    "name": "Base K"
+  },
+  {
     "problem_id": "abc221_a",
     "contest_id": "abc221",
     "contest_title": "AtCoder Beginner Contest 221",
     "problem_index": "A",
     "name": "Seismic magnitude scales"
+  },
+  {
+    "problem_id": "abc221_b",
+    "contest_id": "abc221",
+    "contest_title": "AtCoder Beginner Contest 221",
+    "problem_index": "B",
+    "name": "typo"
   },
   {
     "problem_id": "abc222_a",

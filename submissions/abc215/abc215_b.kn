@@ -1,0 +1,13 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var ans: int :: 0
+	
+	for k(0, 62)
+		if(2 ^ k <= n)
+			do ans :: k
+		end if
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

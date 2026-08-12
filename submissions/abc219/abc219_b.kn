@@ -1,0 +1,13 @@
+func main()
+	var s: [][]char :: #[3][]char
+	for i(0, 2)
+		do s[i] :: cui@inputStr()
+	end for
+	
+	var t: []char :: cui@inputStr()
+	for i(0, ^t - 1)
+		do cui@print("\{s[t[i] $ int - '1' $ int]}")
+	end for
+	
+	do cui@print("\n")
+end func

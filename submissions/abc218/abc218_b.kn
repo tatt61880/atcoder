@@ -1,0 +1,8 @@
+func main()
+	for(1, 26)
+		var p: int :: cui@inputInt()
+		do cui@print("\{'a'.offset(p - 1)}")
+	end for
+	
+	do cui@print("\n")
+end func

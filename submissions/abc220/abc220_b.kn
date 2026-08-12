@@ -1,0 +1,19 @@
+func main()
+	var k: int :: cui@inputInt()
+	var a: []char :: cui@inputStr()
+	var b: []char :: cui@inputStr()
+	
+	var ans: int :: f(a, k) * f(b, k)
+	do cui@print("\{ans}\n")
+	
+	func f(s: []char, k: int): int
+		var res: int :: 0
+		
+		for i(0, ^s - 1)
+			do res :* k
+			do res :+ s[i] $ int - '0' $ int
+		end for
+		
+		ret res
+	end func
+end func
