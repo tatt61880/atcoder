@@ -1,0 +1,10 @@
+func main()
+	var n: int :: cui@inputInt()
+	for i(1, n)
+		if(i % 3 = 0)
+			do cui@print("Fizz\n")
+		else
+			do cui@print("\{i}\n")
+		end if
+	end for
+end func

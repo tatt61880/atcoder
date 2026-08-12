@@ -1,0 +1,13 @@
+func main()
+	var s: []char :: cui@inputStr()
+	var cond1: bool :: s[0] = s[1] & s[1] = s[2] & s[2] = s[3]
+	var cond2: bool :: true
+	
+	for i(0, 2)
+		if((s[i] $ int - '0' $ int + 1) % 10 <> s[i + 1] $ int - '0' $ int)
+			do cond2 :: false
+		end if
+	end for
+	
+	do cui@print((cond1 | cond2 ?("Weak", "Strong")) ~ "\n")
+end func

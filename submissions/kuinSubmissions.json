@@ -3038,6 +3038,13 @@
     "name": "Cabbages"
   },
   {
+    "problem_id": "abc210_b",
+    "contest_id": "abc210",
+    "contest_title": "AtCoder Beginner Contest 210",
+    "problem_index": "B",
+    "name": "Bouzu Mekuri"
+  },
+  {
     "problem_id": "abc211_a",
     "contest_id": "abc211",
     "contest_title": "AtCoder Beginner Contest 211",
@@ -3059,6 +3066,13 @@
     "name": "Alloy"
   },
   {
+    "problem_id": "abc212_b",
+    "contest_id": "abc212",
+    "contest_title": "AtCoder Beginner Contest 212",
+    "problem_index": "B",
+    "name": "Weak Password"
+  },
+  {
     "problem_id": "abc213_a",
     "contest_id": "abc213",
     "contest_title": "AtCoder Beginner Contest 213",
@@ -3071,6 +3085,13 @@
     "contest_title": "AtCoder Beginner Contest 214",
     "problem_index": "A",
     "name": "New Generation ABC"
+  },
+  {
+    "problem_id": "abc214_b",
+    "contest_id": "abc214",
+    "contest_title": "AtCoder Beginner Contest 214",
+    "problem_index": "B",
+    "name": "How many?"
   },
   {
     "problem_id": "abc215_a",
@@ -6382,6 +6403,13 @@
     "contest_title": "AtCoder Beginner Contest 469",
     "problem_index": "C",
     "name": "Cantrip"
+  },
+  {
+    "problem_id": "abc470_a",
+    "contest_id": "abc470",
+    "contest_title": "JPRSプログラミングコンテスト2026#2 （AtCoder Beginner Contest 470）",
+    "problem_index": "A",
+    "name": "Fizz"
   },
   {
     "problem_id": "abl_a",

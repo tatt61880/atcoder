@@ -1,0 +1,11 @@
+func main()
+	var n: int :: cui@inputInt()
+	var s: []char :: cui@input()
+	for i(0, n - 1)
+		if(s[i] = '1')
+			var ans: bool :: i % 2 = 0
+			do cui@print((ans ?("Takahashi", "Aoki")) ~ "\n")
+			ret
+		end if
+	end for
+end func
