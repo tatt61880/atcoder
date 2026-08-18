@@ -1,0 +1,17 @@
+func main()
+	var n: int :: cui@inputInt()
+	var d: dict<[]char, int> :: #dict<[]char, int>
+	
+	var ans: []char
+	var max: int :: 0
+	for(1, n)
+		var s: []char :: cui@input()
+		var num: int :: d.get(s, &) + 1
+		do d.add(s, num)
+		if(num > max)
+			do max :: num
+			do ans :: s
+		end if
+	end for
+	do cui@print("\{ans}\n")
+end func

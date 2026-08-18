@@ -1,0 +1,20 @@
+func main()
+	var n: int :: cui@inputInt()
+	
+	var ans: int :: n
+	
+	for i(0, n - 1)
+		var s: int :: cui@inputInt()
+		
+		for a(1, 250)
+			for b(1, 250)
+				if(s = 4 * a * b + 3 * a + 3 * b)
+					do ans :- 1
+					skip i
+				end if
+			end for
+		end for
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

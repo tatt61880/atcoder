@@ -1,0 +1,7 @@
+func main()
+	var t: []char :: "oxx".repeat(20)
+	var s: []char :: cui@inputStr()
+	
+	var ans: bool :: t.findStr(s, 0) <> -1
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

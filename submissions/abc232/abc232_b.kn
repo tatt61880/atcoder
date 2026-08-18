@@ -1,0 +1,14 @@
+func main()
+	var s: []char :: cui@input()
+	var t: []char :: cui@input()
+	
+	var ans: bool :: true
+	
+	for i(1, ^s - 1)
+		if((26 + s[i] $ int - s[i - 1] $ int) % 26 <> (26 + t[i] $ int - t[i - 1] $ int) % 26) 
+			do ans :: false
+		end if
+	end for
+	
+	do cui@print((ans ?("Yes", "No")) ~ "\n")
+end func

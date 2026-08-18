@@ -1,0 +1,19 @@
+func main()
+	var s: []char :: cui@input()
+	
+	var a: []char :: ##s
+	var z: []char :: ##s
+	
+	for(1, ^s)
+		if(s < a)
+			do a :: ##s
+		end if
+		if(s > z)
+			do z :: ##s
+		end if
+		do s :: s.sub(1, ^s - 1) ~ [s[0]]
+	end for
+	
+	do cui@print("\{a}\n")
+	do cui@print("\{z}\n")
+end func

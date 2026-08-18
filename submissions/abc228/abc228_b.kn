@@ -1,0 +1,23 @@
+func main()
+	var n: int :: cui@inputInt()
+	var x: int :: cui@inputInt() - 1
+	
+	var a: []int :: #[n]int
+	for i(0, n - 1)
+		do a[i] :: cui@inputInt() - 1
+	end for
+	
+	var ans: int :: 0
+	while loop(true)
+		if(a[x] = -1)
+			break loop
+		end if
+		
+		var xp: int :: x
+		do x :: a[x]
+		do a[xp] :: -1
+		do ans :+ 1
+	end while
+	
+	do cui@print("\{ans}\n")
+end func

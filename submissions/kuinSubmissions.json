@@ -3206,11 +3206,25 @@
     "name": "Four Digits"
   },
   {
+    "problem_id": "abc222_b",
+    "contest_id": "abc222",
+    "contest_title": "エクサウィザーズプログラミングコンテスト2021（AtCoder Beginner Contest 222）",
+    "problem_index": "B",
+    "name": "Failing Grade"
+  },
+  {
     "problem_id": "abc223_a",
     "contest_id": "abc223",
     "contest_title": "AtCoder Beginner Contest 223",
     "problem_index": "A",
     "name": "Exact Price"
+  },
+  {
+    "problem_id": "abc223_b",
+    "contest_id": "abc223",
+    "contest_title": "AtCoder Beginner Contest 223",
+    "problem_index": "B",
+    "name": "String Shifting"
   },
   {
     "problem_id": "abc224_a",
@@ -3220,11 +3234,25 @@
     "name": "Tires"
   },
   {
+    "problem_id": "abc224_b",
+    "contest_id": "abc224",
+    "contest_title": "AtCoder Beginner Contest 224",
+    "problem_index": "B",
+    "name": "Mongeness"
+  },
+  {
     "problem_id": "abc225_a",
     "contest_id": "abc225",
     "contest_title": "UNICORNプログラミングコンテスト2021(AtCoder Beginner Contest 225)",
     "problem_index": "A",
     "name": "Distinct Strings"
+  },
+  {
+    "problem_id": "abc225_b",
+    "contest_id": "abc225",
+    "contest_title": "UNICORNプログラミングコンテスト2021(AtCoder Beginner Contest 225)",
+    "problem_index": "B",
+    "name": "Star or Not"
   },
   {
     "problem_id": "abc226_a",
@@ -3234,11 +3262,25 @@
     "name": "Round decimals"
   },
   {
+    "problem_id": "abc226_b",
+    "contest_id": "abc226",
+    "contest_title": "AtCoder Beginner Contest 226",
+    "problem_index": "B",
+    "name": "Counting Arrays"
+  },
+  {
     "problem_id": "abc227_a",
     "contest_id": "abc227",
     "contest_title": "キーエンスプログラミングコンテスト2021-Nov. (AtCoder Beginner Contest 227)",
     "problem_index": "A",
     "name": "Last Card"
+  },
+  {
+    "problem_id": "abc227_b",
+    "contest_id": "abc227",
+    "contest_title": "キーエンスプログラミングコンテスト2021-Nov. (AtCoder Beginner Contest 227)",
+    "problem_index": "B",
+    "name": "KEYENCE building"
   },
   {
     "problem_id": "abc228_a",
@@ -3248,11 +3290,25 @@
     "name": "On and Off"
   },
   {
+    "problem_id": "abc228_b",
+    "contest_id": "abc228",
+    "contest_title": "トヨタシステムズプログラミングコンテスト2021(AtCoder Beginner Contest 228)",
+    "problem_index": "B",
+    "name": "Takahashi's Secret"
+  },
+  {
     "problem_id": "abc229_a",
     "contest_id": "abc229",
     "contest_title": "NECプログラミングコンテスト2021(AtCoder Beginner Contest 229)",
     "problem_index": "A",
     "name": "First Grid"
+  },
+  {
+    "problem_id": "abc229_b",
+    "contest_id": "abc229",
+    "contest_title": "NECプログラミングコンテスト2021(AtCoder Beginner Contest 229)",
+    "problem_index": "B",
+    "name": "Hard Calculation"
   },
   {
     "problem_id": "abc230_a",
@@ -3262,6 +3318,13 @@
     "name": "AtCoder Quiz 3"
   },
   {
+    "problem_id": "abc230_b",
+    "contest_id": "abc230",
+    "contest_title": "AtCoder Beginner Contest 230",
+    "problem_index": "B",
+    "name": "Triple Metre"
+  },
+  {
     "problem_id": "abc231_a",
     "contest_id": "abc231",
     "contest_title": "パナソニックプログラミングコンテスト2021(AtCoder Beginner Contest 231)",
@@ -3269,11 +3332,25 @@
     "name": "Water Pressure"
   },
   {
+    "problem_id": "abc231_b",
+    "contest_id": "abc231",
+    "contest_title": "パナソニックプログラミングコンテスト2021(AtCoder Beginner Contest 231)",
+    "problem_index": "B",
+    "name": "Election"
+  },
+  {
     "problem_id": "abc232_a",
     "contest_id": "abc232",
     "contest_title": "M-SOLUTIONS プロコンオープン2021(AtCoder Beginner Contest 232)",
     "problem_index": "A",
     "name": "QQ solver"
+  },
+  {
+    "problem_id": "abc232_b",
+    "contest_id": "abc232",
+    "contest_title": "M-SOLUTIONS プロコンオープン2021(AtCoder Beginner Contest 232)",
+    "problem_index": "B",
+    "name": "Caesar Cipher"
   },
   {
     "problem_id": "abc233_a",
