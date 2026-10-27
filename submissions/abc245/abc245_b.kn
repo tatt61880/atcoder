@@ -1,0 +1,16 @@
+func main()
+	var n: int :: cui@inputInt()
+	var f: []bool :: #[2001]bool
+	for(1, n)
+		var a: int :: cui@inputInt()
+		do f[a] :: true
+	end for
+	
+	for i(0, 2000)
+		if(!f[i])
+			var ans: int :: i
+			do cui@print("\{ans}\n")
+			ret
+		end if
+	end for
+end func

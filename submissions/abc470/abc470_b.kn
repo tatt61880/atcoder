@@ -1,0 +1,19 @@
+func main()
+	var n: int :: cui@inputInt()
+	var d: dict<int, int> :: #dict<int, int>
+	
+	var max: int :: 0
+	
+	for(1, n)
+		var c: int :: cui@inputInt()
+		var v: int :: d.get(c, &) + 1
+		do d.add(c, v)
+		if(v > max)
+			do max :: v
+		end if
+	end for
+	
+	var ans: int :: n - max
+	
+	do cui@print("\{ans}\n")
+end func

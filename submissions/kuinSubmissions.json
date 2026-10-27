@@ -3360,11 +3360,25 @@
     "name": "10yen Stamp"
   },
   {
+    "problem_id": "abc233_b",
+    "contest_id": "abc233",
+    "contest_title": "AtCoder Beginner Contest 233",
+    "problem_index": "B",
+    "name": "A Reverse"
+  },
+  {
     "problem_id": "abc234_a",
     "contest_id": "abc234",
     "contest_title": "AtCoder Beginner Contest 234",
     "problem_index": "A",
     "name": "Weird Function"
+  },
+  {
+    "problem_id": "abc234_b",
+    "contest_id": "abc234",
+    "contest_title": "AtCoder Beginner Contest 234",
+    "problem_index": "B",
+    "name": "Longest Segment"
   },
   {
     "problem_id": "abc235_a",
@@ -3374,11 +3388,25 @@
     "name": "Rotate"
   },
   {
+    "problem_id": "abc235_b",
+    "contest_id": "abc235",
+    "contest_title": "HHKB プログラミングコンテスト 2022（AtCoder Beginner Contest 235）",
+    "problem_index": "B",
+    "name": "Climbing Takahashi"
+  },
+  {
     "problem_id": "abc236_a",
     "contest_id": "abc236",
     "contest_title": "AtCoder Beginner Contest 236",
     "problem_index": "A",
     "name": "chukodai"
+  },
+  {
+    "problem_id": "abc236_b",
+    "contest_id": "abc236",
+    "contest_title": "AtCoder Beginner Contest 236",
+    "problem_index": "B",
+    "name": "Who is missing?"
   },
   {
     "problem_id": "abc237_a",
@@ -3388,11 +3416,25 @@
     "name": "Not Overflow"
   },
   {
+    "problem_id": "abc237_b",
+    "contest_id": "abc237",
+    "contest_title": "AtCoder Beginner Contest 237",
+    "problem_index": "B",
+    "name": "Matrix Transposition"
+  },
+  {
     "problem_id": "abc238_a",
     "contest_id": "abc238",
     "contest_title": "モノグサプログラミングコンテスト2022（AtCoder Beginner Contest 238）",
     "problem_index": "A",
     "name": "Exponential or Quadratic"
+  },
+  {
+    "problem_id": "abc238_b",
+    "contest_id": "abc238",
+    "contest_title": "モノグサプログラミングコンテスト2022（AtCoder Beginner Contest 238）",
+    "problem_index": "B",
+    "name": "Pizza"
   },
   {
     "problem_id": "abc239_a",
@@ -3402,11 +3444,25 @@
     "name": "Horizon"
   },
   {
+    "problem_id": "abc239_b",
+    "contest_id": "abc239",
+    "contest_title": "デンソークリエイトプログラミングコンテスト2022（AtCoder Beginner Contest 239）",
+    "problem_index": "B",
+    "name": "Integer Division"
+  },
+  {
     "problem_id": "abc240_a",
     "contest_id": "abc240",
     "contest_title": "AtCoder Beginner Contest 240",
     "problem_index": "A",
     "name": "Edge Checker"
+  },
+  {
+    "problem_id": "abc240_b",
+    "contest_id": "abc240",
+    "contest_title": "AtCoder Beginner Contest 240",
+    "problem_index": "B",
+    "name": "Count Distinct Integers"
   },
   {
     "problem_id": "abc241_a",
@@ -3416,11 +3472,25 @@
     "name": "Digit Machine"
   },
   {
+    "problem_id": "abc241_b",
+    "contest_id": "abc241",
+    "contest_title": "AtCoder Beginner Contest 241（Sponsored by Panasonic）",
+    "problem_index": "B",
+    "name": "Pasta"
+  },
+  {
     "problem_id": "abc242_a",
     "contest_id": "abc242",
     "contest_title": "AtCoder Beginner Contest 242",
     "problem_index": "A",
     "name": "T-shirt"
+  },
+  {
+    "problem_id": "abc242_b",
+    "contest_id": "abc242",
+    "contest_title": "AtCoder Beginner Contest 242",
+    "problem_index": "B",
+    "name": "Minimize Ordering"
   },
   {
     "problem_id": "abc243_a",
@@ -3430,11 +3500,25 @@
     "name": "Shampoo"
   },
   {
+    "problem_id": "abc243_b",
+    "contest_id": "abc243",
+    "contest_title": "AtCoder Beginner Contest 243",
+    "problem_index": "B",
+    "name": "Hit and Blow"
+  },
+  {
     "problem_id": "abc244_a",
     "contest_id": "abc244",
     "contest_title": "AtCoder Beginner Contest 244",
     "problem_index": "A",
     "name": "Last Letter"
+  },
+  {
+    "problem_id": "abc244_b",
+    "contest_id": "abc244",
+    "contest_title": "AtCoder Beginner Contest 244",
+    "problem_index": "B",
+    "name": "Go Straight and Turn Right"
   },
   {
     "problem_id": "abc244_c",
@@ -3451,11 +3535,25 @@
     "name": "Good morning"
   },
   {
+    "problem_id": "abc245_b",
+    "contest_id": "abc245",
+    "contest_title": "AtCoder Beginner Contest 245",
+    "problem_index": "B",
+    "name": "Mex"
+  },
+  {
     "problem_id": "abc246_a",
     "contest_id": "abc246",
     "contest_title": "AtCoder Beginner Contest 246",
     "problem_index": "A",
     "name": "Four Points"
+  },
+  {
+    "problem_id": "abc246_b",
+    "contest_id": "abc246",
+    "contest_title": "AtCoder Beginner Contest 246",
+    "problem_index": "B",
+    "name": "Get Closer"
   },
   {
     "problem_id": "abc247_a",
@@ -3638,6 +3736,13 @@
     "contest_title": "トヨタ自動車プログラミングコンテスト2022(AtCoder Beginner Contest 270)",
     "problem_index": "A",
     "name": "1-2-4 Test"
+  },
+  {
+    "problem_id": "abc270_b",
+    "contest_id": "abc270",
+    "contest_title": "トヨタ自動車プログラミングコンテスト2022(AtCoder Beginner Contest 270)",
+    "problem_index": "B",
+    "name": "Hammer"
   },
   {
     "problem_id": "abc271_a",
@@ -6543,6 +6648,55 @@
     "contest_title": "JPRSプログラミングコンテスト2026#2 （AtCoder Beginner Contest 470）",
     "problem_index": "A",
     "name": "Fizz"
+  },
+  {
+    "problem_id": "abc470_b",
+    "contest_id": "abc470",
+    "contest_title": "JPRSプログラミングコンテスト2026#2 （AtCoder Beginner Contest 470）",
+    "problem_index": "B",
+    "name": "Monocolor"
+  },
+  {
+    "problem_id": "abc471_a",
+    "contest_id": "abc471",
+    "contest_title": "AtCoder Beginner Contest 471",
+    "problem_index": "A",
+    "name": "Nine or Nein"
+  },
+  {
+    "problem_id": "abc471_b",
+    "contest_id": "abc471",
+    "contest_title": "AtCoder Beginner Contest 471",
+    "problem_index": "B",
+    "name": "Survey Tabulation"
+  },
+  {
+    "problem_id": "abc472_a",
+    "contest_id": "abc472",
+    "contest_title": "AtCoder Talent Quest 〜 今から28卒には脱出してもらいます〜予選（AtCoder Beginner Contest 472）",
+    "problem_index": "A",
+    "name": "A"
+  },
+  {
+    "problem_id": "abc472_b",
+    "contest_id": "abc472",
+    "contest_title": "AtCoder Talent Quest 〜 今から28卒には脱出してもらいます〜予選（AtCoder Beginner Contest 472）",
+    "problem_index": "B",
+    "name": "Break a Stick"
+  },
+  {
+    "problem_id": "abc473_a",
+    "contest_id": "abc473",
+    "contest_title": "AtCoder Beginner Contest 473",
+    "problem_index": "A",
+    "name": "Second Half Sum"
+  },
+  {
+    "problem_id": "abc473_b",
+    "contest_id": "abc473",
+    "contest_title": "AtCoder Beginner Contest 473",
+    "problem_index": "B",
+    "name": "Old Maid"
   },
   {
     "problem_id": "abl_a",

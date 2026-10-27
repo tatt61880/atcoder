@@ -1,0 +1,12 @@
+func main()
+	var l: int :: cui@inputInt() - 1
+	var r: int :: cui@inputInt() - 1
+	var s: []char :: cui@input()
+	var ans: []char :: ##s
+	
+	for i(l, r)
+		do ans[i] :: s[r + l - i]
+	end for
+	
+	do cui@print("\{ans}\n")
+end func

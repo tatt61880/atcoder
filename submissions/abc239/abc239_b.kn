@@ -1,0 +1,5 @@
+func main()
+	var x: int :: cui@inputInt()
+	var ans: int :: x >= 0 ?(x / 10, (x - 9) / 10)
+	do cui@print("\{ans}\n")
+end func

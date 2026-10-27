@@ -1,0 +1,9 @@
+func main()
+	var s: []char :: cui@input()
+	for i(0, ^s - 1)
+		if(s[i] <> 'A')
+			do s[i] :: '.'
+		end if
+	end for
+	do cui@print("\{s}\n")
+end func

@@ -1,0 +1,15 @@
+func main()
+	var h: int :: cui@inputInt()
+	var w: int :: cui@inputInt()
+	
+	var ans: [][]int :: #[w, h]int
+	for i(0, h - 1)
+		for j(0, w - 1)
+			do ans[j][i] :: cui@inputInt()
+		end for
+	end for
+	
+	for j(0, w - 1)
+		do cui@print("\{ans[j].join(" ")}\n")
+	end for
+end func

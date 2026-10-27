@@ -1,0 +1,21 @@
+func main()
+	var x: int :: cui@inputInt()
+	var y: int :: cui@inputInt()
+	var z: int :: cui@inputInt()
+	
+	if(x < 0)
+		do x :* -1
+		do y :* -1
+		do z :* -1
+	end if
+	
+	var ans: int :: -1
+	
+	if(y < 0 | x < y)
+		do ans :: x
+	elif(z < y)
+		do ans :: x - lib@min(0, z * 2)
+	end if
+	
+	do cui@print("\{ans}\n")
+end func

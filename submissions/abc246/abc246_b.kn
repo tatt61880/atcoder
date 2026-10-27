@@ -1,0 +1,7 @@
+func main()
+	var a: float :: cui@inputFloat()
+	var b: float :: cui@inputFloat()
+	
+	do cui@print("\{a / (a ^ 2.0 + b ^ 2.0) ^ 0.5} ")
+	do cui@print("\{b / (a ^ 2.0 + b ^ 2.0) ^ 0.5}\n")
+end func
